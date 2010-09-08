@@ -1,0 +1,283 @@
+10
+
+dir
+560
+http://yasnippet.googlecode.com/svn/trunk/extras/imported/ruby-mode
+http://yasnippet.googlecode.com/svn
+
+
+
+2010-02-10T09:25:30.317953Z
+560
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b2103351-7347-0410-aa0e-656c9fbaa8cf
+
+.yas-ignore-filenames-as-triggers
+file
+
+
+
+
+2010-02-06T03:08:14.610876Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-08-29T17:59:02.671898Z
+488
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+Rake
+dir
+
+embed string variable.yasnippet
+file
+
+
+
+
+2010-02-06T03:08:14.610876Z
+22a54424b78913c6826505f0a0aa5dd2
+2009-10-15T14:08:17.369804Z
+516
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+222
+
+Idioms
+dir
+
+Counting
+dir
+
+RDoc
+dir
+
+Strings
+dir
+
+Searching and Selection
+dir
+
+add evaluation marker.yasnippet
+file
+
+
+
+
+2010-02-06T03:08:14.614905Z
+09f4d90f0b496de7f729d6df1039e111
+2010-02-01T10:36:42.745215Z
+559
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+114
+
+Arrays
+dir
+
+Insert ERb's.yasnippet
+file
+
+
+
+
+2010-02-06T03:08:14.614905Z
+107d6e3fef5080011403844489e6be3a
+2009-10-30T09:28:38.480456Z
+522
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+243
+
+.yas-make-groups
+file
+
+
+
+
+2010-02-06T03:08:14.614905Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-08-29T17:59:02.671898Z
+488
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+Tests
+dir
+
+Files
+dir
+
+Methods
+dir
+
+.yas-setup.el
+file
+
+
+
+
+2010-02-06T03:08:14.614905Z
+47931d4ba31a57b46ff07b469f8c2957
+2010-02-01T10:36:42.745215Z
+559
+joaotavora
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2187
+
+Declarations
+dir
+
+Ordering
+dir
+
+Classes and Modules
+dir
+
+Each Element
+dir
+
+Hashes
+dir
+
+Blocks
+dir
+
+Serialization
+dir
+

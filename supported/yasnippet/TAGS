@@ -1,0 +1,250 @@
+
+dropdown-list.el,543
+(defface dropdown-list-face64,2233
+(defface dropdown-list-selection-face68,2367
+(defvar dropdown-list-overlays 72,2497
+(defun dropdown-list-hide 74,2534
+(defun dropdown-list-put-overlay 78,2648
+(defun dropdown-list-line 86,2902
+(defun dropdown-list-start-column 118,4387
+(defun dropdown-list-move-to-start-line 126,4724
+(defun dropdown-list-at-point 140,5321
+(defun dropdown-list 167,6694
+(defun define-key* 206,8563
+(defun combine-command 211,8810
+(defvar command-selector-last-command 225,9338
+(defun command-selector 227,9412
+
+Rakefile,18
+  $version 7,127
+
+README,29
+For detailed document,4,119
+
+yasnippet.el,9382
+(defgroup yasnippet 147,5234
+(defcustom yas/snippet-dirs 152,5327
+(defvaralias 'yas/root-directory yas/root-directory171,6168
+(defcustom yas/prompt-functions 173,6221
+(defcustom yas/indent-line 204,7225
+(defcustom yas/also-auto-indent-first-line 221,7786
+(defcustom yas/snippet-revival 228,8000
+(defcustom yas/trigger-key 233,8134
+(defcustom yas/next-field-key 249,8754
+(defcustom yas/prev-field-key 265,9300
+(defcustom yas/skip-and-clear-key 280,9857
+(defcustom yas/triggers-in-field 295,10380
+(defcustom yas/fallback-behavior 303,10598
+(defcustom yas/choose-keys-first 320,11293
+(defcustom yas/choose-tables-first 329,11550
+(defcustom yas/use-menu 339,11852
+(defcustom yas/trigger-symbol 357,12468
+(defcustom yas/wrap-around-region 362,12607
+(defcustom yas/good-grace 370,12855
+(defcustom yas/ignore-filenames-as-triggers 377,13039
+(defcustom yas/visit-from-menu 385,13262
+(defface yas/field-highlight-face392,13470
+(defface yas/field-debug-face398,13701
+(defun yas/define-some-keys 405,13868
+(defvar yas/keymap412,14148
+(defvar yas/key-syntaxes 423,14638
+(defvar yas/after-exit-snippet-hook432,14958
+(defvar yas/before-expand-snippet-hook445,15313
+(defvar yas/buffer-local-condition449,15410
+(defvar yas/version 510,17351
+(defvar yas/menu-table 512,17381
+(defun teste 515,17480
+(defvar yas/known-modes519,17535
+(defvar yas/escaped-characters523,17661
+(defconst yas/field-regexp527,17773
+(defconst yas/multi-dollar-lisp-expression-regexp531,17879
+(defconst yas/backquote-lisp-expression-regexp535,18019
+(defconst yas/transform-mirror-regexp539,18149
+(defconst yas/simple-mirror-regexp543,18301
+(defvar yas/snippet-id-seed 547,18399
+(defun yas/snippet-next-id 550,18471
+(defvar last-buffer-undo-list 559,18677
+(defvar yas/minor-mode-menu 561,18713
+(defun yas/init-minor-keymap 564,18776
+(defvar yas/minor-mode-map 688,25363
+(defun yas/trigger-key-reload 691,25469
+(defvar yas/snippet-tables 705,26037
+(defvar yas/direct-keymaps 708,26155
+(defun yas/direct-keymaps-reload 719,26591
+(defun yas/direct-keymaps-set-vars 731,27132
+(define-minor-mode yas/minor-mode742,27526
+(defvar yas/dont-activate 787,29185
+(defun yas/minor-mode-on 797,29604
+(defun yas/minor-mode-off 809,30017
+(define-globalized-minor-mode yas/global-mode 814,30121
+(defvar yas/font-lock-keywords821,30328
+(defun yas/init-major-keymap 838,30953
+(defvar snippet-mode-map853,31541
+(define-derived-mode snippet-mode 858,31645
+(defstruct (yas/template 869,31975
+(defstruct (yas/snippet-table 881,32243
+(defvar yas/better-guess-for-replacements 956,35092
+(defun yas/remove-snippet 959,35206
+(defun yas/add-snippet 983,36313
+(defun yas/update-snippet 1002,37078
+(defun yas/fetch 1012,37466
+(defun yas/eval-condition 1027,37882
+(defun yas/filter-templates-by-condition 1039,38221
+(defun yas/require-template-specific-condition-p 1054,38853
+(defun yas/template-can-expand-p 1070,39567
+(defun yas/snippet-table-get-all-parents 1079,39881
+(defun yas/snippet-table-templates 1086,40156
+(defun yas/current-key 1096,40532
+(defun yas/snippet-table-all-keys 1123,41323
+(defun yas/real-mode? 1135,41633
+(defun yas/eval-lisp 1144,42018
+(defun yas/eval-lisp-no-saves 1164,42895
+(defun yas/read-lisp 1172,43191
+(defvar yas/mode-symbol 1182,43559
+(defun yas/snippet-table-get-create 1186,43703
+(defun yas/get-snippet-tables 1201,44291
+(defun yas/menu-keymap-get-create 1230,45536
+(defun yas/parse-template 1238,45833
+(defun yas/calculate-group 1317,48834
+(defun yas/subdirs 1334,49703
+(defun yas/make-menu-binding 1348,50323
+(defun yas/expand-or-visit-from-menu 1351,50436
+(defun yas/prompt-for-template 1364,50930
+(defun yas/prompt-for-keys 1375,51306
+(defun yas/prompt-for-table 1382,51560
+(defun yas/x-prompt 1390,51834
+(defun yas/ido-prompt 1412,52860
+(defun yas/dropdown-prompt 1429,53651
+(defun yas/completing-prompt 1439,54075
+(defun yas/no-prompt 1453,54721
+(defun yas/load-directory-1 1459,54895
+(defun yas/load-directory 1496,56456
+(defun yas/load-snippet-dirs 1513,57120
+(defun yas/reload-all 1523,57499
+(defun yas/quote-string 1567,58949
+(defun yas/initialize 1579,59334
+(defun yas/compile-bundle1583,59448
+(defun yas/compile-textmate-bundle 1695,64588
+(defun yas/about 1709,65120
+(defun yas/define-snippets 1715,65320
+(defun yas/show-menu-p 1853,71479
+(defun yas/delete-from-keymap 1864,71825
+(defun yas/define 1899,73549
+(defun yas/hippie-try-expand 1909,74027
+(defvar yas/condition-cache-timestamp 1924,74332
+(defmacro yas/define-condition-cache 1925,74375
+(defalias 'yas/expand yas/expand1948,75403
+(defun yas/expand-from-trigger-key 1949,75455
+(defun yas/expand-from-keymap 1968,76327
+(defun yas/expand-or-prompt-for-template 1983,76916
+(defun yas/fallback 1998,77584
+(defun yas/all-templates 2042,79463
+(defun yas/insert-snippet 2060,80201
+(defun yas/visit-snippet-file 2086,81406
+(defun yas/visit-snippet-file-1 2103,82136
+(defun yas/guess-snippet-directories-1 2132,83593
+(defun yas/guess-snippet-directories 2140,83906
+(defun yas/make-directory-maybe 2171,85255
+(defun yas/new-snippet 2189,86266
+(defun yas/find-snippets 2211,87039
+(defun yas/compute-major-mode-and-parents 2255,88950
+(defvar yas/current-template 2277,90246
+(defvar yas/guessed-directories 2281,90410
+(defun yas/load-snippet-buffer 2285,90578
+(defun yas/tryout-snippet 2406,96657
+(defvar yas/modified-p 2443,98473
+(defvar yas/moving-away-p 2446,98568
+(defvar yas/text 2449,98644
+(defun yas/substr 2452,98700
+(defun yas/choose-value 2463,99069
+(defun yas/key-to-value 2471,99349
+(defun yas/throw 2480,99658
+(defun yas/verify-value 2484,99787
+(defun yas/field-value 2491,100081
+(defun yas/get-field-once 2498,100316
+(defun yas/default-from-field 2504,100511
+(defun yas/inside-string 2508,100607
+(defvar yas/active-field-overlay 2514,100755
+(defvar yas/field-protection-overlays 2517,100835
+(defconst yas/prefix 2520,100930
+(defvar yas/deleted-text 2523,101017
+(defvar yas/selected-text 2526,101100
+(defvar yas/start-column 2529,101195
+(defstruct (yas/snippet 2536,101441
+(defstruct (yas/field 2550,101791
+(defstruct (yas/mirror 2560,101987
+(defstruct (yas/exit 2567,102132
+(defun yas/apply-transform 2571,102210
+(defsubst yas/replace-all 2590,103117
+(defun yas/snippet-find-field 2600,103441
+(defun yas/snippet-sort-fields 2605,103613
+(defun yas/snippet-field-compare 2612,103889
+(defun yas/field-probably-deleted-p 2627,104361
+(defun yas/snippets-at-point 2634,104738
+(defun yas/next-field-or-maybe-expand 2646,105301
+(defun yas/next-field 2658,105747
+(defun yas/place-overlays 2690,107199
+(defun yas/move-to-field 2695,107403
+(defun yas/prev-field 2710,107994
+(defun yas/abort-snippet 2715,108123
+(defun yas/exit-snippet 2722,108337
+(defun yas/exit-all-snippets 2730,108641
+(defun yas/commit-snippet 2741,108893
+(defun yas/check-commit-snippet 2800,111059
+(defun yas/markers-to-points 2841,112919
+(defun yas/points-to-markers 2865,114263
+(defun yas/field-contains-point-p 2883,115406
+(defun yas/field-text-for-display 2889,115609
+(defun yas/undo-in-progress 2893,115779
+(defun yas/make-control-overlay 2899,115941
+(defun yas/skip-and-clear-or-delete-char 2911,116359
+(defun yas/skip-and-clear 2928,117061
+(defun yas/mark-this-and-children-modified 2938,117499
+(defun yas/make-move-active-field-overlay 2948,117874
+(defun yas/on-field-overlay-modification 2970,118964
+(defun yas/make-move-field-protection-overlays 3012,120893
+(defvar yas/protection-violation 3044,122373
+(defun yas/on-protection-overlay-modification 3052,122671
+(defun yas/expand-snippet 3087,124105
+(defun yas/take-care-of-redo 3187,128633
+(defun yas/snippet-revive 3197,128972
+(defun yas/snippet-create 3227,130146
+(defun yas/fom-start 3270,131594
+(defun yas/fom-end 3278,131787
+(defun yas/fom-next 3286,131974
+(defun yas/fom-parent-field 3294,132162
+(defun yas/calculate-adjacencies 3302,132358
+(defun yas/calculate-mirrors-in-fields 3334,133826
+(defun yas/advance-end-maybe 3351,134576
+(defun yas/advance-start-maybe 3367,135081
+(defun yas/advance-end-of-parents-maybe 3375,135381
+(defvar yas/dollar-regions 3382,135678
+(defun yas/snippet-parse-create 3386,135802
+(defun yas/indent-according-to-mode 3437,137270
+(defun yas/indent 3474,138806
+(defun yas/collect-snippet-markers 3502,140054
+(defun yas/real-line-beginning 3517,140671
+(defun yas/escape-string 3526,140905
+(defun yas/protect-escapes 3529,141002
+(defun yas/restore-escapes 3543,141590
+(defun yas/replace-backquotes 3557,142168
+(defun yas/scan-sexps 3566,142597
+(defun yas/make-marker 3573,142760
+(defun yas/field-parse-create 3579,142957
+(defun yas/transform-mirror-parse-create 3653,146802
+(defun yas/simple-mirror-parse-create 3676,148036
+(defun yas/delete-regions 3714,149984
+(defun yas/update-mirrors 3722,150261
+(defun yas/mirror-update-display 3752,151548
+(defun yas/field-update-display 3772,152620
+(defun yas/pre-command-handler 3792,153511
+(defun yas/post-command-handler 3794,153548
+(defun yas/expand-from-trigger-key-doc 3820,154817
+(defun yas/expand-from-keymap-doc 3839,155956
+(defun yas/template-pretty-list 3858,156989
+(defun yas/debug-tables 3876,157452
+(defun yas/debug-snippet-vars 3893,158173
+(defun yas/debug-format-fom-concise 3947,161440
+(defun yas/exterminate-package 3963,162036
+(defun yas/debug-test 3971,162262
+(defadvice c-neutralize-syntax-in-CPP4057,166144

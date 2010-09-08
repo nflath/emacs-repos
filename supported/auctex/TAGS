@@ -1,0 +1,2533 @@
+
+aclocal.m4,178
+dnl variable to assign a value,7,183
+dnl the expression itself,10,388
+[$1=["`sed 's/[^-0-9a-zA-Z_./:$]/\\\\&/g;s/[$]\\\\[{(]\\([^)}]*\\)\\\\[})]/${\\1}/g' <<EOF]EOF551,17745
+
+auctex.elc,276
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/auctex.elel3,75
+;;; This file uses dynamic docstrings,7,225
+;;; This file does not contain utf-8 non-ASCII characters,9,293
+
+auctex.el.in,96
+;;; auctex.elel1,0
+;; strange trick causes tex-site.el to be loaded in a way that can be4,85
+
+auctex.spec,338
+cat <<EOFA > %{buildroot}%{_datadir}/emacs/site-lisp/suse-start-auctex.elel120,4262
+;; suse-start-auctex.elel121,4336
+;; See 124,4425
+cat <<EOFP > %{buildroot}%{_datadir}/emacs/site-lisp/suse-start-preview-latex.elel126,4493
+;; suse-start-preview-latex.elel127,4574
+;; This file enables preview-latex globally:globally128,4605
+
+autogen.sh,202
+${AUTOCONF} || { echo "Error running ${AUTOCONF} in ." >&2 ; exit 31,1077
+${AUTOCONF} -I.. || { echo "Error running ${AUTOCONF} in preview" >&2 ; exit 33,1159
+${MAKE} -f Makefile.in MAKEINFO=50,1701
+
+auto-loads.el,194
+(defalias 'ConTeXt-mode ConTeXt-mode28,721
+(defalias 'TeX-doctex-mode TeX-doctex-mode125,3163
+(defalias 'tex-fold-mode tex-fold-mode248,7072
+(defalias 'Texinfo-mode Texinfo-mode267,7475
+
+auto-loads.el~,207
+;;; auto-loads.el --- automatically extracted autoloads1,0
+;; Local Variables:Variables7,94
+;; version-control: never8,114
+;; no-byte-compile: t9,140
+;; no-update-autoloads: t10,162
+;; End:End12,205
+
+bib-cite.el,3376
+(defgroup bib-cite 594,29747
+(defcustom bib-cite-use-reftex-view-crossref 598,29864
+(defcustom bib-novice 606,30189
+(defcustom bib-switch-to-buffer-function 611,30317
+(defcustom bib-highlight-mouse-t 620,30714
+(defcustom bib-label-help-echo-format 625,30864
+(defcustom bib-bibtex-env-variable 632,31122
+(defcustom bib-cite-inputs 642,31550
+(defcustom bib-cite-aux-inputs 649,31795
+(defcustom bib-dos-or-os2-variable 656,32096
+(defcustom bib-etags-command 672,32758
+(defcustom bib-etags-append-command 681,33196
+(defcustom bib-etags-filename 688,33552
+(defcustom bib-ref-regexp 695,33843
+(defcustom bib-substitute-string-in-display 704,34195
+(defcustom bib-string-ignored-warning711,34462
+(defvar bib-ref-regexpc 723,35009
+(defvar bib-cite-is-XEmacs727,35193
+(defvar bib-cite-minor-mode 730,35301
+(defvar bib-highlight-mouse-keymap 732,35335
+(defvar bib-ext-list 735,35455
+(defvar bib-cite-minor-mode-menu 740,35614
+(defun bib-cite-minor-mode 743,35668
+(defun bib-cite-setup-highlight-mouse-keymap 795,37562
+(defun turn-on-bib-cite 849,40254
+(defun bib-cite-setup-mouse-function 853,40352
+(defvar bib-cite-minor-mode-map862,40623
+(defvar bib-cite-bibtex-mode-syntax-table986,44930
+(defvar bib-string-regexp1004,45624
+(defun bib-display 1008,45784
+(defun bib-find 1050,47250
+(defvar bib-cite-search-ring 1090,48536
+(defun bib-find-next 1093,48637
+(defun bib-display-mouse 1115,49556
+(defun bib-find-mouse 1122,49746
+(defun bib-apropos 1129,49929
+(defvar bib-document-citekeys-obarray-warnings 1174,51791
+(defun bib-make-bibliography 1177,51876
+(defun bib-cite-fontify-red 1228,53792
+(defun bib-cite-fontify-help-xemacs 1241,54272
+(defun bib-cite-fontify-help-as-bibtex 1254,54705
+(defun bib-cite-fontify-help-as-latex 1275,55383
+(defvar bib-document-TeX-files-warnings 1309,56780
+(defun bib-etags 1312,56858
+(defun bib-Is-hidden 1367,59205
+(defun bib-highlight-mouse 1378,59555
+(defun bib-toggle-highlight 1446,62481
+(defun bib-label-help-echo 1465,63166
+(defun bib-label-help 1471,63420
+(defun bib-display-citation 1486,64063
+(defun bib-edit-citation 1517,65126
+(defun bib-apropos-keyword-at-point 1554,66635
+(defun bib-display-label 1569,67241
+(defun bib-find-label 1580,67719
+(defun bib-display-or-find-label 1605,68853
+(defvar bib-label-prompt-map 1662,71138
+(defun bib-guess-or-prompt-for-label 1668,71343
+(defun bib-display-this-ref 1707,73181
+(defun bib-display-this-environment 1744,74234
+(defvar LaTeX-find-label-hist-alist 1803,76725
+(defvar LaTeX-label-list 1804,76803
+(defun create-alist-from-list 1807,76874
+(defun bib-cite-mh-list-to-string 1820,77344
+(defun bib-cite-mh-list-to-string-1 1824,77508
+(defun bib-get-citations 1847,78326
+(defun member-cis 2014,84008
+(defun bib-get-citekeys-obarray 2029,84524
+(defun bib-buffer-citekeys-obarray 2063,85875
+(defun bib-master-directory 2112,87993
+(defun bib-master-file 2120,88277
+(defun bib-document-TeX-files 2173,90437
+(defun bib-document-citekeys-obarray 2220,92385
+(defun bib-return-aux-file-from-tex 2285,95151
+(defun bib-etags-find-noselect 2300,95765
+(defun bib-get-bibliography 2330,96913
+(defun bib-bibliography-list 2407,99861
+(defun bib-create-auto-file 2433,100785
+(defun psg-checkfor-file-list 2463,102025
+(defun search-directory-tree 2500,103274
+(defun bib-cite-file-directory-p 2594,106688
+(defun psg-list-env 2601,106945
+
+bib-cite.elc,464
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/bib-cite.elel3,75
+;;; This file uses dynamic docstrings,7,227
+;;; This file does not contain utf-8 non-ASCII characters,9,295
+When this variable is non-nil,nil18,746
+e.g. Use a path like "c:\emtex\bibinput;ibinput54,3376
+In DOS and OS/2, this *may* be different, e.g. using slashes like "etags /o=o61,3910
+
+ChangeLog,139
+	function name.name714,24174
+	function now.now4188,136903
+	entry at 7733,257311
+	function on 10375,348890
+	function is 11813,392825
+
+CHANGES,45
+     Due to this and other problems,61,2160
+
+config.status,2647
+debug=7,201
+DUALCASE=18,408
+  NULLCMD=21,534
+as_nl=36,820
+  as_echo=47,1354
+  as_echo=50,1473
+    as_echo_body=54,1607
+	arg=63,1862
+      esac;64,1905
+    as_echo_n=68,1999
+  PATH_SEPARATOR=76,2189
+  (PATH='/bin;/bin'; FPATH=77,2208
+    (PATH=78,2272
+    (PATH='/bin:/bin'; FPATH=78,2272
+      PATH_SEPARATOR=79,2336
+IFS=89,2623
+  *) as_save_IFS=94,2759
+  *) as_save_IFS=$IFS; IFS=94,2759
+  as_myself=108,3127
+as_fn_set_status 157,4507
+as_fn_exit 165,4673
+as_fn_unset 175,4804
+as_unset=179,4848
+  as_fn_append 192,5302
+    as_val=206,5685
+  as_fn_arith 209,5716
+  as_expr=218,5890
+  as_basename=224,6010
+  as_dirname=230,6135
+as_cr_letters=255,6547
+  xy)  ECHO_C=266,6877
+       ECHO_T=268,6950
+  esac;269,6970
+  ECHO_N=271,6982
+    as_ln_s=283,7246
+    as_ln_s=291,7637
+  as_mkdir_p=350,8876
+  as_test_x=357,9002
+    as_ls_L_option=360,9065
+	esac;371,9240
+	???[sx]*):;;*)false;373,9303
+	???[sx]*):;;*)false;;esac;373,9303
+as_executable_p=377,9352
+    ac_option=454,11786
+    ac_cs_recheck=463,11979
+    $as_echo "$ac_cs_version"; exit 465,12072
+    debug=467,12158
+    *\'*) ac_optarg=471,12242
+    ac_need_defaults=474,12370
+    $as_echo "$ac_cs_usage"; exit 476,12437
+    ac_cs_silent=479,12594
+     ac_need_defaults=486,12771
+ac_configure_extra_args=492,12824
+  ac_configure_extra_args=496,12892
+  CONFIG_SHELL=503,13128
+    "tex-site.el.out") CONFIG_FILES=523,13494
+    "doc/Makefile") CONFIG_FILES=524,13580
+    "auctex.el") CONFIG_FILES=525,13645
+  tmp=557,14756
+  tmp=561,14862
+ac_cr=571,15188
+  eval ac_cr=576,15428
+  ac_cs_awk_cr=580,15567
+  line 670,18392
+  for (i = 2; i < nfields;674,18480
+    key 675,18514
+  :[FHLC]) ac_mode=$ac_tag; continue;704,19142
+  case $ac_mode$ac_tag in706,19188
+  :[FH]-) ac_tag=709,19295
+  :[FH]*) ac_tag=710,19318
+  ac_save_IFS=712,19363
+    ac_file_inputs=723,19504
+	   *) test -f "$srcdir/$ac_f" && ac_f=734,19844
+      case $ac_f in *\'*) ac_f=738,19989
+    configure_input=745,20312
+      configure_input=749,20458
+       ac_sed_conf_input=756,20766
+    *) ac_sed_conf_input=758,20860
+    esac764,21035
+  ac_dir=768,21059
+  as_dir=791,21503
+  ac_builddir=792,21537
+  ac_dir_suffix=797,21639
+  *)  ac_top_build_prefix=802,21911
+  esac 803,21962
+ac_abs_top_builddir=805,21977
+    ac_srcdir=816,22289
+    ac_top_srcdir=817,22326
+    ac_srcdir=820,22407
+ac_abs_srcdir=824,22555
+  *) ac_INSTALL=835,22719
+ac_datarootdir_hack=839,22897
+ac_datarootdir_hack=; ac_datarootdir_seen=839,22897
+*datarootdir*) ac_datarootdir_seen=851,23112
+  ac_datarootdir_hack=855,23421
+ac_sed_extra=863,23686
+  { ac_out=892,24581
+
+configure,17874
+DUALCASE=18,572
+  NULLCMD=21,698
+as_nl=36,984
+  as_echo=47,1518
+  as_echo=50,1637
+    as_echo_body=54,1771
+	arg=63,2026
+      esac;64,2069
+    as_echo_n=68,2163
+  PATH_SEPARATOR=76,2353
+  (PATH='/bin;/bin'; FPATH=77,2372
+    (PATH=78,2436
+    (PATH='/bin:/bin'; FPATH=78,2436
+      PATH_SEPARATOR=79,2500
+IFS=89,2787
+  *) as_save_IFS=94,2923
+  *) as_save_IFS=$IFS; IFS=94,2923
+  as_myself=108,3291
+  as_bourne_compatible=137,4029
+  as_suggested="  as_lineno_1=";as_suggested=170,5070
+  as_suggested="  as_lineno_1=";as_suggested=$as_suggested$LINENO;as_suggested=170,5070
+  as_lineno_2=";as_suggested=171,5186
+  as_lineno_2=";as_suggested=$as_suggested$LINENO;as_suggested=171,5186
+  as_have_required=175,5502
+  as_save_IFS=182,5643
+  as_save_IFS=$IFS; IFS=182,5643
+  as_fn_append 335,9816
+    as_val=349,10199
+  as_fn_arith 352,10230
+as_fn_error 364,10588
+  as_expr=377,10990
+  as_basename=383,11110
+  as_dirname=389,11235
+as_cr_letters=414,11647
+ECHO_C=452,12809
+  xy)  ECHO_C=457,12943
+       ECHO_T=459,13016
+  esac;460,13036
+  ECHO_N=462,13048
+    as_ln_s=474,13312
+    as_ln_s=482,13703
+  as_mkdir_p=493,13897
+  as_test_x=500,14023
+    as_ls_L_option=503,14086
+	esac;514,14261
+	???[sx]*):;;*)false;516,14324
+	???[sx]*):;;*)false;;esac;516,14324
+as_executable_p=520,14373
+    eval $ac_prev=708,17799
+  *)	ac_optarg=715,17940
+    ac_dashdash=722,18087
+    ac_prev=725,18167
+  -bindir=bindir726,18189
+    ac_prev=730,18327
+  -build=build731,18354
+    ac_prev=736,18563
+  -cache-file=file737,18589
+    cache_file=742,18788
+    ac_prev=745,18865
+  -datadir=datadir746,18888
+    ac_prev=751,19079
+  -datarootdir=datarootdir752,19106
+    ac_useropt=757,19292
+      *) ac_unrecognized_opts=767,19683
+    eval enable_$ac_useropt=770,19821
+    ac_prev=773,19903
+  -docdir=docdir774,19925
+    ac_prev=778,20064
+  -dvidir=dvidir779,20086
+    ac_useropt=783,20206
+      *) ac_unrecognized_opts=793,20599
+    eval enable_$ac_useropt=796,20736
+    ac_prev=801,20935
+  -exec-prefix=prefix802,20962
+    with_gas=809,21233
+    ac_init_help=812,21292
+  -help=help813,21317
+  -help=help815,21399
+    ac_prev=819,21511
+  -host=host820,21537
+    ac_prev=824,21677
+  -htmldir=htmldir825,21700
+    ac_prev=831,21925
+  -includedir=includedir832,21951
+    ac_prev=837,22172
+  -infodir=infodir838,22195
+    ac_prev=842,22337
+  -libdir=libdir843,22359
+    ac_prev=848,22537
+  -libexecdir=libexecdir849,22563
+    ac_prev=854,22776
+  -localedir=localedir855,22801
+    ac_prev=860,23042
+  -localstatedir=localstatedir861,23071
+    ac_prev=866,23322
+  -mandir=mandir867,23344
+    with_fp=872,23503
+    no_create=876,23614
+    no_recursion=880,23774
+    ac_prev=885,23981
+  -oldincludedir=oldincludedir886,24010
+    ac_prev=892,24315
+  -prefix=prefix893,24337
+    ac_prev=898,24561
+  -program-prefix=prefix899,24591
+    ac_prev=905,24883
+  -program-suffix=suffix906,24913
+    ac_prev=917,25419
+  -program-transform-name=name918,25457
+    ac_prev=928,25921
+  -pdfdir=pdfdir929,25943
+    ac_prev=933,26081
+  -psdir=psdir934,26102
+    silent=939,26288
+    ac_prev=942,26376
+  -sbindir=sbindir943,26399
+    ac_prev=951,26713
+  -sharedstatedir=sharedstatedir952,26743
+    ac_prev=959,27031
+  -site=site960,27051
+    ac_prev=964,27163
+  -srcdir=srcdir965,27185
+    ac_prev=970,27397
+  -sysconfdir=sysconfdir971,27423
+    ac_prev=976,27653
+  -target=target977,27681
+    verbose=981,27848
+    ac_init_version=984,27927
+    ac_useropt=987,27975
+      *) ac_unrecognized_opts=997,28364
+    eval with_$ac_useropt=1000,28499
+    ac_useropt=1003,28569
+      *) ac_unrecognized_opts=1013,28958
+    eval with_$ac_useropt=1016,29096
+    with_x=1020,29166
+    ac_prev=1024,29296
+  -x-includes=includes1025,29322
+    ac_prev=1031,29609
+  -x-libraries=libraries1032,29636
+    eval $ac_envvar=1047,30171
+    : ${$1055,30489
+    : ${build_alias=$ac_option} ${$1055,30489
+    : ${build_alias=$ac_option} ${host_alias=$ac_option} ${$1055,30489
+  ac_option=1062,30622
+    no)1068,30794
+    [\\/$]* | ?:[\\/]* )  continue;1089,31507
+    NONE | '' ) case $ac_var in *prefix ) continue;1090,31544
+    NONE | '' ) case $ac_var in *prefix ) continue;; esac;1090,31544
+build=1098,31835
+    cross_compiling=1105,31992
+    cross_compiling=1109,32237
+  ac_srcdir_defaulted=1129,32728
+  srcdir=1154,33287
+    srcdir=1156,33355
+  srcdir=1171,33829
+  eval ac_env_${ac_var}_set=_set1180,34113
+  eval ac_env_${ac_var}_value=_value1181,34159
+  eval ac_cv_env_${ac_var}_set=_set1182,34201
+  eval ac_cv_env_${ac_var}_value=_value1183,34250
+VAR=1198,34709
+  --with-auctexstartfile=auctexstartfile1274,38260
+    ac_builddir=1306,39625
+  ac_dir_suffix=1311,39729
+  *)  ac_top_build_prefix=1316,40001
+  esac 1317,40052
+ac_abs_top_builddir=1319,40067
+    ac_srcdir=1330,40379
+    ac_top_srcdir=1331,40416
+    ac_srcdir=1334,40497
+ac_abs_srcdir=1338,40645
+      $SHELL "$ac_srcdir/configure.gnu" --help=help1344,40838
+      $SHELL "$ac_srcdir/configure" --help=help1347,40955
+Copyright 1361,41317
+ac_configure_args=1433,43511
+      continue 1445,43834
+      ac_arg=1447,43862
+	ac_must_keep_next=1454,44114
+	    esac1463,44524
+	  -* ) ac_must_keep_next=1465,44542
+done1472,44666
+{ ac_configure_args1=1474,44721
+{ ac_configure_args1=; unset ac_configure_args1;1474,44721
+    eval ac_val=1495,45466
+      BASH_ARGV | BASH_SOURCE) eval $ac_var=1504,45811
+      *) { eval $ac_var=1505,45862
+      *) { eval $ac_var=; unset $ac_var;1505,45862
+      esac 1506,45907
+    *${as_nl}ac_space=ac_space1511,46006
+ac_signal=1579,47535
+#define PACKAGE_NAME 1589,47757
+#define PACKAGE_TARNAME 1593,47828
+#define PACKAGE_VERSION 1597,47905
+#define PACKAGE_STRING 1601,47982
+#define PACKAGE_BUGREPORT 1605,48057
+#define PACKAGE_URL 1609,48138
+  ac_site_file1=1618,48388
+  ac_site_file1=1620,48453
+ac_cache_corrupted=1656,49664
+  eval ac_old_set=1658,49725
+  eval ac_new_set=1659,49769
+  eval ac_old_val=1660,49810
+  eval ac_new_val=1661,49856
+  case $ac_old_set,1662,49899
+    set,1663,49933
+      ac_cache_corrupted=1666,50148
+      ac_cache_corrupted=1670,50365
+	ac_old_val_w=1675,50517
+	  ac_cache_corrupted=1680,50819
+	  eval $ac_var=1684,51073
+      fi;1690,51378
+    *\'*) ac_arg=1695,51502
+    *) ac_arg=1696,51581
+ac_ext=1715,52322
+set dummy $ac_prog; ac_word=1727,52650
+  ac_cv_prog_MAKECMD=1734,52909
+as_save_IFS=$IFS; IFS=1736,52980
+    ac_cv_prog_MAKECMD=1743,53248
+test -n "$MAKECMD" || MAKECMD=1765,53691
+ac_make=1774,54002
+SHELL 1779,54221
+    eval ac_cv_prog_make_${ac_make}_set=_set1786,54430
+    eval ac_cv_prog_make_${ac_make}_set=_set1788,54481
+if eval test \$ac_cv_prog_make_${ac_make}_set _set1792,54554
+  SET_MAKE=1795,54694
+  SET_MAKE=1799,54791
+      ac_aux_dir=1806,54979
+ac_config_guess=1820,55486
+  as_save_IFS=1845,56703
+  as_save_IFS=$IFS; IFS=1845,56703
+AUCTEXVERSION=1931,59663
+   EMACS=1951,60303
+  withval=1956,60401
+  withval=$with_emacs; if test "${withval}" = "yes"; then EMACS=1956,60401
+   elif test "${withval}" = "no"; then EMACS=1957,60471
+  withval=1965,60644
+set dummy $ac_prog;1988,61242
+set dummy $ac_prog; ac_word=1988,61242
+  ac_cv_path_EMACS=1996,61507
+  as_save_IFS=1999,61591
+  as_save_IFS=$IFS; IFS=1999,61591
+  IFS=2002,61672
+    ac_cv_path_EMACS=2006,61879
+EMACS=2017,62074
+test -n "$EMACS" || EMACS=2029,62335
+  elisp=2038,62591
+  EMACS_FLAVOR=2047,63081
+  EMACS_FLAVOR=2050,63160
+  elisp=2063,63511
+  elisp=2088,64750
+  elisp=2111,65690
+library=2139,66731
+	mule=2151,67273
+	mule=2154,67322
+  MULESRC=2164,67550
+  enableval=2186,68335
+  elisp=2191,68563
+  elisp=2214,69497
+  withval=2238,70413
+  withval=$with_packagedir; packagedir=2238,70413
+ while :;do case "$expprefix" in *\$*) __ac_tmp__=2252,71101
+`";; *) break 2256,71225
+`";; *) break ;; esac;2256,71225
+  prefix=2257,71253
+  if test "$packagedir" != NONE; then break;2296,73358
+  if test "$packagedir" != NONE; then break; fi;2296,73358
+      packagedir=2303,73657
+  withval=2320,73969
+  withval=$with_lispdir; lispdir=2320,73969
+  expprefix=2330,74328
+ while :;do case "$expprefix" in *\$*) __ac_tmp__=2335,74557
+`";; *) break 2339,74681
+`";; *) break ;; esac;2339,74681
+  prefix=2340,74709
+  if test "$lispdir" != NONE; then break;2376,76634
+  if test "$lispdir" != NONE; then break; fi;2376,76634
+       lispdir=2384,76912
+  withval=2396,77327
+  withval=$with_auctexstartfile;  auctexstartfile=2396,77327
+ while :;do case "$_tmpdir_" in *\$*) __ac_tmp__=2403,77621
+`";; *) break 2407,77742
+`";; *) break ;; esac;2407,77742
+  prefix=2408,77770
+   packagelispdir=2420,78143
+  withval=2441,78824
+  withval=$with_packagelispdir; packagelispdir=2441,78824
+ while :;do case "$tmpdir" in *\$*) __ac_tmp__=2450,79114
+`";; *) break 2454,79229
+`";; *) break ;; esac;2454,79229
+  prefix=2455,79257
+ while :;do case "$explispdir" in *\$*) __ac_tmp__=2462,79559
+`";; *) break 2466,79686
+`";; *) break ;; esac;2466,79686
+  prefix=2467,79714
+ while :;do case "$expstartup" in *\$*) __ac_tmp__=2474,80031
+`";; *) break 2478,80158
+`";; *) break ;; esac;2478,80158
+  prefix=2479,80186
+  withval=2525,82638
+  withval=$with_packagedatadir; packagedatadir=2525,82638
+ while :;do case "$tmpdir" in *\$*) __ac_tmp__=2534,82928
+`";; *) break 2538,83043
+`";; *) break ;; esac;2538,83043
+  prefix=2539,83071
+ while :;do case "$explispdir" in *\$*) __ac_tmp__=2546,83373
+`";; *) break 2550,83500
+`";; *) break ;; esac;2550,83500
+  prefix=2551,83528
+ while :;do case "$expstartup" in *\$*) __ac_tmp__=2558,83845
+`";; *) break 2562,83972
+`";; *) break ;; esac;2562,83972
+  prefix=2563,84000
+ tmpdir=2605,86216
+ while :;do case "$tmpdir" in *\$*) __ac_tmp__=2610,86434
+`";; *) break 2614,86549
+`";; *) break ;; esac;2614,86549
+  prefix=2615,86577
+ while :;do case "$explispdir" in *\$*) __ac_tmp__=2622,86879
+`";; *) break 2626,87006
+`";; *) break ;; esac;2626,87006
+  prefix=2627,87034
+ while :;do case "$expstartup" in *\$*) __ac_tmp__=2634,87344
+`";; *) break 2638,87471
+`";; *) break ;; esac;2638,87471
+  prefix=2639,87499
+   infodir=2687,89955
+  withval=2696,90277
+  withval=$with_auto_dir; autodir=2696,90277
+ tmpdir=2706,90467
+ while :;do case "$tmpdir" in *\$*) __ac_tmp__=2711,90685
+`";; *) break 2715,90800
+`";; *) break ;; esac;2715,90800
+  prefix=2716,90828
+ while :;do case "$explispdir" in *\$*) __ac_tmp__=2723,91130
+`";; *) break 2727,91257
+`";; *) break ;; esac;2727,91257
+  prefix=2728,91285
+ while :;do case "$expstartup" in *\$*) __ac_tmp__=2735,91602
+`";; *) break 2739,91729
+`";; *) break ;; esac;2739,91729
+  prefix=2740,91757
+set dummy tex;2780,93924
+set dummy tex; ac_word=2780,93924
+  ac_cv_path_TEX=2788,94180
+  as_save_IFS=2791,94260
+  as_save_IFS=$IFS; IFS=2791,94260
+    ac_cv_path_TEX=2798,94530
+TEX=2810,94773
+set dummy pdftex;2821,95068
+set dummy pdftex; ac_word=2821,95068
+  ac_cv_path_PDFTEX=2829,95333
+  as_save_IFS=2832,95419
+  as_save_IFS=$IFS; IFS=2832,95419
+    ac_cv_path_PDFTEX=2839,95689
+PDFTEX=2851,95941
+set dummy dvips;2862,96250
+set dummy dvips; ac_word=2862,96250
+  ac_cv_path_DVIPS=2870,96512
+  as_save_IFS=2873,96596
+  as_save_IFS=$IFS; IFS=2873,96596
+    ac_cv_path_DVIPS=2880,96866
+DVIPS=2892,97115
+set dummy perl; ac_word=2908,97450
+  ac_cv_path_PERL=2916,97709
+  as_save_IFS=2919,97791
+  as_save_IFS=$IFS; IFS=2919,97791
+    ac_cv_path_PERL=2926,98061
+PERL=2938,98307
+set dummy makeinfo;2953,98615
+set dummy makeinfo; ac_word=2953,98615
+  ac_cv_path_MAKEINFO=2961,98886
+  as_save_IFS=2964,98976
+  as_save_IFS=$IFS; IFS=2964,98976
+    ac_cv_path_MAKEINFO=2971,99246
+MAKEINFO=2983,99504
+set dummy texi2html;2994,99827
+set dummy texi2html; ac_word=2994,99827
+  ac_cv_path_TEXI2HTML=3002,100101
+  as_save_IFS=3005,100193
+  as_save_IFS=$IFS; IFS=3005,100193
+    ac_cv_path_TEXI2HTML=3012,100463
+TEXI2HTML=3024,100724
+set dummy texi2dvi;3035,101051
+set dummy texi2dvi; ac_word=3035,101051
+  ac_cv_path_TEXI2DVI=3043,101322
+  as_save_IFS=3046,101412
+  as_save_IFS=$IFS; IFS=3046,101412
+    ac_cv_path_TEXI2DVI=3053,101682
+TEXI2DVI=3065,101940
+set dummy texi2pdf;3076,102262
+set dummy texi2pdf; ac_word=3076,102262
+  ac_cv_path_TEXI2PDF=3084,102533
+  as_save_IFS=3087,102623
+  as_save_IFS=$IFS; IFS=3087,102623
+    ac_cv_path_TEXI2PDF=3094,102893
+TEXI2PDF=3106,103151
+set dummy install-info; ac_word=3122,103518
+  ac_cv_path_INSTALL_INFO=3130,103801
+  as_save_IFS=3133,103899
+  as_save_IFS=$IFS; IFS=3133,103899
+  IFS=3136,103980
+    ac_cv_path_INSTALL_INFO=3140,104187
+INSTALL_INFO=3152,104457
+  enableval=3166,104814
+  enableval=$enable_preview; preview_enabled=3166,104814
+  TEX_UNQUOTED=3179,105044
+    eval ac_val=3302,108782
+      BASH_ARGV | BASH_SOURCE) eval $ac_var=3311,109127
+      *) { eval $ac_var=3312,109178
+      *) { eval $ac_var=; unset $ac_var;3312,109178
+      esac 3313,109223
+    *${as_nl}ac_space=ac_space3319,109317
+if diff "$cache_file" confcache >/dev/null 2>&1; then 3341,109956
+s/^[	 ]*#[	 ]*define[	 ][	 ]*\([^	 (][^	 (]*([^)]*)\)[	 ]*\(.*\)/-D\D3374,110985
+DEFS=3393,111262
+ac_write_fail=3414,111877
+as_write_fail=3419,112096
+cat >>$CONFIG_STATUS <<\_ASEOF || as_write_fail=3434,112457
+  NULLCMD=3443,112743
+as_nl=3458,113029
+  as_echo=3469,113563
+  as_echo=3472,113682
+    as_echo_body=3476,113816
+	arg=3485,114071
+      esac;3486,114114
+    as_echo_n=3490,114208
+  PATH_SEPARATOR=3498,114398
+  (PATH='/bin;/bin'; FPATH=3499,114417
+    (PATH=3500,114481
+    (PATH='/bin:/bin'; FPATH=3500,114481
+      PATH_SEPARATOR=3501,114545
+IFS=3511,114832
+  *) as_save_IFS=3516,114968
+  *) as_save_IFS=$IFS; IFS=3516,114968
+  as_myself=3530,115336
+as_fn_set_status 3579,116716
+as_fn_exit 3587,116882
+as_fn_unset 3597,117013
+as_unset=3601,117057
+  as_fn_append 3614,117511
+    as_val=3628,117894
+  as_fn_arith 3631,117925
+  as_expr=3640,118099
+  as_basename=3646,118219
+  as_dirname=3652,118344
+as_cr_letters=3677,118756
+  xy)  ECHO_C=3688,119086
+       ECHO_T=3690,119159
+  esac;3691,119179
+  ECHO_N=3693,119191
+    as_ln_s=3705,119455
+    as_ln_s=3713,119846
+  as_mkdir_p=3772,121085
+  as_test_x=3779,121211
+    as_ls_L_option=3782,121274
+	esac;3793,121449
+	???[sx]*):;;*)false;3795,121512
+	???[sx]*):;;*)false;;esac;3795,121512
+as_executable_p=3799,121561
+"*) set x $ac_config_files; shift;3835,122640
+"*) set x $ac_config_files; shift; ac_config_files=3835,122640
+cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=3840,122704
+    ac_option=3897,124428
+    ac_cs_recheck=3906,124621
+    $as_echo "$ac_cs_version"; exit 3908,124714
+    debug=3910,124800
+    *\'*) ac_optarg=3914,124884
+    ac_need_defaults=3917,125012
+    $as_echo "$ac_cs_usage"; exit 3919,125079
+    ac_cs_silent=3922,125236
+     ac_need_defaults=3929,125413
+ac_configure_extra_args=3935,125466
+  ac_configure_extra_args=3939,125534
+  CONFIG_SHELL=3948,125833
+cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=3965,126104
+    "tex-site.el.out") CONFIG_FILES=3975,126368
+    "doc/Makefile") CONFIG_FILES=3976,126454
+    "auctex.el") CONFIG_FILES=3977,126519
+  tmp=4009,127630
+  tmp=4013,127736
+ac_cr=4023,128062
+  eval ac_cr=4028,128302
+  ac_cs_awk_cr=4032,128441
+ac_delim_num=4047,128729
+  ac_delim_n=4053,128937
+  elif $ac_last_try;4056,129062
+    ac_delim=4059,129155
+s/["\\]/\\&/g;g4086,129505
+s/["\\]/\\&/g;g4095,129597
+s/["\\]/\\&/g;g4099,129638
+cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=4111,129805
+  line 4119,129948
+  for (i = 2; i < nfields;4123,130036
+    key 4124,130070
+cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=4140,130373
+  ac_vpsub=4154,130959
+cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=4164,131108
+  :[FHLC]) ac_mode=$ac_tag; continue;4173,131265
+  case $ac_mode$ac_tag in4175,131311
+  :[FH]-) ac_tag=4178,131418
+  :[FH]*) ac_tag=4179,131441
+  ac_save_IFS=4181,131486
+    ac_file_inputs=4192,131627
+	   *) test -f "$srcdir/$ac_f" && ac_f=4203,131967
+      case $ac_f in *\'*) ac_f=4207,132112
+    configure_input=4214,132435
+      configure_input=4218,132581
+       ac_sed_conf_input=4225,132889
+    *) ac_sed_conf_input=4227,132983
+    esac4233,133158
+  ac_dir=4237,133182
+  as_dir=4260,133626
+  ac_builddir=4261,133660
+  ac_dir_suffix=4266,133762
+  *)  ac_top_build_prefix=4271,134034
+  esac 4272,134085
+ac_abs_top_builddir=4274,134100
+    ac_srcdir=4285,134412
+    ac_top_srcdir=4286,134449
+    ac_srcdir=4289,134530
+ac_abs_srcdir=4293,134678
+  *) ac_INSTALL=4304,134842
+cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=4308,134905
+ac_datarootdir_hack=; ac_datarootdir_seen=4311,135078
+*datarootdir*) ac_datarootdir_seen=4323,135293
+cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=4328,135609
+cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=4342,136004
+  { ac_out=4367,136892
+  ac_cs_success=4405,138249
+  ac_sub_configure_args=4424,138827
+      ac_prev=4431,138955
+    -cache-file=file4438,139168
+    --config-cache | -C)C4442,139333
+      ac_prev=4445,139425
+    -srcdir=srcdir4446,139449
+      ac_prev=4449,139592
+    -prefix=prefix4450,139616
+    --disable-option-checking)checking4452,139703
+      *\'*) ac_arg=4456,139772
+  ac_arg=4464,140016
+  ac_sub_configure_args=4468,140134
+    ac_sub_configure_args=4472,140244
+    ac_builddir=4490,140946
+  ac_dir_suffix=4495,141050
+  *)  ac_top_build_prefix=4500,141322
+  esac 4501,141373
+ac_abs_top_builddir=4503,141388
+    ac_srcdir=4514,141700
+    ac_top_srcdir=4515,141737
+    ac_srcdir=4518,141818
+ac_abs_srcdir=4522,141966
+      ac_sub_configure=4529,142154
+      ac_sub_configure=4531,142248
+      ac_sub_configure=4534,142382
+      ac_sub_configure=4538,142617
+      [\\/]* | ?:[\\/]* ) ac_sub_cache_file=4545,142816
+	ac_sub_cache_file=4547,142901
+
+configure.ac,571
+dnl the Free Software Foundation;11,317
+dnl the Free Software Foundation; either version 11,317
+dnl the Free Software Foundation; either version 3, or 11,317
+dnl along with AUCTeX; see the file COPYING.  If not,20,728
+dnl Software Foundation,21,800
+dnl Software Foundation, Inc., 51 Franklin Street,21,800
+dnl Software Foundation, Inc., 51 Franklin Street, Fifth Floor,21,800
+dnl Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,21,800
+AC_INIT(24,897
+   packagedir=58,1699
+   infodir=117,3559
+AC_ARG_ENABLE(153,4535
+  TEX_UNQUOTED=165,4849
+
+context.el,5820
+(defgroup ConTeXt-macro 57,2035
+(defvar done-mark 67,2222
+(defvar reference 70,2307
+(defvar title 73,2400
+(defvar ConTeXt-known-interfaces 79,2503
+(defcustom ConTeXt-default-interface 81,2576
+(defvar ConTeXt-current-interface 86,2709
+(defvar ConTeXt-menu-changed 90,2869
+(defvar ConTeXt-largest-level 94,2987
+(defun ConTeXt-largest-level 98,3129
+(defvar ConTeXt-optop 105,3221
+(defvar ConTeXt-optcl 108,3302
+(defvar ConTeXt-define-list 114,3411
+(defun ConTeXt-define-command 117,3512
+(defun ConTeXt-insert-define 122,3679
+(defvar ConTeXt-setup-list 132,3908
+(defun ConTeXt-setup-command 135,4007
+(defun ConTeXt-insert-setup 140,4171
+(defvar ConTeXt-referencing-list 150,4400
+(defun ConTeXt-referencing-command 153,4511
+(defun ConTeXt-insert-referencing 157,4637
+(defvar ConTeXt-other-macro-list 167,4870
+(defun ConTeXt-other-macro-command 170,4981
+(defun ConTeXt-insert-other-macro 174,5107
+(defvar ConTeXt-project-structure-list 184,5359
+(defun ConTeXt-project-structure 187,5477
+(defun ConTeXt-project-project-insert 194,5726
+(defun ConTeXt-project-environment-insert 208,6387
+(defun ConTeXt-project-product-insert 220,6966
+(defun ConTeXt-project-component-insert 238,7743
+(defvar ConTeXt-section-block-list 256,8394
+(defun ConTeXt-section-block 259,8503
+(defun ConTeXt-section 266,8660
+(defun ConTeXt-current-section 316,10013
+(defun ConTeXt-down-section 325,10354
+(defun ConTeXt-up-section 347,11097
+(defvar ConTeXt-section-list 358,11449
+(defun ConTeXt-section-name 361,11546
+(defun ConTeXt-section-level 369,11793
+(defcustom ConTeXt-section-hook381,12044
+(defun ConTeXt-section-heading 426,13456
+(defun ConTeXt-section-title 438,13884
+(defun ConTeXt-section-section 444,14142
+(defun ConTeXt-section-ref 466,14951
+(defun TeX-ConTeXt-sentinel 481,15418
+(defgroup ConTeXt-environment 509,16437
+(defcustom ConTeXt-default-environment 514,16554
+(defun ConTeXt-add-environments 524,16922
+(defvar ConTeXt-environment-history 532,17228
+(defun ConTeXt-environment-start-name 534,17270
+(defun ConTeXt-environment-stop-name 545,17652
+(defun ConTeXt-environment 557,18033
+(defun ConTeXt-modify-environment 587,18975
+(defun ConTeXt-environment-menu 607,19697
+(defun ConTeXt-close-environment 633,20561
+(defun ConTeXt-insert-environment 648,20976
+(defvar ConTeXt-environment-helper715,23267
+(defun ConTeXt-mp-region 721,23494
+(defun ConTeXt-work-on-environment 732,23790
+(defun ConTeXt-current-environment 740,24062
+(defun ConTeXt-last-unended-start 751,24434
+(defun ConTeXt-mark-environment 757,24733
+(defun ConTeXt-find-matching-stop 770,25162
+(defun ConTeXt-find-matching-start 804,26355
+(defun ConTeXt-insert-item 850,27879
+(defun ConTeXt-optional-argument-insert 861,28097
+(defun ConTeXt-required-argument-insert 867,28273
+(defun ConTeXt-argument-insert 873,28436
+(defun ConTeXt-arg-ref 883,28774
+(defun ConTeXt-arg-define-ref 891,29126
+(defun ConTeXt-arg-setup 895,29279
+(defvar ConTeXt-item-list 904,29524
+(defvar ConTeXt-extra-paragraph-commands907,29593
+(defun ConTeXt-paragraph-commands-regexp 911,29751
+(defun ConTeXt-environment-full-start-name 926,30286
+(defun ConTeXt-outline-regexp 931,30482
+(defvar ConTeXt-text 951,31093
+(defun ConTeXt-header-end 953,31167
+(defun ConTeXt-trailer-start 960,31343
+(defun ConTeXt-outline-offset 967,31524
+(defun ConTeXt-start-environment-regexp 971,31664
+(defun ConTeXt-outline-level 980,31992
+(defcustom ConTeXt-font-list 1002,32678
+(defun ConTeXt-outline-name 1035,33653
+(defun ConTeXt-imenu-create-index-function 1045,34022
+(defvar ConTeXt-indent-allhanging 1064,34656
+(defvar ConTeXt-indent-arg 1065,34693
+(defvar ConTeXt-indent-basic 1066,34723
+(defvar ConTeXt-indent-item 1067,34755
+(defvar ConTeXt-indent-item-re 1068,34805
+(defvar ConTeXt-indent-syntax-table 1070,34853
+(defun ConTeXt-indent-line 1078,35172
+(defun ConTeXt-find-indent 1090,35604
+(defun ConTeXt-last-unended-start-xml 1176,38866
+(defun ConTeXt-close-xml-tag 1182,39220
+(defvar ConTeXt-mode-map1200,39816
+(defvar ConTeXt-environment-menu-name 1233,41131
+(defun ConTeXt-environment-menu-entry 1235,41204
+(defvar ConTeXt-environment-modify-menu-name 1239,41368
+(defun ConTeXt-environment-modify-menu-entry 1241,41452
+(defvar ConTeXt-define-menu-name 1246,41657
+(defun ConTeXt-define-menu-entry 1248,41701
+(defun ConTeXt-define-menu 1252,41836
+(defvar ConTeXt-setup-menu-name 1257,41960
+(defun ConTeXt-setup-menu-entry 1259,42002
+(defun ConTeXt-setup-menu 1263,42134
+(defvar ConTeXt-referencing-menu-name 1268,42259
+(defun ConTeXt-referencing-menu-entry 1270,42313
+(defun ConTeXt-referencing-menu 1274,42463
+(defvar ConTeXt-other-macro-menu-name 1279,42612
+(defun ConTeXt-other-macro-menu-entry 1281,42666
+(defun ConTeXt-other-macro-menu 1285,42816
+(defvar ConTeXt-project-structure-menu-name 1292,42992
+(defun ConTeXt-project-structure-menu 1294,43058
+(defun ConTeXt-project-structure-menu-entry 1300,43292
+(defvar ConTeXt-section-block-menu-name 1307,43508
+(defun ConTeXt-section-block-menu 1309,43566
+(defun ConTeXt-section-block-menu-entry 1313,43694
+(defvar ConTeXt-section-menu-name 1320,43876
+(defun ConTeXt-section-enable-symbol 1322,43933
+(defun ConTeXt-section-enable 1326,44108
+(defun ConTeXt-section-menu 1332,44328
+(defun ConTeXt-section-menu-entry 1338,44534
+(defun ConTeXt-etexshow 1347,44801
+(defun ConTeXt-menu-update 1422,47935
+(defvar ConTeXt-texexec-option-nonstop 1483,50322
+(defun ConTeXt-expand-options 1486,50432
+(defvar ConTeXt-language-variable-list1507,51115
+(defcustom ConTeXt-clean-intermediate-suffixes1513,51377
+(defcustom ConTeXt-clean-output-suffixes1525,52009
+(defun ConTeXt-mode-common-initialization 1533,52336
+(defun context-guess-current-interface 1616,55364
+(defalias 'ConTeXt-mode ConTeXt-mode1634,55901
+(defun context-mode 1637,55956
+
+context.elc,277
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/context.elel3,75
+;;; This file uses dynamic docstrings,7,226
+;;; This file does not contain utf-8 non-ASCII characters,9,294
+
+context-en.el,639
+(defvar ConTeXt-environment-list-en37,1088
+(defvar ConTeXt-define-list-en67,2253
+(defvar ConTeXt-setup-list-en79,2715
+(defvar ConTeXt-referencing-list-en99,3905
+(defvar ConTeXt-other-macro-list-en105,4148
+(defun ConTeXt-define-command-en 121,4824
+(defun ConTeXt-setup-command-en 125,4954
+(defvar ConTeXt-project-structure-list-en129,5081
+(defvar ConTeXt-section-block-list-en133,5292
+(defvar ConTeXt-section-list-en143,5729
+(defvar ConTeXt-text-en 155,6007
+(defvar ConTeXt-item-list-en158,6086
+(defcustom ConTeXt-default-environment-en 162,6210
+(defun ConTeXt-en-mode-initialization 174,6469
+(defun context-en-mode 189,7122
+
+context-en.elc,280
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/context-en.elel3,75
+;;; This file uses dynamic docstrings,7,229
+;;; This file does not contain utf-8 non-ASCII characters,9,297
+
+context-nl.el,592
+(defvar ConTeXt-environment-list-nl36,1076
+(defvar ConTeXt-define-list-nl59,2186
+(defvar ConTeXt-setup-list-nl63,2319
+(defvar ConTeXt-other-macro-list-nl91,4069
+(defun ConTeXt-define-command-nl 95,4256
+(defun ConTeXt-setup-command-nl 99,4389
+(defvar ConTeXt-project-structure-list-nl103,4520
+(defvar ConTeXt-section-block-list-nl107,4728
+(defvar ConTeXt-section-list-nl117,5167
+(defvar ConTeXt-text-nl 129,5453
+(defvar ConTeXt-item-list-nl132,5533
+(defcustom ConTeXt-default-environment-nl 136,5656
+(defun ConTeXt-nl-mode-initialization 148,5917
+(defun context-nl-mode 163,6567
+
+context-nl.elc,280
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/context-nl.elel3,75
+;;; This file uses dynamic docstrings,7,229
+;;; This file does not contain utf-8 non-ASCII characters,9,297
+
+COPYING,1403
+                       Version 2,47
+ Copyright 4,95
+your programs,20,926
+  When we speak of free software,22,947
+  When we speak of free software, we are referring to freedom,22,947
+11 of the WIPO copyright treaty adopted on 20 December 183,9244
+  When you convey a covered work,187,9381
+the covered work,190,9592
+modification of the work as a means of enforcing,191,9663
+users, your or third parties' legal rights to forbid circumvention oftion of192,9732
+receive it,198,9929
+receive it, in any medium,198,9929
+appropriately publish on each copy an appropriate copyright notice;199,9992
+non-permissive terms added in accord with section 7 apply to the code;201,10118
+keep intact all notices of the absence of any warranty;202,10189
+    Appropriate Legal Notices; however,231,11578
+    Notices displayed by works containing it;370,19236
+    c) Prohibiting misrepresentation of the origin of that material,372,19286
+    reasonable ways as different from the original version;374,19425
+    material by anyone who conveys the material 383,19780
+modify it is void,411,21191
+  However,415,21356
+    the Free Software Foundation,639,33294
+    the Free Software Foundation, either version 3 of the License,639,33294
+    the Free Software Foundation, either version 3 of the License, or639,33294
+parts of the General Public License.  Of course,661,34332
+might be different;662,34405
+
+FAQ,192
+     Well,6,142
+     Well, you might have guessed it,6,142
+   in your document header,284,12502
+   In general,287,12568
+   in your document,299,12824
+monolithic block by Emacs,301,12968
+
+font-latex.el,4314
+(defgroup font-latex 49,1672
+(defgroup font-latex-keywords 56,1812
+(defgroup font-latex-highlighting-faces 61,1943
+(defvar font-latex-multiline-boundary 66,2081
+(defvar font-latex-quote-regexp-beg 69,2202
+(defvar font-latex-quote-list 73,2334
+(defvar font-latex-quotes-control 90,3125
+(defvar font-latex-quotes-internal 94,3293
+(defvar font-latex-quotes-fallback 100,3546
+(defvar font-latex-quote-style-list-french103,3664
+(defvar font-latex-quote-style-list-german108,3880
+(defcustom font-latex-quotes 112,4060
+(defun font-latex-add-quotes 126,4628
+(defun font-latex-quotes-set-internal 134,4932
+(defconst font-latex-sectioning-max 157,5870
+(defface font-latex-sectioning-5-face159,5961
+(defun font-latex-update-sectioning-faces 182,6969
+(defcustom font-latex-fontify-sectioning 209,8051
+(defun font-latex-make-sectioning-faces 235,9174
+(defvar font-latex-keywords-1 274,10673
+(defvar font-latex-keywords-2 277,10757
+(defvar font-latex-built-in-keyword-classes280,10838
+(defcustom font-latex-deactivated-keyword-classes 403,15918
+(defun font-latex-make-match-defun 438,17188
+(defun font-latex-keyword-matcher 489,19292
+(defun font-latex-make-built-in-keywords 523,20800
+(defcustom font-latex-user-keyword-classes 631,24843
+(defun font-latex-make-user-keywords 736,29169
+(defun font-latex-add-keywords 786,31048
+(defvar font-latex-keywords 807,32000
+(defcustom font-latex-fontify-script 813,32134
+(defcustom font-latex-script-display 820,32401
+(defvar font-latex-syntactic-keywords 832,32827
+(defvar font-latex-syntactic-keywords-extra 836,32976
+(defun font-latex-set-syntactic-keywords 841,33232
+(defun font-latex-syntactic-face-function 909,36317
+(defface font-latex-bold-face928,36922
+(defface font-latex-italic-face944,37575
+(defface font-latex-math-face960,38236
+(defface font-latex-sedate-face976,38805
+(defface font-latex-string-face986,39223
+(defface font-latex-warning-face1004,39910
+(defface font-latex-verbatim-face1020,40523
+(defface font-latex-superscript-face1039,41178
+(defface font-latex-subscript-face1044,41312
+(defface font-latex-slide-title-face1049,41442
+(defvar font-lock-comment-start-regexp 1066,41957
+(defvar font-latex-extend-region-functions 1069,42046
+(defvar font-latex-syntax-alist1080,42482
+(defun font-latex-add-to-syntax-alist 1086,42769
+(defun font-latex-setup 1104,43528
+(defun font-latex-jit-lock-force-redisplay 1185,46903
+(defun font-latex-fontify-region 1205,47658
+(defun font-latex-unfontify-region 1225,48583
+(defadvice font-lock-after-change-function 1244,49441
+(defun font-latex-find-matching-close 1271,50348
+(defun font-latex-commented-outp 1320,51960
+(defun font-latex-faces-present-p 1340,52665
+(defun font-latex-forward-comment 1353,53148
+(defun font-latex-put-multiline-property-maybe 1366,53620
+(defvar font-latex-matched-faces 1379,54176
+(defun font-latex-matched-face 1382,54273
+(defvar font-latex-command-with-args-default-spec 1386,54412
+(defvar font-latex-command-with-args-opt-arg-delims1390,54602
+(defvar font-latex-syntax-error-modes 1394,54761
+(defun font-latex-match-command-with-arguments 1397,54884
+(defun font-latex-extend-region-backwards-command-with-args 1497,58607
+(defun font-latex-match-command-in-braces 1514,59253
+(defun font-latex-extend-region-backwards-command-in-braces 1557,60742
+(defun font-latex-match-simple-command 1582,61834
+(defun font-latex-match-math-env 1586,61992
+(defun font-latex-extend-region-backwards-math-env 1616,63169
+(defcustom font-latex-math-environments1636,63959
+(defun font-latex-match-math-envII 1643,64204
+(defun font-latex-extend-region-backwards-math-envII 1670,65114
+(defun font-latex-update-quote-list 1691,65898
+(defun font-latex-match-quotation 1710,66667
+(defun font-latex-extend-region-backwards-quotation 1758,68661
+(defun font-latex-match-script 1796,70072
+(defun font-latex-script 1822,71134
+(defvar font-latex-doctex-preprocessor-face1855,72427
+(defface font-latex-doctex-preprocessor-face1859,72579
+(defvar font-latex-doctex-documentation-face1867,72910
+(defface font-latex-doctex-documentation-face1871,73058
+(defvar font-latex-doctex-keywords1879,73412
+(defvar font-latex-doctex-syntactic-keywords 1884,73603
+(defun font-latex-doctex-^^A 1888,73749
+(defun font-latex-doctex-syntactic-face-function 1921,75073
+
+font-latex.elc,227
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/font-latex.elel3,75
+;;; This file contains utf-8 non-ASCII characters,7,229
+
+INSTALL,184
+   Installing AUCTeX should be simple: merely `./configure'configure4,37
+installations can be done by specifying a `--prefix=prefix6,175
+Making the LaTeX style available420,18148
+
+install-sh,1410
+doit=30,1266
+	-c) instcmd=59,1810
+	-d) dir_arg=63,1861
+	-m) chmodcmd=67,1907
+	-o) chowncmd=72,1976
+	-g) chgrpcmd=77,2045
+	-s) stripcmd=82,2114
+	-t=t86,2169
+	-b=b90,2243
+	dst=116,2610
+		instcmd=120,2652
+defaultIFS=166,3614
+IFS=174,3783
+	pathcomp=179,3835
+	pathcomp=189,3958
+	if [ x"$chowncmd" != x ]; then $doit $chowncmd $dst;197,4046
+	if [ x"$chowncmd" != x ]; then $doit $chowncmd $dst; else true 197,4046
+	if [ x"$chgrpcmd" != x ]; then $doit $chgrpcmd $dst;198,4118
+	if [ x"$chgrpcmd" != x ]; then $doit $chgrpcmd $dst; else true 198,4118
+	if [ x"$stripcmd" != x ]; then $doit $stripcmd $dst;199,4190
+	if [ x"$stripcmd" != x ]; then $doit $stripcmd $dst; else true 199,4190
+	if [ x"$chmodcmd" != x ]; then $doit $chmodcmd $dst;200,4262
+	if [ x"$chmodcmd" != x ]; then $doit $chmodcmd $dst; else true 200,4262
+	if [ x"$chowncmd" != x ]; then $doit $chowncmd $dsttmp;238,5156
+	if [ x"$chowncmd" != x ]; then $doit $chowncmd $dsttmp; else true;238,5156
+	if [ x"$chgrpcmd" != x ]; then $doit $chgrpcmd $dsttmp;239,5229
+	if [ x"$chgrpcmd" != x ]; then $doit $chgrpcmd $dsttmp; else true;239,5229
+	if [ x"$stripcmd" != x ]; then $doit $stripcmd $dsttmp;240,5302
+	if [ x"$stripcmd" != x ]; then $doit $stripcmd $dsttmp; else true;240,5302
+	if [ x"$chmodcmd" != x ]; then $doit $chmodcmd $dsttmp;241,5375
+	if [ x"$chmodcmd" != x ]; then $doit $chmodcmd $dsttmp; else true;241,5375
+
+latex.el,10703
+(defvar LaTeX-optop 37,1107
+(defvar LaTeX-optcl 40,1184
+(defcustom LaTeX-default-style 45,1273
+(defcustom LaTeX-default-options 50,1402
+(defcustom LaTeX-insert-into-comments 58,1619
+(defun LaTeX-newline 65,1854
+(defvar LaTeX-mode-syntax-table 91,2679
+(defun LaTeX-section 104,3084
+(defun LaTeX-current-section 148,4319
+(defun LaTeX-down-section 157,4650
+(defun LaTeX-up-section 179,5393
+(defvar LaTeX-section-list 190,5743
+(defun LaTeX-section-list-add-locally 199,6002
+(defun LaTeX-section-name 222,6951
+(defun LaTeX-section-level 230,7183
+(defcustom TeX-outline-extra 239,7398
+(defun LaTeX-outline-regexp 249,7762
+(defvar LaTeX-largest-level 267,8273
+(defun LaTeX-largest-level 272,8416
+(defun LaTeX-largest-level-set 278,8601
+(defun LaTeX-outline-offset 286,8961
+(defun TeX-look-at 290,9095
+(defun LaTeX-outline-level 300,9387
+(defun LaTeX-outline-name 320,10012
+(defcustom LaTeX-section-hook330,10348
+(defcustom LaTeX-section-label384,12037
+(defun LaTeX-section-heading 415,13113
+(defun LaTeX-section-title 429,13586
+(defun LaTeX-section-toc 438,13986
+(defun LaTeX-section-section 446,14309
+(defun LaTeX-section-label 478,15527
+(defgroup LaTeX-environment 489,15871
+(defcustom LaTeX-default-environment 493,15955
+(defvar LaTeX-environment-history 499,16183
+(defvar LaTeX-current-environment 505,16483
+(defun LaTeX-environment 507,16523
+(defun LaTeX-environment-menu 549,18113
+(defun LaTeX-close-environment 578,19196
+(defvar LaTeX-after-insert-env-hooks 615,20320
+(defun LaTeX-insert-environment 621,20602
+(defun LaTeX-modify-environment 696,23280
+(defun LaTeX-current-environment 717,24044
+(defun docTeX-in-macrocode-p 747,25213
+(defvar LaTeX-document-style-hook 759,25544
+(defun LaTeX-env-document 764,25721
+(defcustom LaTeX-float 776,26074
+(defcustom LaTeX-top-caption-list 787,26484
+(defgroup LaTeX-label 792,26642
+(defcustom LaTeX-label-function 796,26734
+(defcustom LaTeX-figure-label 803,26987
+(defcustom LaTeX-table-label 809,27130
+(defcustom LaTeX-default-format 815,27271
+(defcustom LaTeX-default-width 821,27458
+(defcustom LaTeX-default-position 827,27660
+(defcustom LaTeX-equation-label 836,27988
+(defcustom LaTeX-eqnarray-label 841,28106
+(defun LaTeX-env-item 846,28239
+(defcustom LaTeX-label-alist872,29178
+(defun LaTeX-label 889,29789
+(defun LaTeX-env-figure 925,30969
+(defun LaTeX-env-array 997,33673
+(defun LaTeX-env-label 1012,34289
+(defun LaTeX-env-list 1019,34500
+(defun LaTeX-env-minipage 1029,34799
+(defun LaTeX-env-tabular* 1043,35388
+(defun LaTeX-env-picture 1060,36135
+(defun LaTeX-env-bib 1077,36731
+(defun LaTeX-env-contents 1088,37033
+(defun LaTeX-env-args 1099,37419
+(defvar LaTeX-item-list 1109,37681
+(defun LaTeX-insert-item 1113,37845
+(defun LaTeX-item-argument 1127,38357
+(defun LaTeX-item-bib 1132,38503
+(defvar LaTeX-auto-minimal-regexp-list1138,38599
+(defvar LaTeX-auto-label-regexp-list1148,38992
+(defvar LaTeX-auto-index-regexp-list1152,39149
+(defvar LaTeX-auto-class-regexp-list1159,39549
+(defvar LaTeX-auto-regexp-list1193,41179
+(defun LaTeX-auto-prepare 1221,42702
+(defun LaTeX-listify-package-options 1231,42952
+(defun LaTeX-auto-cleanup 1247,43570
+(defun LaTeX-add-bibliographies 1371,47450
+(defun LaTeX-add-environments 1378,47769
+(defun BibTeX-auto-store 1389,48143
+(defvar BibTeX-auto-regexp-list1408,48944
+(defun TeX-arg-conditional 1416,49218
+(defun TeX-arg-eval 1426,49560
+(defun TeX-arg-label 1432,49801
+(defalias 'TeX-arg-ref TeX-arg-ref1444,50370
+(defun TeX-arg-index-tag 1446,50410
+(defun TeX-arg-index 1460,50914
+(defalias 'TeX-arg-define-index TeX-arg-define-index1472,51490
+(defun TeX-arg-macro 1474,51539
+(defun TeX-arg-environment 1489,52153
+(defun TeX-arg-cite 1504,52813
+(defun TeX-arg-counter 1517,53420
+(defun TeX-arg-savebox 1528,53846
+(defun TeX-arg-file 1540,54290
+(defun TeX-arg-define-label 1550,54668
+(defun TeX-arg-define-macro 1557,54955
+(defun TeX-arg-define-environment 1564,55233
+(defun TeX-arg-define-cite 1571,55531
+(defun TeX-arg-define-counter 1578,55797
+(defun TeX-arg-define-savebox 1585,56067
+(defcustom LaTeX-style-list 1592,56337
+(defun TeX-arg-document 1612,56843
+(defun LaTeX-arg-usepackage 1636,57563
+(defvar TeX-global-input-files 1674,59028
+(defun TeX-arg-input-file 1680,59238
+(defvar BibTeX-global-style-files 1710,60287
+(defun TeX-arg-bibstyle 1716,60501
+(defvar BibTeX-global-files 1738,61247
+(defun TeX-arg-bibliography 1744,61450
+(defun TeX-arg-corner 1765,62202
+(defun TeX-arg-lr 1776,62642
+(defun TeX-arg-tb 1787,63019
+(defun TeX-arg-pagestyle 1798,63396
+(defcustom LaTeX-default-verb-delimiter 1808,63805
+(defun TeX-arg-verb 1813,63934
+(defun TeX-arg-pair 1829,64531
+(defun TeX-arg-size 1840,64915
+(defun TeX-arg-coordinate 1846,65136
+(defconst TeX-braces-default-association1852,65373
+(defcustom TeX-braces-user-association 1864,65645
+(defvar TeX-braces-association1876,66023
+(defvar TeX-left-right-braces1883,66291
+(defun TeX-arg-insert-braces 1891,66666
+(defun TeX-arg-key-val 1924,67738
+(defcustom LaTeX-verbatim-macros-with-delims1941,68366
+(defvar LaTeX-verbatim-macros-with-delims-local 1952,68779
+(defcustom LaTeX-verbatim-macros-with-braces 1964,69275
+(defvar LaTeX-verbatim-macros-with-braces-local 1974,69668
+(defcustom LaTeX-verbatim-environments1986,70160
+(defvar LaTeX-verbatim-environments-local 1997,70518
+(defun LaTeX-verbatim-macros-with-delims 2008,70973
+(defun LaTeX-verbatim-macros-with-braces 2013,71159
+(defun LaTeX-verbatim-environments 2018,71341
+(defun LaTeX-verbatim-macro-boundaries 2023,71499
+(defun LaTeX-current-verbatim-macro 2051,72655
+(defun LaTeX-verbatim-p 2061,73046
+(defcustom LaTeX-syntactic-comments 2075,73547
+(defgroup LaTeX-indentation 2123,75514
+(defcustom LaTeX-indent-level 2128,75630
+(defcustom LaTeX-item-indent 2133,75756
+(defcustom LaTeX-item-regexp 2138,75912
+(defcustom LaTeX-indent-environment-list2143,76065
+(defcustom LaTeX-indent-environment-check 2167,76734
+(defcustom LaTeX-document-regexp 2172,76878
+(defcustom LaTeX-verbatim-regexp 2177,77043
+(defcustom LaTeX-begin-regexp 2182,77212
+(defcustom LaTeX-end-regexp 2187,77346
+(defcustom LaTeX-left-right-indent-level 2192,77474
+(defcustom LaTeX-indent-comment-start-regexp 2197,77639
+(defvar docTeX-indent-inner-fixed2209,78184
+(defun LaTeX-indent-line 2222,78828
+(defun LaTeX-indent-inner-do 2289,81711
+(defun LaTeX-indent-outer-do 2301,82270
+(defun LaTeX-indent-calculate 2311,82711
+(defun LaTeX-indent-level-count 2376,84914
+(defun LaTeX-indent-calculate-last 2404,85814
+(defun LaTeX-current-indentation 2513,89809
+(defun LaTeX-back-to-indentation 2540,90792
+(defcustom LaTeX-fill-break-at-separators 2566,91708
+(defcustom LaTeX-fill-break-before-code-comments 2579,92266
+(defvar LaTeX-nospace-between-char-regexp2586,92508
+(defvar LaTeX-fill-newline-hook 2599,93155
+(defun LaTeX-fill-region-as-paragraph 2602,93267
+(defun LaTeX-fill-region-as-para-do 2673,96056
+(defun LaTeX-fill-delete-newlines 2881,103951
+(defun LaTeX-fill-move-to-break-point 2926,105813
+(defun LaTeX-fill-newline 3149,114731
+(defun LaTeX-fill-paragraph 3180,116083
+(defun LaTeX-fill-code-comment 3322,121327
+(defun LaTeX-fill-region 3355,122576
+(defun LaTeX-find-matching-end 3388,123718
+(defun LaTeX-find-matching-begin 3422,125018
+(defun LaTeX-mark-environment 3454,126281
+(defun LaTeX-fill-environment 3475,127134
+(defun LaTeX-fill-section 3484,127459
+(defun LaTeX-mark-section 3493,127776
+(defun LaTeX-fill-buffer 3521,128776
+(defvar LaTeX-paragraph-commands-internal3534,129030
+(defun LaTeX-paragraph-commands-regexp-make 3541,129363
+(defcustom LaTeX-paragraph-commands 3547,129620
+(defvar LaTeX-paragraph-commands-regexp 3557,129991
+(defun LaTeX-set-paragraph-start 3560,130152
+(defun LaTeX-paragraph-commands-add-locally 3571,130480
+(defun LaTeX-forward-paragraph 3586,131257
+(defun LaTeX-backward-paragraph 3639,133365
+(defun LaTeX-search-forward-comment-start 3709,135723
+(defgroup LaTeX-math 3731,136377
+(defcustom LaTeX-math-list 3735,136453
+(defconst LaTeX-math-default3774,137755
+(defcustom LaTeX-math-abbrev-prefix 4298,163044
+(defun LaTeX-math-abbrev-prefix 4315,163689
+(defvar LaTeX-math-keymap4321,163917
+(defvar LaTeX-math-menu4327,164107
+(defcustom LaTeX-math-menu-unicode4336,164500
+(define-minor-mode LaTeX-math-mode4399,166418
+(defalias 'latex-math-mode latex-math-mode4412,166910
+(defcustom LaTeX-math-insert-function 4419,167075
+(defun LaTeX-math-insert 4424,167233
+(defun LaTeX-math-cal 4430,167441
+(defcustom LaTeX-fold-macro-spec-list 4442,167786
+(defcustom LaTeX-fold-env-spec-list 4449,168061
+(defcustom LaTeX-fold-math-spec-list4456,168346
+(defvar LaTeX-mode-map4485,169284
+(defvar LaTeX-environment-menu-name 4521,170659
+(defun LaTeX-environment-menu-entry 4523,170729
+(defvar LaTeX-environment-modify-menu-name 4527,170889
+(defun LaTeX-environment-modify-menu-entry 4529,170970
+(defun LaTeX-section-enable-symbol 4533,171146
+(defun LaTeX-section-enable 4537,171325
+(defun LaTeX-section-menu 4544,171611
+(defun LaTeX-section-menu-entry 4550,171805
+(defcustom LaTeX-menu-max-items 4555,172025
+(defcustom LaTeX-submenu-name-format 4564,172365
+(defun LaTeX-split-long-menu 4577,172954
+(defvar LaTeX-section-menu 4611,174002
+(defun LaTeX-section-menu-filter 4613,174083
+(defvar LaTeX-environment-menu 4624,174472
+(defvar LaTeX-environment-modify-menu 4626,174561
+(defun LaTeX-environment-menu-filter 4628,174664
+(defcustom LaTeX-font-list4730,179179
+(defcustom LaTeX-babel-hyphen 4761,180175
+(defcustom LaTeX-babel-hyphen-after-hyphen 4773,180606
+(defcustom LaTeX-babel-hyphen-language-alist 4782,180940
+(defvar LaTeX-babel-hyphen-language 4796,181635
+(defun LaTeX-babel-insert-hyphen 4804,182053
+(defcustom LaTeX-enable-toolbar 4857,184042
+(defun LaTeX-maybe-install-toolbar 4862,184145
+(defgroup LaTeX-macro 4871,184399
+(defcustom TeX-arg-cite-note-p 4877,184528
+(defcustom TeX-arg-footnote-number-p 4882,184657
+(defcustom TeX-arg-item-label-p 4887,184794
+(defcustom TeX-arg-right-insert-p 4893,184977
+(defcustom LaTeX-mode-hook 4899,185164
+(defun TeX-latex-mode 4908,185355
+(define-derived-mode docTeX-mode 4940,186367
+(defalias 'TeX-doctex-mode TeX-doctex-mode4966,187654
+(defcustom docTeX-clean-intermediate-suffixes4968,187696
+(defcustom docTeX-clean-output-suffixes 4976,188039
+(defvar LaTeX-header-end4983,188368
+(defvar LaTeX-trailer-start4988,188536
+(defcustom LaTeX-clean-intermediate-suffixes4993,188708
+(defcustom LaTeX-clean-output-suffixes 5001,189050
+(defun LaTeX-common-initialization 5008,189378
+(defun LaTeX-imenu-create-index-function 5400,203857
+(defvar LaTeX-builtin-opts5416,204400
+(defun LaTeX-209-to-2e 5420,204533
+
+latex.elc,24
+function is 932,127892
+
+lpath.elc,275
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/lpath.elel3,75
+;;; This file uses dynamic docstrings,7,224
+;;; This file does not contain utf-8 non-ASCII characters,9,292
+
+Makefile,2632
+prefix 27,876
+exec_prefix 28,903
+libdir 29,934
+packagedatadir 30,969
+datarootdir 31,1027
+datadir 32,1064
+localstatedir 33,1096
+infodir 34,1133
+lispdir 35,1170
+auctexstartfile=36,1214
+packagelispdir 37,1267
+packagedatadir 38,1325
+packagedir 39,1383
+autodir 40,1406
+preview_enabled=41,1447
+subdirs=42,1467
+styledir 43,1484
+AUCTEXDATE 44,1519
+AUCTEXVERSION 45,1543
+INSTALL 47,1566
+INSTALL_DATA 48,1596
+MKINSTALLDIRS 49,1629
+DESTDIR=50,1661
+PACKAGE=52,1671
+PACKAGE_INFO=53,1686
+EMACS=54,1720
+ELCC=55,1741
+AUTOLOAD=56,1805
+DESCEND=59,1982
+CVSFILES=61,2206
+.SUFFIXES:.SUFFIXES64,2311
+SHELL 66,2338
+CP 67,2354
+CP_A 68,2365
+DIST_PREFIX 70,2382
+FTPDIR 71,2414
+WWWDIR 72,2441
+XEMACS_BUILD_DIR 73,2468
+PREVIEW_BUILD_DIR 74,2500
+COMMITTER_NAME=75,2534
+COMMITTER_EMAIL=76,2565
+RPMROOT 77,2593
+RPM_SIGN 78,2619
+MULESRC 80,2638
+MULEELC 81,2658
+AUCSRC 83,2680
+AUCELC 87,2915
+STYLESRC 89,2944
+STYLEELC 124,5013
+CLEANFILES 126,5046
+DISTCLEANFILES 127,5092
+DISTTEXTS 129,5182
+NOSEARCH 131,5235
+all:all133,5263
+.PHONY:.PHONY136,5291
+lisp:lisp143,5605
+docs:docs146,5721
+info:info149,5750
+dvi:dvi152,5780
+tex-site.el:tex-site.el155,5808
+tex-site.el.out:tex-site.el.out161,6046
+auctex.el:auctex.el164,6119
+configure:configure167,6175
+Makefile:Makefile170,6221
+doc/Makefile:doc/Makefile173,6275
+config.status:config.status176,6347
+auto-loads.el:auto-loads.el179,6400
+some:some190,6716
+install:install192,6745
+install-man:install-man196,6871
+install-startup:install-startup200,7010
+install-el:install-el204,7117
+install-lisp:install-lisp237,8384
+install-images:install-images251,8837
+install-docs:install-docs260,9131
+install-auto:install-auto265,9311
+install-metadata:install-metadata268,9385
+.el.elc:.el.elc284,10314
+clean:clean287,10358
+distclean:distclean292,10437
+maintainer-clean:maintainer-clean297,10542
+extraclean:extraclean304,10704
+tar-ball-clean:tar-ball-clean307,10750
+wc:wc312,10884
+snapshot:snapshot317,10984
+dist:dist319,11015
+check-dist:check-dist321,11057
+release-commit:release-commit325,11193
+tar-ball:tar-ball340,11750
+          `echo $${TAG_EXPORT:`echo $${TAG_EXPORT345,11913
+rpm-packages:rpm-packages364,12839
+preview-ball:preview-ball371,13145
+          `echo $${TAG_EXPORT:`echo $${TAG_EXPORT376,13327
+full-release:full-release385,13822
+patch:patch402,14376
+xemacs-package:xemacs-package406,14483
+www-doc:www-doc413,14891
+WBUILDDIR=430,15883
+WEMACSVER=431,15916
+WEMACS=432,15931
+WAUCVER=433,15976
+WPACKAGE=434,15990
+WPACKAGEFILES=435,16052
+windows-package:windows-package439,16224
+
+Makefile.in,2632
+prefix 27,886
+exec_prefix 28,911
+libdir 29,946
+packagedatadir 30,971
+datarootdir 31,1012
+datadir 32,1047
+localstatedir 33,1074
+infodir 34,1113
+lispdir 35,1140
+auctexstartfile=36,1167
+packagelispdir 37,1201
+packagedatadir 38,1242
+packagedir 39,1283
+autodir 40,1316
+preview_enabled=41,1343
+subdirs=42,1377
+styledir 43,1395
+AUCTEXDATE 44,1430
+AUCTEXVERSION 45,1456
+INSTALL 47,1489
+INSTALL_DATA 48,1509
+MKINSTALLDIRS 49,1539
+DESTDIR=50,1571
+PACKAGE=52,1581
+PACKAGE_INFO=53,1596
+EMACS=54,1630
+ELCC=55,1644
+AUTOLOAD=56,1708
+DESCEND=59,1885
+CVSFILES=61,2109
+.SUFFIXES:.SUFFIXES64,2214
+SHELL 66,2241
+CP 67,2257
+CP_A 68,2268
+DIST_PREFIX 70,2285
+FTPDIR 71,2317
+WWWDIR 72,2344
+XEMACS_BUILD_DIR 73,2371
+PREVIEW_BUILD_DIR 74,2403
+COMMITTER_NAME=75,2437
+COMMITTER_EMAIL=76,2468
+RPMROOT 77,2496
+RPM_SIGN 78,2522
+MULESRC 80,2541
+MULEELC 81,2561
+AUCSRC 83,2582
+AUCELC 87,2817
+STYLESRC 89,2846
+STYLEELC 124,4915
+CLEANFILES 126,4948
+DISTCLEANFILES 127,4994
+DISTTEXTS 129,5084
+NOSEARCH 131,5137
+all:all133,5165
+.PHONY:.PHONY136,5193
+lisp:lisp143,5507
+docs:docs146,5623
+info:info149,5652
+dvi:dvi152,5682
+tex-site.el:tex-site.el155,5710
+tex-site.el.out:tex-site.el.out161,5948
+auctex.el:auctex.el164,6021
+configure:configure167,6077
+Makefile:Makefile170,6123
+doc/Makefile:doc/Makefile173,6177
+config.status:config.status176,6249
+auto-loads.el:auto-loads.el179,6302
+some:some190,6618
+install:install192,6647
+install-man:install-man196,6773
+install-startup:install-startup200,6912
+install-el:install-el204,7019
+install-lisp:install-lisp237,8286
+install-images:install-images251,8739
+install-docs:install-docs260,9033
+install-auto:install-auto265,9213
+install-metadata:install-metadata268,9287
+.el.elc:.el.elc284,10216
+clean:clean287,10260
+distclean:distclean292,10339
+maintainer-clean:maintainer-clean297,10444
+extraclean:extraclean304,10606
+tar-ball-clean:tar-ball-clean307,10652
+wc:wc312,10786
+snapshot:snapshot317,10886
+dist:dist319,10917
+check-dist:check-dist321,10959
+release-commit:release-commit325,11095
+tar-ball:tar-ball340,11652
+          `echo $${TAG_EXPORT:`echo $${TAG_EXPORT345,11815
+rpm-packages:rpm-packages364,12741
+preview-ball:preview-ball371,13047
+          `echo $${TAG_EXPORT:`echo $${TAG_EXPORT376,13229
+full-release:full-release385,13724
+patch:patch402,14278
+xemacs-package:xemacs-package406,14385
+www-doc:www-doc413,14793
+WBUILDDIR=430,15785
+WEMACSVER=431,15818
+WEMACS=432,15833
+WAUCVER=433,15878
+WPACKAGE=434,15892
+WPACKAGEFILES=435,15954
+windows-package:windows-package439,16126
+
+mkinstalldirs,403
+errstatus=7,137
+	echo "${usage}" 1>&2; exit 17,343
+	test $# -eq 0 && { echo "${usage}" 1>&2; exit 20,411
+	dirmode=21,463
+     -- ) shift;23,489
+     -- ) shift; break 23,489
+     -* ) echo "${usage}" 1>&2; exit 24,542
+     * )  break 25,601
+0) exit 39,745
+  fi 47,874
+  fi 52,1014
+	mkdir "$pathcomp" || lasterr=71,1317
+	  errstatus=74,1383
+	     lasterr=79,1483
+	       errstatus=83,1586
+
+multi-prompt.el,509
+(defvar multi-prompt-found 38,1343
+(defun multi-prompt 42,1452
+(defun multi-prompt-delete 101,3528
+(defun multi-prompt-next 107,3676
+(defun multi-prompt-next-must-match 118,4089
+(defvar multi-prompt-key-value-sep 140,4828
+(defvar multi-prompt-completion-table 142,4924
+(defun multi-prompt-key-value-collection-fn 145,5023
+(defun multi-prompt-expand-completion-table 174,6089
+(defvar crm-local-must-match-map)185,6469
+(defvar crm-local-completion-map)186,6503
+(defun multi-prompt-key-value189,6553
+
+multi-prompt.elc,321
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/multi-prompt.elel3,75
+;;; This file uses dynamic docstrings,7,231
+;;; This file does not contain utf-8 non-ASCII characters,9,299
+(defvar multi-prompt-found nil 17,620
+
+README.CVS,69
+If you retrieved AUCTeX via CVS instead of as a regular release,1,0
+
+tex-bar.el,653
+(defun TeX-bar-help-from-command-list 75,2577
+(defgroup TeX-tool-bar 81,2823
+(defcustom TeX-bar-TeX-buttons85,2901
+(defun TeX-bar-TeX-buttons 126,4278
+(defgroup TeX-tool-bar-button-definitions 151,5214
+(defcustom TeX-bar-TeX-all-button-alists155,5324
+(defcustom TeX-bar-TeX-button-alist164,5690
+(defun TeX-install-toolbar 213,7752
+(defcustom TeX-bar-LaTeX-buttons227,8230
+(defun TeX-bar-LaTeX-buttons 268,9617
+(defgroup TeX-tool-bar-button-definitions 293,10559
+(defcustom TeX-bar-LaTeX-all-button-alists297,10669
+(defcustom TeX-bar-LaTeX-button-alist306,11039
+(defun LaTeX-install-toolbar 357,13227
+(defun TeX-bar-img-filename 374,13765
+
+tex-bar.elc,350
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-bar.elel3,75
+;;; This file uses dynamic docstrings,7,226
+;;; This file does not contain utf-8 non-ASCII characters,9,294
+If there is no help,18,722
+Type `\[TeX-bar-TeX-buttons]buttons26,1239
+
+tex-buf.el,3788
+(defcustom TeX-process-asynchronous 36,1082
+(defcustom TeX-shell41,1223
+(defcustom TeX-shell-command-option49,1415
+(defun TeX-save-document 77,2382
+(defun TeX-command-master 88,2747
+(defvar TeX-command-region-begin 97,3100
+(defvar TeX-command-region-end 98,3138
+(defun TeX-current-offset 104,3321
+(defun TeX-pin-region 115,3646
+(defun TeX-command-region 146,4779
+(defun TeX-command-buffer 182,6374
+(defun TeX-pop-to-buffer 207,7386
+(defun TeX-recenter-output-buffer 233,8649
+(defun TeX-kill-job 250,9241
+(defun TeX-home-buffer 259,9497
+(defun TeX-next-error 270,9909
+(defun TeX-previous-error 281,10303
+(defun TeX-command 290,10545
+(defun TeX-command-expand 324,11731
+(defun TeX-check-files 368,13364
+(defcustom TeX-save-query 401,14402
+(defvar TeX-command-history 406,14547
+(defun TeX-command-query 408,14581
+(defvar TeX-command-next 440,15747
+(defun TeX-printer-query 445,15887
+(defun TeX-style-check 479,17156
+(defun TeX-output-extension 489,17447
+(defun TeX-view-mouse 498,17732
+(defun TeX-view 506,17974
+(defun TeX-output-style-check 516,18353
+(defvar TeX-after-start-process-function 541,18994
+(defcustom TeX-show-compilation 545,19145
+(defun TeX-run-command 550,19287
+(defun TeX-run-set-command 596,21166
+(defun TeX-run-format 608,21589
+(defvar TeX-error-report-switches 627,22252
+(defun TeX-run-TeX 633,22503
+(defalias 'TeX-run-LaTeX TeX-run-LaTeX665,23701
+(defun TeX-run-BibTeX 668,23742
+(defun TeX-run-compile 676,24062
+(defun TeX-run-shell 680,24200
+(defun TeX-run-discard 687,24455
+(defun TeX-run-discard-foreground 696,24717
+(defalias 'TeX-run-dviout TeX-run-dviout705,25225
+(defun TeX-run-background 707,25281
+(defun TeX-run-silent 721,25865
+(defun TeX-run-interactive 734,26343
+(defun TeX-run-function 773,28083
+(defun TeX-run-discard-or-function 779,28338
+(defun TeX-run-ispell-on-document 787,28704
+(defun TeX-synchronous-sentinel 797,29000
+(defun TeX-command-sentinel 818,29732
+(defvar TeX-sentinel-function 860,31355
+(defvar TeX-sentinel-default-function 867,31568
+(defun TeX-TeX-sentinel 874,31859
+(defun TeX-current-pages 881,32111
+(defun TeX-TeX-sentinel-check 890,32380
+(defun TeX-LaTeX-sentinel-has-warnings 923,33615
+(defun TeX-LaTeX-sentinel-has-bad-boxes 931,33903
+(defun TeX-LaTeX-sentinel 938,34162
+(defun TeX-BibTeX-sentinel 994,36518
+(defvar compilation-in-progress 1018,37391
+(defun TeX-process-get-variable 1025,37628
+(defun TeX-process-set-variable 1038,38022
+(defun TeX-process-check 1049,38315
+(defun TeX-process-buffer-name 1066,38891
+(defun TeX-process-buffer 1070,39072
+(defun TeX-process 1074,39217
+(defun TeX-command-mode-line 1081,39414
+(defun TeX-command-filter 1087,39663
+(defvar TeX-current-page 1095,39943
+(defun TeX-format-mode-line 1100,40092
+(defun TeX-format-filter 1106,40365
+(defvar TeX-parse-function 1146,41764
+(defun TeX-background-filter 1150,41907
+(defun TeX-interactive-goto-prompt 1161,42279
+(defvar TeX-current-process-region-p 1182,42865
+(defun TeX-active-process 1185,42979
+(defun TeX-active-buffer 1189,43100
+(defun TeX-active-master 1195,43315
+(defvar TeX-command-buffer 1207,43768
+(defcustom TeX-region-extra 1212,43877
+(defvar TeX-region-hook 1224,44289
+(defun TeX-quote-filename 1231,44609
+(defun TeX-region-create 1242,44975
+(defun TeX-region-file 1342,48431
+(defcustom TeX-region 1354,48826
+(defvar TeX-error-point 1363,49027
+(defvar TeX-error-file 1368,49143
+(defvar TeX-error-offset 1373,49268
+(defun TeX-parse-reset 1378,49421
+(defun TeX-parse-command 1386,49618
+(defun TeX-parse-TeX 1393,49817
+(defvar TeX-translate-location-hook 1409,50361
+(defun TeX-parse-error 1415,50606
+(defun TeX-error 1512,53141
+(defun TeX-warning 1589,55633
+(defun TeX-help-error 1673,58273
+(defcustom TeX-error-description-list1723,59855
+
+tex-buf.elc,23
+function has 113,8527
+
+tex.el,14886
+(defgroup TeX-file 43,1347
+(defgroup TeX-command 47,1415
+(defgroup LaTeX 51,1503
+(defgroup TeX-misc 57,1605
+(defcustom TeX-print-command 81,2682
+(defcustom TeX-command 91,3057
+(defcustom TeX-Omega-command 96,3156
+(defcustom LaTeX-command 101,3272
+(defcustom LaTeX-Omega-command 106,3371
+(defcustom ConTeXt-engine 111,3486
+(defcustom ConTeXt-Omega-engine 118,3681
+(defcustom TeX-queue-command 127,4053
+(defcustom TeX-mode-hook 137,4442
+(defcustom AmS-TeX-mode-hook 142,4542
+(defcustom TeX-command-list153,4972
+(defcustom TeX-command-output-list287,10367
+(defcustom LaTeX-version 316,11560
+(defcustom LaTeX-command-style333,12018
+(defcustom TeX-printer-list350,12666
+(defcustom TeX-printer-default 382,13762
+(defcustom TeX-print-style 390,13981
+(defcustom TeX-expand-list405,14607
+(defadvice hack-one-local-variable 579,20535
+(defvar TeX-overlay-priority-step 591,21076
+(defun TeX-delete-dups-by-car 728,25967
+(defun TeX-delete-duplicate-strings 747,26706
+(defun TeX-sort-strings 758,27017
+(defgroup TeX-output 764,27149
+(defcustom TeX-display-help 769,27234
+(defcustom TeX-debug-bad-boxes 778,27630
+(defcustom TeX-debug-warnings 783,27790
+(defun TeX-toggle-debug-bad-boxes 788,27943
+(defun TeX-toggle-debug-warnings 795,28200
+(defvar TeX-base-mode-name 804,28464
+(defun TeX-set-mode-name 808,28569
+(defun TeX-mode-prefix 848,30119
+(defgroup TeX-view 858,30400
+(defcustom TeX-view-style862,30480
+(defcustom TeX-output-view-style895,31991
+(defvar TeX-view-predicate-list-builtin938,33971
+(defcustom TeX-view-predicate-list 973,35120
+(defvar TeX-view-program-list-builtin1001,36394
+(defcustom TeX-view-program-list 1037,37915
+(defcustom TeX-view-program-selection1104,40724
+(defun TeX-match-style 1163,42758
+(defun TeX-view-match-predicate 1167,42893
+(defun TeX-view-command-raw 1184,43565
+(defvar TeX-engine-alist-builtin1216,44701
+(defcustom TeX-engine-alist 1224,45093
+(defun TeX-engine-alist 1245,46060
+(defcustom TeX-engine 1253,46448
+(defun TeX-engine-set 1266,46934
+(define-minor-mode TeX-Omega-mode1283,47517
+(defalias 'tex-omega-mode tex-omega-mode1288,47686
+(defcustom TeX-source-correlate-method 1294,47863
+(defvar TeX-source-correlate-method-active 1306,48322
+(defvar TeX-source-correlate-output-page-function 1309,48428
+(defcustom TeX-source-correlate-start-server 1315,48710
+(defvar TeX-source-correlate-start-server-asked 1325,49061
+(defvar TeX-source-correlate-start-server-flag 1328,49179
+(defun TeX-source-correlate-gnuserv-p 1333,49403
+(defun TeX-source-correlate-server-enabled-p 1342,49679
+(defun TeX-source-correlate-start-server-maybe 1348,49964
+(defun TeX-source-correlate-determine-method 1370,50885
+(defun TeX-source-correlate-expand-options 1381,51249
+(defvar TeX-source-correlate-map1398,51982
+(define-minor-mode TeX-source-correlate-mode1407,52308
+(defalias 'TeX-source-specials-mode TeX-source-specials-mode1437,53683
+(defalias 'tex-source-correlate-mode tex-source-correlate-mode1439,53816
+(defcustom TeX-source-specials-tex-flags 1451,54270
+(defcustom TeX-source-specials-places 1456,54433
+(defcustom TeX-source-specials-view-position-flags1474,54938
+(defcustom TeX-source-specials-view-editor-flags1480,55133
+(defcustom TeX-source-specials-view-gnuclient-flags1486,55300
+(defcustom TeX-source-specials-view-emacsclient-flags1492,55456
+(defun TeX-source-specials-view-expand-client 1499,55660
+(defun TeX-source-specials-view-expand-options 1516,56312
+(defvar TeX-synctex-tex-flags 1532,56932
+(defun TeX-synctex-output-page 1535,57037
+(defvar TeX-mode-p 1556,57838
+(defun TeX-mode-set 1560,57948
+(defcustom TeX-PDF-mode 1564,58040
+(define-minor-mode TeX-PDF-mode1570,58189
+(defun TeX-global-PDF-mode 1585,58689
+(defalias 'tex-pdf-mode tex-pdf-mode1594,58973
+(defvar TeX-PDF-mode-parsed 1596,59013
+(defun TeX-PDF-mode-parsed 1601,59151
+(defun TeX-PDF-mode-on 1620,59876
+(defun TeX-PDF-mode-off 1624,59966
+(defcustom TeX-DVI-via-PDFTeX 1628,60059
+(define-minor-mode TeX-interactive-mode1633,60190
+(defalias 'tex-interactive-mode tex-interactive-mode1638,60359
+(defgroup TeX-command-name 1643,60488
+(defcustom TeX-command-BibTeX 1647,60586
+(defcustom TeX-command-Show 1653,60778
+(defcustom TeX-command-Print 1660,61019
+(defcustom TeX-command-Queue 1665,61157
+(defvar TeX-trailer-start 1670,61295
+(defvar TeX-header-end 1675,61443
+(defvar TeX-command-default 1680,61582
+(defvar TeX-clean-default-intermediate-suffixes1687,61795
+(defvar TeX-clean-default-output-suffixes1695,62153
+(defcustom TeX-clean-confirm 1700,62348
+(defun TeX-clean 1707,62502
+(defcustom TeX-master 1749,63800
+(defcustom TeX-one-master 1781,64935
+(defvar TeX-convert-master 1794,65451
+(defvar TeX-transient-master 1800,65769
+(defun TeX-dwim-master 1802,65804
+(defun TeX-master-file-ask 1811,66086
+(defun TeX-master-file 1843,67228
+(defun TeX-master-directory 1938,70153
+(defun TeX-add-local-master 1949,70495
+(defun TeX-local-master-p 1978,71606
+(defcustom TeX-style-global 1989,71973
+(defcustom TeX-auto-local 1996,72208
+(defcustom TeX-style-local 2004,72438
+(defun TeX-split-string 2012,72662
+(defun TeX-parse-path 2035,73337
+(defun TeX-macro-global 2056,73987
+(defun TeX-macro-private 2062,74275
+(defun TeX-tree-expand 2066,74447
+(defcustom TeX-macro-global 2111,76144
+(defcustom TeX-macro-private 2116,76320
+(defcustom TeX-auto-private2123,76569
+(defcustom TeX-style-private2137,77058
+(defcustom TeX-style-path2151,77543
+(defcustom TeX-check-path2167,78207
+(defvar TeX-style-hook-list 2178,78497
+(defcustom TeX-byte-compile 2185,78723
+(defun TeX-load-style 2190,78860
+(defun TeX-load-style-file 2217,79967
+(defun TeX-add-style-hook 2236,80511
+(defun TeX-unload-style 2250,80944
+(defcustom TeX-virgin-style 2261,81339
+(defvar TeX-active-styles 2269,81545
+(defun TeX-run-style-hooks 2273,81679
+(defcustom TeX-parse-self 2295,82497
+(defvar TeX-style-hook-applied-p 2300,82632
+(defvar TeX-update-style-hook 2304,82787
+(defun TeX-update-style 2307,82882
+(defvar TeX-remove-style-hook 2332,83870
+(defun TeX-remove-style 2336,84032
+(defun TeX-style-list 2342,84230
+(defvar TeX-esc 2349,84395
+(defvar TeX-grop 2352,84485
+(defvar TeX-grcl 2355,84583
+(defcustom plain-TeX-enable-toolbar 2358,84681
+(defun plain-TeX-maybe-install-toolbar 2363,84804
+(defgroup TeX-macro 2374,85103
+(defcustom TeX-complete-word 2379,85201
+(defvar TeX-complete-list 2383,85337
+(defun TeX-complete-symbol 2398,85786
+(defcustom TeX-default-macro 2438,87098
+(defcustom TeX-insert-braces 2445,87291
+(defcustom TeX-insert-macro-default-style 2450,87433
+(defvar TeX-arg-opening-brace 2466,88060
+(defvar TeX-arg-closing-brace 2470,88225
+(defvar TeX-after-insert-macro-hook 2474,88389
+(defvar TeX-macro-history 2477,88472
+(defun TeX-insert-macro 2479,88504
+(defvar TeX-electric-macro-map2503,89527
+(defun TeX-electric-macro 2509,89720
+(defun TeX-parse-macro 2525,90266
+(defun TeX-arg-string 2588,92558
+(defun TeX-parse-arguments 2601,93053
+(defun TeX-parse-argument 2630,94120
+(defun TeX-argument-insert 2675,95566
+(defun TeX-argument-prompt 2691,96105
+(defun TeX-string-divide-number-unit 2703,96507
+(defcustom TeX-default-unit-for-image 2713,96889
+(defun TeX-arg-maybe 2721,97102
+(defun TeX-arg-free 2726,97241
+(defun TeX-arg-literal 2734,97532
+(defcustom TeX-install-font-lock 2743,97771
+(defvar TeX-format-list2754,98120
+(defcustom TeX-default-mode 2785,99301
+(defcustom TeX-force-default-mode 2792,99538
+(defun TeX-tex-mode 2798,99701
+(defun VirTeX-common-initialization 2834,100818
+(defcustom plain-TeX-clean-intermediate-suffixes2933,104586
+(defcustom plain-TeX-clean-output-suffixes 2941,104945
+(defcustom plain-TeX-mode-hook 2948,105284
+(defun TeX-plain-tex-mode 2954,105411
+(defun plain-TeX-common-initialization 2981,106409
+(defgroup TeX-parse 3034,107922
+(defvar TeX-auto-parser 3038,108000
+(defconst TeX-auto-parser-temporary 3049,108413
+(defconst TeX-auto-parser-add 3050,108452
+(defconst TeX-auto-parser-local 3051,108485
+(defconst TeX-auto-parser-change 3052,108520
+(defun TeX-auto-add-type 3054,108557
+(defun TeX-auto-add-information 3086,109801
+(defun TeX-auto-list-information 3098,110239
+(defvar TeX-auto-apply-hook 3131,111336
+(defun TeX-auto-apply 3134,111439
+(defun TeX-auto-apply-entry 3140,111628
+(defun TeX-safe-auto-write 3146,111866
+(defcustom TeX-auto-save 3156,112104
+(defcustom TeX-auto-untabify 3161,112238
+(defun TeX-auto-write 3166,112362
+(defcustom TeX-macro-default 3189,113090
+(defcustom TeX-auto-default 3194,113237
+(defun TeX-auto-generate 3200,113421
+(defun TeX-auto-generate-global 3249,115121
+(defun TeX-auto-store 3260,115538
+(defun TeX-auto-entry-clear-p 3282,116286
+(defun TeX-auto-insert 3287,116513
+(defvar TeX-auto-ignore3304,117108
+(defun TeX-auto-add-regexp 3312,117501
+(defvar TeX-auto-empty-regexp-list3319,117824
+(defvar TeX-token-char3323,117965
+(defvar plain-TeX-auto-regexp-list3333,118292
+(defvar TeX-auto-full-regexp-list 3348,119208
+(defvar TeX-auto-prepare-hook 3351,119339
+(defvar TeX-auto-cleanup-hook 3354,119433
+(defcustom TeX-auto-parse-length 3357,119526
+(defcustom TeX-auto-x-parse-length 3363,119727
+(defcustom TeX-auto-x-regexp-list 3371,120024
+(defun TeX-regexp-group-count 3388,120674
+(defun TeX-auto-parse-region 3398,121014
+(defun TeX-auto-parse 3453,122652
+(defun TeX-auto-clear-entry 3487,123759
+(defvar LaTeX-auto-end-symbol 3491,123895
+(defun TeX-auto-symbol-check 3493,123931
+(defcustom TeX-auto-regexp-list 3513,124601
+(defgroup TeX-file-extension 3529,125220
+(defcustom TeX-file-extensions 3533,125316
+(defcustom TeX-all-extensions 3538,125527
+(defcustom TeX-default-extension 3543,125675
+(defcustom docTeX-default-extension 3550,125854
+(defvar TeX-output-extension 3555,125984
+(defcustom BibTeX-file-extensions 3563,126297
+(defcustom BibTeX-style-extensions 3568,126455
+(defcustom TeX-ignore-file 3573,126615
+(defcustom TeX-file-recurse 3581,126899
+(defun TeX-match-extension 3590,127228
+(defun TeX-strip-extension 3605,127640
+(defcustom TeX-kpathsea-path-delimiter 3632,128664
+(defcustom TeX-kpathsea-format-alist3641,128920
+(defun TeX-search-files-kpathsea 3671,130554
+(defun TeX-search-files 3721,132041
+(defun TeX-car-string-lessp 3769,133752
+(defun TeX-listify 3774,133945
+(defun TeX-member 3779,134094
+(defun TeX-elt-of-list-member 3786,134335
+(defun TeX-assoc 3793,134531
+(defun TeX-match-buffer 3802,134808
+(defun TeX-function-p 3809,135033
+(defun TeX-booleanp 3818,135287
+(defun TeX-looking-at-backward 3822,135376
+(defun TeX-current-line 3833,135761
+(defun TeX-current-file-name-master-relative 3837,135861
+(defun TeX-near-bobp 3843,136041
+(defun TeX-deactivate-mark 3849,136206
+(defalias 'TeX-run-mode-hooksTeX-run-mode-hooks3858,136500
+(defvar TeX-mode-syntax-table 3864,136611
+(defvar TeX-command-current 3893,137767
+(defun TeX-command-select-master 3897,137923
+(defun TeX-command-select-buffer 3903,138145
+(defun TeX-command-select-region 3909,138356
+(defvar TeX-command-force 3915,138567
+(defun TeX-command-menu 3919,138703
+(defun TeX-command-menu-print 3924,138854
+(defun TeX-command-menu-printer-entry 3932,139194
+(defun TeX-command-menu-entry 3940,139430
+(defconst TeX-command-menu-name 3961,140129
+(defcustom TeX-electric-escape 3966,140263
+(defcustom TeX-electric-sub-and-superscript 3971,140399
+(defcustom TeX-newline-function 3976,140555
+(defun TeX-insert-backslash 3984,140802
+(defun TeX-insert-sub-or-superscript 3992,141084
+(defun TeX-newline 4002,141480
+(defvar TeX-mode-map4006,141623
+(defvar plain-TeX-mode-map4072,144670
+(defun TeX-mode-specific-command-menu 4078,144820
+(defun TeX-mode-specific-command-menu-entries 4090,145245
+(defun TeX-mode-specific-command-list 4158,148129
+(defvar TeX-fold-menu4171,148592
+(defvar TeX-customization-menu 4224,151035
+(defvar TeX-common-menu-entries4226,151072
+(defvar plain-TeX-menu-entries4262,152638
+(defvar AmSTeX-mode-map4305,154601
+(defun ams-tex-mode 4323,155070
+(defvar TeX-verbatim-p-function 4350,155804
+(defun TeX-verbatim-p 4355,156037
+(defvar TeX-comment-start-regexp 4365,156333
+(defun TeX-comment-region 4371,156608
+(defun TeX-uncomment 4427,159051
+(defun TeX-comment-or-uncomment-paragraph 4445,159617
+(defun TeX-in-comment 4461,160228
+(defun TeX-in-commented-line 4475,160605
+(defun TeX-in-line-comment 4489,161197
+(defun TeX-comment-prefix 4499,161559
+(defun TeX-forward-comment-skip 4509,161906
+(defun TeX-backward-comment-skip 4556,163444
+(defun TeX-comment-forward 4569,164062
+(defun TeX-comment-padding-string 4589,164697
+(defgroup TeX-indentation 4601,165045
+(defcustom TeX-brace-indent-level 4605,165136
+(defun TeX-comment-indent 4610,165274
+(defun TeX-brace-count-line 4618,165493
+(defvar TeX-search-syntax-table4639,166072
+(defun TeX-search-syntax-table 4654,166775
+(defun TeX-find-balanced-brace 4685,168288
+(defun TeX-find-closing-brace 4707,169108
+(defun TeX-find-opening-brace 4715,169479
+(defun TeX-find-macro-boundaries 4723,169849
+(defun TeX-find-macro-end-helper 4768,171545
+(defun TeX-find-macro-start 4810,173014
+(defun TeX-find-macro-end 4817,173290
+(defun TeX-search-forward-unescaped 4823,173463
+(defun TeX-search-backward-unescaped 4833,173890
+(defun TeX-re-search-forward-unescaped 4843,174320
+(defun TeX-search-unescaped 4853,174767
+(defun TeX-escaped-p 4874,175693
+(defun TeX-current-macro 4883,176067
+(defvar TeX-search-forward-comment-start-function 4893,176412
+(defun TeX-search-forward-comment-start 4901,176791
+(defcustom TeX-font-list 4918,177434
+(defvar TeX-font-replace-function 4948,178395
+(defun TeX-describe-font-entry 4951,178525
+(defun TeX-font 4961,178955
+(defun TeX-font-replace 5001,180126
+(defun TeX-font-replace-macro 5021,180690
+(defvar TeX-symbol-marker 5058,182004
+(defvar TeX-symbol-marker-pos 5060,182036
+(defvar TeX-dollar-sign 5064,182173
+(defconst TeX-dollar-string 5066,182258
+(defconst TeX-dollar-regexp5067,182320
+(defcustom TeX-math-toggle-off-input-method 5071,182454
+(defcustom TeX-math-close-double-dollar 5076,182615
+(defun TeX-insert-dollar 5081,182762
+(defvar TeX-math-input-method-off-regexp5132,184499
+(defun TeX-math-input-method-off 5136,184678
+(defun TeX-normal-mode 5146,185017
+(defgroup TeX-quote 5166,185722
+(defcustom TeX-open-quote 5170,185788
+(defcustom TeX-close-quote 5175,185929
+(defcustom TeX-quote-after-quote 5180,186072
+(defcustom TeX-quote-language-alist 5187,186286
+(defvar TeX-quote-language 5215,187399
+(defun TeX-insert-quote 5225,187869
+(defun TeX-insert-punctuation 5308,190737
+(defun TeX-insert-braces 5316,190988
+(defun TeX-submit-bug-report 5339,191649
+(defun TeX-goto-info-page 5381,193085
+(defvar TeX-doc-backend-alist5388,193254
+(defun TeX-doc 5454,195535
+(defun ispell-tex-buffer-p 5513,197659
+(defun TeX-run-ispell 5519,197815
+(defun TeX-ispell-document 5533,198202
+(defvar ispell-tex-major-modes 5567,199252
+
+tex.elc,59
+function returning 170,12041
+function should 1461,166448
+
+tex-fold.el,2266
+(defgroup TeX-fold 58,2119
+(defcustom TeX-fold-type-list 62,2182
+(defcustom TeX-fold-macro-spec-list72,2579
+(defvar TeX-fold-macro-spec-list-internal 123,4700
+(defcustom TeX-fold-env-spec-list131,5095
+(defvar TeX-fold-env-spec-list-internal 139,5391
+(defcustom TeX-fold-math-spec-list 147,5784
+(defvar TeX-fold-math-spec-list-internal 154,6052
+(defcustom TeX-fold-unspec-macro-display-string 162,6448
+(defcustom TeX-fold-unspec-env-display-string 169,6702
+(defcustom TeX-fold-unspec-use-name 176,6966
+(defcustom TeX-fold-preserve-comments 185,7327
+(defcustom TeX-fold-unfold-around-mark 190,7447
+(defcustom TeX-fold-help-echo-max-length 195,7570
+(defcustom TeX-fold-force-fontify 201,7760
+(defcustom TeX-fold-auto 206,7892
+(defface TeX-fold-folded-face211,8027
+(defvar TeX-fold-folded-face 224,8447
+(defface TeX-fold-unfolded-face227,8551
+(defvar TeX-fold-unfolded-face 240,8979
+(defvar TeX-fold-ellipsis 243,9095
+(defvar TeX-fold-open-spots 246,9209
+(defcustom TeX-fold-command-prefix 249,9293
+(defvar TeX-fold-keymap256,9568
+(defun TeX-fold-dwim 274,10183
+(defun TeX-fold-buffer 287,10650
+(defun TeX-fold-paragraph 302,11283
+(defun TeX-fold-region 313,11768
+(defun TeX-fold-region-macro-or-env 326,12283
+(defun TeX-fold-region-comment 386,14547
+(defun TeX-fold-macro 404,15142
+(defun TeX-fold-math 410,15306
+(defun TeX-fold-env 416,15473
+(defun TeX-fold-comment 422,15645
+(defun TeX-fold-item 428,15814
+(defun TeX-fold-comment-do 498,18221
+(defun TeX-fold-make-overlay 524,19065
+(defun TeX-fold-item-end 543,20017
+(defun TeX-fold-overfull-p 566,20624
+(defun TeX-fold-macro-nth-arg 587,21304
+(defun TeX-fold-buffer-substring 643,23421
+(defun TeX-fold-make-help-echo 684,25108
+(defun TeX-fold-update-at-point 703,25926
+(defun TeX-fold-clearout-buffer 722,26556
+(defun TeX-fold-clearout-paragraph 727,26709
+(defun TeX-fold-clearout-region 735,27011
+(defun TeX-fold-clearout-item 741,27241
+(defun TeX-fold-remove-overlays 747,27443
+(defun TeX-fold-expand-spec 761,27809
+(defun TeX-fold-hide-item 795,29016
+(defun TeX-fold-show-item 847,31054
+(defun TeX-fold-post-command 862,31576
+(defun TeX-fold-partition-list 919,33713
+(define-minor-mode TeX-fold-mode938,34484
+(defalias 'tex-fold-mode tex-fold-mode976,36042
+
+tex-fold.elc,32
+function symbol.symbol24,1599
+
+tex-font.el,278
+(defconst tex-font-lock-keywords-132,1045
+(defconst tex-font-lock-keywords-286,3491
+(defvar tex-font-lock-keywords 145,5735
+(defface tex-math-face149,5845
+(defvar tex-math-face 152,5958
+(defun tex-font-lock-syntactic-face-function 155,6043
+(defun tex-font-setup 159,6171
+
+tex-font.elc,225
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-font.elel3,75
+;;; This file contains utf-8 non-ASCII characters,7,227
+
+tex-fptex.el,36
+(defmacro parent-directory 33,1075
+
+tex-fptex.elc,279
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-fptex.elel3,75
+;;; This file uses dynamic docstrings,7,228
+;;; This file does not contain utf-8 non-ASCII characters,9,296
+
+tex-info.el,585
+(defvar Texinfo-environment-list39,1261
+(defconst texinfo-environment-regexp55,2163
+(defun Texinfo-environment 63,2457
+(defun Texinfo-insert-environment 75,2924
+(defun Texinfo-modify-environment 96,3496
+(defun Texinfo-find-env-end 109,3967
+(defun Texinfo-find-env-start 132,4676
+(defun Texinfo-insert-node 155,5398
+(defvar Texinfo-mode-map212,7598
+(defvar Texinfo-font-list295,10994
+(defalias 'Texinfo-mode Texinfo-mode317,11489
+(defun TeX-texinfo-mode 320,11544
+(defcustom Texinfo-clean-intermediate-suffixes 547,20001
+(defcustom Texinfo-clean-output-suffixes554,20307
+
+tex-info.elc,278
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-info.elel3,75
+;;; This file uses dynamic docstrings,7,227
+;;; This file does not contain utf-8 non-ASCII characters,9,295
+
+tex-jp.el,762
+(defgroup AUCTeX-jp 39,1327
+(defcustom japanese-TeX-command-list51,1761
+(defcustom japanese-TeX-error-messages 133,4982
+(defcustom TeX-japanese-process-input-coding-system147,5511
+(defcustom TeX-japanese-process-output-coding-system155,5802
+(defcustom japanese-TeX-command-default 165,6098
+(defcustom japanese-LaTeX-command-default 171,6313
+(defcustom japanese-LaTeX-default-style 177,6535
+(defcustom japanese-LaTeX-style-list182,6675
+(defun japanese-TeX-set-process-coding-system 206,7141
+(defvar japanese-TeX-mode 218,7567
+(defun japanese-plain-tex-mode 224,7771
+(defun japanese-plain-tex-mode-initialization 231,8000
+(defun japanese-latex-mode 239,8275
+(defun japanese-latex-mode-initialization 246,8488
+(defun TeX-insert-punctuation 268,9201
+
+tex-jp.elc,223
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-jp.elel3,75
+;;; This file contains utf-8 non-ASCII characters,7,225
+
+texmathp.el,743
+(defgroup texmathp 94,3562
+(defvar texmathp-environments 102,3831
+(defvar texmathp-macros 103,3866
+(defvar texmathp-onoff-regexp 104,3895
+(defvar texmathp-toggle-regexp 105,3930
+(defvar texmathp-tex-commands1 106,3966
+(defvar texmathp-memory 107,4002
+(defvar texmathp-tex-commands)109,4032
+(defvar texmathp-tex-commands-default111,4088
+(defun texmathp-compile 145,5409
+(defcustom texmathp-tex-commands 175,6623
+(defcustom texmathp-search-n-paragraphs 206,8186
+(defcustom texmathp-allow-detached-args 217,8682
+(defvar texmathp-why 226,9104
+(defvar texmathp-syntax-table236,9672
+(defun texmathp 247,10116
+(defun texmathp-match-environment 299,11943
+(defun texmathp-match-macro 343,13650
+(defun texmathp-match-switch 399,15581
+
+texmathp.elc,278
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/texmathp.elel3,75
+;;; This file uses dynamic docstrings,7,227
+;;; This file does not contain utf-8 non-ASCII characters,9,295
+
+tex-mik.elc,277
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-mik.elel3,75
+;;; This file uses dynamic docstrings,7,226
+;;; This file does not contain utf-8 non-ASCII characters,9,294
+
+tex-site.el,538
+(defgroup AUCTeX 46,1574
+(defvar TeX-lisp-directory55,1831
+(defvar TeX-data-directory64,2193
+(defcustom TeX-auto-global68,2350
+(defconst TeX-mode-alist78,2642
+(defalias 'TeX-load-hack TeX-load-hack86,2868
+(defun TeX-modes-set 107,3525
+(defcustom TeX-modes127,4219
+(defconst AUCTeX-version 145,4754
+(defconst AUCTeX-date 149,4871
+(defalias 'ConTeXt-mode ConTeXt-mode182,5787
+(defalias 'TeX-doctex-mode TeX-doctex-mode279,8229
+(defalias 'tex-fold-mode tex-fold-mode402,12138
+(defalias 'Texinfo-mode Texinfo-mode421,12541
+
+tex-site.el.in,1265
+42,56
+;; Copyright 3,57
+;; You should have received a copy of the GNU General Public License23,738
+;; along with AUCTeX;24,807
+;; along with AUCTeX; see the file COPYING.  If not,24,807
+;; along with AUCTeX; see the file COPYING.  If not, write to the Free24,807
+;; Software Foundation,25,878
+;; Software Foundation, Inc., 51 Franklin St,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA25,878
+;;; Commentary:Commentary28,969
+;; This file contains startup code,30,986
+;; This file contains startup code, autoloads and variables adapted to30,986
+;; the local site configuration.  It is generated and placed by the31,1057
+;; installation procedure and should not be edited by hand,32,1125
+;; installation procedure and should not be edited by hand, nor moved32,1125
+;; to a different place,33,1195
+;; to a different place, as some settings may be established relative33,1195
+;; All user customization should be done with36,1282
+;; M-x customize-variable RET37,1328
+		;; from Emacs 21 as substitute foret.93,2963
+		;; `(assq-delete-all'TeX-modes-set (car list))' which94,3000
+
+tex-site.el.out,1264
+r2,56
+;; Copyright 3,57
+;; You should have received a copy of the GNU General Public License23,738
+;; along with AUCTeX;24,807
+;; along with AUCTeX; see the file COPYING.  If not,24,807
+;; along with AUCTeX; see the file COPYING.  If not, write to the Free24,807
+;; Software Foundation,25,878
+;; Software Foundation, Inc., 51 Franklin St,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,25,878
+;; Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA25,878
+;;; Commentary:Commentary28,969
+;; This file contains startup code,30,986
+;; This file contains startup code, autoloads and variables adapted to30,986
+;; the local site configuration.  It is generated and placed by the31,1057
+;; installation procedure and should not be edited by hand,32,1125
+;; installation procedure and should not be edited by hand, nor moved32,1125
+;; to a different place,33,1195
+;; to a different place, as some settings may be established relative33,1195
+;; All user customization should be done with36,1282
+;; M-x customize-variable RET37,1328
+		;; from Emacs 21 as substitute foret.93,3061
+		;; `(assq-delete-all'TeX-modes-set (car list))' which94,3098
+
+tex-style.el,908
+(defgroup LaTeX-style 29,1015
+(defcustom LaTeX-amsmath-label 38,1257
+(defcustom LaTeX-beamer-section-labels-flag 50,1613
+(defcustom LaTeX-beamer-item-overlay-flag 55,1742
+(defcustom LaTeX-beamer-themes 60,1897
+(defcustom LaTeX-beamer-inner-themes 108,3301
+(defcustom LaTeX-beamer-outer-themes 129,3963
+(defcustom LaTeX-beamer-color-themes 157,4764
+(defcustom LaTeX-beamer-font-themes 191,5719
+(defcustom LaTeX-comment-env-list 218,6521
+(defcustom LaTeX-csquotes-quote-after-quote 227,6780
+(defcustom LaTeX-csquotes-open-quote 232,6932
+(defcustom LaTeX-csquotes-close-quote 240,7274
+(defcustom LaTeX-write18-enabled-p 250,7635
+(defcustom LaTeX-includegraphics-extensions259,7925
+(defcustom LaTeX-includegraphics-options-alist272,8264
+(defcustom LaTeX-includegraphics-strip-extension-flag 314,9645
+(defcustom LaTeX-includegraphics-read-file319,9808
+(defcustom LaTeX-shortvrb-chars 360,11291
+
+tex-style.elc,337
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-style.elel3,75
+;;; This file uses dynamic docstrings,7,228
+;;; This file does not contain utf-8 non-ASCII characters,9,296
+"multline", "flalign" and "gather".  If it is nil,20,773
+
+tex-wizard.el,26
+(defun TeX-wizard 29,994
+
+tex-wizard.elc,280
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/tex-wizard.elel3,75
+;;; This file uses dynamic docstrings,7,229
+;;; This file does not contain utf-8 non-ASCII characters,9,297
+
+TODO,30
+Besides mid-term goals,5,124
+
+toolbar-x.el,1824
+(defvar toolbarx-image-path117,5268
+(defun toolbarx-make-string-from-symbol 147,6337
+(defun toolbarx-make-symbol-from-string 158,6711
+(defun toolbarx-good-option-list-p 169,7046
+(defun toolbarx-separate-options 191,7865
+(defun toolbarx-merge-props 213,8738
+(defun toolbarx-make-command 254,10377
+(defun toolbarx-emacs-mount-popup-menu277,11181
+(defun toolbarx-xemacs-mount-popup-menu347,13870
+(defun toolbarx-mount-popup-menu 405,16082
+(defun toolbarx-option-value 430,17234
+(defun toolbarx-eval-function-or-symbol 444,17698
+(defun toolbarx-test-image-type 469,18786
+(defun toolbarx-test-button-type 519,20376
+(defun toolbarx-test-any-type 535,20940
+(defun toolbarx-test-string-or-nil 541,21149
+(defun toolbarx-test-toolbar-type 553,21613
+(defun toolbarx-test-dropdown-type 575,22390
+(defun toolbarx-test-symbol 587,22887
+(defun toolbarx-test-dropdown-default 599,23354
+(defun toolbarx-test-dropdown-save 616,23981
+(defconst toolbarx-button-props628,24482
+(defconst toolbarx-dropdown-props659,25874
+(defun toolbarx-process-group-without-insert 698,27761
+(defun toolbarx-process-group 718,28481
+(defun toolbarx-process-symbol 797,31494
+(defun toolbarx-process-dropdown-group 851,33970
+(defun toolbarx-find-image 1103,42986
+(defvar toolbarx-internal-button-switches 1135,44240
+(defun toolbarx-emacs-add-button 1143,44530
+(defun toolbarx-emacs-refresh-process-button-or-insert-list 1266,49210
+(defun toolbarx-emacs-refresh 1285,49949
+(defun toolbarx-xemacs-image-properties 1306,50820
+(defun toolbarx-xemacs-button-properties 1391,53725
+(defun toolbarx-xemacs-refresh-process-button-or-insert-list 1476,56955
+(defun toolbarx-xemacs-refresh 1557,60321
+(defun toolbarx-refresh 1677,65012
+(defun toolbarx-install-toolbar 1687,65367
+(defconst toolbarx-default-toolbar-meaning-alist1976,77633
+
+toolbar-x.elc,780
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/auctex/toolbar-x.elel3,75
+;;; This file uses dynamic docstrings,7,228
+;;; This file does not contain utf-8 non-ASCII characters,9,296
+   recursively to its elements;282,36980
+   XEmacs; the first element will be used in Emacs;293,37494
+Meaning alist296,37600
+             provide editor-dependent values;344,39888
+   button;363,40688
+ STRING-* is a string that will appear in the dropdown menu;471,45100
+   dropdown button;487,45768
+   strings;513,46936
+   least 1 and at most 6 strings or glyphs;514,47002
+   file displayed by the dropdown button;515,47064
+ :dropdownprepend-command -- a form;519,47178
+   Emacs;534,47836
+
+tex-mik.el,0
+
+RELEASE,0
+
+README,0
+
+lpath.el,0
+
+INSTALL.windows,0
+
+config.log,0
+
+auctex.el,0

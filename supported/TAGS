@@ -1,0 +1,2312 @@
+
+brace-mirror.el,170
+(defvar brace-mirror-mode-map 18,375
+(define-key brace-mirror-mode-map 21,452
+(define-minor-mode brace-mirror-mode23,544
+(defun brace-mirror-insert-open-brace 29,675
+
+command-frequency.el,848
+(defgroup command-frequency 88,3495
+(define-minor-mode command-frequency-mode97,3786
+(defcustom command-frequency-buffer 112,4240
+(defcustom command-frequency-table-file 118,4383
+(defvar command-frequency-table 128,4651
+(defun command-frequency-record 131,4790
+(defun command-frequency-list 142,5156
+(defun command-frequency-string 172,6399
+(defun command-frequency 199,7533
+(defun command-frequency-insert 236,8900
+(defun command-frequency-write-file 247,9323
+(defun command-frequency-table-save 273,10202
+(defun command-frequency-table-load 287,10800
+(define-minor-mode command-frequency-autosave-mode351,12918
+(defcustom command-frequency-autosave-timeout 376,13829
+(defcustom command-frequency-autosave-destinations 385,14140
+(defvar command-frequency-autosave--timer 419,15738
+(defun command-frequency-autosave--do 422,15787
+
+command-frequency.elc,744
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/command-frequency.elel3,75
+;;; This file uses dynamic docstrings,7,229
+;;; This file does not contain utf-8 non-ASCII characters,9,297
+Setting this variable directly does not take effect;19,982
+- with universal or positive prefix arument - REVERSE was t;73,5985
+(defalias 'command-frequency-insert #[(&optional reverse limit func) "\303\304	\n$\207" [reverse limit func command-frequency t] 5 (#$ . 6544) (list (cond ((not current-prefix-arg) nil) ((> (prefix-numeric-value current-prefix-arg) 0)) (t 'no-sort)) nil t)78,6638
+- with universal or positive prefix arument - REVERSE was t;86,7201
+
+cuda-mode.el,362
+(defcustom cuda-font-lock-extra-types 87,3081
+(defconst cuda-font-lock-keywords-191,3272
+(defconst cuda-font-lock-keywords-295,3385
+(defconst cuda-font-lock-keywords-399,3502
+(defvar cuda-font-lock-keywords 103,3623
+(defvar cuda-mode-syntax-table 106,3734
+(defvar cuda-mode-abbrev-table 112,3942
+(defvar cuda-mode-map 122,4352
+(defun cuda-mode 139,5001
+
+cuda-mode.elc,272
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/cuda-mode.elel3,75
+;;; This file uses dynamic docstrings,7,221
+;;; This file does not contain utf-8 non-ASCII characters,9,289
+
+dired-isearch.el,463
+(defun dired-isearch-forward 45,1384
+(defun dired-isearch-backward 52,1675
+(defun dired-isearch-forward-regexp 59,1969
+(defun dired-isearch-backward-regexp 66,2285
+(defun dired-isearch-search-fun-function 75,2616
+(defun dired-search-forward 85,3008
+(defun dired-search-backward 96,3505
+(defun dired-re-search-forward 105,3894
+(defun dired-re-search-backward 114,4296
+(defun dired-word-search-forward 123,4697
+(defun dired-word-search-backward 132,5107
+
+dired-isearch.elc,276
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/dired-isearch.elel3,75
+;;; This file uses dynamic docstrings,7,225
+;;; This file does not contain utf-8 non-ASCII characters,9,293
+
+doc-mode.el,3217
+(defgroup doc-mode 73,2616
+(defcustom doc-mode-auto-check-p 78,2734
+(defcustom doc-mode-jump-to-template 84,2948
+(defcustom doc-mode-template-start 90,3166
+(defcustom doc-mode-template-end 95,3306
+(defcustom doc-mode-template-continue 100,3438
+(defcustom doc-mode-template-single-line-start 105,3594
+(defcustom doc-mode-template-single-line-end 111,3834
+(defcustom doc-mode-template-keyword-char 117,4065
+(defcustom doc-mode-template-empty-line-after-summary 124,4300
+(defcustom doc-mode-template-empty-line-before-keywords 130,4533
+(defcustom doc-mode-template-keywords136,4770
+(defcustom doc-mode-allow-single-line-comments 144,5070
+(defcustom doc-mode-fold-single-line-comments 154,5542
+(defcustom doc-mode-align-keyword-arguments 160,5769
+(defcustom doc-mode-fill-column 168,6119
+(defcustom doc-mode-keywords-from-tag-func 175,6380
+(defconst doc-mode-font-lock-keywords188,7098
+(defvar doc-mode-templates 247,10342
+(defun doc-mode-add-template 250,10427
+(defvar doc-mode-temp 258,10794
+(defun doc-mode-delete-overlay 260,10824
+(defun doc-mode-replace-overlay 267,11108
+(defun doc-mode-next-template 273,11318
+(defun doc-mode-previous-template 291,11879
+(defun doc-mode-first-template 309,12454
+(defvar doc-mode-lighter 318,12775
+(defvar doc-mode-prefix-map320,12811
+(defvar doc-mode-map336,13498
+(define-minor-mode doc-mode343,13672
+(defun doc-mode-current-tag 368,14681
+(defun doc-mode-current-tag-or-bust 391,15672
+(defun doc-mode-line-indent 396,15853
+(defun doc-mode-insert 405,16168
+(defun doc-mode-insert-markup 414,16425
+(defun doc-mode-insert-line 423,16693
+(defun doc-mode-insert-keyword 435,17131
+(defun doc-mode-insert-doc 445,17660
+(defun doc-mode-remove-doc 496,19543
+(defun doc-mode-remove-tag-doc 511,20031
+(defun doc-mode-find-doc-bounds 519,20371
+(defun doc-mode-new-keyword 548,21623
+(defun doc-mode-has-return-value-p 553,21803
+(defun doc-mode-extract-summary 567,22555
+(defun doc-mode-find-summary 571,22717
+(defconst doc-mode-begin-regexp579,23018
+(defun doc-mode-clean-doc 587,23301
+(defun doc-mode-extract-keywords 602,23879
+(defun doc-mode-extract-keywords-for-tag 637,25285
+(defun doc-mode-find-keyword 642,25548
+(defun doc-mode-filter-keyword 648,25829
+(defun doc-mode-find-eligible-tags 654,26116
+(defsubst doc-mode-position 674,26923
+(defun doc-mode-keyword< 682,27175
+(defun doc-mode-sort-keywords 695,27674
+(defun doc-mode-update-parameters 710,28349
+(defun doc-mode-keywords-from-tag 727,29129
+(defun doc-mode-fix-tag-doc 748,30159
+(defalias 'doc-mode-add-tag-doc doc-mode-add-tag-doc758,30552
+(defun doc-mode-format-message 760,30610
+(defun doc-mode-check-tag-doc 769,30908
+(defun doc-mode-check-buffer 796,32212
+(defun doc-mode-first-faulty-tag-doc 804,32476
+(defun doc-mode-next-faulty-doc 812,32778
+(defvar doc-mode-folds 824,33202
+(defun doc-mode-fold-doc 827,33279
+(defun doc-mode-fold-tag-doc 847,34268
+(defun doc-mode-unfold-by-overlay 855,34575
+(defun doc-mode-unfold-by-overlay-temporary 864,34952
+(defun doc-mode-unfold-doc 870,35183
+(defun doc-mode-unfold-tag-doc 891,35909
+(defun doc-mode-fold-all 900,36238
+(defun doc-mode-unfold-all 910,36503
+(defun doc-mode-toggle-tag-doc-folding 919,36682
+
+doc-mode.elc,271
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/doc-mode.elel3,75
+;;; This file uses dynamic docstrings,7,220
+;;; This file does not contain utf-8 non-ASCII characters,9,288
+
+eproject.el,1941
+(defgroup eproject 202,7378
+(defvar eproject-project-types 210,7751
+(defvar eproject-project-names 213,7872
+(defvar eproject-extra-attributes 216,8038
+(defun define-project-attribute 233,8624
+(defmacro define-project-type 242,8955
+(defun eproject--build-parent-candidates 260,9760
+(defun eproject--scan-parents-for 268,10201
+(defun eproject--find-file-named 273,10505
+(define-project-type generic 280,11023
+(define-project-type generic-eproject 287,11275
+(define-project-type generic-git 289,11350
+(defun eproject--type-info 292,11460
+(defun eproject--project-supertypes 297,11576
+(defun eproject--project-selector 300,11661
+(defun* eproject--look-for-impl 303,11744
+(defun eproject--buffer-file-name 320,12705
+(defun* eproject--run-project-selector 326,13028
+(defun eproject--linearized-isa 334,13455
+(defun eproject--all-types 342,13743
+(defun eproject--compute-all-applicable-metadata 350,14073
+(defun eproject-get-project-metadatum 354,14250
+(defun eproject-add-project-metadatum 357,14366
+(defvar eproject-root 360,14496
+(defmacro* eproject--do-in-buffer 365,14676
+(defun* eproject-root 371,14870
+(defvar eproject-attributes-alist 376,15077
+(defun* eproject-attribute 379,15179
+(defun eproject--known-project-roots 384,15413
+(defmacro define-eproject-accessor 388,15601
+(define-eproject-accessor type)396,16075
+(define-eproject-accessor name)397,16108
+(defun eproject-reinitialize-project 399,16143
+(defun eproject--eval-user-data 408,16486
+(defun eproject--interpret-metadata 424,17212
+(defun eproject--init-attributes 431,17466
+(define-minor-mode eproject-mode490,20320
+(defun eproject-maybe-turn-on 498,20630
+(defun eproject--setup-local-variables 541,22564
+(defun eproject--search-directory-tree 553,23192
+(defun eproject-assert-type 567,23958
+(defun eproject--combine-regexps 573,24237
+(defun* eproject-list-project-files 578,24444
+(defun* eproject-list-project-files-relative 587,24990
+
+eproject.elc,315
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/eproject.elel3,75
+;;; This file uses dynamic docstrings,7,220
+;;; This file does not contain utf-8 non-ASCII characters,9,288
+(defvar eproject-project-types nil 18,1101
+
+eproject-extras.el,1226
+(defalias 'eproject-ifind-file eproject-ifind-file62,1809
+(defun eproject--shorten-filename 64,1889
+(defun eproject-find-file 73,2326
+(defun eproject--completing-read 81,2652
+(defun eproject--icompleting-read 85,2798
+(defun eproject--ido-completing-read 98,3312
+(defcustom eproject-completing-read-function102,3454
+(defun eproject--do-completing-read 115,4119
+(defun eproject--icomplete-read-with-alist 119,4299
+(defun eproject--project-buffers 123,4483
+(defun* eproject--get-name-root-alist 136,5081
+(defun* eproject--read-project-name 147,5544
+(defun* eproject--handle-root-prefix-arg 151,5716
+(define-ibuffer-filter eproject-root158,5907
+(define-ibuffer-filter eproject166,6269
+(define-ibuffer-column eproject 174,6582
+(defun eproject-ibuffer 177,6681
+(defun eproject--ibuffer-byname 185,7029
+(defmacro* with-each-buffer-in-project195,7415
+(defun eproject-kill-project-buffers 208,7965
+(defun eproject-open-all-project-files 218,8319
+(defun eproject-project-root 234,8862
+(defun eproject-revisit-project 239,9049
+(defun eproject-grep 253,9557
+(defcustom eproject-todo-expressions262,9902
+(defun eproject-todo 268,10098
+(defun eproject-eshell-cd-here 276,10399
+(defun eproject-compile 305,11818
+
+eproject-extras.elc,301
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/eproject-extras.elel3,75
+;;; This file uses dynamic docstrings,7,227
+;;; This file does not contain utf-8 non-ASCII characters,9,295
+list of files;31,2401
+
+gdb-shell.el,168
+(defconst gdb-shell-gdb-regexp 39,1462
+(defconst gdb-shell-make-regexp 43,1600
+(defun gdb-shell-input-sender 45,1668
+(define-minor-mode gdb-shell-minor-mode73,2646
+
+gdb-shell.elc,273
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Sat Apr 2,9
+;;; from file c:/Users/nflath/AppData/Roaming/.emacs.d/elpa/gdb-shell-0.4/gdb-shell.elel3,75
+;;; This file uses dynamic docstrings,7,222
+;;; This file does not contain utf-8 non-ASCII characters,9,290
+
+highlight-parentheses.el,427
+(defgroup highlight-parentheses 51,1461
+(defun hl-paren-set 56,1572
+(defcustom hl-paren-colors61,1704
+(defcustom hl-paren-background-colors 69,1988
+(defface hl-paren-face 76,2241
+(defvar hl-paren-overlays 84,2520
+(defvar hl-paren-last-point 88,2644
+(defun hl-paren-highlight 93,2851
+(define-minor-mode highlight-parentheses-mode114,3559
+(defun hl-paren-create-overlays 128,4102
+(defun hl-paren-color-update 145,4740
+
+highlight-parentheses.elc,284
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/highlight-parentheses.elel3,75
+;;; This file uses dynamic docstrings,7,233
+;;; This file does not contain utf-8 non-ASCII characters,9,301
+
+htmlize.el,3092
+(defconst htmlize-version 100,4380
+(defgroup htmlize 119,5120
+(defcustom htmlize-head-tags 123,5208
+(defcustom htmlize-output-type 128,5346
+(defcustom htmlize-generate-hyperlinks 149,6296
+(defcustom htmlize-hyperlink-style 157,6640
+(defcustom htmlize-replace-form-feeds 172,6966
+(defcustom htmlize-html-charset 188,7729
+(defcustom htmlize-convert-nonascii-to-entities 213,8819
+(defcustom htmlize-ignore-face-size 248,10566
+(defcustom htmlize-css-name-prefix 258,11024
+(defcustom htmlize-use-rgb-txt 267,11406
+(defcustom htmlize-html-major-mode 285,12167
+(defvar htmlize-before-hook 293,12479
+(defvar htmlize-after-hook 298,12634
+(defvar htmlize-file-hook 304,12856
+(defvar htmlize-buffer-places)307,12965
+(defconst htmlize-running-xemacs 313,13167
+(defvar htmlize-basic-character-table401,16766
+(defvar htmlize-extended-character-cache 437,18267
+(defun htmlize-protect-string 439,18338
+(defconst htmlize-ellipsis 476,19793
+(defun htmlize-buffer-substring-no-invisible 479,19913
+(defun htmlize-trim-ellipsis 534,22166
+(defconst htmlize-tab-spaces543,22527
+(defun htmlize-untabify 551,22796
+(defun htmlize-despam-address 587,24208
+(defun htmlize-make-hyperlinks 596,24537
+(defun htmlize-defang-local-variables 629,25747
+(defvar htmlize-x-library-search-path648,26449
+(defun htmlize-get-color-rgb-hash 670,27055
+(defvar htmlize-color-rgb-hash 709,28409
+(defun htmlize-face-specifies-property 713,28492
+(defun htmlize-face-color-internal 724,29054
+(defun htmlize-face-foreground 757,30458
+(defun htmlize-face-background 768,30842
+(defun htmlize-color-to-rgb 782,31330
+(defstruct htmlize-fstruct827,33123
+(defun htmlize-face-emacs21-attr 839,33501
+(defun htmlize-face-size 865,34458
+(defun htmlize-face-to-fstruct 876,34852
+(defmacro htmlize-copy-attr-if-set 954,38307
+(defun htmlize-merge-size 965,38770
+(defun htmlize-merge-two-faces 973,39039
+(defun htmlize-merge-faces 982,39335
+(defun htmlize-attrlist-to-fstruct 1002,40021
+(defun htmlize-face-list-p 1023,40841
+(defun htmlize-make-face-map 1050,41798
+(defun htmlize-unstringify-face 1076,42761
+(defun htmlize-faces-in-buffer 1082,42929
+(defmacro htmlize-method 1223,48728
+(defun htmlize-method-function 1228,48941
+(defvar htmlize-memoization-table 1240,49383
+(defmacro htmlize-memoize 1242,49450
+(defun htmlize-default-doctype 1256,49957
+(defun htmlize-default-body-tag 1284,51318
+(defun htmlize-css-specs 1291,51468
+(defun htmlize-css-insert-head 1318,52606
+(defun htmlize-css-insert-text 1351,53862
+(defun htmlize-inline-css-body-tag 1366,54406
+(defun htmlize-inline-css-insert-text 1371,54572
+(defun htmlize-font-body-tag 1388,55072
+(defun htmlize-font-insert-text 1394,55302
+(defun htmlize-buffer-1 1418,56367
+(defmacro htmlize-with-fontify-message 1551,61699
+(defun htmlize-ensure-fontified 1564,62173
+(defun htmlize-buffer 1594,63442
+(defun htmlize-region 1615,64349
+(defun htmlize-region-for-paste 1629,64802
+(defun htmlize-make-file-name 1642,65362
+(defun htmlize-file 1666,66270
+(defun htmlize-many-files 1729,68942
+(defun htmlize-many-files-dired 1763,70256
+
+htmlize.elc,25
+function does 291,57777
+
+icomplete+.el,479
+(defvar icomplete-eoinput)149,5774
+(defvar icompletep-prospects-length)150,5801
+(defvar icicle-nb-of-other-cycle-candidates)151,5838
+(defgroup Icomplete-Plus 155,5905
+(defface icompletep-choices173,6722
+(defface icompletep-determined179,6930
+(defface icompletep-nb-candidates184,7089
+(defface icompletep-keys191,7373
+(defvar icomplete-overlay)202,7755
+(defvar icomplete-prospects-height)203,7782
+(defmacro with-local-quit 264,10907
+(defmacro while-no-input 281,11670
+
+icomplete+.elc,273
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/icomplete+.elel3,75
+;;; This file uses dynamic docstrings,7,222
+;;; This file does not contain utf-8 non-ASCII characters,9,290
+
+javadoc-help.el,3652
+(defgroup javadoc-help 148,5215
+(defcustom javadoc-help-setting-file 154,5419
+(defcustom javadoc-help-cache-dir 159,5587
+(defun javadoc-lookup 167,5797
+(defun javadoc-help 188,6658
+(defun javadoc-set-predefined-urls 198,6939
+(defvar *jdh-javadocs* 213,7386
+(defvar *jdh-predefined-urls* 217,7531
+(defvar *jdh-url-input-history* 221,7599
+(defvar *jdh-dir-input-history* 225,7674
+(defvar *jdh-search-input-history* 229,7751
+(defvar *jdh-matched-search* 233,7829
+(defconst jdh--file-allclasses 239,7924
+(defconst jdh--jmenu-buffer 240,7982
+(defconst jdh--jmenu-mode-name 241,8033
+(defconst jdh--smenu-buffer 242,8084
+(defconst jdh--smenu-mode-name 243,8144
+(defconst jdh--temp-buffer 244,8204
+(defconst jdh--file-magic 245,8267
+(defconst jdh--file-version 246,8308
+(defun jdh-javadoc-new 252,8458
+(defun jdh-javadoc-url 258,8803
+(defun jdh-javadoc-set-url 263,8907
+(defun jdh-javadoc-refreshed 268,9010
+(defun jdh-javadoc-set-refreshed 273,9131
+(defun jdh-javadoc-enabled 280,9353
+(defun jdh-javadoc-set-enabled 285,9472
+(defun jdh-javadoc-predefined 292,9695
+(defun jdh-javadoc-set-predefined 297,9817
+(defun jdh-javadocs-add 304,10055
+(defun jdh-javadocs-get 315,10423
+(defun jdh-javadocs-find-by-url 322,10573
+(defun jdh-javadocs-remove 336,10966
+(defun jdh-javadocs-remove-at 342,11136
+(defun jdh-javadoc-to-str 349,11364
+(defun jdh-get-search-input 368,11997
+(defun jdh-search-in-files 382,12420
+(defun jdh-search-file 402,13144
+(defun jdh-get-allclasses-files 423,14110
+(defun jdh-get-allclasses-url-file 436,14634
+(defun jdh-get-allclasses-local-file 441,14798
+(defun jdh-convert-url-to-file 449,15133
+(defun jdh-select-result 458,15477
+(defun jdh-present-matches 466,15733
+(defun jdh-get-match-url 477,16105
+(defun jdh-get-match-base-url 485,16371
+(defun jdh-normalize-url 490,16489
+(defconst jdh--jmenu-table-offset 516,17487
+(defun jdh-jmenu-redraw 518,17527
+(defun jdh-jmenu-redraw-at 537,18212
+(defun jdh-jmenu-get-javadoc-index 546,18573
+(defun jdh-jmenu-valid-javadoc 551,18752
+(defun jdh-refresh-url 556,18898
+(defun jdh-download-url 566,19380
+(defun jdh-jmenu-add-url 586,20108
+(defun jdh-jmenu-add-directory 609,20928
+(defun jdh-jmenu-input-directory 627,21607
+(defun jdh-jmenu-parse-input 645,22248
+(defun jdh-jmenu-advance-cursor 656,22595
+(defun jdh-jmenu-refresh-javadoc 663,22774
+(defun jdh-jmenu-enable-javadoc 683,23556
+(defun jdh-jmenu-open-url 696,24001
+(defun jdh-jmenu-mark-char 709,24553
+(defun jdh-jmenu-mark-delete 719,24822
+(defun jdh-jmenu-unmark-delete 728,25177
+(defun jdh-jmenu-commit-deletions 734,25314
+(defvar *jdh-jmenu-mode-map* 755,25963
+(defun jdh-jmenu-mode 775,27055
+(defconst jdh--smenu-table-offset 803,28360
+(defun jdh-smenu-redraw 805,28400
+(defun jdh-matched-to-str 824,29117
+(defun jdh-file-to-class 830,29324
+(defun jdh-smenu-get-javadoc-index 836,29542
+(defun jdh-smenu-valid-javadoc 841,29721
+(defun jdh-smenu-advance-cursor 849,30000
+(defun jdh-smenu-launch-url 856,30179
+(defun jdh-smenu-open-url 869,30633
+(defun jdh-smenu-visit-url 875,30777
+(defun jdh-smenu-open-main 881,30925
+(defun jdh-smenu-open-parent 894,31425
+(defun path-parent 908,31974
+(defvar *jdh-smenu-mode-map* 920,32272
+(defun jdh-smenu-mode 936,33069
+(defun jdh-javadocs-save 959,33987
+(defun jdh-javadocs-restore 974,34567
+(defun jdh-javadocs-load-file 985,35138
+(defun jdh-javadocs-save-file 998,35585
+(defun jdh-process-predefined-urls 1012,36065
+(defun jdh-close-buffer 1068,38094
+(defun string-ltrim 1078,38331
+(defun string-rtrim 1085,38481
+(defun string-trim 1092,38630
+(defun concat-path 1096,38700
+(defun jdh-http-p 1103,38982
+
+javadoc-help.elc,275
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/javadoc-help.elel3,75
+;;; This file uses dynamic docstrings,7,224
+;;; This file does not contain utf-8 non-ASCII characters,9,292
+
+java-mode-indent-annotations.el,234
+(defun c-preprend-offset 54,2027
+(defun java-mode-indent-annotations-setup 66,2625
+(defun c-only-java-annotations-p 76,3212
+(defun c-no-indent-after-java-annotations 94,3997
+(defun c-single-indent-after-java-annotations 136,4769
+
+java-mode-indent-annotations.elc,313
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/java-mode-indent-annotations.elel3,75
+;;; This file uses dynamic docstrings,7,240
+;;; This file does not contain utf-8 non-ASCII characters,9,308
+<-->Long foo;38,2364
+
+js2-mode.el,37623
+(defvar js2-ecma-262-externs123,4962
+(defvar js2-browser-externs158,5730
+(defvar js2-rhino-externs314,9641
+(defvar js2-gears-externs345,10293
+(defvar js2-emacs22 372,10913
+(defcustom js2-highlight-level 374,10963
+(defvar js2-mode-dev-mode-p 386,11425
+(defgroup js2-mode 389,11518
+(defcustom js2-basic-offset 393,11596
+(defcustom js2-cleanup-whitespace 403,11965
+(defcustom js2-move-point-on-right-click 408,12106
+(defcustom js2-mirror-mode 420,12597
+(defcustom js2-auto-indent-p 425,12732
+(defcustom js2-bounce-indent-p 431,12939
+(defcustom js2-indent-on-enter-key 442,13480
+(defcustom js2-enter-indents-newline 448,13676
+(defcustom js2-rebind-eol-bol-keys 454,13889
+(defcustom js2-electric-keys 460,14097
+(defcustom js2-idle-timer-delay 466,14317
+(defcustom js2-dynamic-idle-timer-adjust 473,14561
+(defcustom js2-mode-escape-quotes 486,15187
+(defcustom js2-mode-squeeze-spaces 491,15325
+(defcustom js2-mode-show-parse-errors 497,15519
+(defcustom js2-mode-show-strict-warnings 502,15633
+(defcustom js2-strict-trailing-comma-warning 509,15857
+(defcustom js2-strict-missing-semi-warning 516,16133
+(defcustom js2-missing-semi-one-line-override 523,16372
+(defcustom js2-strict-inconsistent-return-warning 532,16746
+(defcustom js2-strict-cond-assign-warning 540,17089
+(defcustom js2-strict-cond-assign-warning 548,17405
+(defcustom js2-strict-var-redeclaration-warning 556,17721
+(defcustom js2-strict-var-hides-function-arg-warning 561,17882
+(defcustom js2-skip-preprocessor-directives 566,18040
+(defcustom js2-language-version 572,18234
+(defcustom js2-allow-keywords-as-property-names 581,18608
+(defcustom js2-instanceof-has-side-effects 592,18905
+(defcustom js2-allow-rhino-new-expr-initializer 598,19096
+(defcustom js2-allow-member-expr-as-function-name 617,19695
+(defvar js2-mode-version 643,20564
+(defmacro deflocal 648,20657
+(deflocal js2-token-beg 654,20852
+(deflocal js2-token-end 655,20879
+(defvar js2-EOF_CHAR 657,20908
+(defvar js2-ERROR 663,21197
+(defvar js2-EOF 664,21219
+(defvar js2-EOL 665,21238
+(defvar js2-ENTERWITH 666,21257
+(defvar js2-LEAVEWITH 667,21318
+(defvar js2-RETURN 668,21343
+(defvar js2-GOTO 669,21365
+(defvar js2-IFEQ 670,21385
+(defvar js2-IFNE 671,21405
+(defvar js2-SETNAME 672,21425
+(defvar js2-BITOR 673,21448
+(defvar js2-BITXOR 674,21469
+(defvar js2-BITAND 675,21492
+(defvar js2-EQ 676,21515
+(defvar js2-NE 677,21534
+(defvar js2-LT 678,21553
+(defvar js2-LE 679,21572
+(defvar js2-GT 680,21591
+(defvar js2-GE 681,21610
+(defvar js2-LSH 682,21629
+(defvar js2-RSH 683,21649
+(defvar js2-URSH 684,21669
+(defvar js2-ADD 685,21690
+(defvar js2-SUB 686,21734
+(defvar js2-MUL 687,21779
+(defvar js2-DIV 688,21799
+(defvar js2-MOD 689,21819
+(defvar js2-NOT 690,21839
+(defvar js2-BITNOT 691,21859
+(defvar js2-POS 692,21882
+(defvar js2-NEG 693,21926
+(defvar js2-NEW 694,21971
+(defvar js2-DELPROP 695,21991
+(defvar js2-TYPEOF 696,22015
+(defvar js2-GETPROP 697,22038
+(defvar js2-GETPROPNOWARN 698,22062
+(defvar js2-SETPROP 699,22092
+(defvar js2-GETELEM 700,22116
+(defvar js2-SETELEM 701,22140
+(defvar js2-CALL 702,22164
+(defvar js2-NAME 703,22185
+(defvar js2-NUMBER 704,22232
+(defvar js2-STRING 705,22255
+(defvar js2-NULL 706,22278
+(defvar js2-THIS 707,22299
+(defvar js2-FALSE 708,22320
+(defvar js2-TRUE 709,22342
+(defvar js2-SHEQ 710,22363
+(defvar js2-SHNE 711,22419
+(defvar js2-REGEXP 712,22477
+(defvar js2-BINDNAME 713,22500
+(defvar js2-THROW 714,22525
+(defvar js2-RETHROW 715,22547
+(defvar js2-IN 716,22628
+(defvar js2-INSTANCEOF 717,22647
+(defvar js2-LOCAL_LOAD 718,22674
+(defvar js2-GETVAR 719,22701
+(defvar js2-SETVAR 720,22724
+(defvar js2-CATCH_SCOPE 721,22747
+(defvar js2-ENUM_INIT_KEYS 722,22775
+(defvar js2-ENUM_INIT_VALUES 723,22806
+(defvar js2-ENUM_INIT_ARRAY 724,22839
+(defvar js2-ENUM_NEXT 725,22871
+(defvar js2-ENUM_ID 726,22897
+(defvar js2-THISFN 727,22921
+(defvar js2-RETURN_RESULT 728,22944
+(defvar js2-ARRAYLIT 729,23019
+(defvar js2-OBJECTLIT 730,23066
+(defvar js2-GET_REF 731,23114
+(defvar js2-SET_REF 732,23158
+(defvar js2-DEL_REF 733,23214
+(defvar js2-REF_CALL 734,23264
+(defvar js2-REF_SPECIAL 735,23330
+(defvar js2-YIELD 736,23409
+(defvar js2-DEFAULTNAMESPACE 739,23486
+(defvar js2-ESCXMLATTR 740,23519
+(defvar js2-ESCXMLTEXT 741,23546
+(defvar js2-REF_MEMBER 742,23573
+(defvar js2-REF_NS_MEMBER 743,23636
+(defvar js2-REF_NAME 744,23706
+(defvar js2-REF_NS_NAME 745,23767
+(defvar js2-first-bytecode 747,23838
+(defvar js2-last-bytecode 748,23880
+(defvar js2-TRY 750,23924
+(defvar js2-SEMI 751,23944
+(defvar js2-LB 752,23987
+(defvar js2-RB 753,24044
+(defvar js2-LC 754,24063
+(defvar js2-RC 755,24124
+(defvar js2-LP 756,24143
+(defvar js2-RP 757,24198
+(defvar js2-COMMA 758,24217
+(defvar js2-ASSIGN 760,24266
+(defvar js2-ASSIGN_BITOR 761,24321
+(defvar js2-ASSIGN_BITXOR 762,24357
+(defvar js2-ASSIGN_BITAND 763,24393
+(defvar js2-ASSIGN_LSH 764,24429
+(defvar js2-ASSIGN_RSH 765,24466
+(defvar js2-ASSIGN_URSH 766,24503
+(defvar js2-ASSIGN_ADD 767,24541
+(defvar js2-ASSIGN_SUB 768,24577
+(defvar js2-ASSIGN_MUL 769,24613
+(defvar js2-ASSIGN_DIV 770,24649
+(defvar js2-ASSIGN_MOD 771,24685
+(defvar js2-first-assign 773,24722
+(defvar js2-last-assign 774,24759
+(defvar js2-HOOK 776,24800
+(defvar js2-COLON 777,24850
+(defvar js2-OR 778,24873
+(defvar js2-AND 779,24922
+(defvar js2-INC 780,24972
+(defvar js2-DEC 781,25033
+(defvar js2-DOT 782,25054
+(defvar js2-FUNCTION 783,25107
+(defvar js2-EXPORT 784,25157
+(defvar js2-IMPORT 785,25205
+(defvar js2-IF 786,25253
+(defvar js2-ELSE 787,25297
+(defvar js2-SWITCH 788,25343
+(defvar js2-CASE 789,25391
+(defvar js2-DEFAULT 790,25437
+(defvar js2-WHILE 791,25486
+(defvar js2-DO 792,25533
+(defvar js2-FOR 793,25577
+(defvar js2-BREAK 794,25622
+(defvar js2-CONTINUE 795,25669
+(defvar js2-VAR 796,25719
+(defvar js2-WITH 797,25764
+(defvar js2-CATCH 798,25810
+(defvar js2-FINALLY 799,25857
+(defvar js2-VOID 800,25906
+(defvar js2-RESERVED 801,25952
+(defvar js2-EMPTY 803,26004
+(defvar js2-BLOCK 807,26091
+(defvar js2-LABEL 808,26140
+(defvar js2-TARGET 809,26179
+(defvar js2-LOOP 810,26203
+(defvar js2-EXPR_VOID 811,26225
+(defvar js2-EXPR_RESULT 812,26292
+(defvar js2-JSR 813,26357
+(defvar js2-SCRIPT 814,26378
+(defvar js2-TYPEOFNAME 815,26444
+(defvar js2-USE_STACK 816,26501
+(defvar js2-SETPROP_OP 817,26528
+(defvar js2-SETELEM_OP 818,26579
+(defvar js2-LOCAL_BLOCK 819,26631
+(defvar js2-SET_REF_OP 820,26660
+(defvar js2-DOTDOT 823,26739
+(defvar js2-COLONCOLON 824,26793
+(defvar js2-XML 825,26842
+(defvar js2-DOTQUERY 826,26884
+(defvar js2-XMLATTR 827,26959
+(defvar js2-XMLEND 828,26994
+(defvar js2-TO_OBJECT 831,27044
+(defvar js2-TO_DOUBLE 832,27071
+(defvar js2-GET 834,27099
+(defvar js2-SET 835,27158
+(defvar js2-LET 836,27217
+(defvar js2-CONST 837,27276
+(defvar js2-SETCONST 838,27299
+(defvar js2-SETCONSTVAR 839,27325
+(defvar js2-ARRAYCOMP 840,27354
+(defvar js2-LETEXPR 841,27381
+(defvar js2-WITHEXPR 842,27406
+(defvar js2-DEBUGGER 843,27432
+(defvar js2-COMMENT 845,27459
+(defvar js2-ENUM 846,27484
+(defconst js2-num-tokens 848,27535
+(defconst js2-debug-print-trees 850,27576
+(deflocal js2-ts-dirty-line 860,27979
+(deflocal js2-ts-regexp-flags 864,28112
+(deflocal js2-ts-string 867,28188
+(deflocal js2-ts-number 871,28278
+(deflocal js2-ts-hit-eof 875,28377
+(deflocal js2-ts-line-start 878,28448
+(deflocal js2-ts-lineno 881,28520
+(deflocal js2-ts-line-end-char 884,28588
+(deflocal js2-ts-cursor 887,28664
+(deflocal js2-ts-is-xml-attribute 891,28786
+(deflocal js2-ts-xml-is-tag-content 894,28866
+(deflocal js2-ts-xml-open-tags-count 897,28948
+(deflocal js2-ts-string-buffer 900,29029
+(deflocal js2-ts-comment-type 904,29160
+(deflocal js2-parsed-errors 909,29258
+(deflocal js2-parsed-warnings 912,29345
+(deflocal js2-recover-from-parse-errors 915,29436
+(deflocal js2-parse-hook 926,29852
+(defvar js2-parse-finished-hook 929,29937
+(deflocal js2-is-eval-code 933,30069
+(defvar js2-parse-ide-mode 939,30326
+(defconst js2-clear-ti-mask 947,30663
+(defconst js2-ti-after-eol 950,30742
+(defconst js2-ti-check-label 953,30825
+(deflocal js2-compiler-generate-debug-info 958,30967
+(deflocal js2-compiler-use-dynamic-scope 959,31013
+(deflocal js2-compiler-reserved-keywords-as-identifier 960,31059
+(deflocal js2-compiler-xml-available 961,31119
+(deflocal js2-compiler-optimization-level 962,31159
+(deflocal js2-compiler-generating-source 963,31204
+(deflocal js2-compiler-strict-mode 964,31248
+(deflocal js2-compiler-report-warning-as-error 965,31288
+(deflocal js2-compiler-generate-observer-count 966,31340
+(deflocal js2-compiler-activation-names 967,31392
+(deflocal js2-called-by-compile-function 972,31526
+(deflocal js2-current-flagged-token 978,31764
+(deflocal js2-current-token 979,31809
+(deflocal js2-nesting-of-function 984,31964
+(deflocal js2-recorded-assignments 986,32002
+(defcustom js2-global-externs 989,32088
+(deflocal js2-default-externs 1001,32570
+(defcustom js2-include-browser-externs 1014,33045
+(defcustom js2-include-rhino-externs 1025,33509
+(defcustom js2-include-gears-externs 1031,33724
+(deflocal js2-additional-externs 1037,33938
+(deflocal js2-current-script-or-fn 1073,35567
+(deflocal js2-current-scope 1074,35607
+(deflocal js2-nesting-of-with 1075,35640
+(deflocal js2-label-set 1076,35673
+(deflocal js2-loop-set 1079,35746
+(deflocal js2-loop-and-switch-set 1080,35774
+(deflocal js2-has-return-value 1081,35813
+(deflocal js2-end-flags 1082,35849
+(defvar js2-prev-name-token-start 1089,36099
+(defvar js2-prev-name-token-string 1090,36138
+(defsubst js2-save-name-token-data 1092,36179
+(defconst js2-end-unreached 1116,37114
+(defconst js2-end-drops-off 1117,37151
+(defconst js2-end-returns 1118,37188
+(defconst js2-end-returns-value 1119,37225
+(defconst js2-end-yields 1120,37262
+(deflocal js2-labeled-stmt 1126,37559
+(deflocal js2-in-for-init 1132,37884
+(deflocal js2-temp-name-counter 1133,37915
+(deflocal js2-parse-stmt-count 1134,37950
+(defsubst js2-get-next-temp-name 1136,37985
+(defvar js2-parse-interruptable-p 1139,38069
+(defvar js2-statements-per-pause 1143,38215
+(deflocal js2-record-comments 1152,38648
+(deflocal js2-scanned-comments 1155,38754
+(defun js2-underline-color 1158,38840
+(defcustom js2-mode-indent-inhibit-undo 1166,39118
+(defcustom js2-mode-indent-ignore-first-tab 1173,39385
+(defvar js2-indent-hook 1193,40397
+(defface js2-warning-face1215,41445
+(defface js2-error-face1224,41731
+(defface js2-jsdoc-tag-face1233,41968
+(defface js2-jsdoc-type-face1238,42111
+(defface js2-jsdoc-value-face1243,42255
+(defface js2-function-param-face1248,42397
+(defface js2-instance-member-face1253,42545
+(defface js2-private-member-face1259,42715
+(defface js2-private-function-call-face1265,42890
+(defface js2-jsdoc-html-tag-name-face1271,43073
+(defface js2-jsdoc-html-tag-delimiter-face1287,43693
+(defface js2-magic-paren-face1303,44320
+(defcustom js2-post-parse-callbacks 1308,44454
+(defface js2-external-variable-face1315,44711
+(defcustom js2-highlight-external-variables 1324,45116
+(defcustom js2-auto-insert-catch-block 1329,45261
+(defvar js2-mode-map1334,45410
+(defconst js2-mode-identifier-re 1426,49609
+(defvar js2-mode-//-comment-re 1428,49671
+(defvar js2-mode-hook 1432,49838
+(deflocal js2-mode-ast 1434,49866
+(deflocal js2-mode-parse-timer 1435,49914
+(deflocal js2-mode-buffer-dirty-p 1436,49970
+(deflocal js2-mode-parsing 1437,50029
+(deflocal js2-mode-node-overlay 1438,50081
+(defvar js2-mode-show-overlay 1440,50119
+(deflocal js2-mode-fontifications 1443,50229
+(deflocal js2-mode-deferred-properties 1444,50287
+(deflocal js2-imenu-recorder 1445,50350
+(deflocal js2-imenu-function-map 1446,50403
+(defvar js2-paragraph-start1448,50461
+(defvar js2-syntactic-ws-start1453,50651
+(defvar js2-syntactic-ws-end1456,50749
+(defvar js2-syntactic-eol1459,50806
+(defvar js2-comment-prefix-regexp1468,51108
+(defvar js2-comment-start-skip1471,51159
+(defvar js2-mode-verbose-parse-p 1474,51219
+(defvar js2-mode-functions-hidden 1477,51326
+(defvar js2-mode-comments-hidden 1478,51384
+(defvar js2-mode-syntax-table1480,51442
+(defvar js2-mode-abbrev-table 1486,51601
+(define-abbrev-table 'js2-mode-abbrev-table js2-mode-abbrev-table1488,51683
+(defvar js2-mode-must-byte-compile 1490,51732
+(defvar js2-mode-pending-parse-callbacks 1493,51864
+(defvar js2-mode-last-indented-line 1496,51980
+(defun js2-delete-if 1600,55712
+(defun js2-position 1606,55892
+(defun js2-find-if 1618,56258
+(defmacro js2-time 1629,56541
+(def-edebug-spec js2-time 1641,56945
+(defsubst neq 1643,56975
+(defsubst js2-same-line 1647,57065
+(defsubst js2-same-line-2 1652,57218
+(defun js2-code-bug 1658,57361
+(defsubst js2-record-parse-error 1664,57606
+(defsubst js2-report-error 1670,57818
+(defsubst js2-report-warning 1682,58241
+(defsubst js2-add-strict-warning 1690,58556
+(defmacro js2-clear-flag 1703,59033
+(defmacro js2-set-flag 1706,59121
+(defsubst js2-flag-set-p 1710,59230
+(defsubst js2-flag-not-set-p 1713,59299
+(defmacro js2-with-unmodifying-text-property-changes 1717,59425
+(def-edebug-spec js2-with-unmodifying-text-property-changes 1736,60163
+(defmacro js2-with-underscore-as-word-syntax 1738,60227
+(def-edebug-spec js2-with-underscore-as-word-syntax 1749,60701
+(defmacro with-buffer 1751,60757
+(defsubst char-is-uppercase 1764,61085
+(defsubst char-is-lowercase 1769,61228
+(def-edebug-spec with-buffer 1775,61412
+(defvar js2-tokens 1796,61784
+(defconst js2-token-names1799,61882
+(defun js2-token-name 1814,62500
+(defsubst js2-token-sym 1828,62943
+(defconst js2-token-codes1832,63075
+(defsubst js2-token-code 1843,63486
+(defsubst js2-report-scan-error 1848,63680
+(defsubst js2-get-string-from-buffer 1856,63967
+(defsubst js2-add-to-string 1865,64298
+(defsubst js2-unget-char 1872,64638
+(defsubst js2-get-char 1877,64821
+(defsubst js2-read-unicode-escape 1898,65669
+(defsubst js2-match-char 1914,66442
+(defsubst js2-peek-char 1923,66708
+(defsubst js2-java-identifier-start-p 1928,66789
+(defsubst js2-java-identifier-part-p 1934,66911
+(defsubst js2-alpha-p 1943,67185
+(defsubst js2-digit-p 1948,67306
+(defsubst js2-js-space-p 1951,67362
+(defconst js2-eol-chars 1959,67553
+(defsubst js2-skip-line 1961,67607
+(defun js2-init-scanner 1968,67795
+(defun js2-token-to-string 1996,68851
+(defconst js2-keywords2009,69255
+(defconst js2-kwd-tokens2027,69669
+(defconst js2-reserved-words2058,70916
+(defconst js2-keyword-names2074,71216
+(defconst js2-reserved-word-names2085,71620
+(defsubst js2-collect-string 2093,71887
+(defun js2-string-to-keyword 2106,72153
+(defsubst js2-ts-set-char-token-bounds 2112,72406
+(defsubst js2-ts-return 2117,72571
+(defsubst js2-x-digit-to-int 2123,72757
+(defun js2-get-token 2146,73371
+(defun js2-read-regexp 2577,90939
+(defun js2-get-first-xml-token 2631,92778
+(defsubst js2-xml-discard-string 2638,92972
+(defun js2-get-next-xml-token 2644,93184
+(defun js2-read-quoted-string 2760,98202
+(defun js2-read-xml-comment 2770,98491
+(defun js2-read-cdata 2789,99096
+(defun js2-read-entity 2808,99697
+(defun js2-read-PI 2824,100076
+(defun js2-scanner-get-line 2837,100459
+(defvar js2-message-table2861,101080
+(defmacro js2-msg 2866,101249
+(defun js2-get-msg 2870,101366
+(defvar js2-property-flag 3522,119129
+(defvar js2-attribute-flag 3523,119204
+(defvar js2-descendants-flag 3524,119254
+(defsubst js2-relpos 3526,119305
+(defsubst js2-make-pad 3531,119438
+(defsubst js2-visit-ast 3536,119552
+(defstruct (js2-node3567,120891
+(defsubst js2-node-get-prop 3576,121224
+(defsubst js2-node-set-prop 3579,121341
+(defsubst js2-fixup-starts 3583,121475
+(defsubst js2-node-add-children 3591,121774
+(defsubst js2-node-abs-pos 3601,122184
+(defsubst js2-node-abs-end 3607,122341
+(defstruct (js2-block-node3616,122709
+(defsubst js2-visit-block 3630,123319
+(defun js2-print-block 3635,123486
+(defstruct (js2-scope3642,123670
+(defun js2-scope-set-parent-scope 3662,124643
+(defun js2-node-get-enclosing-scope 3668,124885
+(defun js2-get-defining-scope 3676,125176
+(defsubst js2-scope-get-symbol 3693,125748
+(defsubst js2-scope-put-symbol 3702,126110
+(defstruct (js2-symbol3713,126541
+(defstruct (js2-error-node3723,126845
+(defstruct (js2-script-node3734,127333
+(defun js2-print-script 3753,128187
+(defstruct (js2-ast-root3757,128302
+(defun js2-visit-ast-root 3774,129138
+(defstruct (js2-comment-node3780,129341
+(defun js2-print-comment 3792,129899
+(defstruct (js2-expr-stmt-node3798,130113
+(defsubst js2-expr-stmt-node-set-has-result 3808,130522
+(defun js2-visit-expr-stmt-node 3815,130846
+(defun js2-print-expr-stmt-node 3818,130934
+(defstruct (js2-loop-node3822,131049
+(defstruct (js2-do-node3830,131319
+(defun js2-visit-do-node 3848,132109
+(defun js2-print-do-node 3852,132229
+(defstruct (js2-while-node3861,132513
+(defun js2-visit-while-node 3877,133236
+(defun js2-print-while-node 3881,133365
+(defstruct (js2-for-node3889,133608
+(defun js2-visit-for-node 3909,134491
+(defun js2-print-for-node 3915,134700
+(defstruct (js2-for-in-node3927,135061
+(defun js2-visit-for-in-node 3951,136236
+(defun js2-print-for-in-node 3956,136414
+(defstruct (js2-return-node3970,136832
+(defun js2-visit-return-node 3983,137413
+(defun js2-print-return-node 3987,137535
+(defstruct (js2-if-node3994,137728
+(defun js2-visit-if-node 4017,138776
+(defun js2-print-if-node 4023,138984
+(defstruct (js2-try-node4043,139541
+(defun js2-visit-try-node 4060,140274
+(defun js2-print-try-node 4067,140528
+(defstruct (js2-catch-node4081,140949
+(defun js2-visit-catch-node 4104,142085
+(defun js2-print-catch-node 4110,142304
+(defstruct (js2-finally-node4123,142720
+(defun js2-visit-finally-node 4136,143317
+(defun js2-print-finally-node 4139,143401
+(defstruct (js2-switch-node4145,143577
+(defun js2-visit-switch-node 4164,144514
+(defun js2-print-switch-node 4169,144669
+(defstruct (js2-case-node4179,144963
+(defun js2-visit-case-node 4193,145602
+(defun js2-print-case-node 4198,145763
+(defstruct (js2-throw-node4210,146085
+(defun js2-visit-throw-node 4223,146640
+(defun js2-print-throw-node 4226,146720
+(defstruct (js2-with-node4231,146854
+(defun js2-visit-with-node 4250,147685
+(defun js2-print-with-node 4254,147808
+(defstruct (js2-label-node4262,148044
+(defun js2-print-label 4276,148650
+(defstruct (js2-labeled-stmt-node4281,148759
+(defun js2-get-label-by-name 4299,149724
+(defun js2-visit-labeled-stmt 4310,150163
+(defun js2-print-labeled-stmt 4315,150332
+(defun js2-labeled-stmt-node-contains 4320,150506
+(defsubst js2-labeled-stmt-node-add-label 4328,150820
+(defstruct (js2-jump-node4333,151051
+(defun js2-visit-jump-node 4340,151327
+(defstruct (js2-break-node4345,151496
+(defun js2-print-break-node 4361,152304
+(defstruct (js2-continue-node4368,152491
+(defun js2-print-continue-node 4384,153318
+(defstruct (js2-function-node4391,153517
+(defun js2-visit-function-node 4423,155412
+(defun js2-print-function-node 4430,155651
+(defsubst js2-function-name 4459,156517
+(defstruct (js2-var-decl-node4469,157086
+(defun js2-visit-var-decl 4487,158028
+(defun js2-print-var-decl 4491,158132
+(defstruct (js2-var-init-node4510,158734
+(defun js2-visit-var-init-node 4526,159532
+(defun js2-print-var-init-node 4531,159719
+(defstruct (js2-cond-node4541,159994
+(defun js2-visit-cond-node 4562,160850
+(defun js2-print-cond-node 4567,161030
+(defstruct (js2-infix-node4576,161304
+(defun js2-visit-infix-node 4595,162156
+(defconst js2-operator-tokens4601,162352
+(defun js2-print-infix-node 4653,164342
+(defstruct (js2-assign-node4666,164745
+(defstruct (js2-unary-node4681,165433
+(defun js2-visit-unary-node 4697,166163
+(defun js2-print-unary-node 4700,166246
+(defstruct (js2-let-node4716,166718
+(defun js2-visit-let-node 4736,167586
+(defun js2-print-let-node 4742,167770
+(defstruct (js2-keyword-node4748,167940
+(defun js2-print-keyword-node 4761,168553
+(defsubst js2-this-node-p 4772,168947
+(defstruct (js2-new-node4776,169087
+(defun js2-visit-new-node 4797,170082
+(defun js2-print-new-node 4804,170314
+(defstruct (js2-name-node4814,170600
+(defun js2-print-name-node 4829,171292
+(defsubst js2-name-node-length 4833,171388
+(defstruct (js2-number-node4840,171601
+(defun js2-print-number-node 4856,172403
+(defstruct (js2-regexp-node4860,172523
+(defun js2-print-regexp 4876,173299
+(defstruct (js2-string-node4884,173497
+(defun js2-print-string-node 4900,174312
+(defstruct (js2-array-node4904,174407
+(defun js2-visit-array-node 4917,175003
+(defun js2-print-array-node 4922,175146
+(defstruct (js2-object-node4927,175273
+(defun js2-visit-object-node 4940,175867
+(defun js2-print-object-node 4944,175969
+(defstruct (js2-object-prop-node4949,176098
+(defun js2-print-object-prop-node 4965,176964
+(defstruct (js2-getter-setter-node4971,177150
+(defun js2-print-getter-setter 4987,178027
+(defstruct (js2-prop-get-node4996,178329
+(defun js2-visit-prop-get-node 5009,178981
+(defun js2-print-prop-get-node 5015,179192
+(defstruct (js2-elem-get-node5021,179369
+(defun js2-visit-elem-get-node 5040,180344
+(defun js2-print-elem-get-node 5046,180563
+(defstruct (js2-call-node5053,180759
+(defun js2-visit-call-node 5072,181654
+(defun js2-print-call-node 5077,181800
+(defstruct (js2-yield-node5084,181980
+(defun js2-visit-yield-node 5097,182554
+(defun js2-print-yield-node 5100,182635
+(defstruct (js2-paren-node5107,182816
+(defun js2-visit-paren-node 5122,183501
+(defun js2-print-paren-node 5125,183581
+(defstruct (js2-array-comp-node5131,183719
+(defun js2-visit-array-comp-node 5154,185008
+(defun js2-print-array-comp-node 5161,185262
+(defstruct (js2-array-comp-loop-node5176,185686
+(defun js2-visit-array-comp-loop 5194,186746
+(defun js2-print-array-comp-loop 5198,186901
+(defstruct (js2-empty-expr-node5205,187108
+(defstruct (js2-xml-node5216,187591
+(defun js2-print-xml-node 5230,188243
+(defstruct (js2-xml-js-expr-node5234,188342
+(defun js2-visit-xml-js-expr 5248,189042
+(defun js2-print-xml-js-expr 5251,189129
+(defstruct (js2-xml-dot-query-node5257,189274
+(defun js2-print-xml-dot-query 5276,190258
+(defstruct (js2-xml-ref-node5283,190461
+(defsubst js2-xml-ref-node-attr-access-p 5312,191649
+(defstruct (js2-xml-prop-ref-node5317,191855
+(defun js2-visit-xml-prop-ref-node 5344,193131
+(defun js2-print-xml-prop-ref-node 5350,193378
+(defstruct (js2-xml-elem-ref-node5360,193732
+(defun js2-visit-xml-elem-ref-node 5396,195389
+(defun js2-print-xml-elem-ref-node 5402,195628
+(defstruct (js2-xml-start-tag-node5416,196082
+(defun js2-visit-xml-start-tag 5435,197094
+(defun js2-print-xml-start-tag 5441,197287
+(defstruct (js2-xml-end-tag-node5451,197681
+(defun js2-visit-xml-end-tag 5464,198297
+(defun js2-print-xml-end-tag 5467,198384
+(defstruct (js2-xml-name-node5473,198530
+(defun js2-visit-xml-name-node 5491,199498
+(defun js2-print-xml-name-node 5494,199589
+(defstruct (js2-xml-pi-node5502,199839
+(defun js2-visit-xml-pi-node 5517,200539
+(defun js2-print-xml-pi-node 5522,200692
+(defstruct (js2-xml-cdata-node5530,200920
+(defun js2-visit-xml-cdata-node 5543,201578
+(defun js2-print-xml-cdata-node 5546,201669
+(defstruct (js2-xml-attr-node5550,201786
+(defun js2-visit-xml-attr-node 5569,202673
+(defun js2-print-xml-attr-node 5573,202807
+(defstruct (js2-xml-text-node5583,203131
+(defun js2-visit-xml-text-node 5596,203764
+(defun js2-print-xml-text-node 5599,203853
+(defstruct (js2-xml-comment-node5604,203991
+(defun js2-print-xml-comment 5615,204506
+(defsubst js2-node-line 5621,204621
+(defsubst js2-block-node-kid 5626,204826
+(defsubst js2-block-node-first 5630,204961
+(defun js2-node-root 5634,205097
+(defun js2-node-position-in-parent 5642,205302
+(defsubst js2-node-short-name 5654,205762
+(defsubst js2-node-child-list 5659,205941
+(defsubst js2-node-set-child-list 5685,206825
+(defconst js2-paren-expr-nodes5709,207697
+(defsubst js2-paren-expr-node-p 5730,208374
+(defsubst js2-node-lp 5738,208769
+(defsubst js2-node-rp 5773,209877
+(defsubst js2-node-first-child 5807,210984
+(defsubst js2-node-last-child 5811,211124
+(defun js2-node-prev-sibling 5815,211269
+(defun js2-node-next-sibling 5829,211744
+(defun js2-node-find-child-before 5840,212119
+(defun js2-node-find-child-after 5866,213121
+(defun js2-node-replace-child 5873,213409
+(defun js2-node-buffer 5884,213780
+(defsubst js2-block-node-push 5893,214093
+(defun js2-node-string 5903,214507
+(defvar js2-discovered-node 5914,214912
+(defvar js2-visitor-offset 5918,215055
+(defvar js2-node-search-point 5921,215137
+(defun js2-node-at-point 5936,215625
+(defun js2-node-at-point-visitor 5970,217039
+(defsubst js2-block-comment-p 6000,218188
+(defun js2-comment-at-point 6006,218466
+(defun js2-mode-find-parent-fn 6025,219141
+(defun js2-mode-find-enclosing-fn 6033,219431
+(defun js2-mode-find-enclosing-node 6043,219737
+(defun js2-node-parent-script-or-fn 6057,220223
+(defsubst js2-nested-function-p 6068,220606
+(defsubst js2-mode-shift-kids 6075,220959
+(defsubst js2-mode-shift-children 6080,221112
+(defsubst js2-node-is-descendant 6086,221413
+(defun js2-visit-none 6095,221643
+(defun js2-print-none 6099,221742
+(defun js2-print-body 6102,221837
+(defun js2-print-list 6109,222071
+(defun js2-print-tree 6118,222314
+(defun js2-print-ast 6124,222537
+(defconst js2-side-effecting-tokens6135,222947
+(defun js2-node-has-side-effects 6210,225460
+(defun js2-member-expr-leftmost-name 6237,226698
+(defconst js2-stmt-node-types6259,227634
+(defun js2-stmt-node-p 6285,228530
+(defsubst js2-mode-find-first-stmt 6294,228927
+(defun js2-node-parent-stmt 6302,229229
+(defconst js2-END_UNREACHED 6362,231649
+(defconst js2-END_DROPS_OFF 6363,231680
+(defconst js2-END_RETURNS 6364,231711
+(defconst js2-END_RETURNS_VALUE 6365,231740
+(defconst js2-END_YIELDS 6366,231775
+(defun js2-has-consistent-return-usage 6368,231804
+(defun js2-end-check-if 6379,232359
+(defun js2-end-check-switch 6391,232855
+(defun js2-end-check-try 6414,233755
+(defun js2-end-check-loop 6438,234825
+(defun js2-end-check-block 6471,236093
+(defun js2-end-check-label 6488,236787
+(defun js2-end-check-break 6499,237292
+(defun js2-end-check 6509,237685
+(defun js2-always-defined-boolean-p 6551,239158
+(defsubst js2-set-face 6582,239946
+(defsubst js2-set-kid-face 6593,240368
+(defsubst js2-fontify-kwd 6603,240703
+(defsubst js2-clear-face 6606,240810
+(defsubst js2-record-text-property 6612,241047
+(defconst js2-ecma-global-props6616,241226
+(defconst js2-ecma-object-props6625,241520
+(defconst js2-ecma-global-funcs6633,241759
+(defconst js2-ecma-number-props6643,242063
+(defconst js2-ecma-date-props 6652,242366
+(defconst js2-ecma-math-props6656,242512
+(defconst js2-ecma-math-funcs6665,242767
+(defconst js2-ecma-function-props6674,243098
+(defsubst js2-parse-highlight-prop-get 6715,245013
+(defun js2-parse-highlight-member-expr-node 6761,246936
+(defun js2-parse-highlight-member-expr-fn-name 6804,248954
+(defconst js2-jsdoc-param-tag-regexp6823,249857
+(defconst js2-jsdoc-typed-tag-regexp6832,250168
+(defconst js2-jsdoc-arg-tag-regexp6850,250611
+(defconst js2-jsdoc-empty-tag-regexp6877,251262
+(defconst js2-jsdoc-link-tag-regexp6920,252279
+(defconst js2-jsdoc-see-tag-regexp6924,252417
+(defconst js2-jsdoc-html-tag-regexp6928,252543
+(defsubst js2-jsdoc-highlight-helper 6932,252685
+(defun js2-highlight-jsdoc 6951,253366
+(defun js2-highlight-assign-targets 6984,254841
+(defun js2-highlight-undeclared-vars 7011,256047
+(defsubst js2-prop-node-name 7117,260569
+(defsubst js2-node-qname-component 7132,261119
+(defsubst js2-record-function-qname 7141,261492
+(defun js2-record-imenu-functions 7151,262021
+(defun js2-compute-nested-prop-get 7179,263191
+(defun js2-record-object-literal 7203,264379
+(defsubst js2-node-top-level-decl-p 7233,266016
+(defun js2-browse-postprocess-chains 7249,266604
+(defsubst js2-treeify 7309,269564
+(defun js2-build-alist-trie 7315,269744
+(defun js2-flatten-trie 7357,271458
+(defun js2-build-imenu-index 7385,272275
+(defun js2-test-print-chains 7392,272570
+(defconst js2-version 7474,276139
+(defmacro js2-record-face 7477,276232
+(defsubst js2-node-end 7481,276381
+(defsubst js2-record-comment 7488,276632
+(defsubst js2-peek-token 7502,277322
+(defsubst js2-peek-flagged-token 7548,279231
+(defsubst js2-consume-token 7553,279379
+(defsubst js2-next-token 7556,279455
+(defsubst js2-next-flagged-token 7561,279542
+(defsubst js2-match-token 7566,279659
+(defsubst js2-valid-prop-name-token 7574,279901
+(defsubst js2-match-prop-name 7580,280074
+(defsubst js2-must-match-prop-name 7590,280402
+(defsubst js2-peek-token-or-eol 7596,280553
+(defsubst js2-set-check-for-label 7608,281060
+(defsubst js2-must-match 7612,281238
+(defsubst js2-inside-function 7621,281550
+(defsubst js2-set-requires-activation 7624,281619
+(defsubst js2-check-activation-name 7628,281793
+(defsubst js2-set-is-generator 7636,282138
+(defsubst js2-must-have-xml 7640,282301
+(defsubst js2-push-scope 7644,282419
+(defsubst js2-pop-scope 7652,282726
+(defsubst js2-enter-loop 7656,282833
+(defsubst js2-exit-loop 7669,283458
+(defsubst js2-enter-switch 7674,283558
+(defsubst js2-exit-switch 7677,283646
+(defun js2-parse 7680,283709
+(defun js2-do-parse 7740,286289
+(defun js2-function-parser 7781,288037
+(defun js2-parse-function-closure-body 7785,288145
+(defun js2-parse-function-body 7796,288661
+(defun js2-parse-function-params 7823,289814
+(defsubst js2-check-inconsistent-return-warning 7848,290811
+(defun js2-parse-function 7866,291719
+(defun js2-parse-statements 7962,296141
+(defun js2-parse-statement 7984,297101
+(defconst js2-parsers8003,297797
+(defsubst js2-parse-warn-missing-semi 8030,299103
+(defconst js2-no-semi-insertion8041,299462
+(defconst js2-autoinsert-semi-and-warn8055,299748
+(defun js2-statement-helper 8058,299823
+(defun js2-auto-insert-semicolon 8078,300522
+(defun js2-parse-condition 8097,301307
+(defun js2-parse-if 8118,302252
+(defun js2-parse-switch 8146,303293
+(defun js2-parse-while 8213,305954
+(defun js2-parse-do 8234,306702
+(defun js2-parse-for 8264,307796
+(defun js2-parse-try 8355,311535
+(defun js2-parse-throw 8440,315016
+(defsubst js2-match-jump-label-name 8457,315615
+(defun js2-parse-break 8466,316014
+(defun js2-parse-continue 8495,317368
+(defun js2-parse-with 8527,318836
+(defun js2-parse-const-var 8548,319679
+(defsubst js2-wrap-with-expr-stmt 8563,320174
+(defun js2-parse-let-stmt 8574,320659
+(defun js2-parse-ret-yield 8590,321242
+(defconst js2-parse-return-stmt-enders8593,321325
+(defsubst js2-now-all-set 8596,321441
+(defun js2-parse-return-or-yield 8604,321797
+(defun js2-parse-debugger 8665,324585
+(defun js2-parse-block 8669,324683
+(defun js2-parse-semi 8685,325185
+(defun js2-parse-default-xml-namespace 8697,325594
+(defun js2-record-label 8724,326730
+(defun js2-parse-name-or-label 8743,327617
+(defun js2-parse-expr-stmt 8788,329573
+(defun js2-parse-variables 8792,329741
+(defun js2-parse-let 8865,332664
+(defsubst js2-define-new-symbol 8900,334180
+(defun js2-define-symbol 8905,334370
+(defun js2-parse-expr 8950,336453
+(defun js2-parse-assign-expr 8971,337211
+(defun js2-parse-cond-expr 9004,338466
+(defun js2-make-binary 9029,339373
+(defun js2-parse-or-expr 9049,340218
+(defun js2-parse-and-expr 9057,340454
+(defun js2-parse-bit-or-expr 9065,340697
+(defun js2-parse-bit-xor-expr 9073,340953
+(defun js2-parse-bit-and-expr 9081,341212
+(defconst js2-parse-eq-ops9089,341461
+(defun js2-parse-eq-expr 9092,341531
+(defconst js2-parse-rel-ops9102,341828
+(defun js2-parse-rel-expr 9105,341917
+(defconst js2-parse-shift-ops9121,342333
+(defun js2-parse-shift-expr 9124,342399
+(defun js2-parse-add-expr 9137,342746
+(defconst js2-parse-mul-ops9150,343096
+(defun js2-parse-mul-expr 9153,343159
+(defsubst js2-make-unary 9166,343506
+(defconst js2-incrementable-node-types9188,344265
+(defsubst js2-check-bad-inc-dec 9192,344432
+(defun js2-parse-unary-expr 9200,344760
+(defun js2-parse-xml-initializer 9249,346484
+(defun js2-parse-argument-list 9305,348713
+(defun js2-parse-member-expr 9319,349233
+(defun js2-parse-member-expr-tail 9360,350708
+(defun js2-parse-dot-query 9387,351654
+(defun js2-parse-element-get 9413,352598
+(defun js2-parse-function-call 9435,353438
+(defun js2-parse-property-access 9451,354052
+(defun js2-parse-attribute-access 9509,356672
+(defun js2-parse-property-name 9537,357652
+(defun js2-parse-xml-elem-ref 9583,359509
+(defun js2-parse-primary-expr 9607,360517
+(defun js2-parse-name 9681,363158
+(defsubst js2-parse-warn-trailing-comma 9704,364253
+(defun js2-parse-array-literal 9717,364614
+(defun js2-parse-array-comprehension 9768,366440
+(defun js2-parse-array-comp-loop 9796,367735
+(defun js2-parse-object-literal 9855,370106
+(defun js2-parse-named-prop 9899,371718
+(defun js2-parse-plain-property 9930,373001
+(defun js2-parse-getter-setter-prop 9949,373743
+(defun js2-create-name-node 9977,374900
+(defconst js-possibly-braceless-keyword-re10040,377840
+(defconst js-indent-operator-re10047,378075
+(defsubst js2-code-at-bol-p 10056,378498
+(defun js2-insert-and-indent 10060,378600
+(defun js-re-search-forward-inner 10075,379251
+(defun js-re-search-forward 10096,380018
+(defun js-re-search-backward-inner 10115,380747
+(defun js-re-search-backward 10135,381501
+(defun js-looking-at-operator-p 10154,382234
+(defun js-continued-expression-p 10164,382589
+(defun js-end-of-do-while-loop-p 10177,383020
+(defun js-ctrl-statement-indentation 10201,383981
+(defun js2-indent-in-array-comp 10227,385141
+(defun js2-array-comp-indentation 10249,386083
+(defun js-proper-indentation 10261,386425
+(defun js2-lineup-comment 10309,388203
+(defun js2-backward-sws 10321,388620
+(defun js2-forward-sws 10326,388747
+(defsubst js2-current-indent 10331,388871
+(defsubst js2-arglist-close 10340,389145
+(defsubst js2-indent-looks-like-label-p 10348,389377
+(defun js2-indent-in-objlit-p 10353,389522
+(defsubst js2-indent-objlit-arg-p 10369,390147
+(defsubst js2-indent-case-block-p 10380,390465
+(defsubst js2-syntax-bol 10389,390689
+(defun js2-bounce-indent 10397,390917
+(defsubst js2-1-line-comment-continuation-p 10560,398196
+(defun js2-indent-line 10576,398700
+(defun js2-indent-region 10615,400327
+(defun js2-mode 10635,400791
+(defun js2-mode-check-compat 10728,405026
+(defun js2-mode-exit 10738,405506
+(defun js2-before-save 10751,405934
+(defsubst js2-mode-reset-timer 10761,406293
+(defun js2-mode-edit 10768,406528
+(defun js2-mode-run-font-lock 10783,407148
+(defun js2-reparse 10800,408009
+(defun js2-mode-show-node 10847,410177
+(defun js2-mode-hide-overlay 10870,411112
+(defun js2-mode-reset 10884,411687
+(defsubst js2-mode-show-warn-or-err 10890,411802
+(defun js2-remove-overlays 10906,412486
+(defun js2-error-at-point 10915,412771
+(defun js2-mode-fontify-regions 10922,413004
+(defun js2-mode-show-errors 10935,413592
+(defun js2-mode-remove-suppressed-warnings 10941,413794
+(defun js2-mode-show-warnings 10969,415134
+(defun js2-echo-error 10975,415352
+(defalias #'js2-echo-help 10981,415524
+(defun js2-enter-key 10983,415569
+(defun js2-mode-split-string 11005,416300
+(defun js2-mode-extend-comment 11029,417187
+(defun js2-fill-string 11079,418879
+(defun js2-fill-comment 11107,419945
+(defun js2-beginning-of-line 11149,421565
+(defun js2-end-of-line 11169,422182
+(defun js2-enter-mirror-mode(11176,422373
+(defun js2-leave-mirror-mode(11189,423128
+(defsubst js2-mode-inside-string 11195,423325
+(defsubst js2-mode-inside-comment-or-string 11202,423596
+(defsubst js2-make-magic-delimiter 11217,424118
+(defun js2-mode-match-delimiter 11224,424420
+(defun js2-mode-match-bracket 11239,425060
+(defun js2-mode-match-paren 11244,425177
+(defun js2-mode-match-curly 11249,425314
+(defun js2-insert-catch-skel 11290,427087
+(defun js2-mode-highlight-magic-parens 11311,427795
+(defun js2-mode-mundanify-parens 11322,428294
+(defsubst js2-match-quote 11331,428649
+(defun js2-mode-match-single-quote 11360,429765
+(defun js2-mode-match-double-quote 11369,430068
+(defun js2-mode-magic-close-paren 11379,430447
+(defun js2-mode-wait-for-parse 11404,431276
+(defun js2-mode-parse-finished 11412,431607
+(defun js2-mode-flag-region 11424,432100
+(defun js2-isearch-open-invisible 11439,432730
+(defun js2-mode-invisible-overlay-bounds 11443,432874
+(defun js2-mode-function-at-point 11456,433314
+(defun js2-mode-toggle-element 11465,433660
+(defun js2-mode-hide-element 11498,434789
+(defun js2-mode-show-element 11524,435721
+(defun js2-mode-show-all 11532,435986
+(defun js2-mode-toggle-hide-functions 11537,436125
+(defun js2-mode-hide-functions 11543,436279
+(defun js2-mode-function-hider 11555,436741
+(defun js2-mode-show-functions 11569,437211
+(defun js2-mode-hide-comment 11582,437699
+(defun js2-mode-toggle-hide-comments 11591,438063
+(defun js2-mode-hide-comments 11600,438357
+(defsubst js2-mode-extend-//-comment 11613,438813
+(defun js2-mode-hide-//-comments 11630,439532
+(defun js2-mode-toggle-//-comment 11645,440064
+(defun js2-mode-show-comments 11661,440663
+(defun js2-mode-display-warnings-and-errors 11673,441107
+(defun js2-mode-hide-warnings-and-errors 11680,441317
+(defun js2-mode-toggle-warnings-and-errors 11687,441529
+(defun js2-mode-customize 11700,442045
+(defun js2-mode-forward-sexp 11704,442122
+(defun js2-next-error 11737,443378
+(defun js2-down-mouse-3 11780,444960
+(defun js2-mode-create-imenu-index 11792,445395
+(defun js2-mode-find-tag 11804,445817
+(defun js2-mode-forward-sibling 11820,446460
+(defun js2-mode-backward-sibling 11830,446884
+(defun js2-beginning-of-defun 11839,447260
+(defun js2-end-of-defun 11852,447729
+(defun js2-mark-defun 11863,448229
+(defun js2-narrow-to-defun 11909,450005
+(defalias 'js2r js2r11920,450402
+
+log4j-mode.el,2082
+(defgroup log4j-mode 135,5956
+(defface log4j-font-lock-debug-face 141,6124
+(defvar log4j-font-lock-debug-face145,6312
+(defface log4j-font-lock-info-face 148,6394
+(defvar log4j-font-lock-info-face152,6585
+(defface log4j-font-lock-warn-face 155,6665
+(defvar log4j-font-lock-warn-face159,6855
+(defface log4j-font-lock-error-face 162,6935
+(defvar log4j-font-lock-error-face166,7120
+(defface log4j-font-lock-fatal-face 169,7202
+(defvar log4j-font-lock-fatal-face173,7395
+(defcustom log4j-record-begin-regexp 176,7477
+(defcustom log4j-record-end-regexp 188,7944
+(defcustom log4j-auto-revert-flag 200,8398
+(defcustom log4j-restore-point-flag 207,8709
+(defconst log4j-mode-version 219,9251
+(defvar log4j-mode-hook 222,9330
+(defvar log4j-after-filter-hook 225,9403
+(defvar log4j-include-regexp 230,9624
+(defvar log4j-exclude-regexp 235,9847
+(defvar log4j-filter-active-flag 240,10071
+(defvar log4j-last-filter-pos 245,10267
+(defvar log4j-last-highlight-pos 248,10370
+(defvar log4j-local-record-begin-regexp 251,10479
+(defvar log4j-local-record-end-regexp 255,10661
+(defun log4j-get-point-in-buffer 272,11496
+(defun log4j-filter-list 279,11704
+(defun log4j-backward-record 297,12428
+(defun log4j-forward-record 306,12719
+(defsubst log4j-record-search-forward 314,12955
+(defsubst log4j-next-record 340,14190
+(defun log4j-setup-buffers 359,15141
+(defun log4j-filter-buffer-name 377,15886
+(defun log4j-filter-buffer 383,16127
+(defun log4j-make-regexp 448,19059
+(defun log4j-start-filter 457,19420
+(defun log4j-stop-filter 474,20212
+(defun log4j-browse-source 485,20691
+(defun log4j-highlight-buffer 560,23851
+(defun log4j-match-record-fatal 577,24582
+(defun log4j-match-record-error 581,24747
+(defun log4j-match-record-warn 585,24921
+(defun log4j-match-record-info 589,25095
+(defun log4j-match-record-debug 593,25266
+(defvar log4j-font-lock-keywords597,25468
+(defvar log4j-mode-map 609,26094
+(defvar log4j-mode-local-map 622,26603
+(defun log4j-after-revert-function 627,26769
+(defun log4j-guess-file-format 686,29280
+(defun log4j-mode 740,31353
+
+macro-math.el,279
+(defgroup macro-math 61,2090
+(defcustom macro-math-rounding-precision 65,2177
+(defun macro-math-eval-region 71,2341
+(defun macro-math-eval-and-round-region 94,3422
+(defsubst macro-math-symbol-value 103,3817
+(defun macro-math-eval 112,4168
+(defun macro-math-round 119,4442
+
+macro-math.elc,273
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/macro-math.elel3,75
+;;; This file uses dynamic docstrings,7,222
+;;; This file does not contain utf-8 non-ASCII characters,9,290
+
+member-function.el,2441
+(defvar mf--insert-commentary 118,5022
+(defvar mf--user-name-function 121,5135
+(defvar mf--checkout-if-readonly 126,5340
+(defvar  mf--header-file-extension 131,5548
+(defvar  mf--source-file-extension 133,5662
+(defconst mf--version 138,5796
+(defconst c++-keywords141,5854
+(defconst c++-operators 154,6683
+(defun make-c++-keywords-regexp 160,7054
+(defun make-c++-operators-regexp 165,7270
+(defconst c++-token-regexp-alist170,7458
+(defun mf--looking-at-keyword-p 199,8571
+(defun mf--looking-at-token-p 202,8672
+(defun mf--skip-comments 205,8783
+(defun mf--next-token 219,9362
+(defun mf--tokenize 232,9965
+(defmacro mf--tokenize-to 238,10251
+(defun mf--tokenize-buffer 242,10393
+(defun mf--blockify 249,10610
+(defun mf--template-specify 273,11647
+(defun mf--next-class 303,12971
+(defun mf--attach-template-spec 322,13871
+(defun mf--complete-class-decl-p 328,14078
+(defun mf--class-name 340,14548
+(defun mf--class-decl-block 346,14778
+(defun mf--tokens-after-class-decl-block 354,15072
+(defun mf--list-decls 363,15485
+(defun mf--pure-virtual-p 385,16644
+(defun mf--member-fn-decls 390,16841
+(defun mf--prepend-class-scope-designators 405,17534
+(defun mf--prepend-1-class-scope-designator 409,17774
+(defun mf--fn-dfns 457,20077
+(defun mf--remove-preproc-dirs 470,20665
+(defun mf--remove-blocks 479,21039
+(defun mf--list-fn-defs-buffer 485,21244
+(defun mf--list-member-fn-decls-buffer 494,21514
+(defun mf--split-at-every 509,22270
+(defun mf--split-at 517,22569
+(defun mf--equal-param-decl 529,23023
+(defun mf--equal-args 555,24322
+(defun mf--equal-decls 572,25108
+(defun mf--undefined-decls 592,25834
+(defun mf--remove-decl-specifiers 602,26303
+(defun mf--remove-specifiers 611,26682
+(defun mf--remove-default-args 615,26863
+(defun mf--class-name-decl 635,27844
+(defun mf--function-name-decl 642,28139
+(defun mf--date-string 650,28432
+(defun mf--format-comment-block 654,28573
+(defun mf--format-empty-template-definition 668,29108
+(defun mf--format-empty-definition 690,30201
+(defun mf--format-parens 714,31462
+(defun mf--undefined-decls-from-files 729,32232
+(defun mf--format-undefined-decls-from-files 737,32579
+(defun mf--infer-c-filename 743,32926
+(defun mf--expand-member-functions-args 751,33202
+(defun mf--in-comment-p 767,33888
+(defun mf--evacuate-blocks 783,34541
+(defun mf--make-temp-c-file 795,34946
+(defvar mf--saved-string 816,35848
+(defun expand-member-functions 818,35881
+
+member-function.elc,39
+function commentary.commentary20,764
+
+mic-paren.el,2144
+(defvar mic-paren-version 306,15153
+(defgroup mic-paren-matching 330,15900
+(defcustom paren-priority 335,16039
+(defcustom paren-overlay-priority 352,16852
+(defcustom paren-sexp-mode 363,17249
+(defcustom paren-highlight-at-point 378,17976
+(defcustom paren-highlight-offscreen 385,18269
+(defcustom paren-display-message 397,18709
+(defcustom paren-message-linefeed-display 408,19204
+(defcustom paren-message-show-linenumber 424,19934
+(defcustom paren-message-no-match 442,20783
+(defcustom paren-message-truncate-lines 448,21006
+(defcustom paren-ding-unmatched 454,21222
+(defcustom paren-delay 462,21535
+(defcustom paren-dont-touch-blink 488,22598
+(defcustom paren-dont-load-timer 496,22907
+(defcustom paren-bind-modified-sexp-functions 506,23356
+(defface paren-face-match527,24319
+(defface paren-face-mismatch534,24521
+(defface paren-face-no-match541,24744
+(defcustom paren-match-face 548,24966
+(defcustom paren-mismatch-face 553,25112
+(defcustom paren-no-match-face 558,25270
+(defvar paren-match-quoted-paren 569,25674
+(defvar paren-match-paired-delimiter 597,27075
+(defvar paren-open-paren-context-backward 611,27683
+(defconst mic-paren-original-keybinding-of-sexp-functions644,29145
+(defvar mic-paren-overlays 693,30918
+(defvar mic-paren-idle-timer 709,31563
+(defvar mic-paren-previous-location 713,31678
+(defun paren-activate 721,31962
+(defun paren-deactivate 803,35216
+(defun paren-toggle-matching-paired-delimiter 827,36167
+(defun paren-toggle-matching-quoted-paren 844,36919
+(defun paren-toggle-open-paren-context 873,38316
+(defun paren-forward-sexp 884,38723
+(defun paren-backward-sexp 908,39647
+(defun mic-paren-command-idle-hook 918,39957
+(defun mic-paren-command-hook 926,40212
+(defun mic-paren-minibuffer-setup-hook 932,40406
+(defun mic-paren-minibuffer-exit-hook 935,40493
+(defun mic-paren-fcq-mismatch 938,40580
+(defun mic-paren-highlight 942,40744
+(defun mic-paren-get-matching-open-text 1122,48728
+(defun mic-paren-get-matching-close-text 1168,50911
+(defun mic-paren-is-following-char-quoted 1193,51975
+(defun mic-paren-uncharquote 1202,52288
+(defun mic-paren-recharquote 1214,52819
+
+mic-paren.elc,272
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/mic-paren.elel3,75
+;;; This file uses dynamic docstrings,7,221
+;;; This file does not contain utf-8 non-ASCII characters,9,289
+
+org-buffers.el,2283
+(defvar org-buffers-buffer-name34,1080
+(defvar org-buffers-state38,1185
+(defvar org-buffers-follow-link-method 42,1348
+(defvar org-buffers-buffer-properties52,1763
+(defcustom org-buffers-excluded-buffers65,2404
+(defcustom org-buffers-excluded-modes 71,2598
+(defvar org-buffers-mode-map 77,2771
+(defvar org-buffers-mode-hook 79,2825
+(define-minor-mode org-buffers-mode85,3098
+(defun org-buffers-help 94,3539
+(define-key org-buffers-mode-map 99,3638
+(define-key org-buffers-mode-map 100,3709
+(define-key org-buffers-mode-map 101,3769
+(define-key org-buffers-mode-map 102,3834
+(define-key org-buffers-mode-map 103,3903
+(define-key org-buffers-mode-map 104,3968
+(define-key org-buffers-mode-map 105,4037
+(define-key org-buffers-mode-map 106,4105
+(define-key org-buffers-mode-map 107,4187
+(define-key org-buffers-mode-map 108,4257
+(define-key org-buffers-mode-map 109,4321
+(define-key org-buffers-mode-map 110,4400
+(defun org-buffers-list 113,4489
+(defun org-buffers-list:refresh 160,6510
+(defun org-buffers-list:by 166,6686
+(defun org-buffers-toggle-properties 182,7309
+(defun org-buffers-toggle-headings 196,7896
+(defun org-buffers-delete-properties 228,9071
+(defun org-buffers-get-property-block 236,9324
+(defun org-buffers-group-by 246,9716
+(defun org-buffers-exclude-p 266,10709
+(defun org-buffers-reset-state 273,10998
+(defun org-buffers-columns-view 277,11129
+(defun org-buffers-parse-selected-entries 296,11857
+(defun org-buffers-insert-parsed-entry 303,12146
+(defun org-buffers-get-buffer-props 310,12377
+(defun org-buffers-follow-link 319,12650
+(defun org-buffers-switch-to-buffer 329,13056
+(defun org-buffers-switch-to-buffer-other-window 334,13228
+(defun org-buffers-switch-to-buffer-generic 339,13409
+(defun org-buffers-get-buffer-name 353,13972
+(defun org-buffers-tag-for-deletion 364,14440
+(defun org-buffers-remove-tags 372,14739
+(defun org-buffers-set-tags 379,14942
+(defun org-buffers-execute-pending-operations 417,16721
+(defun org-buffers-map-entries 443,17791
+(defun org-buffers-set-state 447,17926
+(defmacro org-buffers-delete-regions 456,18221
+(defmacro org-buffers-state-get 463,18468
+(defmacro org-buffers-state-eq 466,18551
+(defmacro org-buffers-outline-level 469,18642
+(defun org-buffers-store-link 477,18880
+
+org-buffers.elc,23
+  function is 44,2537
+
+p4.el,14949
+(defconst p4-emacs-version-number 110,3848
+(defconst p4-emacs-maintainer113,3938
+(defconst p4-web-page 117,4100
+(defmacro with-current-buffer-writeable 213,8418
+(defmacro defp4localvar 630,25081
+(defvar p4-all-p4-buffer-files 639,25397
+(defvar p4-async-command-hook 643,25564
+(defvar p4-async-minor-mode 646,25671
+(defvar p4-change-client-hooks 658,26147
+(defp4localvar p4-current-args 663,26345
+(defp4localvar p4-form-command 666,26455
+(defp4localvar p4-error-extent 669,26548
+(defvar p4-enabled 672,26656
+(defvar p4-file-refresh-timer 677,26887
+(defp4localvar p4-output-buffer 681,27060
+(defp4localvar p4-mode 684,27174
+(defvar p4-minor-map687,27266
+(defvar p4-my-clients 705,27999
+(defvar p4-notify-list 712,28267
+(defp4localvar p4-offline-mode 714,28340
+(defp4localvar p4-revision 721,28569
+(defvar p4-server-version 724,28663
+(defvar p4-timer 726,28734
+(defvar p4-output-buffers 729,28832
+(defconst p4-async-minor-map744,29339
+(defun p4-make-derived-map 753,29639
+(defconst p4-basic-map761,29889
+(defconst p4-diff-map777,30617
+(defconst p4-change-log-map786,30924
+(defconst p4-opened-map806,31979
+(defconst p4-prefix-map815,32304
+(defconst p4-print-rev-map869,34313
+(defconst p4-begin-form-error 880,34681
+(defconst p4-end-form-error 881,34743
+(defconst p4-change-history-change-regex883,34799
+(defconst p4-change-history-index-regex891,35123
+(defconst p4-change-history-revision-regex898,35377
+(defconst p4-pathname-with-revision-plus-905,35552
+(defconst p4-signal-names908,35647
+(defconst p4-AUTHOR 980,37781
+(defconst p4-DATE 981,37830
+(defconst p4-FILE 982,37851
+(defconst p4-REVISION 983,37872
+(defconst p4-SIZE 984,37923
+(defun p4-get-dired-filename 994,38182
+(defun p4-fix-dired-filename 1002,38452
+(defun p4-get-dired-marked-files 1012,38788
+(defun p4-viper-current-state 1030,39585
+(defun p4-exit-viper-edit-state 1035,39740
+(defun p4-create-timer 1136,43300
+(defun p4-cancel-timer 1144,43640
+(defun p4-kill-buffer-hook 1157,43967
+(defun p4-disable 1169,44636
+(defun p4-enable 1174,44729
+(defun p4-toggle-enabled 1179,44818
+(defun p4-set-enabled 1184,44939
+(defun p4-available-p 1196,45297
+(defun p4-async-call-p4 1430,54353
+(defsubst p4-re-search-back 1606,61501
+(defun p4-revert-buffer 1611,61679
+(defun p4-kill-form-buffer 1629,62342
+(defun p4-call-command 1635,62524
+(defun p4-call-form-command 1697,65105
+(defun p4-call-form-command-2 1729,66537
+(defun p4-commit-form-changes 1765,67905
+(defun p4-form-error-goto-line 1808,69506
+(defun p4-form-error-format 1820,69969
+(defun p4-form-error-delete 1842,70786
+(defun p4-format-form 1851,71146
+(defun p4-recover-failed-submit 1859,71439
+(defun p4-set-p4-executable 1892,72590
+(defun p4-remove-output-buffer 1905,73086
+(defun p4-push-output-buffer 1911,73362
+(defun p4-pop-output-buffer 1915,73529
+(defun p4-quit-buffer 1921,73733
+(defun p4-quit-and-bury-output-buffer 1936,74363
+(defun p4-quit-and-kill-output-buffer 1944,74707
+(defun p4-quit-and-bury-current-buffer 1952,75057
+(defun p4-quit-and-kill-current-buffer 1962,75494
+(defun p4-make-command-buffer 1972,75937
+(defun p4-display-output 1977,76150
+(defun p4-is-opened 2011,77524
+(defun p4-call-describe 2043,78725
+(defun p4-call-diff 2050,79044
+(defun p4-call-diff-get-args 2060,79456
+(defun p4-call-diff2 2069,79818
+(defun p4-call-login 2081,80402
+(defun p4-call-opened 2095,80969
+(defun p4-call-print 2112,81510
+(defun p4-call-simple-p4-command 2147,82938
+(defun p4-call-sync 2159,83417
+(defun p4-get-extent-property 2194,84781
+(defun p4-save-some-files 2198,84921
+(defun p4-diff-all-opened 2211,85494
+(defun p4-get-file-revision 2218,85671
+(defun p4-ediff 2234,86284
+(defun p4-ediff-head 2240,86454
+(defun p4-ediff-revision 2246,86616
+(defun p4-ediff-files 2256,87039
+(defun p4-set-major-mode 2272,87803
+(defun p4-ediff2 2285,88204
+(defun p4-get-ediff-buffer 2318,89434
+(defun p4-call-ediff-buffers 2327,89759
+(defun p4-print-revision 2360,91439
+(defun p4-get-depot-file-buffer 2401,93273
+(defun p4-get-full-filespec 2424,94312
+(defun p4-make-read-only 2445,95200
+(defsubst p4-set-extent-face 2455,95538
+(defun p4-create-active-link 2459,95683
+(defun p4-move-buffer-point-to-top 2472,96264
+(defun p4-create-change-log 2480,96503
+(defun p4-get-server-version 2492,97037
+(defun p4-directory-p 2508,97653
+(defun p4-get-client-root 2512,97778
+(defun p4-canonicalize-client-root 2534,98635
+(defun p4-map-depot-to-client 2552,99316
+(defun p4-map-depot-files 2566,99832
+(defun p4-build-depot-files-map 2597,100920
+(defconst p4-activate-form-files 2626,102247
+(defun p4-activate-form-files 2627,102299
+(defun p4-confirm-undo-delete 2648,103328
+(defconst p4-activate-opened-buffer2658,103698
+(defun p4-activate-opened-buffer 2663,103961
+(defun p4-mark-match-with-face 2700,105831
+(defconst p4-mark-permission-denied 2705,106023
+(defun p4-mark-permission-denied 2706,106086
+(defconst p4-mark-opened-not-changed 2710,106235
+(defun p4-mark-opened-not-changed 2711,106314
+(defconst p4-mark-must-resolve 2715,106466
+(defun p4-mark-must-resolve 2716,106541
+(defconst p4-mark-open-for-edit2719,106624
+(defun p4-mark-open-for-edit 2721,106715
+(defconst p4-mark-cannot-clobber 2725,106852
+(defun p4-mark-cannot-clobber 2726,106921
+(defvar p4-must-sync-before 2730,107061
+(defun p4-must-sync-before 2731,107121
+(defun p4-replace-with-first-capture 2735,107262
+(defconst p4-match-all-but-trailing-cr 2739,107392
+(defconst p4-match-all-but-trailing-whitespace 2741,107447
+(defconst p4-pathname-with-revision2743,107519
+(defun p4-activate-client-pathnames 2750,107905
+(defun p4-insert-no-properties 2811,110581
+(defun p4-font-lock-buffer 2820,110874
+(defun p4-print-with-revision-history 2842,111579
+(defalias 'p4-blame p4-blame2850,111933
+(defalias 'p4-print-with-rev-history p4-print-with-rev-history2851,111986
+(defun p4-print-rev-history 2853,112057
+(defun p4-max-change-length 2902,114142
+(defun p4-annotate-changes 2915,114583
+(defun p4-apply-changelist-changes 2945,115851
+(defun p4-apply-change-history 2985,117412
+(defun p4-get-change-history 3070,121253
+(defun p4-make-basic-buffer 3126,123523
+(defun p4-scroll-down-1-line 3141,123990
+(defun p4-scroll-down-1-line-other-w 3146,124084
+(defun p4-scroll-up-1-line 3151,124208
+(defun p4-scroll-up-1-line-other-w 3156,124296
+(defun p4-scroll-down-1-window 3161,124415
+(defun p4-scroll-down-1-window-other-w 3166,124557
+(defun p4-scroll-up-1-window 3171,124728
+(defun p4-scroll-up-1-window-other-w 3176,124864
+(defun p4-top-of-buffer 3181,125031
+(defun p4-top-of-buffer-other-w 3186,125121
+(defun p4-bottom-of-buffer 3193,125272
+(defun p4-bottom-of-buffer-other-w 3198,125368
+(defun p4-delete-other-windows 3205,125525
+(defun p4-goto-next-diff 3210,125631
+(defun p4-goto-prev-diff 3221,125889
+(defun p4-next-depot-file 3230,126114
+(defun p4-prev-depot-file 3241,126402
+(defun p4-next-depot-diff 3250,126657
+(defun p4-prev-depot-diff 3261,126948
+(defun p4-moveto-print-rev-column 3270,127206
+(defun p4-next-change-rev-line 3283,127666
+(defun p4-prev-change-rev-line 3291,127883
+(defun p4-toggle-line-wrap 3300,128132
+(defun p4-run-action 3316,128823
+(defun p4-set-action 3342,129784
+(defun p4-make-action-closure 3366,130782
+(defun p4-buffer-on-enter 3395,132103
+(defun p4-buffer-on-mouse-button-2 3400,132233
+(defun p4-buffer-on-mouse-button-3 3405,132401
+(defun p4-buffer-mouse-clicked 3410,132569
+(defun p4-action-diff2 3418,132969
+(defun p4-find-file-or-print-other-window 3422,133092
+(defun p4-find-file-other-window 3431,133437
+(defun p4-action-filelog-short-format 3444,133979
+(defun p4-action-filelog-long-format 3450,134111
+(defun p4-goto-next-change 3456,134246
+(defun p4-goto-prev-change 3465,134456
+(defun p4-buffer-set-face-property 3474,134676
+(defun p4-extent-properties-at 3481,134953
+(defun p4-call-on-matches 3491,135276
+(defun p4-normalize-on-matches-data 3548,137922
+(defun p4-call-if-line-matches 3586,139356
+(defvar p4-mark-change-log3596,139726
+(defun p4-mark-change-log 3602,140061
+(defun p4-activate-change-log-buffer 3640,141993
+(defvar p4-active-change-numbers 3649,142347
+(defun p4-active-change-numbers 3650,142425
+(defun p4-activate-change-numbers 3660,142880
+(defun p4-activate-diff-buffer 3667,143143
+(defun p4-regexp-create-links 3722,145725
+(defun p4-command-line-flags-p 3731,146066
+(defun p4-filter-out 3744,146474
+(defun p4-check-status 3754,146839
+(defun p4-file-login 3765,147345
+(defun p4-password-login 3777,147795
+(defun p4-prompt-login 3798,148499
+(defun p4-call-list-command 3807,148875
+(defun p4-call-list-command-with-links 3824,149696
+(defun p4-call-file-command 3841,150521
+(defun p4-optional-file-command 3892,152593
+(defun p4-file-command 3904,153067
+(defun p4-create-or-edit-form 3933,154388
+(defun p4-edit-specification 3955,155381
+(defp4cmd p4-annotate 3977,156185
+(defp4cmd p4-reopen 4020,157646
+(defp4cmd p4-lock 4028,157885
+(defp4cmd p4-unlock 4034,158076
+(defp4cmd p4-users 4040,158263
+(defp4cmd p4-groups 4050,158649
+(defp4cmd p4-jobs 4060,159034
+(defp4cmd p4-fix 4066,159223
+(defp4cmd p4-fixes 4073,159467
+(defp4cmd p4-where 4079,159664
+(defp4cmd p4-diff 4085,159868
+(defp4cmd p4-diff2 4097,160294
+(defp4cmd p4-diff-head 4126,161645
+(defp4cmd p4-diff-revision 4136,162046
+(defp4cmd p4-add 4150,162648
+(defp4cmd p4-delete 4158,162857
+(defp4cmd p4-filelog 4164,163031
+(defp4cmd p4-files 4174,163422
+(defp4cmd p4-refresh 4189,164058
+(defp4cmd p4-have 4199,164466
+(defp4cmd p4-changes 4205,164634
+(defp4cmd p4-help 4217,165155
+(defp4cmd p4-info 4235,165848
+(defp4cmd p4-integrate 4244,166142
+(defalias 'p4-integ p4-integ4248,166292
+(defp4cmd p4-resolve 4250,166358
+(defp4cmd p4-rename 4279,167463
+(defun p4-rename-files 4292,167941
+(defun p4-rename-one-file 4307,168466
+(defp4cmd p4-describe 4329,169257
+(defp4cmd p4-branches 4353,170151
+(defp4cmd p4-change 4360,170379
+(defun p4-client-delete 4374,170849
+(defp4cmd p4-clients 4400,171819
+(defp4cmd p4-labels 4412,172201
+(defp4cmd p4-labelsync 4417,172364
+(defp4cmd p4-logout 4426,172748
+(defp4cmd p4-login 4436,173111
+(defp4cmd p4-opened 4443,173319
+(defp4cmd p4-submit 4468,174273
+(defp4cmd p4-group 4512,176153
+(defp4cmd p4-job 4518,176332
+(defp4cmd p4-jobspec 4524,176508
+(defp4cmd p4-set 4531,176748
+(defp4cmd p4-tickets 4537,176916
+(defp4cmd p4-sync 4543,177092
+(defalias 'p4-get p4-get4548,177262
+(defun p4-branch-edit 4560,177648
+(defun p4-list-opened-files 4568,177973
+(defun p4-open-client-file 4589,178626
+(defun p4-diff-client-file 4594,178844
+(defun p4-ediff-client-file 4599,179087
+(defun p4-call-for-client-file 4605,179393
+(defun p4-open-client-or-depot-file 4623,180110
+(defun p4-not-in-depot 4639,180758
+(defun p4-out-of-sync 4690,182686
+(defun p4-sync-check 4725,183933
+(defun p4-sync-file 4731,184076
+(defun p4-sync-directory 4737,184254
+(defun p4-sync-directory-recursively 4742,184396
+(defun p4-sync-directory-with 4747,184562
+(defalias 'p4-sync-workspace p4-sync-workspace4753,184776
+(defun p4-old-revision-opened 4755,184816
+(defun p4-set-p4client 4800,186574
+(defun p4-display-p4client 4829,187725
+(defun p4-set-p4config 4837,188071
+(defun p4-display-p4config 4845,188397
+(defun p4-set-my-clients 4856,188815
+(defun p4-display-p4port 4868,189316
+(defun p4-set-p4port 4873,189476
+(defun p4-display-p4user 4894,190255
+(defun p4-get-user 4903,190655
+(defun p4-set-p4user 4911,190865
+(defun p4-get-current-variable 4916,191026
+(defun p4-report-both-variable-values 4923,191264
+(defun p4-report-current-and-environment-variable 4927,191464
+(defun p4-set-p4-evar 4933,191729
+(defun p4-find-file-hook 4943,192110
+(defsubst p4-track-p4-file-and-buffer 4957,192765
+(defun p4-forget-p4-file-and-buffer 4962,192972
+(defun p4-set-p4notify 4972,193368
+(defun p4-display-p4notify 4998,194345
+(defun p4-notify 5005,194589
+(defun p4-emacs-version 5082,198215
+(defun p4-config-file 5092,198554
+(defun p4-confirm-version-check-enabled-by-config 5111,199253
+(defun p4-get-add-branch-files 5117,199479
+(defun p4-get-have-files 5134,200246
+(defun p4-file-revision 5159,201286
+(defun p4-fstat 5193,202835
+(defun p4-get-fstat-value 5216,203777
+(defun p4-have-revision 5226,204174
+(defun p4-head-revision 5239,204676
+(defun p4-check-mode 5252,205168
+(defun p4-refresh-buffer 5282,206434
+(defun p4-refresh-p4-files 5302,207203
+(defun p4-check-mode-all-p4-buffers 5309,207474
+(defun p4-run-in-file-buffers 5325,208145
+(defun p4-toggle-hook-find-file 5348,209140
+(defun p4-toggle-universal-argument 5357,209558
+(defun p4-toggle-read-only 5366,209836
+(defun p4-browse-web-page 5389,210721
+(defun p4-bug-report 5395,210850
+(defun p4-describe-bindings 5442,212568
+(defun p4-string-to-list 5465,213352
+(defun p4-buffer-file-name 5476,213758
+(defun p4-buffer-file-name-2 5482,214004
+(defun p4-buffer-directory 5493,214523
+(defun p4-get-file-names 5508,215071
+(defun p4-follow-link-name 5519,215496
+(defvar p4-depot-history 5533,215998
+(defvar p4-depot-completion-cache 5536,216065
+(defvar p4-branches-history 5540,216192
+(defvar p4-branches-completion-cache 5543,216254
+(defvar p4-clients-history 5547,216365
+(defvar p4-clients-completion-cache 5550,216426
+(defvar p4-jobs-completion-cache 5554,216536
+(defvar p4-labels-history 5558,216640
+(defvar p4-labels-completion-cache 5561,216700
+(defvar p4-users-completion-cache 5565,216808
+(defvar p4-groups-completion-cache 5569,216914
+(defvar p4-arg-string-history 5573,217022
+(defun p4-depot-completion-search 5576,217096
+(defun p4-cache-cleanup 5613,218645
+(defun p4-partial-cache-cleanup 5627,219145
+(defun p4-read-depot-output 5645,219828
+(defun p4-completion-helper 5667,220732
+(defun p4-depot-completion-build 5679,221180
+(defvar p4-completion-function-alist5777,225773
+(defun p4-read-arg-string 5786,226111
+(defun p4-arg-string-completion 5802,226838
+(defun p4-list-completion 5859,229955
+(defun p4-file-name-completion 5868,230297
+(defun p4-string-completion-builder 5887,231102
+(defalias 'p4-branch-string-completionp4-branch-string-completion5907,231930
+(defalias 'p4-client-string-completionp4-client-string-completion5910,232028
+(defalias 'p4-job-string-completionp4-job-string-completion5913,232125
+(defalias 'p4-label-string-completionp4-label-string-completion5916,232216
+(defalias 'p4-user-string-completionp4-user-string-completion5919,232311
+(defalias 'p4-group-string-completionp4-group-string-completion5922,232404
+(defun p4-prompt-for-args 5925,232499
+(defun p4-get-args 5942,233158
+(defun p4-depot-find-file 5959,233806
+(defun p4-get-config-info 5974,234448
+(defun p4-current-client 5984,234807
+(defun p4-current-server-port 5995,235208
+(defun p4-save-opened-files 5999,235321
+(defun p4-empty-diff-p 6014,235916
+(defvar p4-blame-2ary-disp-method)6039,236797
+(defun p4-blame-kill-blame 6055,237573
+(defun p4-blame-secondary-buffer-cleanup 6061,237744
+
+p4.elc,49
+FUNCTION the 881,103893
+function is 948,109262
+
+p4-lowlevel.el,1547
+(defgroup p4-lowlevel 37,1471
+(defcustom p4-lowlevel-p4-program 41,1564
+(defcustom p4-lowlevel-diff-switches 46,1702
+(defcustom p4-lowlevel-command-messages 54,1990
+(defun p4-lowlevel-command-to-buffer 60,2200
+(defun p4-lowlevel-buffer-to-alist 131,5544
+(defun p4-lowlevel-command-to-alist 164,7275
+(defun p4-lowlevel-re-assoc 177,7925
+(defun p4-lowlevel-successful-alist-p 187,8280
+(defun p4-lowlevel-items-matching-tag 203,8877
+(defun p4-lowlevel-lines-matching-tag 210,9190
+(defun p4-lowlevel-errors 225,9823
+(defun p4-lowlevel-info-lines 234,10182
+(defun p4-lowlevel-text 240,10421
+(defun p4-lowlevel-command-or-error 246,10654
+(defun p4-lowlevel-command-into-buffer 287,12690
+(defun p4-lowlevel-command-messages 306,13580
+(defun p4-lowlevel-canonicalize-revision 313,13812
+(defun p4-lowlevel-add 335,14916
+(defun p4-lowlevel-change 352,15993
+(defun p4-lowlevel-changes 381,17380
+(defun p4-lowlevel-diff 415,19403
+(defun p4-lowlevel-diff-s 430,20182
+(defun p4-lowlevel-diff2 449,21009
+(defun p4-lowlevel-edit 472,22381
+(defun p4-lowlevel-filelog 485,23098
+(defun p4-lowlevel-opened 496,23727
+(defun p4-lowlevel-fstat 506,24300
+(defun p4-lowlevel-info 540,25792
+(defun p4-lowlevel-print 555,26442
+(defun p4-lowlevel-reopen 575,27708
+(defun p4-lowlevel-resolve 593,28900
+(defun p4-lowlevel-revert 606,29607
+(defun p4-lowlevel-submit 616,30121
+(defun p4-lowlevel-sync 637,31141
+(defun p4-lowlevel-integrate 647,31591
+(defun p4-lowlevel-client-version 661,32361
+(defun p4-lowlevel-get-buffer-create 673,32988
+
+p4-lowlevel.elc,274
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/p4-lowlevel.elel3,75
+;;; This file uses dynamic docstrings,7,223
+;;; This file does not contain utf-8 non-ASCII characters,9,291
+
+pager.el,383
+(defvar pager-temporary-goal-column 63,2609
+(defconst pager-keep-column-commands67,2780
+(defalias 'pg-dn pg-dn77,3145
+(defalias 'pg-up pg-up78,3180
+(defalias 'row-dn row-dn79,3213
+(defalias 'row-up row-up80,3248
+(defun pager-page-down 84,3357
+(defun pager-page-up 92,3682
+(defun pager-scroll-screen 102,4044
+(defun pager-row-up 116,4535
+(defun pager-row-down 128,4979
+
+pastebin.el,218
+(defgroup pastebin 40,1256
+(defcustom pastebin-default-subdomain 45,1351
+(defcustom pastebin-type-assoc50,1470
+(defvar pastebin-subdomain-history 130,3860
+(defun pastebin-buffer 133,3916
+(defun pastebin 145,4394
+
+scheme-complete.el,3542
+(defvar *scheme-r5rs-info*88,3537
+(defvar *scheme-srfi-info*310,15811
+(defvar *scheme-chicken-modules*1307,54947
+(defvar *scheme-implementation-exports*1734,74841
+(defvar *scheme-chicken-base-repo*2708,113308
+(defvar *scheme-chicken-repo-dirs*2725,114082
+(defun scheme-chicken-available-modules 2736,114492
+(defvar *scheme-gauche-repo-path*2749,114902
+(defvar *scheme-gauche-site-repo-path*2761,115461
+(defun scheme-gauche-available-modules 2764,115551
+(defun scheme-append-map 2788,116436
+(defun scheme-flatten 2797,116678
+(defun scheme-in-string-p 2803,116810
+(defun scheme-beginning-of-sexp 2810,116997
+(defun scheme-find-file-in-path 2817,117201
+(defmacro scheme-with-find-file 2823,117410
+(defun scheme-directory-tree-files 2838,117980
+(defun scheme-beginning-of-current-sexp-operator 2864,118937
+(defun scheme-beginning-of-next-sexp 2872,119159
+(defun scheme-beginning-of-string 2876,119240
+(defun scheme-enclosing-2-sexp-prefixes 2889,119731
+(defun scheme-nth-sexp-at-point 2904,120353
+(defun scheme-symbol-at-point 2912,120577
+(defun scheme-goto-next-top-level 2920,120807
+(defun scheme-sexp-type-at-point 2931,121201
+(defun scheme-let-vars-at-point 2959,121979
+(defun scheme-extract-match-clause-vars 2981,122852
+(defun scheme-extract-match-vars 3024,124411
+(defgroup scheme-complete 3054,125661
+(defcustom scheme-default-implementation 3058,125735
+(defvar *scheme-current-implementation* 3064,125945
+(defvar *scheme-interpreter-alist*3068,126111
+(defvar *scheme-imported-modules* 3074,126219
+(defun scheme-current-implementation 3076,126259
+(defun scheme-current-local-vars 3099,127219
+(defun scheme-extract-import-module-name 3209,132221
+(defun scheme-extract-import-module-imports 3224,132761
+(defun scheme-extract-sexp-imports 3270,134633
+(defun scheme-module-symbol-p 3296,135708
+(defun scheme-skip-shebang 3300,135867
+(defun scheme-current-imports 3308,136109
+(defun scheme-name-of-define 3336,137208
+(defun scheme-type-of-define 3344,137454
+(defun scheme-extract-definitions 3355,137784
+(defun scheme-current-globals 3407,140156
+(defun scheme-current-definitions 3421,140611
+(defun scheme-srfi-exports 3438,141200
+(defun scheme-module-exports 3447,141503
+(defun scheme-translate-type 3523,144915
+(defun scheme-lookup-type 3569,146756
+(defun scheme-predicate->type 3590,147335
+(defun scheme-string-prefix-p 3619,148230
+(defun scheme-do-completion 3625,148407
+(defun scheme-env-lookup 3686,150890
+(defun scheme-current-env 3693,151044
+(defun scheme-env-filter 3711,151669
+(defun scheme-type-match-p 3720,151952
+(defun scheme-translate-special-type 3764,154066
+(defun scheme-nth* 3773,154257
+(defun scheme-file->lines 3779,154391
+(defun scheme-passwd-file-names 3791,154777
+(defun scheme-host-file-names 3802,155100
+(defun scheme-ssh-known-hosts-file-names 3810,155336
+(defun scheme-ssh-config-file-names 3816,155510
+(defun scheme-complete-user-name 3823,155708
+(defun scheme-complete-host-name 3829,155985
+(defun scheme-complete-port-name 3835,156266
+(defun scheme-complete-file-name 3853,157014
+(defun scheme-complete-directory-name 3861,157284
+(defun scheme-string-completer 3868,157601
+(defun scheme-apply-string-completer 3881,158018
+(defun scheme-smart-complete 3886,158195
+(defun scheme-complete-or-indent 4023,164223
+(defun scheme-translate-dot-to-optional 4037,164639
+(defun scheme-optional-in-brackets 4046,164884
+(defun scheme-base-type 4055,165191
+(defun scheme-sexp-to-string 4066,165427
+(defun scheme-get-current-symbol-info 4069,165504
+
+scheme-complete.elc,278
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/scheme-complete.elel3,75
+;;; This file uses dynamic docstrings,7,227
+;;; This file does not contain utf-8 non-ASCII characters,9,295
+
+subword.el,590
+(defvar subword-mode-map83,3342
+(define-minor-mode subword-mode96,3919
+(define-obsolete-function-alias 'c-subword-mode c-subword-mode120,4833
+(define-global-minor-mode global-subword-mode 123,4919
+(defun subword-forward 126,5011
+(defun subword-backward 144,5494
+(defun subword-mark 151,5763
+(defun subword-kill 172,6316
+(defun subword-backward-kill 179,6574
+(defun subword-transpose 186,6838
+(defun subword-downcase 193,7108
+(defun subword-upcase 203,7455
+(defun subword-capitalize 213,7794
+(defun subword-forward-internal 242,8495
+(defun subword-backward-internal 259,8883
+
+subword.elc,270
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/subword.elel3,75
+;;; This file uses dynamic docstrings,7,219
+;;; This file does not contain utf-8 non-ASCII characters,9,287
+
+vc-p4.el,1767
+(defcustom vc-p4-require-p4config 200,8330
+(defcustom vc-p4-annotate-command 213,8957
+(defun vc-p4-create-repo 224,9410
+(defun vc-p4-registered 227,9489
+(defun vc-p4-state 243,10079
+(defun vc-p4-dir-state 291,12592
+(defun vc-p4-workfile-version 308,13305
+(defun vc-p4-latest-on-branch-p 313,13453
+(defun vc-p4-checkout-model 320,13698
+(defun vc-p4-workfile-unchanged-p 324,13805
+(defun vc-p4-mode-line-string 332,14146
+(defun vc-p4-register 351,14931
+(defun vc-p4-init-version 377,16190
+(defun vc-p4-responsible-p 381,16292
+(defun vc-p4-find-version 393,16733
+(defun vc-p4-checkin 396,16819
+(defun vc-p4-checkout 430,18305
+(defun vc-p4-revert 454,19271
+(defun vc-p4-merge 462,19550
+(defun vc-p4-merge-news 472,19840
+(defun vc-p4-resolve-select-yours 482,20094
+(defun vc-p4-resolve-select-theirs 485,20183
+(defun vc-p4-resolve-select-original 488,20273
+(defun vc-p4-steal-lock 491,20365
+(defun vc-p4-print-log 501,20938
+(defun vc-p4-show-log-entry 524,21916
+(defun vc-p4-wash-log 555,23010
+(defun vc-p4-update-changelog 561,23187
+(defvar log-view-message-re)596,24608
+(defvar log-view-file-re)597,24637
+(defvar log-view-font-lock-keywords)598,24663
+(define-derived-mode vc-p4-log-view-mode 600,24701
+(defun vc-p4-diff 618,25664
+(defun vc-p4-annotate-command 656,27536
+(defun vc-p4-read-output 675,28438
+(defun vc-p4-annotate-command-internal 692,28991
+(defconst vc-p4-annotate-re895,37793
+(defun vc-p4-annotate-time 900,37993
+(defun vc-p4-annotate-extract-revision-at-line 914,38635
+(defun vc-p4-previous-version 919,38801
+(defun vc-p4-find-p4config 923,38949
+(defun vc-p4-is-in-client 939,39649
+(defun vc-p4-has-unresolved-conflicts-p 955,40307
+(defun vc-p4-select-conflict-text 1001,42453
+(defun vc-p4-command 1025,43508
+
+vc-p4.elc,268
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/vc-p4.elel3,75
+;;; This file uses dynamic docstrings,7,217
+;;; This file does not contain utf-8 non-ASCII characters,9,285
+
+winpoint.el,597
+(defgroup winpoint 99,2775
+(defcustom winpoint-non-restore-buffer-list103,2875
+(defvar winpoint-frame-windows 109,3006
+(defvar winpoint-frame-positions 118,3332
+(defalias 'window-point-remember-mode window-point-remember-mode128,3714
+(define-minor-mode winpoint-mode129,3768
+(defun winpoint-remember 146,4442
+(defun winpoint-remember-configuration 155,4784
+(defun winpoint-restore 182,5775
+(defun winpoint-match-non-restore-buffer 190,6053
+(defun winpoint-get 200,6383
+(defun winpoint-put 208,6656
+(defun winpoint-clean 226,7464
+(defun filter-map! 239,8023
+(defun filter! 253,8448
+
+winpoint.elc,317
+;ELCELC1,0
+;;; Compiled by nflath@US-SEA-L3BKT1A on Fri Apr 2,9
+;;; from file c:/Users/nflath/Documents/My Dropbox/emacs-repos/supported/winpoint.elel3,75
+;;; This file uses dynamic docstrings,7,220
+;;; This file does not contain utf-8 non-ASCII characters,9,288
+(defvar winpoint-frame-positions nil 26,1161

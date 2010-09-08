@@ -1,0 +1,12 @@
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+(add-hook 'LaTeX-mode-hook (lambda () (TeX-fold-mode 1)))
+(setq-default TeX-electric-sub-and-superscript t)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
+
+(defadvice LaTeX-insert-item (before latex-item-add-newline activate)
+  (newline-and-indent))

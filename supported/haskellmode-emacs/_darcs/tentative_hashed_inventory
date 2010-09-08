@@ -1,0 +1,29 @@
+pristine:0000001756-56e616c7660c3f3d3c1d771766e41e01bb6bc5f5a6d958762958dba103380dc6
+Starting with inventory:
+0000005431-4222bbaa678aa402e9510f17a3f749446a0cc474f8c5503772b5eacbc8814449
+[TAG 2.7.0
+svein.ove@aas.no**20091130150338
+ Ignore-this: 28d8d1717347488cae5c803080e44284
+] 
+hash: 0000003623-2217d3b7f878466a0086fbcdeeec794099c4743878b4dbc6fe37f4cc34085f6a
+[Avoid treating -->, etc., as comments
+svein.ove@aas.no**20091202161538
+ Ignore-this: bc84159fe4fa7db93f802372858a5e66
+] 
+hash: 0000000444-e19a56b4cafca603ae8683cbca9b2893cc555e8d6d6f1e2cf34f0fbdb57e1aee
+[Turn off parse-sexp-ignore-comments (?)
+svein.ove@aas.no**20091202161717
+ Ignore-this: 86a95ede94d4f5bee3f9889c410b4
+] 
+hash: 0000000270-8dd2efff0f93e260acfdce4f8184729fb721a817dab7c568edddb73f266620b1
+[Use a special current-column function for haskell. Fixes #12.
+svein.ove@aas.no**20091212212634
+ Ignore-this: c105f4dec7cd24b850b1a1b88de11b8f
+] 
+hash: 0000005881-7b56970b717c9908ac76733009f2f4b0a31c90a499d28a34b14ddb306b1ecdfe
+[Add options to mode hook.
+Dave Love <fx@gnu.org>**20091208103442
+ Ignore-this: 30f5d09a670745427d0e8151b2d67b65
+ They're capitalized-words-mode and turn-on-haskell-decl-scan.
+] 
+hash: 0000000403-9b2ad7a5c7304737f4a35ef413a1a7012327f3c8b90b53b06fdc2d1bbf6fac80

@@ -1,0 +1,6 @@
+(require 'auto-complete-config)
+(if (boundp 'ac-dictionary-directories)
+    (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict"))
+(ac-config-default)
+(add-hook-to-all programming-major-mode-hooks 'auto-complete-mode)
+(ac-flyspell-workaround)
