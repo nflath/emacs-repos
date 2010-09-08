@@ -98,3 +98,14 @@ URL in a new window."
 (require 'org-google-weather)
 
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(add-hook 'before-save-hook
+          (lambda ()
+            (when (and (locate-dominating-file buffer-file-name ".git")
+                       (eq major-mode 'emacs-lisp-mode))
+              (shell-command "git commit -am \"Auto commit from emacs\"; git push"))
+            t))
+
+
+                                                                          
