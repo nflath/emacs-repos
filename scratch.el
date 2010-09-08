@@ -106,6 +106,3 @@ URL in a new window."
                        (eq major-mode 'emacs-lisp-mode))
               (shell-command "git commit -am \"Auto commit from emacs\"; git push"))
             t))
-
-
-                                                                          
