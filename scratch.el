@@ -109,4 +109,4 @@ URL in a new window."
 
 
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
-(define-key c++-mode-map (kbd "C-a") 'ido-beginning-of-defun)
+(define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
