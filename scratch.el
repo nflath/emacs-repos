@@ -107,6 +107,5 @@ URL in a new window."
               (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master"))
             t))
 
-
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
