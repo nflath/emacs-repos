@@ -40,6 +40,7 @@
 (defun ido-goto-symbol ()
   "Will update the imenu index and then use ido to select a symbol to navigate to."
   (interactive)
+  (setq imenu-create-index-function 'imenu-default-create-index-function)
   (imenu--make-index-alist)
   (let ((name-and-pos '())
         (symbol-names '()))
