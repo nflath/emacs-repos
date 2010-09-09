@@ -100,9 +100,7 @@
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))
       (addsymbols imenu--index-alist)
-      (if (not symbol-names)
-          (ido-goto-symbol)
-        (let* ((symbol-at-point (symbol-name (symbol-at-point)))
+      (let* ((symbol-at-point (symbol-name (symbol-at-point)))
                (selected-symbol (ido-completing-read
                                  "Symbol? "
                                  (if (member symbol-at-point symbol-names)
