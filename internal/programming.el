@@ -100,17 +100,14 @@
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))
       (addsymbols imenu--index-alist)
-      (let* ((symbol-at-point (symbol-name (symbol-at-point)))
-               (selected-symbol (ido-completing-read
-                                 "Symbol? "
-                                 (if (member symbol-at-point symbol-names)
-                                     (cons symbol-at-point (remove-if
-                                                            (lambda (x) (string-equal x symbol-at-point))
-                                                            symbol-names))
-                                   symbol-names)))
-               (position (cdr (assoc selected-symbol name-and-pos))))
-          (if (markerp position)
-              (goto-char position) (goto-char (overlay-start position))))))))
+      (let ((pt (point))
+            (closest 0))
+        (dolist (symbol symbol-names)
+          (let* ((pos (cdr (assoc symbol name-and-pos)))
+                (position (if (markerp pos) pos (overlay-start pos))))
+            (if (and (> pos closest) (< pos pt))
+                (setq closest pos))))
+        (goto-char pos)))))))))
 
 ;;Compiling always asks to save my buffers; I want it to instead do nothing, so I have save-some-buffers only do stuff if passed a filter.
 (defadvice save-some-buffers (around save-buffers-ignore activate)
