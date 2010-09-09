@@ -107,7 +107,7 @@
                  (position (if (markerp pos) pos (overlay-start pos))))
             (if (and (> pos closest) (< pos pt))
                 (setq closest pos))))
-        (goto-char pos)))))))))
+        (goto-char closest)))))
 
 ;;Compiling always asks to save my buffers; I want it to instead do nothing, so I have save-some-buffers only do stuff if passed a filter.
 (defadvice save-some-buffers (around save-buffers-ignore activate)
