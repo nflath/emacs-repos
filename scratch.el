@@ -106,3 +106,5 @@ URL in a new window."
                        (eq major-mode 'emacs-lisp-mode))
               (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push"))
             t))
+
+
