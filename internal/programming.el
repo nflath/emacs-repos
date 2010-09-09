@@ -77,7 +77,7 @@
 (global-set-key (kbd "M-s") 'ido-goto-symbol)
 
 (defun ido-beginning-of-defun ()
-  "Will update the imenu index and then use ido to select a symbol to navigate to."
+  "Will update the imenu index and then use ido to go to the beginning of defun."
   (interactive)
   (setq imenu-create-index-function 'imenu-default-create-index-function)
   (imenu--make-index-alist)
