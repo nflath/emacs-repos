@@ -104,7 +104,7 @@
             (closest 0))
         (dolist (symbol symbol-names)
           (let* ((pos (cdr (assoc symbol name-and-pos)))
-                (position (if (markerp pos) pos (overlay-start pos))))
+                 (position (if (markerp pos) pos (overlay-start pos))))
             (if (and (> pos closest) (< pos pt))
                 (setq closest pos))))
         (goto-char pos)))))))))
