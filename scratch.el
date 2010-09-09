@@ -104,7 +104,7 @@ URL in a new window."
           (lambda ()
             (when (and (locate-dominating-file buffer-file-name ".git")
                        (eq major-mode 'emacs-lisp-mode))
-              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push"))
+              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master"))
             t))
 
 
