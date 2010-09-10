@@ -36,7 +36,7 @@
 	url = git@github.com:nflath/cache.git
 [submodule "supported/auto-complete"]
     path = supported/auto-complete
-	url = http://github.com/m2ym/auto-complete
+	url = http://github.com/m2ym/auto-complete.git
 [submodule "supported/clojure-mode"]
     path = supported/clojure-mode
 	url = http://github.com/jochu/clojure-mode.git
