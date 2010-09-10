@@ -12,6 +12,7 @@
                 ("\\.HH$"                     . c++-mode)
                 ("\\.cpp$"                    . c++-mode)
                 ("\\.CPP$"                    . c++-mode)
+                ("\\.tat$"                    . python-mode)
                 ("\\.hpp$"                    . c++-mode)
                 ("\\.HPP$"                    . c++-mode)
                 ("\\.java$"                   . c++-mode)

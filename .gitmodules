@@ -1,0 +1,3 @@
+[submodule "supported/save-visited-files2"]
+	path = supported/save-visited-files2
+	url = git@github.com:nflath/save-visited-files.git
