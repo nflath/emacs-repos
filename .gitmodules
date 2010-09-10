@@ -1,3 +1,42 @@
 [submodule "supported/save-visited-files"]
 	path = supported/save-visited-files
 	url = git@github.com:nflath/save-visited-files.git
+[submodule "supported/org-mode"]
+	path = supported/org-mode
+	url = git://repo.or.cz/org-mode.git
+[submodule "supported/mv-shell"]
+    path = supported/mv-shell
+	url = git@github.com:nflath/mv-shell.git
+[submodule "supported/markdown-mode"]
+    path = supported/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git
+[submodule "supported/magit"]
+    path = supported/magit
+	url = http://github.com/philjackson/magit.git
+[submodule "supported/rainbow"]
+    path = supported/rainbow
+	url = git://git.naquadah.org/rainbow.git
+[submodule "supported/hungry-delete"]
+    path = supported/hungry-delete
+	url = git@github.com:nflath/hungry-delete.git
+[submodule "supported/google-weather-el"]
+    path = supported/google-weather-el
+	url = git://git.naquadah.org/google-weather-el.git
+[submodule "supported/haml"]
+    path = supported/haml
+	url = http://github.com/nex3/haml.git
+[submodule "supported/hideshow-org"]
+    path = supported/hideshow-org
+	url = http://github.com/secelis/hideshow-org.git
+[submodule "supported/c-eldoc"]
+    path = supported/c-eldoc
+	url = git@github.com:nflath/c-eldoc.git
+[submodule "supported/cache"]
+    path = supported/cache
+	url = git@github.com:nflath/cache.git
+[submodule "supported/auto-complete"]
+    path = supported/auto-complete
+	url = http://github.com/m2ym/auto-complete
+[submodule "supported/clojure-mode"]
+    path = supported/clojure-mode
+	url = http://github.com/jochu/clojure-mode.git
