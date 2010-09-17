@@ -93,8 +93,6 @@ URL in a new window."
   (browse-url (concat "file://" buffer-file-name)))
 
 (require 'google-weather)
-(require 'google-maps)
-
 (require 'org-google-weather)
 
 
@@ -109,3 +107,4 @@ URL in a new window."
 
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
+
