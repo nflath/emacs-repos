@@ -1,4 +1,4 @@
-(defvar emacs-repos-dir "c:/Users/nflath/Documents/My Dropbox/emacs-repos/"
+(defvar emacs-repos-dir "c:/Users/nflath/emacs-repos/"
   "Where the repository is located - used to load files ")
 
 (defvar org-directory "c:/Users/nflath/Documents/My Dropbox/org/"
