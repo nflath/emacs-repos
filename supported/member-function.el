@@ -804,7 +804,7 @@ temp buffer when he is done with it."
   (let ((buffer-name (make-temp-name (replace-regexp-in-string "/" "" (buffer-name cfile))))
         (contents (buffer-substring (point-min) (point-max))))  ; Assumes cfile is already current buffer.
     (save-excursion
-      (get-buffer-create buffer-name t) ; t means don't warn.
+      (get-buffer-create buffer-name) ; t means don't warn.
       (set-buffer buffer-name)
       (insert contents)
       (goto-char (point-min))
