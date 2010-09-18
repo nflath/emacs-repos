@@ -187,3 +187,14 @@
     (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
     (goto-char pos)))
 (global-set-key (kbd "C-c C-r") 'sudo-edit-current-file)
+
+(setq completion-ignored-extensions
+      (cons ".class" completion-ignored-extensions)
+      completion-ignored-extensions
+      (cons ".exe"   completion-ignored-extensions)
+      completion-ignored-extensions
+      (cons ".o"     completion-ignored-extensions)
+      completion-ignored-extensions
+      (cons ".dvi"   completion-ignored-extensions)
+      completion-ignored-extensions
+      (cons ".ps"    completion-ignored-extensions))
