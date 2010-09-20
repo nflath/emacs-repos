@@ -6,7 +6,7 @@
                                            (buffer-file-name))
                            "'"))))
 
-(defun a4-ad ()
+(defun a4-add ()
   (interactive)
   (message (shell-command-to-string (concat "ssh obs11 'cd /local/nflath/baiyu; a4 chroot; a4 add "
                                             (replace-regexp-in-string "/home/nflath/obs11"
