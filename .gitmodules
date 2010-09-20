@@ -14,7 +14,7 @@
     path = supported/magit
 	url = http://github.com/philjackson/magit.git
 [submodule "supported/rainbow"]
-    path = supported/rainbow
+	path = supported/rainbow
 	url = git://git.naquadah.org/rainbow.git
 [submodule "supported/hungry-delete"]
     path = supported/hungry-delete
