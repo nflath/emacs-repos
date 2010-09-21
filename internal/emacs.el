@@ -35,6 +35,8 @@
 (eval-after-load 'init-finished
   '(server-start))
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;;History features
 (setq save-place-file "~/.emacs.d/.saveplace")
 (setq-default save-place t)
