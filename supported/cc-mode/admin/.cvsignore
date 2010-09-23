@@ -1,0 +1,5 @@
+*.html
+cc-mode-html
+cc-mode-manual
+patches
+*.gz

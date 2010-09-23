@@ -1,0 +1,3 @@
+constant foo = "//\"";
+class Bar {
+}

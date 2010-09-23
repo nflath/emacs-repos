@@ -1,0 +1,12 @@
+(0 typ) (3 reg) (4 fun) (7 reg)
+
+(4 typ) (7 reg) (8 var) (9 reg) (11 key) (13 reg)
+(24 str) (29 reg)
+(4 typ) (7 reg) (8 var) (9 reg)
+(24 str) (29 reg)
+(2 lbl) (3 reg)
+(2 lbl) (5 reg) (7 key) (9 reg)
+(17 str) (22 reg)
+(2 lbl) (5 reg)
+(17 str) (22 reg)
+

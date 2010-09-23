@@ -1,0 +1,9 @@
+cc-mode.info*
+cc-mode.html
+cc-mode.dvi
+cc-mode.ps
+cc-mode.rev.ps
+cc-mode-5.[0-9][0-9]
+ChangeLog.gz
+texi
+dist

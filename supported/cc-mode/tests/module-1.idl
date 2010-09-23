@@ -1,0 +1,45 @@
+// This example is taken from the OMG CORBA CIDL spec.
+
+module Components
+{
+typedef string FeatureName;
+typedef sequence<FeatureName> NameList;
+
+valuetype FacetDescription
+{
+    public CORBA::RepositoryId InterfaceID;
+    public FeatureName Name;
+};
+
+valuetype Facet : FacetDescription
+{
+    public Object ref;		// Note "ref" fontification.
+};
+
+typedef sequence<Facet> Facets;
+
+valuetype PortDescription
+{
+    public FeatureName name;
+    public CORBA::RepositoryId type_id;
+};
+
+valuetype FacetDescription : PortDescription
+{
+    public Object facet_ref;
+};
+
+typedef sequence<FacetDescription> FacetDescriptions;
+exception InvalidName { };
+
+interface Navigation
+{
+    Object provide_facet (in FeatureName name) raises (InvalidName);
+    FacetDescriptions describe_facets();
+    Facets provide_all_facets();
+    Facets provide_named_facets (in NameList names) raises (InvalidName);
+    FacetDescriptions get_all_facets();
+    FacetDescriptions get_named_facets (in NameList names) raises (InvalidName);
+    boolean same_component (in Object object_ref);
+};
+};

@@ -1,0 +1,26 @@
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (17 reg)
+(4 key) (10 reg) (11 typ) (15 reg) (16 fun) (19 reg)
+(8 key) (14 reg) (15 ref) (18 reg) (19 ref) (22 reg) (23 ref) (37 reg) (38 ref) (48 reg) (49 typ) (69 reg)
+(15 ref) (18 reg) (19 ref) (22 reg) (23 ref) (37 reg) (38 ref) (48 reg) (49 typ) (62 reg)
+(15 ref) (18 reg) (19 ref) (22 reg) (23 ref) (37 reg) (38 ref) (48 reg) (49 typ) (59 reg)
+
+(8 cmt)
+(0 reg)
+(4 typ) (8 reg) (9 fun) (13 reg) (15 typ) (18 reg) (19 var) (20 reg)
+(15 typ) (18 reg) (19 var) (20 reg)
+(8 key) (14 reg) (15 typ) (26 reg)
+(8 typ) (11 reg) (12 var) (13 reg)
+
+
+
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (17 reg)
+(4 key) (10 reg) (11 typ) (15 reg) (16 fun) (19 reg)
+(8 key) (14 reg)
+(12 typ) (23 reg)
+(12 typ) (28 reg)
+
+(8 cmt)
+(0 reg) (8 cmt)
+(0 reg) (8 cmt)
+(0 reg)
+

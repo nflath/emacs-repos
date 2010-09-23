@@ -1,0 +1,7 @@
+union Foo switch (X::MyEnum)
+{
+case A: case B:
+    int foo;
+default:
+    wchar bar[17];
+};

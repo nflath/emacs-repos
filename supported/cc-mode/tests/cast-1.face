@@ -1,0 +1,28 @@
+(0 typ) (4 reg) (5 fun) (6 reg)
+(4 typ) (8 reg) (9 var) (11 reg)
+
+
+(32 cmt) (53 reg)
+
+(32 cmt) (53 reg)
+
+(32 cmt) (53 reg)
+
+(32 cmt) (53 reg)
+(5 typ) (7 reg)
+(5 typ) (7 reg) (11 typ) (13 reg)
+(4 cmt)
+
+(54 reg)
+
+(5 typ) (9 reg)
+(5 typ) (7 reg)
+(5 typ) (7 reg)
+
+
+(5 typ) (9 reg)
+(5 typ) (9 reg) (12 typ) (16 reg)
+(5 typ) (8 reg)
+
+
+

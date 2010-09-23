@@ -1,0 +1,7 @@
+((topmost-intro <0,0>))
+((template-args-cont <1,0> <1,9>))
+((inher-intro <2,0>))
+((template-args-cont <3,0> <1,16>))
+((inher-cont <2,4>))
+((template-args-cont <5,0> <1,17>))
+((class-open <6,0>))
