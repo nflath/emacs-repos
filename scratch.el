@@ -109,7 +109,8 @@ URL in a new window."
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 
 
-(defun save-windows-dthurn (&rest args) 
+(defun save-windows-dthurn (&rest args)
+  (interactive)
   (window-configuration-to-register ?a))
 
 (global-set-key (kbd "C-.") 'jump-to-register)
