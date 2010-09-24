@@ -114,3 +114,7 @@ URL in a new window."
   (window-configuration-to-register ?a))
 
 (global-set-key (kbd "C-.") 'jump-to-register)
+
+(defadvice function-name (before dthurn-window-save-advice activate)
+  (dthurn-window-save)
+  )
