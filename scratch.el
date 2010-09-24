@@ -96,7 +96,7 @@ URL in a new window."
 (require 'org-google-weather)
 
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(remove-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (add-hook 'before-save-hook
           (lambda ()
