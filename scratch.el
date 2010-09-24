@@ -116,5 +116,5 @@ URL in a new window."
 (global-set-key (kbd "C-.") 'jump-to-register)
 
 (defadvice delete-frame (before dthurn-window-save-advice activate)
-  (dthurn-window-save)
+  (save-windows-dthurn)
   )
