@@ -91,5 +91,5 @@ URL in a new window."
               (eq (face-at-point) 'font-lock-doc-face))
           (setq count (1+ count)))
       (forward-line))
-    count))
+    (print count)))
 
