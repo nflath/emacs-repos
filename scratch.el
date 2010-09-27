@@ -79,3 +79,16 @@ URL in a new window."
 
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
+
+(defun num-code-lines ()
+  (interactive)
+  (beginning-of-line)
+  (let ((count 0))
+    (while (not (eobp))
+      (back-to-indentation)
+      (if (or (eq (face-at-point) 'font-lock-comment-face)
+              (eq (face-at-point) 'font-lock-comment-delimiter-face)
+              (eq (face-at-point) 'font-lock-doc-face))
+          (setq count (1+ count)))
+      (forward-line))))
+
