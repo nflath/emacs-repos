@@ -80,13 +80,3 @@ URL in a new window."
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 
-
-(defun save-windows-dthurn (&rest args)
-  (interactive)
-  (window-configuration-to-register ?a ?a))
-
-(global-set-key (kbd "C-.") 'jump-to-register)
-
-(defadvice delete-frame (before dthurn-window-save-advice activate)
-  (save-windows-dthurn)
-  )
