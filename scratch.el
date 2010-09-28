@@ -74,7 +74,7 @@ URL in a new window."
           (lambda ()
             (when (and (locate-dominating-file buffer-file-name ".git")
                        (eq major-mode 'emacs-lisp-mode))
-              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master"))
+              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master")).
             t))
 
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
@@ -93,3 +93,5 @@ URL in a new window."
       (forward-line))
     (print count)))
 
+(require 'edit-server)
+(edit-server-start)
