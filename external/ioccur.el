@@ -1,2 +1,2 @@
 (require 'ioccur)
-(setq ioccur-search-delay 0)
+(setq ioccur-search-delay 1)
