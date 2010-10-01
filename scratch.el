@@ -1,33 +1,6 @@
 ;; This buffer is for notes you don't want to save, and for Lisp evaluation.  If you want to create a file, visit that
 ;; file with C-x C-f, then enter the text in that file's own buffer.
 
-(setq str "abc")
-
-(defun org-increment-string (str)
-  (let ((chars (string-to-list str))
-        (n (1- (length str)))
-        result y)
-
-    (while (and (>= n 0))
-      (let ((char (nth n chars)))
-        (setq result (append (list (org-increment-char char)) result))
-        (setq y (1- n))
-        (setq n (if (not (or (= char ?Z) (= char ?z)))
-                    -1
-                  (1- n)))))
-    (if (> y 0 )
-        (while (>= y 0)
-          (setq result (append (list (nth n chars)) result))
-          (setq y (1- y)))
-      (setq result (append (list ?a) result)))
-    (concat result)))
-
-(defun org-increment-char (char)
-  (cond
-   ((= char ?Z) ?A)
-   ((= char ?z) ?a)
-   (t (1+ char))))
-
 (setq browse-url-chrome-arguments nil)
 (setq browse-url-chrome-program "google-chrome")
 
@@ -92,12 +65,6 @@ URL in a new window."
   (interactive)
   (browse-url (concat "file://" buffer-file-name)))
 
-(require 'google-weather)
-(require 'org-google-weather)
-
-
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 (add-hook 'before-save-hook
           (lambda ()
             (when (and (locate-dominating-file buffer-file-name ".git")
@@ -108,3 +75,8 @@ URL in a new window."
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 (define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
 
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
+(setq org-mobile-checksum-binary "echo ")
