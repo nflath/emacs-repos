@@ -1,0 +1,1 @@
+struct Foo {@defs (String)};

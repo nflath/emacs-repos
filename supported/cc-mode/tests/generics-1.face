@@ -1,0 +1,78 @@
+
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (21 reg)
+
+(4 typ) (7 reg) (8 typ) (14 reg) (16 typ) (22 reg) (24 var) (34 reg) (37 key) (40 reg) (41 typ) (44 reg) (45 typ) (51 reg) (53 typ) (59 reg)
+
+(4 key) (10 reg) (12 typ) (13 reg) (15 typ) (19 reg) (20 fun) (41 reg) (42 typ) (43 reg) (46 var) (47 reg) (49 typ) (59 reg) (60 typ) (61 reg) (63 var) (64 reg)
+(8 key) (11 reg) (13 typ) (14 reg) (15 var) (16 reg)
+
+
+
+
+
+
+(0 key) (9 reg) (10 typ) (20 reg) (21 typ) (22 reg)
+(4 key) (10 reg) (12 typ) (13 reg) (15 typ) (22 reg) (23 fun) (34 reg) (35 typ) (45 reg) (46 typ) (47 reg) (49 var) (50 reg)
+(4 key) (10 reg) (12 typ) (13 reg) (14 key) (21 reg) (22 typ) (23 reg) (25 typ) (32 reg) (33 fun) (39 reg) (40 typ) (50 reg) (51 typ) (52 reg) (54 var) (55 reg)
+
+
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (25 reg) (26 typ) (27 reg) (28 key) (35 reg) (36 typ) (46 reg)
+(4 key) (10 reg) (11 typ) (15 reg) (16 typ) (20 reg) (23 key) (30 reg) (31 typ) (36 reg) (39 var) (46 reg)
+(8 key) (11 reg) (12 typ) (16 reg) (17 typ) (21 reg) (24 key) (31 reg) (32 typ) (37 reg)
+
+(4 key) (10 reg) (11 typ) (15 reg) (16 fun) (23 reg) (24 typ) (28 reg) (31 key) (38 reg) (39 typ) (44 reg) (46 var) (52 reg)
+
+(8 key) (11 reg) (13 typ) (18 reg) (19 var) (20 reg)
+(19 key) (23 reg)
+
+
+
+(4 key) (10 reg) (11 key) (17 reg) (19 typ) (20 reg) (22 typ) (23 reg) (24 fun) (32 reg) (33 typ) (43 reg) (44 typ) (45 reg) (47 var) (51 reg) (53 typ) (57 reg) (60 key) (65 reg) (66 typ) (67 reg) (69 var) (72 reg)
+(4 key) (10 reg) (11 key) (17 reg) (19 typ) (20 reg) (21 key) (28 reg) (29 typ) (39 reg) (40 typ) (41 reg)
+(8 typ) (9 reg) (10 fun) (13 reg) (14 typ) (24 reg) (25 typ) (26 reg) (28 var) (32 reg)
+
+
+(4 key) (10 reg) (11 key) (17 reg) (19 typ) (20 reg) (21 key) (28 reg) (29 typ) (35 reg) (38 typ) (48 reg) (51 key) (56 reg) (57 typ) (58 reg)
+(8 typ) (17 reg) (18 fun) (21 reg) (22 typ) (32 reg) (33 typ) (34 reg) (36 var) (40 reg)
+(8 typ) (9 reg) (10 var) (11 reg)
+(8 typ) (9 reg) (10 var) (11 reg)
+
+
+(4 key) (10 reg) (11 key) (17 reg) (19 typ) (20 reg) (21 key) (28 reg) (29 typ) (35 reg) (38 typ) (48 reg) (51 key) (56 reg) (57 typ) (58 reg)
+(8 typ) (9 reg) (10 fun) (13 reg) (14 typ) (24 reg) (27 key) (34 reg) (35 typ) (36 reg) (38 var) (42 reg)
+
+
+(4 key) (10 reg) (12 typ) (13 reg) (15 typ) (19 reg) (20 var) (32 reg)
+(8 typ) (17 reg) (18 typ) (27 reg) (28 typ) (35 reg) (38 var) (39 reg) (42 key) (45 reg) (46 typ) (55 reg) (56 typ) (65 reg) (66 typ) (73 reg)
+
+(8 typ) (15 reg) (16 typ) (22 reg) (24 typ) (31 reg) (33 var) (34 reg) (37 key) (40 reg) (41 typ) (48 reg) (49 typ) (55 reg) (57 typ) (64 reg)
+(8 typ) (17 reg) (23 key) (26 reg) (27 typ) (36 reg)
+(8 typ) (11 reg) (12 var) (15 reg)
+
+
+
+
+(0 key) (6 reg) (7 key) (16 reg) (17 typ) (21 reg) (22 typ) (23 reg)
+(4 typ) (8 reg) (9 fun) (12 reg) (13 typ) (14 reg) (15 var) (16 reg)
+(4 key) (10 reg) (11 typ) (19 reg) (20 fun) (28 reg)
+
+
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (19 reg)
+(4 key) (10 reg) (11 key) (17 reg) (18 typ) (22 reg)
+(8 fun) (19 reg) (20 typ) (23 reg) (24 typ) (30 reg) (34 key) (41 reg) (42 typ) (48 reg) (50 var) (58 reg)
+
+
+(4 key) (10 reg) (11 typ) (15 reg) (16 fun) (23 reg) (25 typ) (29 reg) (32 key) (39 reg) (40 typ) (45 reg) (47 var) (53 reg)
+
+
+(4 key) (10 reg) (12 typ) (13 reg) (15 typ) (19 reg) (20 var) (32 reg)
+
+
+(4 key) (10 reg) (12 typ) (13 reg) (15 typ) (19 reg) (20 fun) (41 reg) (42 typ) (43 reg) (46 var) (47 reg) (49 typ) (59 reg) (60 typ) (61 reg) (63 var) (64 reg)
+(8 key) (11 reg) (13 typ) (14 reg) (15 var) (16 reg)
+
+
+
+
+(4 typ) (7 reg) (8 typ) (14 reg) (16 typ) (22 reg) (24 var) (34 reg) (37 key) (40 reg) (41 typ) (44 reg) (45 typ) (51 reg) (53 typ) (59 reg)
+

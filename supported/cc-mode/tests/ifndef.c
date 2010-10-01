@@ -1,0 +1,3 @@
+#ifndef foo
+bar
+#endif

@@ -69,7 +69,7 @@ URL in a new window."
           (lambda ()
             (when (and (locate-dominating-file buffer-file-name ".git")
                        (eq major-mode 'emacs-lisp-mode))
-              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master"))
+              (shell-command "export SSH_AUTH_SOCK=0; git commit -am \"Auto commit from emacs\"; git push origin master")).
             t))
 
 (define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
@@ -80,3 +80,20 @@ URL in a new window."
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
 (setq org-mobile-checksum-binary "echo ")
+
+(defun num-code-lines ()
+  (interactive)
+  (beginning-of-line)
+  (let ((count 0))
+    (while (not (eobp))
+      (back-to-indentation)
+      (if (or (eq (face-at-point) 'font-lock-comment-face)
+              (eq (face-at-point) 'font-lock-comment-delimiter-face)
+              (eq (face-at-point) 'font-lock-doc-face))
+          (setq count (1+ count)))
+      (forward-line))
+    (print count)))
+
+(require 'edit-server)
+(edit-server-start)
+

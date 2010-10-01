@@ -1,0 +1,122 @@
+-*- fundamental -*-
+
+CORBA IDL, PSDL and CIDL are very keyword rich, so to keep my sanity I
+had to classify them in a more compact form than in cc-langs.el.  Note
+that this file might not be kept up-to-date with cc-langs.el.
+
+		Primitive type
+		| Primitive type prefix
+		| |  Class decl
+		| |  | Brace list decl
+		| |  | | Other block decl
+		| |  | | | Typedef decl
+		| |  | | | | Typeless decl
+		| |  | | | | | Modifier
+		| |  | | | | | | Other decl or decl prefix
+		| |  | | | | | | |  Block decl with vars
+		| |  | | | | | | |  | In decl spec after header
+		| |  | | | | | | |  | |  Type (list) follows
+		| |  | | | | | | |  | |  | Ref (list) follows
+		| |  | | | | | | |  | |  | | Colon type (list) follows
+		| |  | | | | | | |  | |  | | | Paren type (list) follows
+		| |  | | | | | | |  | |  | | | | Brace sexp with ids follows
+		| |  | | | | | | |  | |  | | | | | < > arglist follows
+		| |  | | | | | | |  | |  | | | | | |  Constant
+		| |  | | | | | | |  | |  | | | | | |  | Label
+		| |  | | | | | | |  | |  | | | | | |  | | Other
+Keyword		| |  | | | | | | |  | |  | | | | | |  | | |
+
+FALSE		- -  - - - - - - -  - -  - - - - - -  X - -
+Object		X -  - - - - - - -  - -  - - - - - -  - - -
+TRUE		- -  - - - - - - -  - -  - - - - - -  X - -
+ValueBase	X -  - - - - - - -  - -  - - - - - -  - - -
+abstract	- -  - - - - - X -  - -  - - - - - -  - - -  (Also different and unspecified use in CIDL)
+any		X -  - - - - - - -  - -  - - - - - -  - - -
+as		- -  - - - - - - -  - X  X - - - - -  - - -  PSDL
+attribute	- -  - - - - - X -  - -  - - - - - -  - - -
+bindsTo		- -  - - - - - X -  - -  - - - - - -  - - -  CIDL
+boolean		X -  - - - - - - -  - -  - - - - - -  - - -
+case		- -  - - - - - - -  - -  - - - - - -  - X -
+catalog		- -  X - - - - - -  - -  - - - - - -  - - -  CIDL
+char		X -  - - - - - - -  - -  - - - - - -  - - -
+component	- -  X - - - - - -  - -  X - X - - -  - - -
+composition	- -  - - X - - - -  - -  - X - - - -  - - -  CIDL
+const		- -  - - - - - X -  - X  - - - - - -  - - -  `In decl spec after header' for PSDL
+consumes	- -  - - - - - X -  - -  - - - - - -  - - -
+context		- -  - - - - - - -  - X  - - - - - -  - - -
+custom		- -  - - - - - X -  - -  - - - - - -  - - -
+default		- -  - - - - - - -  - -  - - - - - -  - X -
+delegatesTo	- -  - - - - - X -  - -  - - - - - -  - - -  CIDL
+double		X -  - - - - - - -  - -  - - - - - -  - - -
+emits		- -  - - - - - X -  - -  - - - - - -  - - -
+entity		- -  - - - - - - -  - -  - - - - - -  - - X  CIDL
+enum		- -  - X - - - - -  - -  X - - - X -  - - -
+eventtype	- -  X - - - - - -  - -  X - X - - -  - - -
+exception	- -  X - - - X - -  - -  - - - - - -  - - -
+executor	- -  X - - - X - -  - -  - - - - - -  - - -  CIDL (two different uses)
+facet		- -  - - - - X - -  - -  - - - - - -  - - -  CIDL
+factory		- -  - - - - X - -  - -  - - - - - -  - - -
+finder		- -  - - - - X - -  - -  - - - - - -  - - -
+fixed		X -  - - - - - - -  - -  - - - - - X  - - -
+float		X -  - - - - - - -  - -  - - - - - -  - - -
+getraises	- -  - - - - - - -  - X  - - - - - -  - - -
+home		- -  X - - - - - -  - -  X - X - - -  - - -  (Also different use in CIDL)
+implements	- -  - - - - - X -  - X  X - - - - -  - - -  PSDL, `other decl' for CIDL
+import		- -  - - - - - X -  - -  - X - - - -  - - -
+in		- -  - - - - - X -  - -  - - - - - -  - - -
+inout		- -  - - - - - X -  - -  - - - - - -  - - -
+interface	- -  X - - - - - -  - -  X - X - - -  - - -
+key		- -  - - - - X - -  - -  - - - - - -  - - -  PSDL
+local		- -  - - - - - X -  - -  - - - - - -  - - -
+long		X X  - - - - - - -  - -  - - - - - -  - - -
+manages		- -  X - - - X - -  - X  X - - - - -  - - -  `Class decl' and `typeless decl' for CIDL (clashes with `type follows')
+module		- -  - - X - - - -  - -  - X - - - -  - - -
+multiple	- -  - - - - - X -  - -  - - - - - -  - - -
+native		- -  - - - - X - -  - -  X - - - - -  - - -
+octet		X -  - - - - - - -  - -  - - - - - -  - - -
+of		- -  - - - - - - -  - X  X - - - - -  - - -  PSDL
+oneway		- -  - - - - - X -  - -  - - - - - -  - - -
+out		- -  - - - - - X -  - -  - - - - - -  - - -
+primary		- -  - - - - - X -  - -  - - - - - -  - - -  PSDL
+primarykey	- -  - - - - - - -  - X  X - - - - -  - - -
+private		- -  - - - - - X -  - -  - - - - - -  - - -
+process		- -  - - - - - - -  - -  - - - - - -  - - X  CIDL
+provides	- -  - - - - - X -  - -  - - - - - -  - - -
+proxy		- -  - - - - - X -  - -  - - - - - -  - - -  CIDL
+public		- -  - - - - - X -  - -  - - - - - -  - - -
+publishes	- -  - - - - - X -  - -  - - - - - -  - - -
+raises		- -  - - - - - - -  - X  - - - - - -  - - -
+readonly	- -  - - - - - X -  - -  - - - - - -  - - -
+ref		X -  - - - - - - -  - X  - - - - - X  - - -  PSDL
+scope		- -  - - - - - - -  - -  X - - - - -  - - -  PSDL
+segment		- -  X - - - X - -  - -  - - - - - -  - - -  CIDL
+sequence	X -  - - - - - - -  - -  - - - - - X  - - -
+service		- -  - - - - - - -  - -  - - - - - -  - - X  CIDL
+session		- -  - - - - - - -  - -  - - - - - -  - - X  CIDL
+setraises	- -  - - - - - - -  - X  - - - - - -  - - -
+short		X -  - - - - - - -  - -  - - - - - -  - - -
+state		- -  - - - - - X -  - -  - - - - - -  - - -  PSDL
+storage		- -  - - - - - - -  - -  - - - - - -  - - X  CIDL
+storagehome	- -  X - - - - - -  - -  X - X - - -  - - -  PSDL (also different use in CIDL)
+storagetype	- -  X - - - - - -  - -  X - X - - -  - - -  PSDL
+storedOn	- -  - - - - - X -  - -  - - - - - -  - - -  CIDL
+stores		- -  - - - - X - -  - -  - - - - - -  - - -  PSDL
+string		X -  - - - - - - -  - -  - - - - - X  - - -
+strong		- X  - - - - - - -  - -  - - - - - -  - - -  PSDL
+struct		- -  X - - - - - -  - -  X - - - - -  - - -
+supports	- -  - - - - - - -  - X  X - - - - -  - - -
+switch		- -  - - - - - - -  - -  - - - X - -  - - -  Also on c-block-stmt-2-kwds
+truncatable	- -  - - - - - - -  - -  - - - - - -  - - X
+typedef		- -  - - - X - - -  - -  - - - - - -  - - -
+typeid		- -  - - - - - X -  - -  - - - - - -  - - -
+typeprefix	- -  - - - - - X -  - -  - - - - - -  - - -
+union		- -  X - - - - - -  - -  X - - - - -  - - -
+unsigned	- X  - - - - - - -  - -  - - - - - -  - - -
+uses		- -  - - - - - X -  - -  - - - - - -  - - -
+valuetype	- -  X - - - - - -  - -  X - X - - -  - - -
+void		X -  - - - - - - -  - -  - - - - - -  - - -
+wchar		X -  - - - - - - -  - -  - - - - - -  - - -
+wstring		X -  - - - - - - -  - -  - - - - - X  - - -
+
+Note: The separation of "Modifier" from "Other decl or decl prefix"
+hasn't been checked thoroughly.

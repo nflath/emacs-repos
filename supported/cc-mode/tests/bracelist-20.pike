@@ -1,0 +1,7 @@
+constant foo = ([
+    "identifier": ({([
+		    ]),
+		    ([
+		    ])
+    });
+]);

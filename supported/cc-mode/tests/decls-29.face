@@ -1,0 +1,16 @@
+(0 cmt)
+
+
+(0 typ) (1 reg) (2 var) (5 reg)
+
+(0 typ) (4 reg) (5 fun) (6 reg)
+
+(4 typ) (5 reg) (7 var) (9 reg)
+
+
+
+
+(4 typ) (8 reg) (9 fun) (12 reg) (14 typ) (18 reg) (20 var) (22 reg)
+(14 typ) (18 reg) (20 var) (22 reg)
+(14 typ) (18 reg) (20 var) (22 reg)
+

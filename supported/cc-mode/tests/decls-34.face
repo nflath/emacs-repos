@@ -1,0 +1,7 @@
+(0 typ) (3 reg) (4 typ) (8 reg) (9 fun) (12 reg)
+(0 typ) (4 reg) (5 typ) (8 reg) (9 fun) (12 reg)
+(0 typ) (4 reg) (5 typ) (9 reg) (10 fun) (13 reg)
+(0 typ) (4 reg) (5 typ) (9 reg) (10 fun) (13 reg)
+(0 typ) (4 reg) (5 typ) (9 reg) (10 fun) (13 reg)
+(0 ref) (1 reg) (2 typ) (6 reg) (7 typ) (12 reg) (13 fun) (16 reg)
+(0 typ) (5 reg) (6 ref) (7 reg) (8 typ) (13 reg) (14 fun) (17 reg)

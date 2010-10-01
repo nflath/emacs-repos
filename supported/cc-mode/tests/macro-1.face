@@ -1,0 +1,11 @@
+(0 typ) (3 reg) (4 var) (9 reg)
+
+(0 cpp) (7 reg) (8 var) (13 reg)
+
+(0 cpp) (7 reg) (8 fun) (26 reg) (27 var) (34 reg) (36 var) (41 reg)
+(4 key) (7 reg) (26 neg) (27 reg)
+(8 key) (10 reg) (12 neg) (13 reg)
+(34 str) (53 reg)
+(8 key) (12 reg)
+
+(0 typ) (3 reg) (4 var) (11 reg)

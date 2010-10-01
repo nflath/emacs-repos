@@ -1,0 +1,4 @@
+(0 key) (5 reg) (6 typ) (20 reg)
+(6 key) (12 reg) (13 ref) (24 reg) (26 typ) (39 reg)
+(6 key) (12 reg) (13 key) (20 reg) (21 ref) (35 reg) (37 typ) (56 reg)
+

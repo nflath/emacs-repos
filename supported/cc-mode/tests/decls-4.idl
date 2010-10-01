@@ -1,0 +1,6 @@
+interface Partner
+{
+    // a comment beginning in column X
+    void createUser(in User::Attributes attributes)
+	raises (domain::InsufficientPermissions);
+};

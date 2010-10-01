@@ -1,0 +1,64 @@
+(0 cmt)
+
+(0 reg)
+(0 cpp) (8 reg) (9 str) (27 reg)
+
+(0 key) (15 reg) (16 typ) (22 reg)
+
+(0 cpp) (3 reg)
+(2 fun) (16 reg) (19 typ) (21 reg) (23 typ) (29 reg) (31 var) (44 reg) (45 fun) (54 reg) (57 typ) (64 reg) (65 var) (68 reg)
+
+(4 typ) (8 reg) (9 var) (12 reg) (32 cmt) (72 reg)
+
+(4 key) (10 reg) (12 key) (16 reg)
+
+(0 cpp) (6 reg) (7 cmt) (26 reg)
+
+(2 fun) (16 reg) (19 typ) (21 reg) (23 typ) (29 reg) (31 var) (44 reg)
+
+(4 typ) (11 reg) (12 var) (14 reg)
+
+(5 key) (9 reg)
+
+(4 key) (10 reg) (11 key) (15 reg)
+
+
+(2 fun) (6 reg)
+
+(4 key) (10 reg) (12 key) (16 reg)
+
+
+(2 fun) (18 reg) (21 typ) (23 reg) (25 typ) (31 reg) (33 var) (40 reg) (41 fun) (46 reg) (49 typ) (59 reg) (60 var) (66 reg)
+
+(4 key) (10 reg) (14 typ) (21 reg)
+
+
+
+(2 fun) (19 reg) (22 key) (27 reg) (28 typ) (32 reg) (34 var) (36 reg) (37 fun) (42 reg) (45 typ) (55 reg) (56 var) (57 reg)
+
+(4 key) (10 reg) (14 typ) (21 reg)
+
+
+
+(3 typ) (7 reg) (11 fun) (27 reg) (30 typ) (40 reg) (41 var) (47 reg)
+
+(5 key) (9 reg)
+(4 key) (10 reg)
+
+
+(2 fun) (14 reg) (17 typ) (23 reg) (25 var) (26 reg)
+
+(4 key) (10 reg) (14 key) (18 reg) (59 typ) (67 reg) (69 key) (73 reg)
+
+
+(0 cmt)
+(0 reg) (3 typ) (6 reg) (20 fun) (38 reg)
+
+(4 key) (10 reg)
+
+
+(3 typ) (5 reg) (7 fun) (13 reg) (16 typ) (18 reg) (20 var) (21 reg) (23 typ) (25 reg) (26 var) (27 reg) (29 typ) (32 reg) (33 var) (34 reg)
+
+
+
+(0 key) (4 reg)

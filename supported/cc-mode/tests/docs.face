@@ -1,0 +1,28 @@
+(0 key) (6 reg) (7 key) (12 reg) (13 typ) (17 reg)
+
+(4 doc)
+
+(12 dmk doc) (24 doc) (29 dmk doc) (41 doc)
+(18 err doc) (19 doc)
+(7 dmk doc) (13 doc) (22 dmk doc) (29 doc)
+(7 dmk doc)
+(18 doc) (19 dmk doc) (23 doc)
+(7 err doc) (8 doc) (16 dmk doc) (19 err doc) (20 doc) (21 err doc) (22 doc) (26 err doc) (27 doc) (29 err doc) (30 doc)
+(8 dmk doc) (12 doc) (16 dmk doc) (20 doc) (22 dmk doc) (26 doc)
+(8 err doc) (9 doc) (14 err doc) (15 doc)
+
+(7 dmk doc) (13 doc)
+(7 dmk doc) (14 doc)
+(7 dmk doc) (11 doc)
+(7 reg)
+
+(4 doc) (8 dmk doc) (15 doc)
+(7 reg)
+
+(4 cmt)
+(0 reg)
+(4 cmt)
+
+
+(7 reg)
+

@@ -1,0 +1,169 @@
+From: Kevin Ruland <kruland@earthlink.net>
+Reply-To: kevin@rodin.wustl.edu
+To: cc-mode-help@lists.sourceforge.net
+Subject: Oracle ProC embedded sql indentation
+Date: Fri, 14 Jul 2000 21:07:13 -0500
+X-Mailer: KMail [version 1.0.28]
+References: <200007121948.MAA06676@lists.sourceforge.net>
+In-Reply-To: <200007121948.MAA06676@lists.sourceforge.net>
+MIME-Version: 1.0
+Message-Id: <00071421134200.01561@euler.home.ksr>
+Sender: cc-mode-help-admin@lists.sourceforge.net
+Errors-To: cc-mode-help-admin@lists.sourceforge.net
+X-Mailman-Version: 1.1
+Precedence: bulk
+List-Id: Bug reports, feature requests, and general talk about CC Mode. <cc-mode-help.lists.sourceforge.net>
+X-BeenThere: cc-mode-help@lists.sourceforge.net
+Content-Type: Multipart/Mixed;
+  boundary="Boundary-=_nWlrBbmQBhCDarzOwKkYHIDdqSCD"
+X-Content-Length: 5169
+Lines: 148
+Xref: lister.idonex.se prog.cc-mode.help:2202
+X-Gnus-Article-Number: 2202   Sat Jul 15 05:13:09 2000
+
+
+--Boundary-=_nWlrBbmQBhCDarzOwKkYHIDdqSCD
+Content-Type: text/plain
+Content-Transfer-Encoding: 8bit
+
+
+Hello everyone.
+
+I've been a big fan of CC-mode for quite some time.  Now that I'm doing quite a
+bit of embedded sql, I thought I'd hack up some better indentation.  This code
+can be activated by setting c-special-indent hook to c-plsql-special-indent in
+your favorite cstyle.  Also included is a q&d font-lock modification.
+
+The indentation code is not too smart because I didn't want (and couldn't
+because Sun compiled cc-mode into it's Xemacs) to modify the syntax symbols and
+parser.  It basically scans backwards to determine if the line is in an
+embedded sql block then tries to do the right thing.  It really falls short
+with subqueries, but it's better than nothing!
+
+Hope someone else out there finds this code useful and could help improve it.
+
+Kevin Ruland
+
+
+--Boundary-=_nWlrBbmQBhCDarzOwKkYHIDdqSCD
+Content-Type: text/english;
+  name="new.emacs"
+Content-Transfer-Encoding: 8bit
+Content-Disposition: attachment; filename="new.emacs"
+
+
+(let ((execsql "^[ \t]*EXEC[ \t]+SQL[ \t]+")
+      (atclause "AT[ \t\n]+[^ \t]*"))
+  (setq c++-font-lock-keywords
+	(append (list
+		 ;; includes
+		 (list (concat "\\(" execsql "INCLUDE\\)[ \t]+\\([^;]+\\)")
+		       '(1 font-lock-keyword-face)
+		       '(2 font-lock-string-face))
+		 ;; begin/end declare section
+		 (cons (concat "\\(" execsql
+			       "\\(BEGIN\\|END\\)[ \t]*DECLARE[ \t]*SECTION"
+			       "\\)")
+		       font-lock-keyword-face)
+		 ;; 1-parameter
+		 (cons (concat "\\(" execsql atclause
+			       "\\("
+			       "\\|PREPARE"
+			       "\\|DECLARE"
+			       "\\|OPEN"
+			       "\\|FETCH"
+			       "\\)\\)")
+		       font-lock-keyword-face)
+		 ;; catch others
+		 (cons (concat "\\(" execsql atclause
+			       "\\)")
+		       font-lock-keyword-face))
+		c++-font-lock-keywords-3
+	      )))
+
+(defun c-search-uplist-for-plsql (brace-state)
+  ;; search for the point being in a pl/sql block, returning a cons if
+  ;; found. aref 0 contains the bufpos of the "EXEC SQL" statement, and aref 1
+  ;; contains the bufpos of the end of the "EXECUTE".
+  (if (null brace-state) ;; no brace-state means we cannot be inside a pl/sql block
+      nil
+    (let ((carcache (car brace-state))
+	  search-start search-end)
+      (if (consp carcache)
+	  ;; a cons cell in the first element means that there is some
+	  ;; balanced sexp before the current bufpos. this we can
+	  ;; ignore. the nth 1 and nth 2 elements define for us the
+	  ;; search boundaries
+	  (setq search-start (nth 2 brace-state)
+		search-end (nth 1 brace-state))
+	;; if the car was not a cons cell then nth 0 and nth 1 define
+	;; for us the search boundaries
+	(setq search-start (nth 1 brace-state)
+	      search-end (nth 0 brace-state)))
+      ;; search-end cannot be a cons cell
+      (and (consp search-end)
+	   (error "consp search-end: %s" search-end))
+      ;; if search-end is nil we are definitely not in a class
+      (if (or (not search-end)
+	      (< search-end (point-min)))
+	  nil
+	;; now, we need to look more closely at search-start.  if
+	;; search-start is nil, then our start boundary is really
+	;; point-min.
+	(if (not search-start)
+	    (setq search-start (point-min))
+	  ;; if search-start is a cons cell, then we can start
+	  ;; searching from the end of the balanced sexp just ahead of
+	  ;; us
+	  (if (consp search-start)
+	      (setq search-start (cdr search-start))))
+	;; now we can do a quick regexp search from search-start to
+	;; search-end and see if we can find a pl/sql block.  watch for
+	;; class like strings in literals
+	(save-excursion
+	  (save-restriction
+	    (let ((search-key "\\(EXEC[ \t]+SQL[^\n]+EXECUTE\\)\\|END-EXEC")
+		  foundp sqlstmt syntax)
+	      (goto-char (c-point 'eol))
+	      ;; Go back to the previous "EXEC SQL ... EXECUTE" or "END-EXEC" line
+	      (while (and (not foundp)
+			  (progn
+			    (c-backward-syntactic-ws)
+			    (< search-start (point)))
+			  (re-search-backward search-key search-start t))
+		(setq sqlstmt (match-beginning 0))
+		(if (c-in-literal search-start) ; its in a comment or string, ignore
+		    nil
+		  (setq foundp t)
+		  (setq syntax (list (cons (if (string= "END-EXEC" (match-string 0))
+					       'statement
+					     'statement-cont)
+					   sqlstmt))))))
+	      syntax))
+	  ))))
+
+(defun c-plsql-special-indent ()
+  "Indent pl/sql blocks."
+
+  (let* ((plstmt (c-search-uplist-for-plsql (c-parse-state)))
+	 (pos (- (point-max) (point)))
+	 (indent (apply '+ (mapcar 'c-get-offset plstmt)))
+	 (shift-amt  (- (current-indentation) indent)))
+    (if (or (zerop shift-amt)
+	    (not plstmt))
+	nil
+      (if (and c-echo-syntactic-information-p
+	       (not (c-echo-parsing-error)))
+	  (message "syntax: %s, indent= %d" "plsql-cont" indent))
+      (delete-region (c-point 'bol) (c-point 'boi))
+      (beginning-of-line)
+      (indent-to indent))
+    (if (< (point) (c-point 'boi))
+	(back-to-indentation)
+      ;; If initial point was within line's indentation, position after
+      ;; the indentation.  Else stay at same point in text.
+      (if (> (- (point-max) pos) (point))
+	  (goto-char (- (point-max) pos)))
+      )))
+
+--Boundary-=_nWlrBbmQBhCDarzOwKkYHIDdqSCD--

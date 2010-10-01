@@ -1,0 +1,26 @@
+(0 fun) (4 reg)
+
+(4 typ) (7 reg) (8 var) (9 reg)
+
+(4 key) (10 reg)
+(4 key) (8 reg)
+
+
+(8 key) (13 reg)
+(4 key) (8 reg) (10 str) (11 reg)
+
+
+(8 key) (13 reg)
+(4 key) (8 reg) (9 ref) (13 reg)
+
+(8 key) (13 reg)
+
+(4 key) (8 reg) (9 ref) (13 reg)
+
+(8 key) (13 reg)
+
+(4 key) (8 reg) (9 ref) (13 reg)
+
+(8 key) (13 reg)
+
+
