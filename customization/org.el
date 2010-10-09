@@ -280,3 +280,7 @@
 (org-agenda-list)
 
 (define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
+
+(setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
+(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
+(setq org-mobile-checksum-binary "echo ")

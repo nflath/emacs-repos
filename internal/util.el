@@ -246,3 +246,7 @@ character of the current line."
         (eq pt (point)))) (beginning-of-line))
    (t (back-to-indentation))))
 (global-set-key (kbd "C-a") 'nflath-cycle-bol)
+
+(defun browse-current-file ()
+  (interactive)
+  (browse-url (concat "file://" buffer-file-name)))
