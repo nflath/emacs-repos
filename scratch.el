@@ -9,5 +9,5 @@
 
 (defun perform-command-movement (command movement)
   (interactive "c\nc")
-  (aget command-list command)
+  (call-interactively (aget command-list command))
   )
