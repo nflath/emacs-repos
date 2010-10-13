@@ -10,6 +10,8 @@
 
 (defun perform-command-movement (command movement)
   (interactive "c\nc")
+  (print command)
+  (print movement)
   (save-excursion
     (let ((start (point)))
       (call-interactively (aget movement-list command))
