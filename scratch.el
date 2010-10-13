@@ -14,7 +14,7 @@
   (print movement)
   (save-excursion
     (let ((start (point)))
-      (call-interactively (aget movement-list command))
+      (call-interactively (aget movement-list movement))
       (funcall (aget command-list command) start (point)))))
 
 
