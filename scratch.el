@@ -5,7 +5,8 @@
       '( "d" . 'kill-region))
 
 (setq movement-list
-      '( "f" . 'forward-word))
+      '( "f" . 'forward-word)
+      '( "s" . 'forward-sexp))
 
 (defun perform-command-movement (command movement)
   (interactive "c\nc")
@@ -13,3 +14,5 @@
     (let ((start (point)))
       (call-interactively (aget movement-list command))
       (funcall (aget movement-list command) start (point)))))
+
+
