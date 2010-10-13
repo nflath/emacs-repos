@@ -2,7 +2,8 @@
 ;; file with C-x C-f, then enter the text in that file's own buffer.
 (require 'assoc)
 (setq command-list
-      '(( ?d . kill-region)))
+      '(( ?d . kill-region)
+        ( ?c . copy-region-as-kill)))
 
 (setq movement-list
       '(( ?f . forward-word)
