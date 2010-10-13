@@ -7,7 +7,7 @@
 (setq movement-list
       '( "f" . 'forward-word))
 
-(defun perform-command-movement (&rest args)
+(defun perform-command-movement (command movement )
   (interactive)
   
   )
