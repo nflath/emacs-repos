@@ -5,8 +5,8 @@
       '( ?d . 'kill-region))
 
 (setq movement-list
-      '(( ?f . 'forward-word)
-        ( ?s . 'forward-sexp)))
+      '(( ?f . forward-word)
+        ( ?s . forward-sexp)))
 
 (defun perform-command-movement (command movement)
   (interactive "c\nc")
