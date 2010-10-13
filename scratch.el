@@ -6,7 +6,7 @@
         ( ?c . copy-region-as-kill)))
 
 (setq movement-list
-      '(( ?f . forward-word)
+      '(( ?w . forward-word)
         ( ?s . forward-sexp)))
 
 (defun perform-command-movement (command movement)
