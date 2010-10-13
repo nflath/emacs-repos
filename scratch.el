@@ -13,6 +13,6 @@
   (save-excursion
     (let ((start (point)))
       (call-interactively (aget movement-list command))
-      (funcall (aget movement-list command) start (point)))))
+      (funcall (aget command-list command) start (point)))))
 
 
