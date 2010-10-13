@@ -7,7 +7,7 @@
 (setq movement-list
       '( "f" . 'forward-word))
 
-(defun perform-command-movement (command movement )
-  (interactive)
+(defun perform-command-movement (command movement)
+  (interactive "c\nc")
   
   )
