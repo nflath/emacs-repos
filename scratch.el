@@ -9,5 +9,7 @@
 
 (defun perform-command-movement (command movement)
   (interactive "c\nc")
-  (call-interactively (aget command-list command))
-  )
+  (save-excursion
+    (let ((start (point)))
+      (call-interactively (aget movement-list command))
+      (funcall (aget movement-list command) start (point)))))
