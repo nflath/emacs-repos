@@ -15,4 +15,4 @@
       (call-interactively (aget movement-list movement))
       (funcall (aget command-list command) start (point)))))
 
-
+(global-set-key (kbd "C-t") 'perform-movement-command)
