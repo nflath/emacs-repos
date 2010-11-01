@@ -7,6 +7,7 @@
 
 (setq movement-list
       '(( ?w . forward-word)
+        ( ?d . end-of-line)
         ( ?s . forward-sexp)))
 
 (defun perform-command-movement (command movement)
@@ -16,4 +17,4 @@
       (call-interactively (aget movement-list movement))
       (funcall (aget command-list command) start (point)))))
 
-(global-set-key (kbd "C-t") 'perform-command-movement)
+(global-set-key (kbd "C-q") 'perform-command-movement)
