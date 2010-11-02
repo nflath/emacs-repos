@@ -190,16 +190,11 @@
     (goto-char pos)))
 (global-set-key (kbd "C-c C-r") 'sudo-edit-current-file)
 
-(setq completion-ignored-extensions
-      (cons ".class" completion-ignored-extensions)
-      completion-ignored-extensions
-      (cons ".exe"   completion-ignored-extensions)
-      completion-ignored-extensions
-      (cons ".o"     completion-ignored-extensions)
-      completion-ignored-extensions
-      (cons ".dvi"   completion-ignored-extensions)
-      completion-ignored-extensions
-      (cons ".ps"    completion-ignored-extensions))
+(add-to-list 'completion-ignored-extensions ".class")
+(add-to-list 'completion-ignored-extensions ".exe")
+(add-to-list 'completion-ignored-extensions ".o")
+(add-to-list 'completion-ignored-extensions ".dvi")
+(add-to-list 'completion-ignored-extensions ".ps")
 
 ;; Avoid those horrible "File %s changed on disk.  Reread from disk?" messages.
 (setq revert-without-query '(".*"))
