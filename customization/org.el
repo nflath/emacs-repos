@@ -7,21 +7,6 @@
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
-(setq org-agenda-custom-commands
-      (quote (("p" "Pending Tasks" todo "PENDING" ((org-agenda-todo-ignore-scheduled nil)
-                                                   (org-agenda-todo-ignore-deadlines nil)
-                                                   (org-agenda-todo-ignore-with-date nil)))
-              ("f" "Future Tasks" todo "FUTURE" ((org-agenda-todo-ignore-scheduled nil)
-                                                   (org-agenda-todo-ignore-deadlines nil)
-                                                   (org-agenda-todo-ignore-with-date nil)))
-              ("S" " Tasks" todo "STALLED" ((org-agenda-todo-ignore-scheduled nil)
-                                                 (org-agenda-todo-ignore-deadlines nil)
-                                                 (org-agenda-todo-ignore-with-date nil)))
-              ("x" "Weekly agenda with hidden future" agenda ""
-               ((org-agenda-ndays 7)
-                (org-agenda-skip-function 'my-org-skip-hidden-if-future)
-                (org-agenda-start-day nil))))))
-
 
 ;;Time logging
 (org-clock-persistence-insinuate)
@@ -191,10 +176,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (define-key global-map "\C-cr" 'org-remember)
 
-;(require 'org-table)
-;(add-hook 'text-mode-hook 'turn-on-orgtbl)
-;(remove-hook 'text-mode-hook 'turn-on-orgstruct)
-;(remove-hook 'text-mode-hook 'turn-on-orgstruct++)
 (setq org-hide-leading-stars t)
 (require 'org)
 (when (locate-library "org-babel-init")(require 'org-babel-init))
@@ -211,31 +192,6 @@
 (setq org-habit-graph-column 60)
 
 (add-hook 'org-mode-hook 'org-hide-block-all)
-
-(defun org-is-hidden-p (&optional pom)
-  "Is the task at POM or point a habit?"
-  (string= "hidden" (org-entry-get (or pom (point)) "STYLE")))
-
-(provide 'org-cust)
-
-(defun org-hide-current ()
-  (interactive)
-  (org-set-property "STYLE" "hidden") )
-
-(defun org-agenda-hide ()
-  "Set a property for the current headline."
-  (interactive)
-  (org-agenda-check-no-diary)
-  (let* ((hdmarker (or (org-get-at-bol 'org-hd-marker)
-                       (org-agenda-error)))
-         (buffer (marker-buffer hdmarker))
-         (pos (marker-position hdmarker))
-         (inhibit-read-only t)
-         newhead)
-    (with-current-buffer buffer
-      (widen)
-      (goto-char pos)
-      (org-set-property "STYLE" "hidden"))))
 
 (setq org-entities-user
       '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
@@ -262,19 +218,6 @@
 ;;    (list org-entities org-entities-user)))
 
 ;; (remove-hook 'find-file-hook 'org-pretty-entities)
-
-(defun my-org-skip-hidden-if-future ()
-  (let ((end-entry (save-excursion
-                     (or (outline-next-heading) (org-end-of-subtree))))
-        (scheduled (org-entry-get nil "SCHEDULED"))
-        (hidden (when (string= (org-entry-get nil "STYLE") "hidden")
-                  t)))
-    (when (and hidden scheduled)
-      (if (<= (- (org-time-string-to-absolute scheduled)
-                 (calendar-absolute-from-gregorian (calendar-current-date)))
-              0)
-          nil
-        end-entry))))
 
 (setq org-agenda-repeating-timestamp-show-all nil)
 (org-agenda-list)

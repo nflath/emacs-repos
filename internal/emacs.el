@@ -200,3 +200,11 @@
       (cons ".dvi"   completion-ignored-extensions)
       completion-ignored-extensions
       (cons ".ps"    completion-ignored-extensions))
+
+;; Avoid those horrible "File %s changed on disk.  Reread from disk?" messages.
+(setq revert-without-query '(".*"))
+;; And same for "buffer %s has changed on disk.  Really edit?"
+(defun ask-user-about-supersession-threat (filename)
+  (message "Reverting file %s..." filename)
+  (revert-buffer t t)
+  (message "Reverting file %s... done" filename))
