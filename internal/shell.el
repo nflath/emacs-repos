@@ -66,58 +66,7 @@
       input)))
 (add-hook 'comint-preoutput-filter-functions 'shorten-prompt)
 
-;;The following patches dirtrack so that when the regularr expression matching yyour prompt has a match that is not a
-;;directory, it does not eat all the output and error.  Instead, it does the much more sensible thing of nothing.
-
 (require 'dirtrack)
-(defun dirtrack (input)
-  "Determine the current directory by scanning the process output for a prompt.
-The prompt to look for is the first item in `dirtrack-list'.
-
-You can toggle directory tracking by using the function `dirtrack-mode'.
-
-If directory tracking does not seem to be working, you can use the
-function `dirtrack-debug-mode' to turn on debugging output."
-  (unless (or (null dirtrack-mode)
-              (eq (point) (point-min)))     ; no output?
-    (let (prompt-path
-          (current-dir default-directory)
-          (dirtrack-regexp    (nth 0 dirtrack-list))
-          (match-num	      (nth 1 dirtrack-list))
-          ;; Currently unimplemented, it seems.  --Stef
-          (multi-line	      (nth 2 dirtrack-list)))
-      (save-excursion
-        ;; No match
-        (if (not (string-match dirtrack-regexp input))
-            (dirtrack-debug-message
-             (format "Input `%s' failed to match `dirtrack-list'" input))
-          (setq prompt-path (match-string match-num input))
-          ;; Empty string
-          (if (not (> (length prompt-path) 0))
-              (dirtrack-debug-message "Match is empty string")
-            ;; Transform prompts into canonical forms
-            (setq prompt-path (funcall dirtrack-directory-function
-                                       prompt-path)
-                  current-dir (funcall dirtrack-canonicalize-function
-                                       current-dir))
-            (dirtrack-debug-message
-             (format "Prompt is %s\nCurrent directory is %s"
-                     prompt-path current-dir))
-            ;; Compare them
-            (if (or (string= current-dir prompt-path)
-                    (string= current-dir (abbreviate-file-name prompt-path)))
-                (dirtrack-debug-message (format "Not changing directory"))
-              ;; It's possible that Emacs will think the directory
-              ;; won't exist (eg, rlogin buffers)
-              (if (file-accessible-directory-p prompt-path)
-                  ;; Change directory
-                  (and (shell-process-cd prompt-path)
-                       (run-hooks 'dirtrack-directory-change-hook)
-                       (dirtrack-debug-message
-                        (format "Changing directory to %s" prompt-path)))
-                (progn (message "Directory %s does not exist" prompt-path) input)))
-            )))))
-  input)
 
 ;;When I'm on windows, I want to use *eshell* instead of the built-in shell.  However, a few of my functions call shell directly, so I alias *shell* to *eshell* if I'm using windows
 (when (eq window-system 'w32)

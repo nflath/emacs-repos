@@ -10,7 +10,6 @@
            (directory-files-recursive (concat man-dir dir))))
         (remove-if-not (lambda (elt) (string-match "man" elt))
                        (directory-files man-dir)))
-
   (mapcar (lambda (elt)
             (eval
              `(defun ,(intern (concat "man-" elt)) ()
