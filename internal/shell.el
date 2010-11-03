@@ -1,3 +1,4 @@
+(setq explicit-shell-file-name "/bin/zsh")
 ;;Functions that make it much easier to open a shell.  Also, create a shell in the default emacs directory.
 (defun shell-current-directory ()
   "Opens a shell in the current directory"
