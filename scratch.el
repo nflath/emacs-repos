@@ -17,3 +17,16 @@
       (funcall (aget command-list command) start (point)))))
 
 (global-set-key (kbd "C-t") 'perform-command-movement)
+(add-to-list 'load-path "~/emacs-repos/supported/slime")
+
+
+(add-to-list 'load-path "~/opt/clojure-mode")
+(require 'clojure-mode)
+
+;; slime
+(eval-after-load "slime"
+  '(progn (slime-setup '(slime-repl))))
+
+(add-to-list 'load-path "~/opt/slime")
+(require 'slime)
+(slime-setup)

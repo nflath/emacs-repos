@@ -40,3 +40,6 @@
 [submodule "supported/clojure-mode"]
     path = supported/clojure-mode
 	url = http://github.com/jochu/clojure-mode.git
+[submodule "supported/slime"]
+	path = supported/slime
+	url = git://github.com/nablaone/slime.git
