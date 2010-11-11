@@ -16,12 +16,3 @@
   (ispell-send-string (concat "*" word "\n"))
   (ispell-send-string "#\n"))
 (global-set-key (kbd "C-c f") 'flyspell-add-word)
-
-
-
-
-
-
-
-
-
