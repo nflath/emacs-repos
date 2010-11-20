@@ -1,3 +1,4 @@
+(require 'gud)
 (define-key gud-minor-mode-map (kbd "M-v") 'gdb-toggle-breakpoint)
 (define-key gud-minor-mode-map (kbd "M-c") 'gud-cont   )
 (define-key gud-minor-mode-map (kbd "M-m") 'gud-down   )
