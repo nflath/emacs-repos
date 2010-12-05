@@ -52,14 +52,10 @@
 (setq org-log-done 'time)
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d!)")
-        (sequence "|" "CANCELED(c@/!)")
-        (sequence "|" "STALLED(s@/!)")
-        (sequence "PENDING(p@/!)" "|" )))
+        (sequence "|" "CANCELED(c@/!)")))
 
 (setq org-todo-keyword-faces
-      '(("CANCELED"  . (:foreground "blue" :weight bold))
-        ("STALLED"  . (:foreground "RED" :weight bold))
-        ("PENDING"  . (:foreground "orange" :weight bold))))
+      '(("CANCELED"  . (:foreground "blue" :weight bold))))
 
 (defun org-current-section-number (&optional pos)
   "Returns the subsection number at pos"
@@ -151,14 +147,6 @@
                 (setq yas/trigger-key [tab])
                 (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
                 (define-key yas/keymap [tab] 'yas/next-field)))))
-
-(defun bh/insert-inactive-timestamp ()
-  "Insert a timestamp for the current time at point."
-  (interactive)
-  (save-excursion
-    (insert "\n")
-    (org-cycle)
-    (org-insert-time-stamp nil t t nil nil nil)))
 
 ;;General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
