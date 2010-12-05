@@ -33,5 +33,5 @@
               (if syntax (setq syntax (cdr syntax)))))))
       pos)))
 
-(define-key c-mode-map (kbd "C-M-a") 'c-beginning-of-defun)
-(define-key c++-mode-map (kbd "C-M-a") 'c-beginning-of-defun)
+(define-key c-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)
+(define-key c++-mode-map (kbd "C-M-a") 'ido-beginning-of-defun)

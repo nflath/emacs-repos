@@ -17,3 +17,4 @@
                   (if (file-exists-p h-file)
                       (expand-member-functions h-file c-file)))
                 h-file-list))))
+(add-hook 'c++-mode-hook 'c-file-enter)
