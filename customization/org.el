@@ -224,17 +224,5 @@
 
 (define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
 
-(setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
-(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
-(setq org-mobile-checksum-binary "echo ")
-(defadvice org-save-all-org-buffers (around mobileorg-auto-push activate)
-  (ad-deactivate 'org-save-all-org-buffers)
-  (org-mobile-push)
-  (ad-activate 'org-save-all-org-buffers))
 
-(defadvice org-agenda-redo (before mobileorg-auto-pull activate)
-  (org-mobile-pull))
-
-(defadvice org-agenda (before mobileorg-auto-pull activate)
-  (org-mobile-pull))
 
