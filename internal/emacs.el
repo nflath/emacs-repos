@@ -73,8 +73,7 @@
                            (let ((buffer-file-name (replace-regexp-in-string "\\.tmp$" ""
                                                                              (or buffer-file-name (buffer-name)))))
                              (set-auto-mode)
-                             (if (eq major-mode 'fundamental-mode)
-                                 (org-mode)))))
+                             )))
 
 ;;Some better keybindings
 (global-set-key (kbd "C-x r") 'revert-buffer)
@@ -85,6 +84,7 @@
 (global-set-key (kbd "M-o") 'occur)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-o") 'split-line)
+(define-key log-edit-mode-map (kbd "C-x C-s") 'log-edit-done)
 (define-key global-map [(control meta o)] 'loccur)
 (define-key global-map [(control shift o)] 'loccur-previous-match)
 (global-set-key (kbd"C-x \\") 'align-regexp)
@@ -203,3 +203,7 @@
   (message "Reverting file %s..." filename)
   (revert-buffer t t)
   (message "Reverting file %s... done" filename))
+
+(setq whitespace-style '(lines-tail))
+(setq whitespace-line-column 80)
+(global-whitespace-mode)
