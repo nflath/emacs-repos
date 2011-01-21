@@ -1,3 +1,6 @@
+(setq todochiku-command "C:/Users/nflath/Snarl_CMD.exe")
+(add-to-list 'load-path "C:/Users/nflath/src/org-mode/lisp")
+(setq warning-suppress-types nil)
 ;;Create required directories
 (mapcar (lambda (dir) (mkdir dir t))
         '("~/.emacs.d/tmp"

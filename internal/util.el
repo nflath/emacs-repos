@@ -250,3 +250,13 @@ character of the current line."
 (defun browse-current-file ()
   (interactive)
   (browse-url (concat "file://" buffer-file-name)))
+
+(defun wc-elisp ()
+  (interactive)
+  (save-excursion
+    (beginning-of-buffer)
+    (let ((i 0))
+      (while (not (eobp))
+        (forward-word)
+        (setq i (1+ i)))
+      (print i))))

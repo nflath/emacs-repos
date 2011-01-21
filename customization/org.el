@@ -165,6 +165,25 @@
 (define-key global-map "\C-cr" 'org-remember)
 
 (setq org-hide-leading-stars t)
+
+
+(require 'appt)
+(setq org-agenda-include-diary t)
+(setq appt-time-msg-list nil)
+(org-agenda-to-appt)
+
+(defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
+  "Pressing `r' on the agenda will also add appointments."
+  (progn
+    (setq appt-time-msg-list nil)
+    (org-agenda-to-appt)))
+
+(ad-activate 'org-agenda-redo)
+
+(progn
+  (appt-activate 1)
+  (setq appt-display-format 'window))
+
 (require 'org)
 (when (locate-library "org-babel-init")(require 'org-babel-init))
 (when (locate-library "org-depend") (require 'org-depend))
