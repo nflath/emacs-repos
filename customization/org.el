@@ -168,7 +168,6 @@
 
 
 (require 'appt)
-(setq org-agenda-include-diary t)
 (setq appt-time-msg-list nil)
 (org-agenda-to-appt)
 
