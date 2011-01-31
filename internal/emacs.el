@@ -84,7 +84,8 @@
 (global-set-key (kbd "M-o") 'occur)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-o") 'split-line)
-(define-key log-edit-mode-map (kbd "C-x C-s") 'log-edit-done)
+;;(require 'log-edit-mode)
+;;(define-key log-edit-mode-map (kbd "C-x C-s") 'log-edit-done)
 (define-key global-map [(control meta o)] 'loccur)
 (define-key global-map [(control shift o)] 'loccur-previous-match)
 (global-set-key (kbd"C-x \\") 'align-regexp)
@@ -206,4 +207,4 @@
 
 (setq whitespace-style '(lines-tail))
 (setq whitespace-line-column 80)
-(global-whitespace-mode)
+(add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
