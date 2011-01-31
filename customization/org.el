@@ -163,9 +163,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cl" 'org-store-link)
 (define-key global-map "\C-cr" 'org-remember)
-
 (setq org-hide-leading-stars t)
-
 
 (require 'appt)
 (setq appt-time-msg-list nil)
