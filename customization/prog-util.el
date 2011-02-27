@@ -40,6 +40,7 @@
     lisp-mode-hook
     haskell-mode-hook
     clojure-mode-hook
+    python-mode-hook
     c-mode-common-hook
     )
   "List of programming mode hooks.")
