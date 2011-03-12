@@ -208,3 +208,4 @@
 (setq whitespace-style '(lines-tail))
 (setq whitespace-line-column 80)
 (add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
+(setq tab-always-indent 'complete)

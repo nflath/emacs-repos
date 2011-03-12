@@ -4,6 +4,7 @@
 
 (require 'wdired)
 (require 'dired-x)
+(require 'dired-aux)
 (setq wdired-allow-to-change-permissions 'advanced)
 (setq dired-auto-revert-buffer t)
 (define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
@@ -14,3 +15,19 @@
   (mapcar 'load-file
           (dired-get-marked-files nil arg)))
 (define-key dired-mode-map (kbd "c") 'eval-files-dired)
+
+(setq dired-omit-files
+      (rx (or (seq bol (? ".") "#")         ;; emacs autosave files
+              (seq bol "." (not (any "."))) ;; dot-files
+              (seq "~" eol)                 ;; backup-files
+              (seq bol "CVS" eol)           ;; CVS dirs
+              (seq ".class" eol)
+              (seq ".pyc" eol)
+              )))
+
+(setq dired-omit-extensions
+      (append dired-latex-unclean-extensions
+              dired-bibtex-unclean-extensions
+              dired-texinfo-unclean-extensions))
+
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
