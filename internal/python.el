@@ -129,5 +129,6 @@ is passed after the options."
        (flymake-add-checker 'flymake-pylint-init))
 
      (when flymake-enable-pep8
-       (flymake-add-checker 'flymake-pep8-init)))
-  )
+       (flymake-add-checker 'flymake-pep8-init))))
+
+(setq python-remove-cwd-from-path nil)
