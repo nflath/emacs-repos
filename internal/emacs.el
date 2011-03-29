@@ -209,8 +209,8 @@
   (message "Reverting file %s... done" filename))
 
 (setq whitespace-style '(lines-tail))
-(setq whitespace-line-column 80)
+(setq whitespace-line-column 79)
 (add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
-(add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 80)))
+(add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 79)))
 (setq tab-always-indent 'complete)
 
