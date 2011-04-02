@@ -1,6 +1,6 @@
 ;;Checkout the latest version of org mode, if I don't already have it.
 (require 'org-install)
-
+(require 'org-habit)
 ;;Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))
@@ -209,7 +209,6 @@
 
 
 (setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
-(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
 (setq org-mobile-checksum-binary "echo ")
 (defadvice org-save-all-org-buffers (around mobileorg-auto-push activate)
   (ad-deactivate 'org-save-all-org-buffers)
