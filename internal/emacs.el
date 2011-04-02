@@ -149,9 +149,10 @@
 (icomplete-mode 1)
 (setq icomplete-compute-delay 0)
 
-;;Ido is a mode for easier selection of items in the minibuffer.  It's main uses are enhancing find-file and
-;;switch-buffer.  Ido provides 'flex matching', as well as searching recent directories if no matches are found.  It
-;;will also default to the file at point if it exists.
+;;Ido is a mode for easier selection of items in the minibuffer.  It's main uses
+;;are enhancing find-file and switch-buffer.  Ido provides 'flex matching', as
+;;well as searching recent directories if no matches are found.  It will also
+;;default to the file at point if it exists.
 (setq ido-save-directory-list-file "~/.emacs.d/.ido.last")
 (setq ido-enable-flex-matching t)
 (defadvice ido-find-file (around dired-dont-guess activate)
@@ -171,8 +172,10 @@
 
 (winner-mode t)
 
-;;Tramp allows remote access to files by using find-file with /ssh:user@host:path/to/file.  It is too slow for regular
-;;use, but it can still sometimes be useful.  We want it to use ssh by default to make it slightly more bearable.
+;;Tramp allows remote access to files by using find-file with
+;;/ssh:user@host:path/to/file.  It is too slow for regular use, but it can still
+;;sometimes be useful.  We want it to use ssh by default to make it slightly
+;;more bearable.
 (require 'tramp)
 (setq tramp-default-method "ssh")
 
@@ -208,4 +211,8 @@
 (setq whitespace-style '(lines-tail))
 (setq whitespace-line-column 80)
 (add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
+<<<<<<< HEAD
+(add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 80)))
+=======
 (setq tab-always-indent 'complete)
+>>>>>>> 46d191f6844b4079a909ee93c0e20aec7c4a4f94

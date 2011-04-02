@@ -40,7 +40,6 @@
 (defun ido-goto-symbol ()
   "Will update the imenu index and then use ido to select a symbol to navigate to."
   (interactive)
-  (setq imenu-create-index-function 'imenu-default-create-index-function)
   (imenu--make-index-alist)
   (let ((name-and-pos '())
         (symbol-names '()))
@@ -72,8 +71,9 @@
                                                             symbol-names))
                                    symbol-names)))
                (position (cdr (assoc selected-symbol name-and-pos))))
-          (if (markerp position)
-              (goto-char position) (goto-char (overlay-start position))))))))
+          (if (overlayp  position)
+              (goto-char (overlay-start position))
+            (goto-char position)))))))
 (global-set-key (kbd "M-s") 'ido-goto-symbol)
 
 ;;Compiling always asks to save my buffers; I want it to instead do nothing, so I have save-some-buffers only do stuff if passed a filter.
