@@ -211,8 +211,6 @@
 (setq whitespace-style '(lines-tail))
 (setq whitespace-line-column 80)
 (add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
-<<<<<<< HEAD
 (add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 80)))
-=======
 (setq tab-always-indent 'complete)
->>>>>>> 46d191f6844b4079a909ee93c0e20aec7c4a4f94
+
