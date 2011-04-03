@@ -5,4 +5,5 @@
   "Location of org files")
 
 (defvar man-dir "C:/cygwin/usr/share/man/" "Location of man files")
-(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
+
+(defvar org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
