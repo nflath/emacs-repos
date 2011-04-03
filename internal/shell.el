@@ -24,7 +24,7 @@
 
 ;;Dirtrack is a mode that keeps your shell buffers' directories in sync with the shell.  It does this by looking for the
 ;;current directory in your prompt.  To use it, you need to set your prompt to match the regex, or vice versa.
-(setq-default dirtrack-list '("[a-zA-Z]*@\\([^$]*\\)\\$ " 1))
+(setq-default dirtrack-list '("[a-zA-Z]*@\\([^$ \t\r\n]*\\)\\$ " 1))
 (defun shell-mode-start-dirtrack ()
   "Changes to the correct prompt"
   (shell-dirtrack-mode -1)

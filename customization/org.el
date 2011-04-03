@@ -209,7 +209,6 @@
 
 
 (setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
-(setq org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
 (setq org-mobile-checksum-binary "echo ")
 (defadvice org-save-all-org-buffers (around mobileorg-auto-push activate)
   (ad-deactivate 'org-save-all-org-buffers)
