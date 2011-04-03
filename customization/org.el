@@ -1,6 +1,6 @@
 ;;Checkout the latest version of org mode, if I don't already have it.
 (require 'org-install)
-
+(require 'org-habit)
 ;;Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))

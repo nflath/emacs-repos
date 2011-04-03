@@ -7,4 +7,4 @@
 (set-face-attribute 'default nil :height 90)
 
 (defvar man-dir "/usr/share/man/" "Location of man files")
-(defvar org-mobile-directory "C:/Users/nflath/Documents/My Dropbox/MobileOrg")
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
