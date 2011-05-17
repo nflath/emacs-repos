@@ -8,3 +8,10 @@
 
 
 (current-time)
+
+(defun only-outline ()
+  (interactive)
+  (occur "^\\*")
+  (switch-to-buffer "*Occur*")
+  (rename-buffer (buffer-name) + ".org")
+  )
