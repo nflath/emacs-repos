@@ -1,2 +1,2 @@
-(require 'google-weather)
-(require 'org-google-weather)
+;(require 'google-weather)
+;(require 'org-google-weather)
