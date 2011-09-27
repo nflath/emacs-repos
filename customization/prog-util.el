@@ -22,6 +22,7 @@
     sql-mode
     lisp-mode
     c-mode
+    python-mode
     c++-mode
     java-mode
     objc-mode

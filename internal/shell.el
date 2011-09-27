@@ -1,4 +1,6 @@
-(setq explicit-shell-file-name "/bin/zsh")
+(if (= 0 (shell-command "zsh"))
+    (setq explicit-shell-file-name "/bin/zsh"))
+
 ;;Functions that make it much easier to open a shell.  Also, create a shell in the default emacs directory.
 (defun shell-current-directory ()
   "Opens a shell in the current directory"
@@ -28,7 +30,9 @@
 (defun shell-mode-start-dirtrack ()
   "Changes to the correct prompt"
   (shell-dirtrack-mode -1)
-  (comint-send-string (current-buffer) "export PS1=\"nflath@\%d$ \"\n")
+  (if (= 0 (shell-command "zsh"))
+      (comint-send-string (current-buffer) "export PS1=\"nflath@\%d$ \"\n")
+    (comint-send-string (current-buffer) "export PS1=\"nflath@\\w$ \"\n"))
   (dirtrack-mode 1))
 (add-hook 'shell-mode-hook 'shell-mode-start-dirtrack)
 

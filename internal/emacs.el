@@ -35,7 +35,7 @@
 (eval-after-load 'init-finished
   '(server-start))
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;History features
 (setq save-place-file "~/.emacs.d/.saveplace")
@@ -135,9 +135,10 @@
 (defun maximize-frame ()
   "Maximizes the Emacs frame."
   (interactive)
-  (if (fboundp 'x-send-client-message)
-      (x11-maximize-frame)
-    (w32-maximize-frame)))
+  (if window-system
+      (if (fboundp 'x-send-client-message)
+          (x11-maximize-frame)
+        (w32-maximize-frame))))
 (eval-after-load 'init-finished
   '(maximize-frame))
 
@@ -209,7 +210,7 @@
   (message "Reverting file %s... done" filename))
 
 (setq whitespace-style '(lines-tail))
-(setq whitespace-line-column 79)
+(setq whitespace-line-column 85)
 (add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
 (add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 79)))
 (setq tab-always-indent 'complete)

@@ -98,13 +98,14 @@
 (defadvice kill-line (after fixup-whitespace activate)
   "Call fixup whitespace after killing line."
   (when (not (eq major-mode 'python-mode))
-    (if (not (eq major-mode 'shell-mode))
-        (funcall indent-line-function))
     (if (not (looking-at "$"))
         (fixup-whitespace))
-    (indent-according-to-mode)
-    (if (looking-at "^")
-        (back-to-indentation))))
+    (if (not (looking-at "$"))
+        (fixup-whitespace))
+    (if (and (not (eq major-mode 'shell-mode))
+             (not (looking-at "^$"))
+             (not (eq indent-line-function 'indent-relative)))
+        (funcall indent-line-function))))
 
 (defadvice kill-line (after fixup-comments activate)
   "Don't leave comment characters after killing a line."
