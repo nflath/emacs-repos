@@ -28,4 +28,3 @@
 
 (if (get-buffer "scratch.el")
     (kill-buffer "scratch.el"))
-
