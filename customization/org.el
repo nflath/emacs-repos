@@ -167,7 +167,7 @@
 
 (require 'appt)
 (setq appt-time-msg-list nil)
-(org-agenda-to-appt)
+;(org-agenda-to-appt)
 
 (defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
   "Pressing `r' on the agenda will also add appointments."

@@ -215,3 +215,5 @@
 (add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 79)))
 (setq tab-always-indent 'complete)
 
+(setq split-height-threshold 80)
+(setq split-width-threshold 160)

@@ -10,8 +10,8 @@
          (t 'erc-header-line-disconnected))))
 (setq erc-header-line-face-method 'erc-update-header-line-show-disconnected)
 
-;;I sometimes want to look through the logs of my conversations.  The following makes sure to always keep logs
-;;up-to-date and saved.
+;;I sometimes want to look through the logs of my conversations.  The following
+;;makes sure to always keep logs up-to-date and saved.
 (setq erc-log-channels-directory "~/.emacs.d/logs/")
 (setq erc-save-buffer-on-part t)
 (setq erc-save-queries-on-quit nil
@@ -21,7 +21,8 @@
 ;;Hide unimportant messages from being displayed.
 (setq erc-hide-list '("MODE"))
 
-;;When possible, notifies me by use of notify-send(and thus outside emacs) when I am mentioned in a message.
+;;When possible, notifies me by use of notify-send(and thus outside emacs) when
+;;I am mentioned in a message.
 (when (shell-command "notify-send --version")
   (defun erc-notify-on-msg (msg)
     (if (string-match "nflath:" msg)
