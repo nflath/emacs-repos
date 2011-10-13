@@ -110,7 +110,7 @@ the time in seconds it took to load."
 (defun string-trim (str)
   "Chomp leading and tailing whitespace from STR."
   (let ((s (if (symbolp str) (symbol-name str) str)))
-    (replace-regexp-in-string "\\(^[[:space:]\\n]*\\|[[:space:]\\n]*$\\)" "" s)))
+    (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" s)))
 
 (defun exec-cmds (cmd-list error)
   "Execute all commands in the list until one fails, then print
