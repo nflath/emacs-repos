@@ -2,7 +2,7 @@
 (setq auto-mode-alist
       (append '(
                 ("\\.tat$"                    . python-mode)
-                ("\\.tac$"                    . c++-mode)
+                ("\\.tac$"                    . tacc-mode)
                 ("\\.tin$"                    . c++-mode)
                 ("\\.itin$"                   . c++-mode)
                 )

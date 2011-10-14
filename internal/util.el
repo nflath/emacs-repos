@@ -260,3 +260,46 @@ character of the current line."
         (forward-word)
         (setq i (1+ i)))
       (print i))))
+
+(defun uniquify-all-lines-region (start end)
+  "Find duplicate lines in region START to END keeping first occurrence."
+  (interactive "*r")
+  (save-excursion
+    (let ((end (copy-marker end)))
+      (while
+          (progn
+            (goto-char start)
+            (re-search-forward "^\\(.*\\)\n\\(\\(.*\n\\)*\\)\\1\n" end t))
+        (replace-match "\\1\n\\2")))))
+
+(defun uniquify-all-lines-buffer ()
+  "Delete duplicate lines in buffer and keep first occurrence."
+  (interactive "*")
+  (uniquify-all-lines-region (point-min) (point-max)))
+
+(defun sum-column()
+  "Sums a column of numbers starting at point"
+  (interactive)
+  (save-excursion
+    (if (and (not (= (current-column) 0))
+             (re-search-backward "[ \t]" 0 t ))
+        (forward-char))
+    (let ((retn 0)
+          (old-column (current-column))
+          (old-next-line-add-newlines))
+      (setq next-line-add-newlines nil)
+      (while (not
+              (looking-at "^[ \t]*$"))
+        (move-to-column old-column t)
+        (if (and (looking-at "-?[0123456789]+")
+                 (eq (current-column) old-column))
+            (setq retn (+ retn (string-to-number (current-word)))))
+        (next-line)
+        (beginning-of-line))
+      (next-line)
+      (next-line)
+      (move-end-of-line 0)
+      (insert (make-string (- old-column (current-column)) 32))
+      (insert (number-to-string retn))
+      (setq next-line-add-newlines old-next-line-add-newlines)
+      retn)))
