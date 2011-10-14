@@ -16,16 +16,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-current-time ((t (:inherit org-time-grid :foreground "red"))) t))
-
+ 
 ;;Loads emacs configuration
 (load-file (concat emacs-repos-dir "customization/prog-util.el"))
 (load-file (concat emacs-repos-dir "customization/org.el"))
+(load-file (concat emacs-repos-dir "optumsoft/a4.el"))
 (load-directory (concat emacs-repos-dir "internal/"))
 (load-directory (concat emacs-repos-dir "external/"))
 
 ;;We're finished loading everything now
 (provide 'init-finished)
+(require 'tacc)
+
+(add-to-list 'auto-mode-alist '("\\.tac$" . tacc-mode))
 
 (if (get-buffer "scratch.el")
     (kill-buffer "scratch.el"))
-
