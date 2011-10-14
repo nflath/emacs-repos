@@ -15,3 +15,12 @@
   (switch-to-buffer "*Occur*")
   (rename-buffer (buffer-name) + ".org")
   )
+
+(defun shell-and-cd (&rest args)
+  (interactive)
+  (let ((dir default-directory))
+    (switch-to-buffer "*shell*")
+    (comint-send-string (current-buffer) (concat "cd " dir))))
+shell-and-cd
+(add-to-list 'load-path "c:/Users/nflath/emacs-repos/supported/calfw")
+(require 'calfw-org)
