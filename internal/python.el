@@ -125,5 +125,6 @@ is passed after the options."
         (set-buffer-modified-p mod))))
 
 (add-hook 'python-mode-hook 'optumsoft-indent-python-mode-hook)
+(add-hook 'python-mode-hook 'optumsoft-python-add-copyright)
 
 (setq python-remove-cwd-from-path nil)

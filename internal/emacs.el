@@ -316,3 +316,33 @@
 (dolist (p packages-to-install)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(setq revert-without-query '(".*"))
+;; And same for "buffer %s has changed on disk.  Really edit?"
+(defun ask-user-about-supersession-threat (filename)
+  (message "Reverting file %s..." filename)
+  (revert-buffer t t)
+  (message "Reverting file %s... done" filename))
+
+(setq c-basic-offset 3)
+
+(setq auto-mode-alist
+      (append '(("\\.c$"                      . c-mode)
+                ("\\.cc$"                     . c++-mode)
+                ("\\.C$"                      . c++-mode)
+                ("\\.CC$"                     . c++-mode)
+                ("\\.h$"                      . c-mode)
+                ("\\.hh$"                     . c++-mode)
+                ("\\.H$"                      . c-mode)
+                ("\\.HH$"                     . c++-mode)
+                ("\\.cpp$"                    . c++-mode)
+                ("\\.CPP$"                    . c++-mode)
+                ("\\.hpp$"                    . c++-mode)
+                ("\\.HPP$"                    . c++-mode)
+                ("\\.\\([pP][Llm]\\|al\\)$"   . perl-mode)
+                ("\\`/var/tmp/"               . text-mode)
+                ("\\.tac$"                    . tacc-mode)
+                ("\\.tin$"                    . c++-mode)
+                ("\\.itin$"                    . c++-mode)
+                )
+              auto-mode-alist))
