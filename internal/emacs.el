@@ -43,6 +43,9 @@
 (require 'saveplace)
 
 (setq savehist-file "~/.emacs.d/.savehist")
+(setq savehist-additional-variables    ;; also save...
+      '(search ring regexp-search-ring)    ;; ... my search entries
+      )
 (savehist-mode 1)
 
 ;;Improve the buffer menu
@@ -217,3 +220,99 @@
 
 (setq split-height-threshold 80)
 (setq split-width-threshold 160)
+
+(electric-pair-mode t)
+(electric-indent-mode t)
+(electric-layout-mode t)
+
+(global-auto-revert-mode t)
+
+(require 'windmove)
+(windmove-default-keybindings 'super)
+(set-default 'imenu-auto-rescan t)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("ELPA" . "http://tromey.com/elpa/") t)
+
+(package-initialize)
+(package-refresh-contents)
+(setq nxml-slash-auto-complete-flag t)
+
+(setq packages-to-install '(auctex
+                            auto-complete
+                            auto-complete-etags
+                            auto-indent-mode
+                            autopair
+                            c-eldoc
+                            calfw-gcal
+                            clojure-mode
+                            clojure-test-mode
+                            cmake-mode
+                            color-theme
+                            ctags cygwin-mount
+                            durendal
+                            ecb
+                            eldoc-eval
+                            elisp-cache
+                            elisp-slime-nav
+                            find-file-in-project
+                            fuzzy-match
+                            graphviz-dot-mode
+                            haskell-mode
+                            haml-mode
+                            highlight-parentheses
+                            icomplete+
+                            ipython
+                            js2-mode
+                            load-dir
+                            magit
+                            magit-simple-keys
+                            magithub
+                            markdown-mode
+                            marmalade
+                            mic-paren
+                            org
+                            org-email
+                            org-magit
+                            pep8
+                            powershell
+                            pyflakes
+                            pylint
+                            pytest
+                            python
+                            python-mode
+                            python-pep8
+                            python-pylint
+                            rainbow-mode
+                            rainbow-delimiters
+                            scratch
+                            setup-cygwin
+                            slime
+                            slime-clj
+                            slime-fuzzy
+                            slime-repl
+                            smart-operator
+                            smart-tab
+                            swank-cdt
+                            w32-browser
+                            wgrep
+                            yasnippet
+                            dired-isearch
+                            emms
+                            facebook
+                            gdb-shell
+                            htmlize
+                            hungry-delete
+                            log4j-mode
+                            mv-shell
+                            nxml-mode
+                            twitter
+                            w3
+                            yaml-mode))
+
+(dolist (p packages-to-install)
+  (when (not (package-installed-p p))
+    (package-install p)))

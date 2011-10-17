@@ -49,7 +49,7 @@
   "Sets up the correct style for officcial GNU Emacs elisp files."
   (setq indent-tabs-mode t)
   (setq tab-width 8))
-
+(define-key emacs-lisp-mode-map (kbd "M-.") 'find-function-at-point)
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (save-excursion

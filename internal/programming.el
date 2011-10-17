@@ -132,3 +132,18 @@
                    (font-lock-add-keywords
                     nil
                     '(("\\(FIXME\\|TODO\\)" 1 font-lock-warning-face t)))))
+(defun esk-pretty-lambdas ()
+  (font-lock-add-keywords
+   nil `(("(?\\(lambda\\>\\)"
+          (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                    ,(make-char 'greek-iso8859-7 107))
+                    nil))))))
+
+(defun esk-add-watchwords ()
+  (font-lock-add-keywords
+   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
+          1 font-lock-warning-face t))))
+
+(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
+(add-hook 'prog-mode-hook 'esk-add-watchwords)
+                                              
