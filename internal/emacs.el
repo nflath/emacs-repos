@@ -311,6 +311,12 @@
                             nxml-mode
                             twitter
                             w3
+                            macro-math
+                            javadoc-help
+                            ioccur
+                            save-visited-files
+                            scheme-complete
+                            winpoint
                             yaml-mode))
 
 (dolist (p packages-to-install)

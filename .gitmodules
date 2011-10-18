@@ -1,6 +1,3 @@
-[submodule "supported/save-visited-files"]
-	path = supported/save-visited-files
-	url = git@github.com:nflath/save-visited-files.git
 [submodule "supported/google-weather-el"]
     path = supported/google-weather-el
 	url = git://git.naquadah.org/google-weather-el.git
