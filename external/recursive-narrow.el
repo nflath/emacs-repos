@@ -1,4 +1,4 @@
-;;; recursive-narrow.el - Adds commands that replace narrow-to-region and widen
+;;; recursive-narrow.el --- Adds commands that replace narrow-to-region and widen
 ;;; commands to operate recursively.
 
 ;; Copyright (C) 2010 Nathaniel Flath <flat0103@gmail.com>
@@ -71,7 +71,8 @@ call to recursive-narrow-to-region."""
                                                     (recenter))
               (widen)))
 
-(provide 'recursive-narrow)
-
 (global-set-key (kbd "C-x n n") 'recursive-narrow-to-region)
 (global-set-key (kbd "C-x n w") 'recursive-widen)
+
+(provide 'recursive-narrow)
+;;; recursive-narrow.el ends here
