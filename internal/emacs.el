@@ -245,7 +245,6 @@
                             auto-complete
                             auto-complete-etags
                             auto-indent-mode
-                            autopair
                             c-eldoc
                             calfw-gcal
                             clojure-mode
@@ -292,6 +291,7 @@
                             setup-cygwin
                             slime
                             slime-clj
+                            switch-window
                             slime-fuzzy
                             slime-repl
                             smart-operator
