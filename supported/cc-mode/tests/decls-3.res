@@ -1,5 +1,0 @@
-((topmost-intro 1))
-((inclass 1) (topmost-intro 1))
-((inclass 1) (topmost-intro 24))
-((inclass 1) (topmost-intro 49))
-((class-close 1))

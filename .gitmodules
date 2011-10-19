@@ -1,9 +1,3 @@
 [submodule "supported/google-weather-el"]
     path = supported/google-weather-el
 	url = git://git.naquadah.org/google-weather-el.git
-[submodule "supported/cache"]
-    path = supported/cache
-	url = git@github.com:nflath/cache.git
-[submodule "supported/recursive-narrow"]
-	path = supported/recursive-narrow
-	url = git@github.com:nflath/recursive-narrow.git

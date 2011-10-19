@@ -317,7 +317,19 @@
                             save-visited-files
                             scheme-complete
                             winpoint
-                            yaml-mode))
+                            cache
+                            yaml-mode
+                            doc-mode
+                            gccsense
+                            p4
+                            pager
+                            pastebin
+                            command-frequency
+                            guess-offset
+                            loccur
+                            recursive-narrow
+                            member-function
+                            ))
 
 (dolist (p packages-to-install)
   (when (not (package-installed-p p))
