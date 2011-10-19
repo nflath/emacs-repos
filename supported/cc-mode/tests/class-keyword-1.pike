@@ -1,4 +1,0 @@
-// ------------------- Containers ----------------
-class TagCharset
-{
-}

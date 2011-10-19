@@ -1,7 +1,0 @@
-constant foo = ([
-    "identifier": ({([
-		    ]),
-		    ([
-		    ])
-    });
-]);
