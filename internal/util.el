@@ -356,3 +356,16 @@ file of a buffer in an external program."
           (delete-region (match-beginning 0) (match-end 0))
           (insert (format "%f" (* num amt)))))))
 
+(defun shell-current-directory ()
+  "Opens a shell in the current directory"
+  (interactive)
+  (let ((new-buffer-name (concat "shell-" (expand-file-name default-directory) "-shell" )))
+    (if (get-buffer new-buffer-name) (switch-to-buffer-other-window new-buffer-name)
+      (shell new-buffer-name))))
+
+(defun ido-shell ()
+  "Prompts for a directory and then opens a shell in it."
+  (interactive)
+  (let ((dirname (expand-file-name (ido-read-directory-name "Shell in directory: "))))
+    (shell dirname)
+    (comint-send-string (current-buffer) (concat "cd " dirname "\n"))))

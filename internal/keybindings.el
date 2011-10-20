@@ -9,3 +9,5 @@
 (global-set-key (kbd "C-a") 'nflath-cycle-bol)
 (global-set-key [(control shift up)] 'move-line-up)
 (global-set-key [(control shift down)] 'move-line-down)
+(global-set-key (kbd "C-x s" ) 'ido-shell)
+(global-set-key (kbd "C-c s") 'shell-current-directory)
