@@ -24,7 +24,6 @@
 ;;Loads emacs configuration
 (load-file (concat emacs-repos-dir "customization/prog-util.el"))
 (load-file (concat emacs-repos-dir "customization/org.el"))
-(load-file (concat emacs-repos-dir "optumsoft/a4.el"))
 (load-directory (concat emacs-repos-dir "internal/"))
 (load-directory (concat emacs-repos-dir "external/"))
 
