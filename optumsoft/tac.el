@@ -94,6 +94,7 @@
   (set (make-local-variable 'comment-use-syntax) t)
   (set (make-local-variable 'comment-start) "//")
   (set (make-local-variable 'defun-prompt-regex) ".*")
+  (set (make-local-variable 'fill-paragraph-function) 'fill-comment-paragraph)
   (set (make-local-variable 'open-paren-in-column-0-is-defun-start) nil))
   
 
@@ -106,6 +107,7 @@
 (defun tac-electric (str)
   (insert str)
   (tac-indent-line))
+
 
 ;(define-key tac-mode-map (kbd "{") (lambda () (interactive) (tac-electric "{")))
 
