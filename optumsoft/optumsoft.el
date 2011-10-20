@@ -1,4 +1,5 @@
 ;; General configurations for OptumSoft
+(setq c-basic-offset 4)
 
 (setq auto-mode-alist
       (append '(
