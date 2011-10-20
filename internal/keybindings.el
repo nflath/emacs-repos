@@ -1,6 +1,7 @@
 ;;; Sets custom keybindings
 
 ;; global
+(global-set-key (kbd "M-s") 'ido-goto-symbol)
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 (global-set-key (kbd "C-x y") 'copy-whole-line)
 (global-set-key [f1] 'help-anything)
@@ -15,6 +16,7 @@
 (global-set-key (kbd "C-c s") 'shell-current-directory)
 (global-set-key (kbd "C-c m") 'insert-email)
 (global-set-key (kbd "C-c f") 'flyspell-add-word)
+
 ;; c-mode-base
 (define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
 (define-key c-mode-base-map (kbd "C-c c f") 'c-fwdinclude)
