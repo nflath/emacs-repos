@@ -94,7 +94,7 @@
   (set (make-local-variable 'comment-use-syntax) t)
   (set (make-local-variable 'comment-start) "//")
   (set (make-local-variable 'defun-prompt-regex) ".*")
-  (set (open-paren-in-column-0-is-defun-start nil)))
+  (set (make-local-variable 'open-paren-in-column-0-is-defun-start) nil))
   
 
 (define-key tac-mode-map (kbd "TAB") 'tac-indent-line)
