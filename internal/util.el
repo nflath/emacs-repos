@@ -427,3 +427,36 @@ file of a buffer in an external program."
           (if (overlayp  position)
               (goto-char (overlay-start position))
             (goto-char position)))))))
+
+(defun sudo-edit (&optional arg)
+  "Find a file and open it as root."
+  (interactive "p")
+  (if arg
+      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+(defun sudo-edit-current-file ()
+  "Edit the current file as root."
+  (interactive)
+  (let ((pos (point)))
+    (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
+    (goto-char pos)))
+
+(defun x11-maximize-frame ()
+  "Maximize the current frame (to full screen) on an X display."
+  (interactive)
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
+
+(defun w32-maximize-frame ()
+  "Maximize the current frame on a Windows machine."
+  (interactive)
+  (w32-send-sys-command 61488))
+
+(defun maximize-frame ()
+  "Maximizes the Emacs frame."
+  (interactive)
+  (if window-system
+      (if (fboundp 'x-send-client-message)
+          (x11-maximize-frame)
+        (w32-maximize-frame))))
