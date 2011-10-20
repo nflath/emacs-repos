@@ -3,6 +3,7 @@
   (add-hook 'text-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'org-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'latex-mode-hook 'turn-on-flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'plain-tex-mode-hook 'turn-on-flyspell-mode))
 
 (defadvice ispell-command-loop (before ispell-reverse-miss-list activate)

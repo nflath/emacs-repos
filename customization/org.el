@@ -1,15 +1,13 @@
-;;Checkout the latest version of org mode, if I don't already have it.
-;;(require 'org-install)
 (require 'org-habit)
 
-;;Agenda customizations
+;; Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 
-;;Time logging
+;; Time logging
 (org-clock-persistence-insinuate)
 (setq org-clock-idle-time 15)
 (setq org-clock-out-remove-zero-time-clocks t)
@@ -26,7 +24,7 @@
         (org-set-property "Effort" effort)))))
 (add-hook 'org-clock-in-prepare-hook 'my-org-mode-ask-effort)
 
-;;org-remember - quickly jot down thoughts
+;; org-remember - quickly jot down thoughts
 (org-remember-insinuate)
 (setq org-remember-templates
       `(("Todo" ?t "* TODO %?\n  %i\n " ,(concat org-directory "remember.org") "Tasks")))
@@ -35,7 +33,8 @@
 (setq org-refile-targets '((org-agenda-files . (:level . 1))))
 (setq org-default-notes-file (concat org-directory "/remember.org"))
 
-;;General org customizations
+;; General org customizations
+(setq org-agenda-repeating-timestamp-show-all nil)
 (setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
 (setq org-completion-use-ido t)
 (setq org-insert-heading-respect-content t)
@@ -47,8 +46,9 @@
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 (setq org-use-speed-commands t)
 (setq org-archive-location (concat org-directory "archive/%s_archive::"))
+(setq org-hide-leading-stars t)
 
-;;TODO customizations
+;; TODO customizations
 (setq org-enforce-todo-dependencies t)
 (setq org-log-done 'time)
 (setq org-todo-keywords
@@ -136,7 +136,7 @@
         (shell-command "mv *.html publish/" nil)
         (kill-buffer "agenda.html")))))
 
-;;If yasnippet is loaded, make TAB work properly with both org and yasnippet
+;; If yasnippet is loaded, make TAB work properly with both org and yasnippet
 (when (locate-library "yasnippet")
   (require 'yasnippet)
   (progn
@@ -149,7 +149,7 @@
                 (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
                 (define-key yas/keymap [tab] 'yas/next-field)))))
 
-;;General hooks for org and agenda
+;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
 (add-hook 'org-mode-hook 'org-indent-mode)
@@ -158,30 +158,20 @@
           (lambda ()
             (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)))
 
-;;Keybindings
-(define-key org-mode-map (kbd "C-<RET>" ) 'org-insert-heading-respect-content)
-(global-set-key (kbd "C-c i") 'bh/insert-inactive-timestamp)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cl" 'org-store-link)
-(define-key global-map "\C-cr" 'org-remember)
-(setq org-hide-leading-stars t)
-
+;; Turn on appointment checking
 (require 'appt)
 (setq appt-time-msg-list nil)
-;(org-agenda-to-appt)
+(appt-activate 1)
+(setq appt-display-format 'window)
 
-(defadvice  org-agenda-redo (after org-agenda-redo-add-appts)
+(defadvice  org-agenda-redo (after org-agenda-redo-add-appts activate)
   "Pressing `r' on the agenda will also add appointments."
   (progn
     (setq appt-time-msg-list nil)
     (org-agenda-to-appt)))
 
-(ad-activate 'org-agenda-redo)
 
-(progn
-  (appt-activate 1)
-  (setq appt-display-format 'window))
-
+;; Setup
 (require 'org)
 (when (locate-library "org-babel-init")(require 'org-babel-init))
 (when (locate-library "org-depend") (require 'org-depend))
@@ -189,26 +179,16 @@
 (defun my-org-pending-remove-scheduled ()
   (when (string= state "PENDING")
     (org-remove-timestamp-with-keyword org-scheduled-string)))
-
 (add-hook 'org-after-todo-state-change-hook 'my-org-pending-remove-scheduled)
 
-;;graph habits
+;; graph habits
 (add-to-list 'org-modules 'org-habit)
 (setq org-habit-graph-column 60)
 
+;; Start with nothing expanded
 (add-hook 'org-mode-hook 'org-hide-block-all)
 
-(setq org-entities-user
-      '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
-        ("union" "\\cup" t "&cup;" "[union]" "[union]" "∪")
-        ("Z" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
-        ("R" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
-        ("integers" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
-        ("reals" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
-        ("nullset" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")
-        ("null" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")))
-
-
+;; Keep mobileorg up-to-date
 (setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
 (setq org-mobile-checksum-binary "echo ")
 (defadvice org-save-all-org-buffers (around mobileorg-auto-push activate)
@@ -222,24 +202,35 @@
 (defadvice org-agenda (before mobileorg-auto-pull activate)
   (org-mobile-pull))
 
-;; (defun org-pretty-entities ()
-;;   (interactive)
-;;   (mapcar
-;;    (lambda (lst)
-;;      (font-lock-add-keywords
-;;          nil (mapcar
-;;               (lambda (el)
-;;                 (list
-;;                  (concat "\\(" (regexp-quote "\\") (nth 0 el) "\\)[\s^_]"  )
-;;                  `(0 (progn (compose-region (match-beginning 1) (match-end 1)
-;;                                             ,(nth 6 el)) nil))))
-;;               lst)))
-;;    (list org-entities org-entities-user)))
+;; Prettify entities
+;;  (setq org-entities-user
+;;        '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
+;;          ("union" "\\cup" t "&cup;" "[union]" "[union]" "∪")
+;;          ("Z" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
+;;          ("R" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
+;;          ("integers" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
+;;          ("reals" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
+;;          ("nullset" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")
+;;          ("null" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")))
 
-;; (remove-hook 'find-file-hook 'org-pretty-entities)
+;;  (defun org-pretty-entities ()
+;;    (interactive)
+;;    (mapcar
+;;     (lambda (lst)
+;;       (font-lock-add-keywords
+;;           nil (mapcar
+;;                (lambda (el)
+;;                  (list
+;;                   (concat "\\(" (regexp-quote "\\") (nth 0 el) "\\)[\s^_]"  )
+;;                   `(0 (progn (compose-region (match-beginning 1) (match-end 1)
+;;                                              ,(nth 6 el)) nil))))
+;;                lst)))
+;;     (list org-entities org-entities-user)))
 
-(setq org-agenda-repeating-timestamp-show-all nil)
+;;  (remove-hook 'find-file-hook 'org-pretty-entities)
+
+;; Make the agenda
 (org-agenda-list)
 
-(define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
+
 

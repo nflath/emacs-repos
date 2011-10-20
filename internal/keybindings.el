@@ -35,6 +35,9 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-c w") (lambda () (interactive) (diff-buffer-with-file (current-buffer))))
+(global-set-key (kbd "C-c i") 'bh/insert-inactive-timestamp)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cl" 'org-store-link)
 
 ;; c-mode-base
 (define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
@@ -56,3 +59,8 @@
 ;; visual-line-mode
 (define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
 (define-key visual-line-mode-map (kbd "C-e") 'end-of-visual-line)
+
+;; org-mode
+(define-key org-mode-map (kbd "C-<RET>" ) 'org-insert-heading-respect-content)
+(define-key global-map "\C-cr" 'org-remember)
+(define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
