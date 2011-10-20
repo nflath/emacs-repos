@@ -17,8 +17,7 @@
   (add-hook 'inferior-python-mode-hook
             (lambda ()
               (setq comint-process-echoes nil)))
-  ;(run-python)
-  (setq comint-process-echoes nil))
+  (run-python))
 
 ;; Customizing
 (when (= 0 (shell-command "pyflakes"))
@@ -26,36 +25,8 @@
   (setq flymake-enable-pylint nil)
   (setq flymake-enable-pep8 nil)
 
-  ;; Python or python mode?
   (eval-after-load 'python
     '(progn
-
-       ;;==================================================
-       ;; Virtualenv Commands
-       ;;==================================================
-
-
-       ;;==================================================
-       ;; Flymake for python configuration
-       ;;===================================================
-
-       ;; TODO: There is some duplication, that can be removed using macros
-       ;; TODO: Implement flymake-remove-checker
-
-       ;; Instructions to add a new checker based on command:
-       ;;
-       ;; 1) Write an init function, the flymake-command-setup performs some
-       ;;    checks and at the end of the option list the filename to process:
-       ;;
-       ;;   (defun flymake-newchecker-init ()
-       ;;      (flymake-command-setup "command" (list "option1" "option2")))
-       ;;
-       ;; 2) Use the flymake-add-checker function
-       ;;
-       ;;    (flymake-add-checker flymake-newchecker-init)
-
-       (require 'tramp)
-       ;; Utilities that increase legibility and reduce code duplication
        (defun current-file-remotep ()
          "Tell if the file is remote"
          (subsetp (list (current-buffer)) (tramp-list-remote-buffers)))
