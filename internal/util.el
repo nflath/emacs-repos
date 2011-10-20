@@ -1,3 +1,5 @@
+;;; Collection of utility functions for interactive use 
+
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill. This function directly calls
 kill-line, so see documentation of kill-line for how to use it including prefix
@@ -17,7 +19,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (save-excursion
     (move-beginning-of-line 1)
     (copy-line arg)))
-(global-set-key (kbd "C-x y") 'copy-whole-line)
 
 (defun move-line (n)
   "Move the current line up or down by N lines."
@@ -47,7 +48,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (interactive "p")
   (move-line (if (null n) 1 n)))
 
-(defun my-help ()
+(defun help-anything ()
   "If function given tries to `describe-function' if variable
 uses 'describe-variable', otherwise uses `manual-entry' to display
 manpage of a `current-word'."
@@ -60,7 +61,6 @@ manpage of a `current-word'."
      ((and (eq major-mode 'java-mode) (fboundp java-describe-class))
       (java-describe-class (current-word)))
      (t (man (current-word))))))
-(global-set-key [f1] 'my-help)
 
 (defun google (query)
   "googles a query"
@@ -92,7 +92,7 @@ manpage of a `current-word'."
   (interactive)
   (tabify (point-min) (point-max)))
 
-(defun my-increment-number-decimal (&optional arg)
+(defun increment-number-decimal (&optional arg)
   "Increment the number forward from point by 'arg'."
   (interactive "p*")
   (save-excursion
@@ -108,7 +108,7 @@ manpage of a `current-word'."
           (replace-match (format (concat "%0" (int-to-string field-width) "d")
                                  answer)))))))
 
-(defun my-increment-number-hexadecimal (&optional arg)
+(defun increment-number-hexadecimal (&optional arg)
   "Increment the number forward from point by 'arg'."
   (interactive "p*")
   (save-excursion
@@ -128,7 +128,7 @@ manpage of a `current-word'."
                                          hex-format)
                                  answer)))))))
 
-(defun my-format-bin (val width)
+(defun format-bin (val width)
   "Convert a number to a binary string."
   (let (result)
     (while (> width 0)
@@ -139,7 +139,7 @@ manpage of a `current-word'."
       (setq width (1- width)))
     result))
 
-(defun my-increment-number-binary (&optional arg)
+(defun increment-number-binary (&optional arg)
   "Increment the number forward from point by 'arg'."
   (interactive "p*")
   (save-excursion
@@ -152,7 +152,7 @@ manpage of a `current-word'."
           (setq answer (+ (string-to-number (match-string 0) 2) inc-by))
           (when (< answer 0)
             (setq answer (+ (expt 2 field-width) answer)))
-          (replace-match (my-format-bin answer field-width)))))))
+          (replace-match (format-bin answer field-width)))))))
 
 (defun swap-windows ()
   "If you have 2 windows, it swaps them."
@@ -170,7 +170,6 @@ manpage of a `current-word'."
       (set-window-buffer w2 b1)
       (set-window-start w1 s2)
       (set-window-start w2 s1)))))
-(global-set-key (kbd "C-c O") 'swap-windows)
 
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
@@ -203,13 +202,11 @@ manpage of a `current-word'."
         (delete-file filename)
         (set-visited-file-name newname)
         (set-buffer-modified-p nil)     t))))
-(global-set-key (kbd "C-c b m") 'move-buffer-file)
 
 (defun prev-window (&optional arg)
   "Go to the previous window displayed."
   (interactive)
   (other-window (- arg)))
-(global-set-key (kbd "C-x p") 'prev-window)
 
 (defun turn-on-auto-revert-mode ()
   "Always turns on auto revert mode, instead of toggling."
@@ -221,12 +218,11 @@ manpage of a `current-word'."
   (interactive)
   (visual-line-mode 1))
 
-(defun my-grep (word)
+(defun grep-with-defaults (word)
   "Grep the whole directory for something defaults to term at cursor position"
   (interactive (list (read-string (concat "Grep For: <" (current-word) ">: "))))
   (when (string-equal word "") (setq word (current-word)))
   (grep (concat "egrep -s -i -n -r \"" word "\" * " )))
-(global-set-key (kbd "C-x g") 'my-grep)
 
 (defun insert-current-time (&optional arg)
   "Insert current time string at current position"
@@ -245,13 +241,14 @@ character of the current line."
         (back-to-indentation)
         (eq pt (point)))) (beginning-of-line))
    (t (back-to-indentation))))
-(global-set-key (kbd "C-a") 'nflath-cycle-bol)
 
 (defun browse-current-file ()
+  "Opens the current file in a web browser."
   (interactive)
   (browse-url (concat "file://" buffer-file-name)))
 
-(defun wc-elisp ()
+(defun wc-buffer-elisp ()
+  "Counts the words in the buffer using elisp"
   (interactive)
   (save-excursion
     (beginning-of-buffer)
@@ -304,7 +301,7 @@ character of the current line."
       (setq next-line-add-newlines old-next-line-add-newlines)
       retn)))
 
-(defun prelude-open-with ()
+(defun open-with ()
   "Simple function that allows us to open the underlying
 file of a buffer in an external program."
   (interactive)
@@ -314,24 +311,7 @@ file of a buffer in an external program."
                     " "
                     buffer-file-name))))
 
-(defun prelude-move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (previous-line 2))
-
-(global-set-key [(control shift up)] 'prelude-move-line-up)
-
-(defun prelude-move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (next-line 1)
-  (transpose-lines 1)
-  (previous-line 1))
-
-(global-set-key [(control shift down)] 'prelude-move-line-down)
-
-(defun prelude-view-url ()
+(defun view-url ()
   "Open a new buffer containing the contents of URL."
   (interactive)
   (let* ((default (thing-at-point-url-at-point))
@@ -342,7 +322,7 @@ file of a buffer in an external program."
     (cond ((search-forward "<?xml" nil t) (xml-mode))
           ((search-forward "<html" nil t) (html-mode)))))
 
-(defun prelude-eval-and-replace ()
+(defun eval-and-replace ()
   "Replace the preceding sexp with its value."
   (interactive)
   (backward-kill-sexp)
@@ -351,23 +331,6 @@ file of a buffer in an external program."
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
-
-(defun prelude-swap-windows ()
-  "If you have 2 windows, it swaps them."
-  (interactive)
-  (if (/= (count-windows) 2)
-      (message "You need exactly 2 windows to do this.")
-    (let* ((w1 (first (window-list)))
-           (w2 (second (window-list)))
-           (b1 (window-buffer w1))
-           (b2 (window-buffer w2))
-           (s1 (window-start w1))
-           (s2 (window-start w2)))
-      (set-window-buffer w1 b2)
-      (set-window-buffer w2 b1)
-      (set-window-start w1 s2)
-      (set-window-start w2 s1)))
-  (other-window 1))
 
 (defun add (amt) 
   "Increment the number (in base 10 representation) at point."
@@ -392,3 +355,4 @@ file of a buffer in an external program."
         (let ((num (car (read-from-string (buffer-substring (match-beginning 0) (match-end 0))))))
           (delete-region (match-beginning 0) (match-end 0))
           (insert (format "%f" (* num amt)))))))
+
