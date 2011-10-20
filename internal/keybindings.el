@@ -11,3 +11,5 @@
 (global-set-key [(control shift down)] 'move-line-down)
 (global-set-key (kbd "C-x s" ) 'ido-shell)
 (global-set-key (kbd "C-c s") 'shell-current-directory)
+
+(define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
