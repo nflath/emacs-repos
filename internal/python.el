@@ -13,11 +13,9 @@
 
 (define-key	python-mode-map	(kbd "C-;")	'my-insert-self)
 
-(when (= 0 (shell-command "python --version"))
-  (add-hook 'inferior-python-mode-hook
-            (lambda ()
-              (setq comint-process-echoes nil)))
-  (run-python nil python-shell-interpreter))
+(add-hook 'inferior-python-mode-hook
+          (lambda ()
+            (setq comint-process-echoes nil)))
 
 ;; Customizing
 (when (= 0 (shell-command "pyflakes"))
