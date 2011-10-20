@@ -1,3 +1,4 @@
+;; Customizations for cc-mode
 (require 'cc-mode)
 (defun h-file-create ()
   "Create a new h file.  Insert a infdef/define/endif block"
@@ -16,8 +17,8 @@
                   "\n\n#endif")
           (search-backward "public:\n")
           (next-line)))))
-
 (add-hook 'c++-mode-hook 'h-file-create)
+(add-hook 'c-mode-hook 'h-file-create)
 
 (defun set-compile-command ()
   "Sets the compile command to a sensible default if no makefile is found."
@@ -30,6 +31,7 @@
                    (or (getenv "CPPFLAGS") "-DDEBUG=9")
                    (or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")
                    file)))))
+
 (add-hook 'c-mode-hook 'set-compile-command)
 (add-hook 'c++-mode-hook 'set-compile-command)
 
@@ -66,10 +68,6 @@
         (c-forward-declare arg)
       (c-include arg))))
 
-(define-key c-mode-base-map (kbd "C-c c f") 'c-fwdinclude)
-
-(define-key c-mode-map (kbd "C-c o") 'ff-find-other-file)
-(define-key c++-mode-map (kbd "C-c o") 'ff-find-other-file)
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-syntactic-indentation 1)))
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-electric-state 1)))
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-hungry-state 1)))

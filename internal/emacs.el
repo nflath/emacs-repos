@@ -257,7 +257,7 @@
                 ("\\.HPP$"                    . c++-mode)
                 ("\\.\\([pP][Llm]\\|al\\)$"   . perl-mode)
                 ("\\`/var/tmp/"               . text-mode)
-                ("\\.tac$"                    . tacc-mode)
+                ("\\.tac$"                    . tac-mode)
                 ("\\.tin$"                    . c++-mode)
                 ("\\.itin$"                    . c++-mode)
                 )
@@ -267,3 +267,9 @@
 (setq vc-delete-logbuf-window t)
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+(setq browse-url-browser-function (quote browse-url-generic))
+(setq browse-url-generic-program "google-chrome")
+
+(setq eldoc-idle-delay 0)
+(autoload 'turn-on-eldoc-mode "eldoc" nil t)
