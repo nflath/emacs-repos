@@ -14,6 +14,7 @@
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'rr 'replace-regexp)
 (setq scroll-preserve-screen-position t)
+(setq resize-mini-windows nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq apropos-do-all t)
 (setq message-log-max t)
@@ -198,3 +199,4 @@
 ;; Turn eldoc on
 (setq eldoc-idle-delay 0)
 (autoload 'turn-on-eldoc-mode "eldoc" nil t)
+

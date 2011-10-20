@@ -94,12 +94,11 @@
                             smart-tab
                             swank-cdt
                             switch-window
-                            twitter
-                            w3
+                            w3 ;;
                             w32-browser
-                            wgrep
-                            winpoint
-                            yaml-mode
+                            wgrep ;;
+                            winpoint ;;
+                            yaml-mode ;;
                             yasnippet))
 
 ;; Install packages if they have not been installed
