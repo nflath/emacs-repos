@@ -1,7 +1,7 @@
-(defcustom tacc-basic-offset 3 "Amount to indent by")
+(defcustom tac-basic-offset 3 "Amount to indent by")
 
-(setq tacc-mode-syntax-table c++-mode-syntax-table)
-(setq tacc-mode-font-lock-keywords
+(setq tac-mode-syntax-table c++-mode-syntax-table)
+(setq tac-mode-font-lock-keywords
   (let ((keywords '("foreach" "or" "wait" "timeout" "default" "case" "switch" "for" "do" "while"
                     "else" "if" "continue" "break" "embedded" "coroutine" "frined" "sparse" "array" "stack"
                     "extensible" "queue" "using" "new" "static" "inout" "in" "out" "invasive" "extern" "inline"
@@ -37,7 +37,7 @@
             (setq indent (1- indent))))))
       indent)))
 
-(defun tacc-mode-indentation ()
+(defun tac-mode-indentation ()
   (interactive)
   (save-excursion
     (beginning-of-line)
@@ -60,8 +60,8 @@
           (let ((lineend (point)))
             (beginning-of-line)
             (if (re-search-forward "}" lineend t)
-                (* tacc-basic-offset (1- indent))
-              (* tacc-basic-offset indent)))
+                (* tac-basic-offset (1- indent))
+              (* tac-basic-offset indent)))
         (re-search-backward "(" (point-min) t)
         (+ 1 (current-column))))))
 
@@ -69,12 +69,12 @@
   (interactive)
   (delete-region (point) (progn (skip-chars-forward " \t") (point))))
 
-(defun tacc-indent-line (&rest args)
+(defun tac-indent-line (&rest args)
   (interactive)
   (save-excursion
     (beginning-of-line)
     (delete-horizontal-space-forward)
-    (let ((indent (tacc-mode-indentation)))
+    (let ((indent (tac-mode-indentation)))
       (if (> indent 0)
           (dotimes (x indent)
             (insert " "))))
@@ -84,27 +84,27 @@
     (if (> saf (point))
         (goto-char saf))))
 
-(define-derived-mode tacc-mode nil "Tacc"
-  "tacc"
-  :syntax-table tacc-mode-syntax-table
+(define-derived-mode tac-mode nil "Tac"
+  "tac"
+  :syntax-table tac-mode-syntax-table
   (set (make-local-variable 'font-lock-defaults)
-       '(tacc-mode-font-lock-keywords nil nil nil nil))
-  (set (make-local-variable 'indent-line-function) 'tacc-indent-line)
+       '(tac-mode-font-lock-keywords nil nil nil nil))
+  (set (make-local-variable 'indent-line-function) 'tac-indent-line)
   (set (make-local-variable 'parse-sexp-ignore-comments) t)
   (set (make-local-variable 'comment-use-syntax) t)
   (set (make-local-variable 'comment-start) "//"))
   
 
-(define-key tacc-mode-map (kbd "TAB") 'tacc-indent-line)
-(define-key tacc-mode-map (kbd "C-c o") 'ff-find-other-file)
+(define-key tac-mode-map (kbd "TAB") 'tac-indent-line)
+(define-key tac-mode-map (kbd "C-c o") 'ff-find-other-file)
 (require 'find-file)
 (add-to-list 'cc-other-file-alist '("\\.tac\\'" (".tin")))
 (add-to-list 'cc-other-file-alist '("\\.tin\\'" (".tac")))
 
-(defun tacc-electric (str)
+(defun tac-electric (str)
   (insert str)
-  (tacc-indent-line))
+  (tac-indent-line))
 
-;(define-key tacc-mode-map (kbd "{") (lambda () (interactive) (tacc-electric "{")))
+;(define-key tac-mode-map (kbd "{") (lambda () (interactive) (tac-electric "{")))
 
-(provide 'tacc)
+(provide 'tac)
