@@ -29,9 +29,6 @@
 
 ;;We're finished loading everything now
 (provide 'init-finished)
-(require 'tacc)
-
-(add-to-list 'auto-mode-alist '("\\.tac$" . tacc-mode))
 
 (if (get-buffer "scratch.el")
     (kill-buffer "scratch.el"))

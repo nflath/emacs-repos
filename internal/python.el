@@ -27,27 +27,6 @@
 
   (eval-after-load 'python
     '(progn
-       (defun current-file-remotep ()
-         "Tell if the file is remote"
-         (subsetp (list (current-buffer)) (tramp-list-remote-buffers)))
-
-       (defun flymake-create-copy-file ()
-         "Create a copy local file"
-         (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                            'flymake-create-temp-inplace)))
-           (file-relative-name
-            temp-file
-            (file-name-directory buffer-file-name))))
-
-       (defun flymake-command-setup (command &optional options)
-         "Setup the command to be used with flymake, the command
-will be called in this way: COMMAND OPTIONS FILE The FILE varible
-is passed after the options."
-         ;; Make sure it's not a remote buffer or flymake would not work
-         (when (not (current-file-remotep))
-           (list command
-                 (append options (list (flymake-create-copy-file))))))
-
        ;; Init functions!
        (defun flymake-pyflakes-init ()
          (flymake-command-setup "pyflakes"))
@@ -79,23 +58,5 @@ is passed after the options."
 
        (when flymake-enable-pep8
          (flymake-add-checker 'flymake-pep8-init)))))
-
-(defun optumsoft-indent-python-mode-hook ()
-  (setq py-indent-offset 3)
-  (optumsoft-python-add-copyright))
-
-(defun optumsoft-python-add-copyright ()
-  (if (< (buffer-size) 10)
-      (let ((mod (buffer-modified-p)))
-        (save-excursion
-          (goto-char (point-min))
-          (insert "#!/usr/bin/env python\n")
-          (insert (format "# Copyright (c) %s OptumSoft, Inc.  All rights reserved.\n"
-                          (nth 5 (decode-time (current-time)))))
-          (insert "# OptumSoft, Inc. Confidential and Proprietary.\n\n"))
-        (set-buffer-modified-p mod))))
-
-(add-hook 'python-mode-hook 'optumsoft-indent-python-mode-hook)
-(add-hook 'python-mode-hook 'optumsoft-python-add-copyright)
 
 (setq python-remove-cwd-from-path nil)
