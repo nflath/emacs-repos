@@ -369,3 +369,16 @@ file of a buffer in an external program."
   (let ((dirname (expand-file-name (ido-read-directory-name "Shell in directory: "))))
     (shell dirname)
     (comint-send-string (current-buffer) (concat "cd " dirname "\n"))))
+
+(defun continue-string-if-necessary ()
+  "If in a string, closes it and starts it again on the next
+  line; otherwise just calls newling-and-indent."
+  (interactive)
+  (if (or
+       (eq (get-text-property (point) 'face) font-lock-string-face)
+       (eq (c-in-literal) 'string))
+      (progn
+        (insert "\"")
+        (newline-and-indent)
+        (insert "+ \""))
+    (newline-and-indent)))

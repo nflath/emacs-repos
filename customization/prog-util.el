@@ -119,3 +119,4 @@ an error with the command that failed."
     (if (= 0 (shell-command (car cmd-list)))
         (exec-cmds (cdr cmd-list) error)
       (message (concat error ": The command '%s' failed.") (car cmd-list)))))
+
