@@ -1,7 +1,6 @@
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
-(display-battery-mode t)
 (setq eval-expression-print-length nil)
 (display-time-mode t)
 (setq frame-title-format (concat invocation-name "@" system-name ": %b %+%+ %f"))

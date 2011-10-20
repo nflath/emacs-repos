@@ -64,7 +64,7 @@
                             mic-paren
                             mv-shell
                             nxml-mode
-                            org
+                            org 
                             org-email
                             org-magit
                             p4

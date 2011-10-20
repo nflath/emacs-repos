@@ -17,7 +17,7 @@
   (add-hook 'inferior-python-mode-hook
             (lambda ()
               (setq comint-process-echoes nil)))
-  (run-python))
+  (run-python nil python-shell-interpreter))
 
 ;; Customizing
 (when (= 0 (shell-command "pyflakes"))
