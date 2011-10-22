@@ -15,68 +15,63 @@
 (setq packages-to-install '(auctex
                             auto-complete
                             auto-complete-etags
-                            c-eldoc ;;
-                            cache ;;
-                            calfw-gcal
-                            clojure-mode ;;
-                            clojure-test-mode ;;
-                            color-theme ;;
-                            cygwin-mount
-                            dired-isearch ;;
-                            doc-mode ;;
-                            durendal ;;
-                            eldoc-eval ;;
-                            elisp-slime-nav ;;
-                            emms
-                            fuzzy-match ;;
-                            gdb-shell ;;
-                            graphviz-dot-mode ;;
-                            guess-offset ;;
-                            haml-mode ;;
+                            c-eldoc 
+                            cache 
+                            clojure-mode 
+                            clojure-test-mode 
+                            color-theme 
+                            dired-isearch 
+                            doc-mode 
+                            durendal 
+                            eldoc-eval 
+                            elisp-slime-nav 
+                            fuzzy-match 
+                            gdb-shell 
+                            graphviz-dot-mode 
+                            guess-offset 
+                            haml-mode 
                             haskell-mode
-                            highlight-parentheses ;;
-                            htmlize ;;
-                            hungry-delete ;;
-                            icomplete+ ;;
-                            javadoc-help ;;
+                            highlight-parentheses 
+                            htmlize 
+                            hungry-delete 
+                            icomplete+ 
+                            javadoc-help 
                             js2-mode
-                            load-dir ;;
-                            loccur ;;
-                            macro-math ;;
-                            magit ;;
-                            magithub ;;
-                            markdown-mode ;;
-                            marmalade ;;
-                            mic-paren ;;
-                            mv-shell ;;
+                            load-dir 
+                            loccur 
+                            macro-math 
+                            magit 
+                            magithub 
+                            markdown-mode 
+                            marmalade 
+                            mic-paren 
+                            mv-shell 
                             nxml-mode
                             org 
                             org-email
                             org-magit
-                            p4 ;;
-                            pager ;;
-                            pastebin ;;
-                            powershell
-                            pyflakes ;;
-                            pytest ;;
-                            python-pep8 ;;
-                            python-pylint ;;
-                            rainbow-mode ;;
-                            recursive-narrow ;;
-                            save-visited-files ;;
-                            scheme-complete ;;
-                            setup-cygwin
-                            slime ;;
-                            slime-fuzzy ;;
-                            slime-repl ;;
-                            smart-operator ;;
-                            swank-cdt ;;
-                            w3 ;;
-                            w32-browser
-                            wgrep ;;
-                            winpoint ;;
-                            yaml-mode ;;
-                            yasnippet ;;))
+                            p4 
+                            pager 
+                            pastebin 
+                            pyflakes 
+                            pytest 
+                            python-pep8 
+                            python-pylint 
+                            rainbow-mode 
+                            recursive-narrow 
+                            save-visited-files 
+                            scheme-complete 
+                            slime 
+                            slime-fuzzy 
+                            slime-repl 
+                            smart-operator 
+                            swank-cdt 
+                            w3 
+                            w32-browser 
+                            wgrep 
+                            winpoint 
+                            yaml-mode 
+                            yasnippet))
 
 ;; Install packages if they have not been installed
 (dolist (p packages-to-install)
