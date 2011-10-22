@@ -1,7 +1,12 @@
-;; (require 'clojure-mode)
+(require 'clojure-mode)
+(require 'clojure-test-mode)
+(require 'slime)
+(require 'slime-fuzzy)
+(require 'slime-repl)
+(require 'durendal)
 
-;; (eval-after-load "slime"
-;;   '(progn (slime-setup '(slime-repl))))
+(add-hook 'clojure-mode-hook 'durendal-enable-auto-compile)
 
-;; (require 'slime)
-;; (slime-setup)
+;;(require 'swank-cdt)
+(slime-setup)
+

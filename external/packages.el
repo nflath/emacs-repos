@@ -31,72 +31,43 @@
 
 
 ;;; Enhancements
-;; wgrep
 (require 'wgrep)
 (setq wgrep-enable-key "q")
 
-;; recursive-narrow
 (require 'recursive-narrow)
 
-;; mv-shell
 (require 'mv-shell)
 (mv-shell-mode 1)
 
-;; gdb-shell
 (require 'gdb-shell)
 (add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
 
-;; pager
 (require 'pager)
 
-;;guess-offset
 (require 'guess-offset)
 
-;;rainbow-mode
 (require 'rainbow-mode)
 (add-hook 'prog-mode-hook 'rainbow-mode)
 
-;; mic-paren
 (require 'mic-paren)
 (paren-activate)
 
-;; highlight-parentheses
 (require 'highlight-parentheses)
 (add-hook 'prog-mode-hook 'highlight-parentheses-mode)
 
-;; hungry-delete
 (require 'hungry-delete)
 (add-hook 'prog-mode-hook 'turn-on-hungry-delete-mode)
 (add-hook 'org-mode-hook 'turn-on-hungry-delete-mode)
 
-;; smart-operator
-;; FIXME:  
-;;(require 'smart-operator)
-;;(add-hook 'prog-mode-hook 'smart-operator-mode)
+(require 'save-visited-files)
+(eval-after-load 'init-finished
+  '(progn
+     (setq save-visited-files-auto-restore t)
+     (save-visited-files-mode t)))
 
-;; diredisearch
 (require 'dired-isearch)
 
+(require 'icomplete+)
 
-
-
-;;; Utilities
-;; htlmize
-(require 'htmlize)
-(setq htmlize-html-major-mode 'html-mode)
-
-;; pastebin
-(require 'pastebin)
-
-;; p4
-(require 'p4)
-(setq p4-verbose nil)
-
-;; marmalade
-
-;; doc-mode
-(require 'doc-mode)
-(add-hook 'c-mode-common-hook 'doc-mode)
-
-;; fuzzy-match
-(require 'fuzzy-match)
+(require 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))

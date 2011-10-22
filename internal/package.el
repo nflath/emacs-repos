@@ -18,19 +18,16 @@
                             c-eldoc ;;
                             cache ;;
                             calfw-gcal
-                            clojure-mode
-                            clojure-test-mode
+                            clojure-mode ;;
+                            clojure-test-mode ;;
                             color-theme ;;
-                            command-frequency
                             cygwin-mount
-                            dired-isearch
+                            dired-isearch ;;
                             doc-mode ;;
-                            durendal
+                            durendal ;;
                             eldoc-eval ;;
-                            elisp-slime-nav
+                            elisp-slime-nav ;;
                             emms
-                            facebook
-                            find-file-in-project
                             fuzzy-match ;;
                             gdb-shell ;;
                             graphviz-dot-mode ;;
@@ -40,21 +37,17 @@
                             highlight-parentheses ;;
                             htmlize ;;
                             hungry-delete ;;
-                            icomplete+
-                            ioccur
+                            icomplete+ ;;
                             ipython
-                            javadoc-help
+                            javadoc-help ;;
                             js2-mode
                             load-dir ;;
-                            loccur
-                            log4j-mode
-                            macro-math
-                            magit
-                            magit-simple-keys
-                            magithub
-                            markdown-mode
+                            loccur ;;
+                            macro-math ;;
+                            magit ;;
+                            magithub ;;
+                            markdown-mode ;;
                             marmalade ;;
-                            member-function
                             mic-paren ;;
                             mv-shell ;;
                             nxml-mode
@@ -71,22 +64,20 @@
                             python-pylint ;;
                             rainbow-mode ;;
                             recursive-narrow ;;
-                            save-visited-files
-                            scheme-complete
+                            save-visited-files ;;
+                            scheme-complete ;;
                             setup-cygwin
-                            slime
-                            slime-clj
-                            slime-fuzzy
-                            slime-repl
+                            slime ;;
+                            slime-fuzzy ;;
+                            slime-repl ;;
                             smart-operator ;;
-                            smart-tab
-                            swank-cdt
+                            swank-cdt ;;
                             w3 ;;
                             w32-browser
                             wgrep ;;
                             winpoint ;;
                             yaml-mode ;;
-                            yasnippet))
+                            yasnippet ;;))
 
 ;; Install packages if they have not been installed
 (dolist (p packages-to-install)
