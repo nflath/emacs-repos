@@ -7,6 +7,5 @@
 
 (add-hook 'clojure-mode-hook 'durendal-enable-auto-compile)
 
-;;(require 'swank-cdt)
 (slime-setup)
 
