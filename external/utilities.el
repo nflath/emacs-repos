@@ -22,3 +22,5 @@
 (require 'macro-math)
 
 (require 'loccur)
+
+(require 'w32-browser)
