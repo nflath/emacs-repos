@@ -4,5 +4,4 @@
 (require 'python-pylint)
 (require 'pyflakes)
 (require 'pytest)
-(require 'ipython)
 
