@@ -1,4 +1,5 @@
 (setq warning-suppress-types nil)
+(setq debug-on-error t)
 
 ;;Create required directories
 (mapcar (lambda (dir) (mkdir dir t))
