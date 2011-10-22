@@ -1,3 +1,0 @@
-[submodule "supported/google-weather-el"]
-    path = supported/google-weather-el
-	url = git://git.naquadah.org/google-weather-el.git
