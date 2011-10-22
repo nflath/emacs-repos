@@ -57,3 +57,8 @@
                    (mapcar 'buffer-file-name (buffer-list))))
 
 
+(add-to-list 'load-path "~/Downloads/calfw")
+(require 'calfw)
+(require 'calfw-org)
+(require 'calfw-ical)
+

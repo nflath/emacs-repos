@@ -8,4 +8,4 @@
     (jdh-refresh-url "http://download.oracle.com/javase/1.5.0/docs/api/")
   (error nil))
 
-(define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
+

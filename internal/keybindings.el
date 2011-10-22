@@ -48,6 +48,11 @@
 (global-set-key '[M-kp-8] 'pager-row-up)
 (global-set-key '[M-down] 'pager-row-down)
 (global-set-key '[M-kp-2] 'pager-row-down)
+(global-set-key (kbd "C-x v s") 'magit-status)
+(global-set-key "\C-x~" 'macro-math-eval-and-round-region)
+(global-set-key "\C-x=" 'macro-math-eval-region)
+(global-set-key [(control meta o)] 'loccur)
+(global-set-key [(control shift o)] 'loccur-previous-match)
 
 ;; c-mode-base
 (define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
@@ -80,3 +85,11 @@
 (define-key dired-mode-map (kbd "C-r") 'dired-isearch-backward)
 (define-key dired-mode-map (kbd "C-M-s") 'dired-isearch-forward-regexp)
 (define-key dired-mode-map (kbd "C-M-r") 'dired-isearch-backward-regexp)
+
+;; java-mode
+(define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
+
+;; yassnippet
+(define-key yas/minor-mode-map (kbd "SPC") 'yas/expand)
+(define-key yas/minor-mode-map (kbd "(") 'yas/expand)
+

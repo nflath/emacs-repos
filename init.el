@@ -16,10 +16,10 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;;Loads emacs configuration
+(load-file (concat emacs-repos-dir "internal/package.el"))
 (require 'load-dir)
 (setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
                        '("customization" "internal" "external" "optumsoft")))
-(load-file (concat emacs-repos-dir "internal/package.el"))
 (load-dirs)
 
 ;;We're finished loading everything now
