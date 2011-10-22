@@ -38,7 +38,6 @@
                             htmlize ;;
                             hungry-delete ;;
                             icomplete+ ;;
-                            ipython
                             javadoc-help ;;
                             js2-mode
                             load-dir ;;
