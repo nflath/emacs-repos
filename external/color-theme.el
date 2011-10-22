@@ -149,6 +149,7 @@ other ones; I hope you like it."
      (sgml-entity-face ((t (:foreground "gold"))))
      (org-agenda-current-time ((t (:inherit org-time-grid :foreground "red"))))
      (flyspell-incorrect-face ((t (:foreground "OrangeRed" :bold t :underline t))))
-     (flyspell-duplicate-face ((t (:foreground "Gold3" :bold t :underline t)))))))
+     (flyspell-duplicate-face ((t (:foreground "Gold3" :bold t :underline t))))
+     )))
 (color-theme-hober)
 

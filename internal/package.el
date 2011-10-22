@@ -15,43 +15,37 @@
 (setq packages-to-install '(auctex
                             auto-complete
                             auto-complete-etags
-                            auto-indent-mode
-                            c-eldoc
-                            cache
+                            c-eldoc ;;
+                            cache ;;
                             calfw-gcal
                             clojure-mode
                             clojure-test-mode
-                            cmake-mode
-                            color-theme
+                            color-theme ;;
                             command-frequency
-                            ctags
                             cygwin-mount
                             dired-isearch
-                            doc-mode
+                            doc-mode ;;
                             durendal
-                            ecb
-                            eldoc-eval
-                            elisp-cache
+                            eldoc-eval ;;
                             elisp-slime-nav
                             emms
                             facebook
                             find-file-in-project
-                            fuzzy-match
-                            gccsense
-                            gdb-shell
-                            graphviz-dot-mode
-                            guess-offset
-                            haml-mode
+                            fuzzy-match ;;
+                            gdb-shell ;;
+                            graphviz-dot-mode ;;
+                            guess-offset ;;
+                            haml-mode ;;
                             haskell-mode
-                            highlight-parentheses
-                            htmlize
-                            hungry-delete
+                            highlight-parentheses ;;
+                            htmlize ;;
+                            hungry-delete ;;
                             icomplete+
                             ioccur
                             ipython
                             javadoc-help
                             js2-mode
-                            load-dir
+                            load-dir ;;
                             loccur
                             log4j-mode
                             macro-math
@@ -59,41 +53,34 @@
                             magit-simple-keys
                             magithub
                             markdown-mode
-                            marmalade
+                            marmalade ;;
                             member-function
-                            mic-paren
-                            mv-shell
+                            mic-paren ;;
+                            mv-shell ;;
                             nxml-mode
                             org 
                             org-email
                             org-magit
-                            p4
-                            pager
-                            pastebin
-                            pep8
+                            p4 ;;
+                            pager ;;
+                            pastebin ;;
                             powershell
-                            pyflakes
-                            pylint
-                            pytest
-                            python
-                            python-mode
-                            python-pep8
-                            python-pylint
-                            rainbow-delimiters
-                            rainbow-mode
-                            recursive-narrow
+                            pyflakes ;;
+                            pytest ;;
+                            python-pep8 ;;
+                            python-pylint ;;
+                            rainbow-mode ;;
+                            recursive-narrow ;;
                             save-visited-files
                             scheme-complete
-                            scratch
                             setup-cygwin
                             slime
                             slime-clj
                             slime-fuzzy
                             slime-repl
-                            smart-operator
+                            smart-operator ;;
                             smart-tab
                             swank-cdt
-                            switch-window
                             w3 ;;
                             w32-browser
                             wgrep ;;

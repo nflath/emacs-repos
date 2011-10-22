@@ -38,6 +38,16 @@
 (global-set-key (kbd "C-c i") 'bh/insert-inactive-timestamp)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cl" 'org-store-link)
+(global-set-key (kbd "C-x n n") 'recursive-narrow-to-region)
+(global-set-key (kbd "C-x n w") 'recursive-widen)
+(global-set-key "\C-v"	'pager-page-down)
+(global-set-key [next]	'pager-page-down)
+(global-set-key "\ev"	    'pager-page-up)
+(global-set-key [prior]	'pager-page-up)
+(global-set-key '[M-up]	'pager-row-up)
+(global-set-key '[M-kp-8] 'pager-row-up)
+(global-set-key '[M-down] 'pager-row-down)
+(global-set-key '[M-kp-2] 'pager-row-down)
 
 ;; c-mode-base
 (define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
@@ -64,3 +74,9 @@
 (define-key org-mode-map (kbd "C-<RET>" ) 'org-insert-heading-respect-content)
 (define-key global-map "\C-cr" 'org-remember)
 (define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
+
+;; dired-mode
+(define-key dired-mode-map (kbd "C-s") 'dired-isearch-forward)
+(define-key dired-mode-map (kbd "C-r") 'dired-isearch-backward)
+(define-key dired-mode-map (kbd "C-M-s") 'dired-isearch-forward-regexp)
+(define-key dired-mode-map (kbd "C-M-r") 'dired-isearch-backward-regexp)
