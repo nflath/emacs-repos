@@ -1,7 +1,6 @@
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
-(display-battery-mode t)
 (setq eval-expression-print-length nil)
 (display-time-mode t)
 (setq frame-title-format (concat invocation-name "@" system-name ": %b %+%+ %f"))
@@ -15,6 +14,7 @@
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'rr 'replace-regexp)
 (setq scroll-preserve-screen-position t)
+(setq resize-mini-windows nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq apropos-do-all t)
 (setq message-log-max t)
@@ -43,6 +43,8 @@
 (require 'saveplace)
 
 (setq savehist-file "~/.emacs.d/.savehist")
+(setq savehist-additional-variables 
+      '(search ring regexp-search-ring))
 (savehist-mode 1)
 
 ;;Improve the buffer menu
@@ -53,54 +55,32 @@
 (setq ibuffer-view-ibuffer t)
 (global-set-key  (kbd "C-x C-b")        'ibuffer-other-window)
 
-;;Rename duplicate buffers
+;; Rename duplicate buffers
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
-;;Display tooltips in echo area
+;; Display tooltips in echo area
 (setq help-at-pt-display-when-idle t)
 (setq help-at-pt-timer-delay 0)
 (help-at-pt-set-timer)
 
-;;Auto-revert PDFs and images
+;; Auto-revert PDFs and images
 (add-hook 'doc-view-mode-hook 'turn-on-auto-revert-mode)
 
-;;Set the major mode on new buffers according to the buffer name.
-(setq-default major-mode (lambda ()
-                           (let ((buffer-file-name (replace-regexp-in-string "\\.tmp$" ""
-                                                                             (or buffer-file-name (buffer-name)))))
-                             (set-auto-mode)
-                             )))
+;; Set the major mode on new buffers according to the buffer name.
+(setq-default major-mode
+              (lambda ()
+                (let ((buffer-file-name
+                       (replace-regexp-in-string
+                        "\\.tmp$" ""
+                        (or buffer-file-name (buffer-name)))))
+                  (set-auto-mode)
+                  )))
 
-;;Some better keybindings
-(global-set-key (kbd "C-x r") 'revert-buffer)
-(global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-k") 'kill-line)
-(global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "M-o") 'occur)
-(global-set-key (kbd "C-x C-k") 'kill-region)
-(global-set-key (kbd "C-o") 'split-line)
-;;(require 'log-edit-mode)
-;;(define-key log-edit-mode-map (kbd "C-x C-s") 'log-edit-done)
-(define-key global-map [(control meta o)] 'loccur)
-(define-key global-map [(control shift o)] 'loccur-previous-match)
-(global-set-key (kbd"C-x \\") 'align-regexp)
-(global-set-key (kbd "C-c v") 'visual-line-mode)
-(global-set-key (kbd "<f2>") 'recompile)
-(global-set-key (kbd "M-g") 'goto-line)
-(global-set-key (kbd "C-c C-c") 'comment-dwim)
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
-(global-set-key (kbd "C-c w") (lambda () (interactive) (diff-buffer-with-file (current-buffer))))
-(define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
-(define-key visual-line-mode-map (kbd "C-e") 'end-of-visual-line)
-(global-set-key (kbd "C-x f") 'ido-find-file-other-window)
-
-;;Backup to only use one directory
+;; Backup should only use one directory instead of sending 
 (mkdir "~/.emacs.d/data/emacs-backups/" t)
 (setq backup-directory-alist `(("." . "~/.emacs.d/emacs-backups/")))
 (setq version-control t)
@@ -112,48 +92,30 @@
           '(lambda ()
              (setq buffer-backed-up nil)))
 
-;;CUA-mode rectangles
+;; CUA-mode rectangles
 (setq cua-enable-cua-keys nil)
 (cua-mode t)
 
-;;Turn on auto-save
+;; Turn on auto-save
 (setq auto-save-default t)
 (setq auto-save-list-file-name "~/.emacs.d/.saves")
 
-;;Initialize a frame
-(defun x11-maximize-frame ()
-  "Maximize the current frame (to full screen) on an X display."
-  (interactive)
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
-
-(defun w32-maximize-frame ()
-  "Maximize the current frame on a Windows machine."
-  (interactive)
-  (w32-send-sys-command 61488))
-
-(defun maximize-frame ()
-  "Maximizes the Emacs frame."
-  (interactive)
-  (if window-system
-      (if (fboundp 'x-send-client-message)
-          (x11-maximize-frame)
-        (w32-maximize-frame))))
+;; Maximize the frame
 (eval-after-load 'init-finished
   '(maximize-frame))
 
-;;subword movement
+;; subword movement
 (require 'subword)
 (global-subword-mode t)
 
-;;Better M-x
+;; Better M-x
 (icomplete-mode 1)
 (setq icomplete-compute-delay 0)
 
-;;Ido is a mode for easier selection of items in the minibuffer.  It's main uses
-;;are enhancing find-file and switch-buffer.  Ido provides 'flex matching', as
-;;well as searching recent directories if no matches are found.  It will also
-;;default to the file at point if it exists.
+;; Ido is a mode for easier selection of items in the minibuffer.  It's main uses
+;; are enhancing find-file and switch-buffer.  Ido provides 'flex matching', as
+;; well as searching recent directories if no matches are found.  It will also
+;; default to the file at point if it exists.
 (setq ido-save-directory-list-file "~/.emacs.d/.ido.last")
 (setq ido-enable-flex-matching t)
 (defadvice ido-find-file (around dired-dont-guess activate)
@@ -167,53 +129,74 @@
 (ido-everywhere t)
 (setq ido-default-buffer-method 'selected-window)
 
+;; Turn abbrev mode on
 (setq only-global-abbrevs nil)
 (require 'abbrev)
 (setq-default abbrev-mode t)
 
+;; Record changes in window configuration
 (winner-mode t)
 
-;;Tramp allows remote access to files by using find-file with
-;;/ssh:user@host:path/to/file.  It is too slow for regular use, but it can still
-;;sometimes be useful.  We want it to use ssh by default to make it slightly
-;;more bearable.
+;; Tramp allows remote access to files by using find-file with
+;; /ssh:user@host:path/to/file.  It is too slow for regular use, but it can still
+;; sometimes be useful.  We want it to use ssh by default to make it slightly
+;; more bearable.
 (require 'tramp)
 (setq tramp-default-method "ssh")
 
-(defun sudo-edit (&optional arg)
-  "Find a file and open it as root."
-  (interactive "p")
-  (if arg
-      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
-    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
+;; Use tab to complete if possible
+(setq tab-always-indent 'complete)
 
-(defun sudo-edit-current-file ()
-  "Edit the current file as root."
-  (interactive)
-  (let ((pos (point)))
-    (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
-    (goto-char pos)))
-(global-set-key (kbd "C-c C-r") 'sudo-edit-current-file)
-
+;; Ignore files when completing
 (add-to-list 'completion-ignored-extensions ".class")
 (add-to-list 'completion-ignored-extensions ".exe")
 (add-to-list 'completion-ignored-extensions ".o")
 (add-to-list 'completion-ignored-extensions ".dvi")
 (add-to-list 'completion-ignored-extensions ".ps")
 
-;; Avoid those horrible "File %s changed on disk.  Reread from disk?" messages.
+;; Have lines be max 80 chars
+(setq whitespace-style '(lines-tail))
+(setq whitespace-line-column 85)
+(add-hook 'prog-mode-hook '(lambda () (whitespace-mode 1)))
+(add-hook 'prog-mode-hook '(lambda () (setq fill-column 79)))
+
+;; When to split windows
+(setq split-height-threshold 80)
+(setq split-width-threshold 160)
+
+;; 
+(electric-pair-mode t)
+(electric-indent-mode t)
+(electric-layout-mode t)
+
+;; Always revert
+(global-auto-revert-mode t)
+
+;; Windmove - use keys to move windows
+(require 'windmove)
+(windmove-default-keybindings 'super)
+
+;; Set Imenu to always rescan
+(set-default 'imenu-auto-rescan t)
+
+;; Get rid of annoying prompts
 (setq revert-without-query '(".*"))
-;; And same for "buffer %s has changed on disk.  Really edit?"
 (defun ask-user-about-supersession-threat (filename)
   (message "Reverting file %s..." filename)
   (revert-buffer t t)
   (message "Reverting file %s... done" filename))
 
-(setq whitespace-style '(lines-tail))
-(setq whitespace-line-column 85)
-(add-hook-to-all programming-major-mode-hooks '(lambda () (whitespace-mode 1)))
-(add-hook-to-all programming-major-mode-hooks '(lambda () (setq fill-column 79)))
-(setq tab-always-indent 'complete)
+;; This causes VC to not longer destroy your window configuration.
+(setq vc-delete-logbuf-window t)
 
-(setq split-height-threshold 80)
-(setq split-width-threshold 160)
+;; Wrap lines by default
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+;; Use Chrome as the browse
+(setq browse-url-browser-function (quote browse-url-generic))
+(setq browse-url-generic-program "google-chrome")
+
+;; Turn eldoc on
+(setq eldoc-idle-delay 0)
+(autoload 'turn-on-eldoc-mode "eldoc" nil t)
+

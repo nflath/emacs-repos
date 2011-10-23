@@ -1,4 +1,4 @@
-;;Use Gmail to send email when ~/.authinfo exists
+;; Use Gmail to send email when ~/.authinfo exists
 (when (file-exists-p "~/.authinfo")
   (require 'smtpmail)
   (setq send-mail-function 'smtpmail-send-it
@@ -12,7 +12,7 @@
         smtpmail-smtp-service 587
         smtpmail-debug-info t))
 
-;;Send emails easily
+;; Send emails easily
 (defvar email-alist
   '(( "Max Burstyn"              "dmbursty@gmail.com")
     ( "Yubin Kim"                "shdwfeather@gmail.com")
@@ -34,4 +34,3 @@
                         (mapcar #'car email-alist))
                        email-alist))))
 
-(global-set-key (kbd "C-c m") 'insert-email)

@@ -5,6 +5,8 @@
   (isearch-repeat direction)
   (isearch-update))
 
+(setq-default isearch-case-fold-search t)
+
 (define-key isearch-mode-map (kbd "C-M-r") (lambda ()
                                              (interactive)
                                              (isearch-switch-to-regexp 'backward)))

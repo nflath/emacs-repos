@@ -1,3 +1,0 @@
-constant foo = "//\"";
-class Bar {
-}

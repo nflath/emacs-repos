@@ -1,34 +1,30 @@
-(require 'log-edit)
 (setq warning-suppress-types nil)
+(setq debug-on-error t)
+
 ;;Create required directories
 (mapcar (lambda (dir) (mkdir dir t))
         '("~/.emacs.d/tmp"
           "~/.emacs.d/elisp"
+	  "~/.emacs.d/elpa"
           "~/.emacs.d/log"))
 
 (let ((default-directory (concat emacs-repos-dir "supported/")))
   (add-to-list 'load-path default-directory)
   (normal-top-level-add-subdirs-to-load-path))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-current-time ((t (:inherit org-time-grid :foreground "red"))) t))
- 
+(let ((default-directory "~/.emacs.d/elpa"))
+  (add-to-list 'load-path default-directory)
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;;Loads emacs configuration
-(load-file (concat emacs-repos-dir "customization/prog-util.el"))
-(load-file (concat emacs-repos-dir "customization/org.el"))
-(load-file (concat emacs-repos-dir "optumsoft/a4.el"))
-(load-directory (concat emacs-repos-dir "internal/"))
-(load-directory (concat emacs-repos-dir "external/"))
+(load-file (concat emacs-repos-dir "internal/package.el"))
+(require 'load-dir)
+(setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
+                       '("customization" "internal" "external" "optumsoft")))
+(load-dirs)
 
 ;;We're finished loading everything now
 (provide 'init-finished)
-(require 'tacc)
-
-(add-to-list 'auto-mode-alist '("\\.tac$" . tacc-mode))
 
 (if (get-buffer "scratch.el")
     (kill-buffer "scratch.el"))

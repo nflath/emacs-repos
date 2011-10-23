@@ -31,21 +31,6 @@
     )
     "List of programming modes.")
 
-(defvar programming-major-mode-hooks
-  '(emacs-lisp-mode-hook
-    lisp-interaction-mode-hook
-    inferior-emacs-lisp-mode-hook
-    scheme-mode-hook
-    sql-mode-hode
-    clojure-mode-hook
-    lisp-mode-hook
-    haskell-mode-hook
-    clojure-mode-hook
-    python-mode-hook
-    c-mode-common-hook
-    )
-  "List of programming mode hooks.")
-
 (defun line-matches (regexp)
     "Returns non-nil if the current line matches the given regexp, nil otherwise."
     (interactive "sRegex: ")
@@ -119,3 +104,4 @@ an error with the command that failed."
     (if (= 0 (shell-command (car cmd-list)))
         (exec-cmds (cdr cmd-list) error)
       (message (concat error ": The command '%s' failed.") (car cmd-list)))))
+

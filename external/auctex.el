@@ -1,5 +1,5 @@
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(require 'tex)
+(require 'preview)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)

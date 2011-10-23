@@ -1,5 +1,0 @@
-#name: int main(argc, argv) { ... }
-# --
-public static void main(String [] args) {
-    $0
-}

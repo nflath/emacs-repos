@@ -1,5 +1,0 @@
-(setq command-frequency-table-file (concat emacs-repos-dir ".frequencies"))
-(require 'command-frequency)
-(command-frequency-table-load)
-(command-frequency-autosave-mode 1)
-(command-frequency-mode 1)
