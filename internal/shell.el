@@ -72,8 +72,3 @@
 (add-hook 'comint-preoutput-filter-functions 'shorten-prompt)
 
 (require 'dirtrack)
-
-;;When I'm on windows, I want to use *eshell* instead of the built-in shell.  However, a few of my functions call shell directly, so I alias *shell* to *eshell* if I'm using windows
-(when (eq window-system 'w32)
-  (require 'eshell)
-  (defalias 'shell 'eshell))
