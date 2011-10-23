@@ -1,6 +1,0 @@
-((topmost-intro 1))
-((defun-block-intro 1))
-((arglist-cont-nonempty 23 26) (else-clause 23))
-((substatement 38) (comment-intro))
-((substatement 38) (comment-intro))
-((substatement 38) (comment-intro))

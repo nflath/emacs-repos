@@ -1,2 +1,0 @@
-/* defined (y) */
-#if foo
