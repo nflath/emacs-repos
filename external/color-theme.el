@@ -1,6 +1,4 @@
 ;;color-theme allows you to choose a pre-defined color theme for Emacs.
-
-(require 'color-theme)
 (defun color-theme-hober (&optional preview)
   "Does all sorts of crazy stuff.
 Originally based on color-theme-standard, so I probably still have some

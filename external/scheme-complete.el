@@ -1,6 +1,5 @@
 ;;; Auto-completion and eldoc for scheme
 (require 'scheme)
-(require 'scheme-complete)
 (define-key scheme-mode-map "\t" 'scheme-complete-or-indent)
 
 (add-hook 'scheme-mode-hook
