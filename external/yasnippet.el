@@ -9,7 +9,6 @@
 ;;
 ;;Yasnippet and all of the snippets it comes with can be downloaded from http://code.google.com/p/yasnippet/.
 
-(require 'yasnippet)
 (yas/initialize)
 (setq yas/root-directory (concat emacs-repos-dir "snippets"))
 

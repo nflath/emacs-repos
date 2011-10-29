@@ -8,10 +8,6 @@
 	  "~/.emacs.d/elpa"
           "~/.emacs.d/log"))
 
-(let ((default-directory (concat emacs-repos-dir "supported/")))
-  (add-to-list 'load-path default-directory)
-  (normal-top-level-add-subdirs-to-load-path))
-
 (let ((default-directory "~/.emacs.d/elpa"))
   (add-to-list 'load-path default-directory)
   (normal-top-level-add-subdirs-to-load-path))
