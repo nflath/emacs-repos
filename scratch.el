@@ -27,5 +27,3 @@
 (setq foo (shell-command-to-string "~/a.out&"))
 
 (add-to-list 'load-path "~/Downloads/calfw")
-
-vc-handled-backends

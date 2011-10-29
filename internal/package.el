@@ -75,4 +75,5 @@
 ;; Install packages if they have not been installed
 (dolist (p packages-to-install)
   (when (not (package-installed-p p))
-    (package-install p)))
+    (package-install p))
+  (condition-case nil (require p) (error t)))
