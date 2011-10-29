@@ -61,3 +61,5 @@
 (add-hook 'comint-preoutput-filter-functions 'shorten-prompt)
 
 (require 'dirtrack)
+(when (eq window-system 'w32)
+  (setq-default dirtrack-list '("\\(.*\\)>" 1)))

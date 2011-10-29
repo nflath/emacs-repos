@@ -13,8 +13,7 @@
   (interactive)
   (occur "^\\*")
   (switch-to-buffer "*Occur*")
-  (rename-buffer (buffer-name) + ".org")
-  )
+  (rename-buffer (buffer-name) + ".org"))
 
 (defun shell-and-cd (&rest args)
   (interactive)
@@ -27,38 +26,6 @@
 
 (setq foo (shell-command-to-string "~/a.out&"))
 
-(remove-if '(lambda (x)
-              (and nil (or (string-equal location x)
-                           (not (file-exists-p x))
-                           (eq nil x))))
-           (mapcar 'buffer-file-name (buffer-list)))
-
-(mapcar '(lambda (x) (insert x "\n"))
-        (remove-if '(lambda (x)
-                      (if x
-                      (or (string-equal "foo" x)
-                          (not (file-exists-p x))
-                          (eq nil x))))
-                   (mapcar 'buffer-file-name (buffer-list)))
-))
-
-
-(mapcar '(lambda (x) (if x (insert x "\n"))
-        (remove-if '(lambda (x)
-                      (if x (or (string-equal "foo" x)
-                                (not (file-exists-p x))
-                                (eq nil x))))
-                   (mapcar 'buffer-file-name (buffer-list)))))
-
-(setq a (remove-if '(lambda (x)
-                      (if x (or (string-equal "foo" x)
-                                (not (file-exists-p x))
-                                (eq nil x))))
-                   (mapcar 'buffer-file-name (buffer-list))))
-
-
 (add-to-list 'load-path "~/Downloads/calfw")
-(require 'calfw)
-(require 'calfw-org)
-(require 'calfw-ical)
 
+vc-handled-backends

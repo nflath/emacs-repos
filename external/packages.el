@@ -14,9 +14,6 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (setq markdown-enable-math t)
 
-;; graphviz-dot-mode
-
-
 ;;; Eldoc
 ;; c-eldoc
 (require 'c-eldoc)
