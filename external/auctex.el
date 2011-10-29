@@ -1,4 +1,5 @@
 (require 'tex)
+(require 'tex-fold)
 (require 'preview)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -10,3 +11,10 @@
 
 (defadvice LaTeX-insert-item (before latex-item-add-newline activate)
   (newline-and-indent))
+
+(setq LaTeX-section-hook
+      '(LaTeX-section-heading
+        LaTeX-section-title
+        LaTeX-section-toc
+        LaTeX-section-section
+        LaTeX-section-label))

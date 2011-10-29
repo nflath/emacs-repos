@@ -1,4 +1,5 @@
-;; Things I really wish were patched in Emacs
+;;;;; Things I really wish were patched in Emacs.
+
 
 (defun ff-find-the-other-file (&optional in-other-window)
   "Find the header or source file corresponding to the current file.
@@ -132,3 +133,42 @@ If optional IN-OTHER-WINDOW is non-nil, find the file in another window."
         nil))))
 
     found))                        ;; return buffer-name or filename
+
+(defun smart-operator-insert (op &optional only-where)
+     "See `smart-operator-insert-1'."
+     (if (member (face-at-point) '(font-lock-comment-face font-lock-string-face)) (insert op)
+       (delete-horizontal-space)
+       (cond ((and (smart-operator-lispy-mode?)
+                   (not (smart-operator-document-line?)))
+              (smart-operator-lispy op))
+             ((not smart-operator-docs)
+              (smart-operator-insert-1 op 'middle))
+             (t
+              (smart-operator-insert-1 op only-where)))))
+
+(defun smart-operator-. ()
+  "See `smart-operator-insert'."
+  (interactive)
+  (if (member (face-at-point) '(font-lock-comment-face font-lock-string-face)) (insert op)
+  (cond ((and smart-operator-double-space-docs
+              (smart-operator-document-line?))
+         (smart-operator-insert "." 'after)
+         (insert " "))
+        ((or (looking-back "[0-9]")
+             (or (and c-buffer-is-cc-mode
+                      (looking-back "[a-z]"))
+                 (and
+                  (memq major-mode '(python-mode ruby-mode))
+                  (looking-back "[a-z\)]"))
+                 (and
+                  (memq major-mode '(js-mode js2-mode))
+                  (looking-back "[a-z\)$]"))))
+         (insert "."))
+        ((memq major-mode '(cperl-mode perl-mode ruby-mode))
+         ;; Check for the .. range operator
+         (if (looking-back ".")
+             (insert ".")
+           (insert " . ")))
+        (t
+         (smart-operator-insert "." 'after)
+         (insert " ")))))

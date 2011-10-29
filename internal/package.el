@@ -27,7 +27,6 @@
                             elisp-slime-nav 
                             fuzzy-match 
                             gdb-shell 
-                            graphviz-dot-mode 
                             guess-offset 
                             haml-mode 
                             haskell-mode

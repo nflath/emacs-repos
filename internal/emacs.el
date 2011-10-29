@@ -189,6 +189,10 @@
 ;; This causes VC to not longer destroy your window configuration.
 (setq vc-delete-logbuf-window t)
 
+;;git is balls slow on windows, causing slow file opens
+(if (eq window-system 'w32)
+    (setq vc-handled-backends nil))
+
 ;; Wrap lines by default
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
