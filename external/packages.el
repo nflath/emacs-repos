@@ -10,3 +10,5 @@
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 
 
+;;nxml
+(setq nxml-slash-auto-complete-flag t)
