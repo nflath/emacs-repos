@@ -5,6 +5,9 @@
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (setq markdown-enable-math t)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 
 ;;; Eldoc
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
@@ -12,3 +15,5 @@
 
 ;;nxml
 (setq nxml-slash-auto-complete-flag t)
+
+
