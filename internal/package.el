@@ -13,8 +13,6 @@
 
 ;; List of packages to install
 (setq packages-to-install '(auctex
-                            auto-complete
-                            auto-complete-etags
                             c-eldoc 
                             cache 
                             clojure-mode 
@@ -47,7 +45,6 @@
                             mv-shell 
                             nxml-mode
                             org 
-                            org-email
                             org-magit
                             p4 
                             pager 
@@ -69,8 +66,7 @@
                             w32-browser 
                             wgrep 
                             winpoint 
-                            yaml-mode 
-                            yasnippet))
+                            yaml-mode))
 
 ;; Install packages if they have not been installed
 (dolist (p packages-to-install)
