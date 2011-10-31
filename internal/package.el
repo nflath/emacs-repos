@@ -60,7 +60,6 @@
                             slime 
                             slime-fuzzy 
                             slime-repl 
-                            smart-operator 
                             swank-cdt 
                             w3 
                             w32-browser 

@@ -62,4 +62,4 @@
 
 (require 'dirtrack)
 (when (eq window-system 'w32)
-  (setq-default dirtrack-list '("\\(.*\\)>" 1)))
+  (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1)))

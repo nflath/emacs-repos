@@ -11,4 +11,3 @@
      (setq save-visited-files-auto-restore t)
      (save-visited-files-mode t)))
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
-(add-hook 'prog-mode-hook (lambda () (smart-operator-mode)))

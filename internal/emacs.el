@@ -164,10 +164,8 @@
 (setq split-height-threshold 80)
 (setq split-width-threshold 160)
 
-;; 
-(electric-pair-mode t)
 (electric-indent-mode t)
-(electric-layout-mode t)
+
 
 ;; Always revert
 (global-auto-revert-mode t)
