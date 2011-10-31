@@ -8,6 +8,10 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
+;; Clojure
+(defun slime-fuzzy-init ())
+(add-hook 'clojure-mode-hook 'durendal-enable-auto-compile)
+(slime-setup)
 
 ;;; Eldoc
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
@@ -17,3 +21,7 @@
 (setq nxml-slash-auto-complete-flag t)
 
 
+;; utilities
+(setq htmlize-html-major-mode 'html-mode)
+(setq p4-verbose nil)
+(add-hook 'c-mode-common-hook 'doc-mode)
