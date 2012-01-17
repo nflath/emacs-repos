@@ -16,7 +16,7 @@
 (load-file (concat emacs-repos-dir "internal/package.el"))
 (require 'load-dir)
 (setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
-                       '("customization" "internal" "external" "optumsoft")))
+                       '("customization" "internal" "external")))
 (load-dirs)
 
 ;;We're finished loading everything now
