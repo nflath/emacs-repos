@@ -8,7 +8,7 @@
                         package-archives
                         '(("marmalade" . "http://marmalade-repo.org/packages/")
                           ("ELPA" . "http://tromey.com/elpa/"))))
-(package-initialize)
+
 (package-refresh-contents)
 
 ;; List of packages to install
@@ -72,3 +72,6 @@
   (when (not (package-installed-p p))
     (package-install p))
   (condition-case nil (require p) (error t)))
+
+
+(package-initialize)
