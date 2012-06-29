@@ -6,7 +6,6 @@
 
 (format-time-string "%Y-%m-%d" (date-to-day "2011-01-24"))
 
-
 (current-time)
 
 (defun only-outline ()

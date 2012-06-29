@@ -1,4 +1,6 @@
-(require 'org-habit)
+ (require 'org-habit)
+
+(setq org-alphabetical-lists t)
 
 ;; Agenda customizations
 (setq org-agenda-start-on-weekday nil)
@@ -203,34 +205,17 @@
   (org-mobile-pull))
 
 ;; Prettify entities
-;;  (setq org-entities-user
-;;        '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
-;;          ("union" "\\cup" t "&cup;" "[union]" "[union]" "∪")
-;;          ("Z" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
-;;          ("R" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
-;;          ("integers" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
-;;          ("reals" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
-;;          ("nullset" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")
-;;          ("null" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")))
-
-;;  (defun org-pretty-entities ()
-;;    (interactive)
-;;    (mapcar
-;;     (lambda (lst)
-;;       (font-lock-add-keywords
-;;           nil (mapcar
-;;                (lambda (el)
-;;                  (list
-;;                   (concat "\\(" (regexp-quote "\\") (nth 0 el) "\\)[\s^_]"  )
-;;                   `(0 (progn (compose-region (match-beginning 1) (match-end 1)
-;;                                              ,(nth 6 el)) nil))))
-;;                lst)))
-;;     (list org-entities org-entities-user)))
-
-;;  (remove-hook 'find-file-hook 'org-pretty-entities)
+(setq org-entities-user
+      '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
+        ("union" "\\cup" t "&cup;" "[union]" "[union]" "∪")
+        ("Z" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
+        ("R" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
+        ("integers" "\\mathbb{Z}" t "&#8477" "[Set of Integers]" "[Set of Integers]" "ℤ")
+        ("reals" "\\mathbb{R}" t "&#8484" "[Set of Reals]" "[Set of Reals]" "ℝ")
+        ("nullset" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")
+        ("null" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")))
+(setq org-pretty-entities t)
+(remove-hook 'find-file-hook 'org-pretty-entities)
 
 ;; Make the agenda
 (org-agenda-list)
-
-
-

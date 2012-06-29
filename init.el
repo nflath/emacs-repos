@@ -5,7 +5,7 @@
 (mapcar (lambda (dir) (mkdir dir t))
         '("~/.emacs.d/tmp"
           "~/.emacs.d/elisp"
-	  "~/.emacs.d/elpa"
+          "~/.emacs.d/elpa"
           "~/.emacs.d/log"))
 
 (let ((default-directory "~/.emacs.d/elpa"))
