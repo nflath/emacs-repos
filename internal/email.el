@@ -12,20 +12,6 @@
         smtpmail-smtp-service 587
         smtpmail-debug-info t))
 
-;; Send emails easily
-(defvar email-alist
-  '(( "Max Burstyn"              "dmbursty@gmail.com")
-    ( "Yubin Kim"                "shdwfeather@gmail.com")
-    ( "Derek Thor Thurn"         "thor@thurn.ca")
-    ( "Gobi Raveendran"          "superworm85@gmail.com")
-    ( "Design Project fydp uydp" "fydp_ngym@googlegroups.com")
-    ( "SE1 SE463"                "dmbursty@gmail.com, shdwfeather@gmail.com, thor@thurn.ca")
-    ( "Networks"                 "curtis.steeves@gmail.com, tyler.szabo@gmail.com, thor@thurn.ca")
-    ( "Linode"                   "dmbursty@gmail.com, shdwfeather@gmail.com, tyler.szabo@gmail.com, thor@thurn.ca")
-    ( "Alan Mackenzie"           "acm@muc.de")
-    )
-  "alist of names to email adresses")
-
 (defun insert-email ()
   "Uses email-alist to read a name and insert the correct email addresses at point."
   (interactive)
