@@ -1,7 +1,6 @@
 ;; FixMe: M-RET in org-mode doesn't seem to work
 ;; FixMe: cache javadoc locally
-;; FixMe: C-s doesn't work in dired
-;; FixMe: Work in jabber-chat
+;; FixMe: nflath@optumsoft.com in jabber-chat
 ;; FixMe: ';;' at end of line do not match up when indenting
 ;; FixMe: Is there a way to fin out how many columns are visible?
 ;; FixMe: global modes should be added to packages
@@ -13,19 +12,22 @@
 ;; FixMe: Install ispell on mac OS x
 ;; FixMe: browse-URL on OS x doesn't work
 ;; FixMe: fullscreen command on OSX
-;; FixMe: Have google-chrome be a program on command line
+;; FixMe: Have google-chrome work be a program on command line
 
+;; FixMe: submit pager-default-commands to marmalade, check into github, remove internal/pager.el, add to el-get
 ;; FixMe: Add missing functions to man-mode - need to push and update
 ;; FixMe: dired - no file on this line??
-;; FixMe: M-x M-p doesn't work
+
+
 (add-to-list 'exec-path "/usr/local/git/bin")
+
 
 (setq-default debug-on-error t)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 
 (setq user-emacs-directory "~/.emacs.d")
-(setq emacs-repos-dir "~/emacs-repos/")
+(setq emacs-repos-dir "~/Dropbox/emacs-repos/")
 (defvar org-directory "~/Dropbox/org/" "Location of org files")
 (set-face-attribute 'default nil :height 90)
 (setq warning-suppress-types nil)

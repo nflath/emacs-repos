@@ -20,7 +20,7 @@
 ;; Add tab-completion to M-:
 (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
 
-;; Set correct formatting for GNU Emacs elisp files 
+;; Set correct formatting for GNU Emacs elisp files
 (defun gnu-emacs-elisp-formating ()
   "Sets up the correct style for officcial GNU Emacs elisp files."
   (setq indent-tabs-mode t)
@@ -34,19 +34,20 @@
                 (gnu-emacs-elisp-formating)))))
 
 ;; Make the scratch buffer unkillable and persistent
-(defvar scratch-file (concat emacs-repos-dir "scratch.el")
+(defvar scratch-file (concat "~/.emacs.d/scratch.el")
   "Location the *scratch* buffer is saved to.")
 
 (save-excursion
   (set-buffer (get-buffer-create "*scratch*"))
   (lisp-interaction-mode)
   (make-local-variable 'kill-buffer-query-functions)
-  (add-hook 'kill-buffer-query-functions #'(lambda ()
+  (remove-hook 'kill-buffer-query-functions #'(lambda ()
                                              (if (eq (current-buffer) (get-buffer-create "*scratch*"))
                                                  (bury-buffer)
                                                (bury-buffer (get-buffer-create "*scratch*")))
                                              nil))
   (erase-buffer)
-  (insert-file scratch-file)
+  (if (file-exists-p scratch-file) (insert-file scratch-file))
   (setq buffer-file-name scratch-file)
-  (setq default-directory emacs-repos-dir))
+  (setq default-directory "~/.emacs.d")
+  (save-buffer))
