@@ -1,3 +1,4 @@
+;; FixMe: Can this be installed from el-get?
 (require 'cl)
 (defvar org-bullets-dots nil)
 (setq-default org-bullets-dots nil)

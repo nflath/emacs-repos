@@ -142,7 +142,6 @@
         org
 
         ;; Version control enhacements
-        p4  ;; FixMe: Work with a4
         git-emacs
         github-browse-file
         gitconfig-mode
