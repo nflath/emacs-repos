@@ -1,5 +1,3 @@
-(require 'loccur)
-;;; Sets custom keybindings
 
 ;; global
 (global-set-key (kbd "M-s") 'ido-goto-symbol)
@@ -80,8 +78,4 @@
 ;; java-mode
 (define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
 
-;; yassnippet
-;(require 'yasnippet)
-;(define-key yas/minor-mode-map (kbd "SPC") 'yas/expand)
-;(define-key yas/minor-mode-map (kbd "(") 'yas/expand)
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
