@@ -44,7 +44,7 @@
 (require 'saveplace)
 
 (setq savehist-file "~/.emacs.d/.savehist")
-(setq savehist-additional-variables 
+(setq savehist-additional-variables
       '(search ring regexp-search-ring))
 (savehist-mode 1)
 
@@ -81,7 +81,7 @@
                   (set-auto-mode)
                   )))
 
-;; Backup should only use one directory instead of sending 
+;; Backup should only use one directory instead of sending
 (mkdir "~/.emacs.d/data/emacs-backups/" t)
 (setq backup-directory-alist `(("." . "~/.emacs.d/emacs-backups/")))
 (setq version-control t)
@@ -198,4 +198,6 @@
 (setq browse-url-browser-function (quote browse-url-generic))
 (setq browse-url-generic-program "google-chrome")
 
+(set-face-attribute 'default nil :height 90)
 
+(xterm-mouse-mode)

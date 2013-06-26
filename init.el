@@ -19,58 +19,35 @@
 ;; FixMe: dired - no file on this line??
 
 
+
+;;; Debug errors when they arise
+(setq-default debug-on-error t)
+
+;;; Add git to our exec-path
 (add-to-list 'exec-path "/usr/local/git/bin")
 
-
-(setq-default debug-on-error t)
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-
-(setq user-emacs-directory "~/.emacs.d")
+;;; Set a few paths in order to determine where everything is
+(setq user-emacs-directory "~/.emacs.d/")
 (setq emacs-repos-dir "~/Dropbox/emacs-repos/")
 (defvar org-directory "~/Dropbox/org/" "Location of org files")
-(set-face-attribute 'default nil :height 90)
-(setq warning-suppress-types nil)
 
-(let ((default-directory "~/.emacs.d/"))
-  (normal-top-level-add-subdirs-to-load-path))
-
-;;Create required directories
-(mapcar (lambda (dir) (mkdir dir t))
-        '("~/.emacs.d/tmp"
-          "~/.emacs.d/elisp"
-          "~/.emacs.d/elpa"
-          "~/.emacs.d/log"))
-
-(let ((default-directory "~/Dropbox/.emacs.d"))
+;;; Set the load path
+(let ((default-directory user-emacs-directory))
   (add-to-list 'load-path default-directory)
   (normal-top-level-add-subdirs-to-load-path))
 
-;; ;; Requires the following installed:
-(load-file (concat emacs-repos-dir "elget.el"))
-(setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
-                       '("customization" "internal" "external")))
+;;Create various required directories
+(mapcar (lambda (dir) (mkdir dir t))
+        (list (concat user-emacs-directory "elpa")
+              (concat user-emacs-directory "log")))
 
+;;; Load packages using el-get
+(load-file (concat emacs-repos-dir "elget.el"))
+
+;;; Load other customizations
+(setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
+                        '("customization" "internal" "external")))
 (load-dirs)
 
 ;;We're finished loading everything now
 (provide 'init-finished)
-
-(if (get-buffer "scratch.el") (kill-buffer "scratch.el"))
-
-(setq yas/root-directory "~/Dropbox/emacs-repos/snippets/")
-(yas/load-directory yas/root-directory)
-(yas/global-mode)
-
-defun
-
-(defun  ()
-   "thisandthat."
-   (interactive)
-   (let (var1)
-     (setq var1 some)
-
-     )
-   )
-
-(xterm-mouse-mode)

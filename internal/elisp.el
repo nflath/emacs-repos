@@ -34,14 +34,14 @@
                 (gnu-emacs-elisp-formating)))))
 
 ;; Make the scratch buffer unkillable and persistent
-(defvar scratch-file (concat "~/.emacs.d/scratch.el")
+(defvar scratch-file "~/.emacs.d/scratch.el"
   "Location the *scratch* buffer is saved to.")
 
 (save-excursion
   (set-buffer (get-buffer-create "*scratch*"))
   (lisp-interaction-mode)
   (make-local-variable 'kill-buffer-query-functions)
-  (remove-hook 'kill-buffer-query-functions #'(lambda ()
+  (add-hook 'kill-buffer-query-functions #'(lambda ()
                                              (if (eq (current-buffer) (get-buffer-create "*scratch*"))
                                                  (bury-buffer)
                                                (bury-buffer (get-buffer-create "*scratch*")))
