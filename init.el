@@ -1,9 +1,7 @@
-;; FixMe: Add missing functions to man-mode
-;; FixMe: cache javadoc locally
 ;; FixMe: M-RET in org-mode doesn't seem to work
+;; FixMe: cache javadoc locally
 ;; FixMe: C-s doesn't work in dired
 ;; FixMe: Work in jabber-chat
-;; FixMe: M-x M-p doesn't work
 ;; FixMe: ';;' at end of line do not match up when indenting
 ;; FixMe: Is there a way to fin out how many columns are visible?
 ;; FixMe: global modes should be added to packages
@@ -14,35 +12,33 @@
 ;; FixMe: Send email from emacs - including contacts from google?
 ;; FixMe: Install ispell on mac OS x
 ;; FixMe: browse-URL on OS x doesn't work
-;; FixMe: fullscreen command
-;; FixMe: dired - no file on this line??
+;; FixMe: fullscreen command on OSX
 ;; FixMe: Have google-chrome be a program on command line
 
+;; FixMe: Add missing functions to man-mode - need to push and update
+;; FixMe: dired - no file on this line??
+;; FixMe: M-x M-p doesn't work
 (add-to-list 'exec-path "/usr/local/git/bin")
 
-(defun hexrgb-canonicalize-defined-colors (&rest args) ) ;; FixMe: What is using this?
-(defun dired-get-filename (&rest args) ()) ;; FixMe: What is using this?
-(defun plist-to-alist (args) );; FixMe: What is using this?
-
 (setq-default debug-on-error t)
-(add-to-list 'load-path "~/Dropbox/.emacs.d/el-get/el-get")
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 
-(setq user-emacs-directory "~/Dropbox/.emacs.d")
-(setq emacs-repos-dir "~/Dropbox/emacs-repos/")
+(setq user-emacs-directory "~/.emacs.d")
+(setq emacs-repos-dir "~/emacs-repos/")
 (defvar org-directory "~/Dropbox/org/" "Location of org files")
 (set-face-attribute 'default nil :height 90)
 (setq warning-suppress-types nil)
 
-(let ((default-directory "~/Dropbox/.emacs.d/"))
+(let ((default-directory "~/.emacs.d/"))
   (normal-top-level-add-subdirs-to-load-path))
 
 ;;Create required directories
 (mapcar (lambda (dir) (mkdir dir t))
-        '("~/Dropbox/.emacs.d/tmp"
-          "~/Dropbox/.emacs.d/elisp"
-          "~/Dropbox/.emacs.d/elpa"
-          "~/Dropbox/.emacs.d/log"))
+        '("~/.emacs.d/tmp"
+          "~/.emacs.d/elisp"
+          "~/.emacs.d/elpa"
+          "~/.emacs.d/log"))
 
 (let ((default-directory "~/Dropbox/.emacs.d"))
   (add-to-list 'load-path default-directory)
