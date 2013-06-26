@@ -1,3 +1,4 @@
+(require 'loccur)
 ;;; Sets custom keybindings
 
 ;; global
@@ -25,8 +26,6 @@
 (global-set-key (kbd "M-o") 'occur)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-o") 'split-line)
-(global-set-key [(control meta o)] 'loccur)
-(global-set-key [(control shift o)] 'loccur-previous-match)
 (global-set-key (kbd"C-x \\") 'align-regexp)
 (global-set-key (kbd "C-c v") 'visual-line-mode)
 (global-set-key (kbd "<f2>") 'recompile)
@@ -40,14 +39,6 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key (kbd "C-x n n") 'recursive-narrow-to-region)
 (global-set-key (kbd "C-x n w") 'recursive-widen)
-(global-set-key "\C-v"	'pager-page-down)
-(global-set-key [next]	'pager-page-down)
-(global-set-key "\ev"	    'pager-page-up)
-(global-set-key [prior]	'pager-page-up)
-(global-set-key '[M-up]	'pager-row-up)
-(global-set-key '[M-kp-8] 'pager-row-up)
-(global-set-key '[M-down] 'pager-row-down)
-(global-set-key '[M-kp-2] 'pager-row-down)
 (global-set-key (kbd "C-x v s") 'magit-status)
 (global-set-key "\C-x~" 'macro-math-eval-and-round-region)
 (global-set-key "\C-x=" 'macro-math-eval-region)
@@ -90,6 +81,7 @@
 (define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
 
 ;; yassnippet
-(define-key yas/minor-mode-map (kbd "SPC") 'yas/expand)
-(define-key yas/minor-mode-map (kbd "(") 'yas/expand)
-
+;(require 'yasnippet)
+;(define-key yas/minor-mode-map (kbd "SPC") 'yas/expand)
+;(define-key yas/minor-mode-map (kbd "(") 'yas/expand)
+(define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)

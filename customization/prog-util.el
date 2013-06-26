@@ -10,8 +10,9 @@
   (mapcar (lambda (hook) (remove-hook hook fn)) hooks))
 
 (defvar elisp-modes '(emacs-lisp-mode-hook
-                    lisp-interaction-mode-hook
-                    inferior-emacs-lisp-mode-hook)
+                      lisp-interaction-mode-hook
+                      ielm-mode-hook
+                      inferior-emacs-lisp-mode-hook)
   "List of modes that are used for programming in emacs-lisp.")
 
 (defvar programming-major-modes
@@ -87,10 +88,6 @@ the time in seconds it took to load."
   (let ((prev-time (float-time)))
     (load-file file)
     (cons file (- (float-time) prev-time))))
-
-(defun load-directory (dir)
-  "Loads every .el file in a directory."
-  (mapcar 'time-load-file (directory-files dir t "\\.elc?$")))
 
 (defun string-trim (str)
   "Chomp leading and tailing whitespace from STR."

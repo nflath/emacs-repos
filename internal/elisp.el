@@ -1,4 +1,7 @@
 ;; Turn on eldoc in emacs-lisp modes and the *scratch* buffer.
+;; Turn eldoc on
+(setq eldoc-idle-delay 0)
+(autoload 'turn-on-eldoc-mode "eldoc" nil t)
 (add-hook-to-all elisp-modes 'turn-on-eldoc-mode)
 (switch-to-buffer "*scratch*")
 (turn-on-eldoc-mode)

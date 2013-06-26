@@ -10,7 +10,7 @@
 (setq org-agenda-skip-deadline-if-done t)
 
 ;; Time logging
-(org-clock-persistence-insinuate)
+;(org-clock-persistence-insinuate)
 (setq org-clock-idle-time 15)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-persist 'history)
@@ -54,11 +54,11 @@
 (setq org-enforce-todo-dependencies t)
 (setq org-log-done 'time)
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "|" "DONE(d!)")
+      '((sequence "TODO(t)" "WAITINGRESPONSE(t)" "|" "DONE(d!)")
         (sequence "|" "CANCELED(c@/!)")))
 
 (setq org-todo-keyword-faces
-      '(("CANCELED"  . (:foreground "blue" :weight bold))))
+      '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
 
 (defun org-current-section-number (&optional pos)
   "Returns the subsection number at pos"
@@ -154,7 +154,7 @@
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
-(add-hook 'org-mode-hook 'org-indent-mode)
+(remove-hook 'org-mode-hook 'org-indent-mode)
 (add-hook 'org-agenda-mode-hook '(lambda () (cd (car org-agenda-files))))
 (add-hook 'org-mode-hook
           (lambda ()
@@ -171,7 +171,6 @@
   (progn
     (setq appt-time-msg-list nil)
     (org-agenda-to-appt)))
-
 
 ;; Setup
 (require 'org)
@@ -190,20 +189,6 @@
 ;; Start with nothing expanded
 (add-hook 'org-mode-hook 'org-hide-block-all)
 
-;; Keep mobileorg up-to-date
-(setq org-mobile-inbox-for-pull (concat org-directory "mobile.org"))
-(setq org-mobile-checksum-binary "echo ")
-(defadvice org-save-all-org-buffers (around mobileorg-auto-push activate)
-  (ad-deactivate 'org-save-all-org-buffers)
-  (org-mobile-push)
-  (ad-activate 'org-save-all-org-buffers))
-
-(defadvice org-agenda-redo (before mobileorg-auto-pull activate)
-  (org-mobile-pull))
-
-(defadvice org-agenda (before mobileorg-auto-pull activate)
-  (org-mobile-pull))
-
 ;; Prettify entities
 (setq org-entities-user
       '(("intersection" "\\cap" t "&cap;" "[intersection]" "[intersection]" "∩")
@@ -215,7 +200,18 @@
         ("nullset" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")
         ("null" "\\emptyset" t "&Phi;" "Phi" "Phi" "∅")))
 (setq org-pretty-entities t)
-(remove-hook 'find-file-hook 'org-pretty-entities)
+
+(setq org-fontify-done-headline t)
+
+;; Just some switches
+(defun work-org-mode ()
+  (interactive)
+  (setq org-directory "~/Dropbox/work/")
+  (load-file (concat emacs-repos-dir "customization/org.el")))
+(defun home-org-mode ()
+  (interactive)
+  (setq org-directory "~/Dropbox/org/")
+  (load-file (concat emacs-repos-dir "customization/org.el")))
 
 ;; Make the agenda
 (org-agenda-list)

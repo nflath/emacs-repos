@@ -1,3 +1,4 @@
+(setq mac-command-modifier `meta)
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
@@ -35,7 +36,7 @@
 (eval-after-load 'init-finished
   '(server-start))
 
-;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;History features
 (setq save-place-file "~/.emacs.d/.saveplace")
@@ -166,7 +167,6 @@
 
 (electric-indent-mode t)
 
-
 ;; Always revert
 (global-auto-revert-mode t)
 
@@ -198,7 +198,4 @@
 (setq browse-url-browser-function (quote browse-url-generic))
 (setq browse-url-generic-program "google-chrome")
 
-;; Turn eldoc on
-(setq eldoc-idle-delay 0)
-(autoload 'turn-on-eldoc-mode "eldoc" nil t)
 

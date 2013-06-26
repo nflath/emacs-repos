@@ -15,7 +15,7 @@
   (if (ad-get-arg 1)
       ad-do-it))
 
-;;I want compilation buffers to scroll to the bottom, since this is in general where errors are.
+;I want compilation buffers to scroll to the bottom, since this is in general where errors are.
 (setq compilation-scroll-output t)
 
 ;;These advices cause copy-pasted code to be properly indented.
@@ -44,11 +44,14 @@
 (defadvice kill-line (after fixup-comments activate)
   "Don't leave comment characters after killing a line."
   (let* ((pt (point))
-         (only (progn (back-to-indentation) (eq (point) pt))))
+         (comment-at-start (progn (back-to-indentation) (looking-at (concat "[ \t]*" (regexp-opt (list (string-trim comment-start)))))))
+         (only (eq (point) pt)))
     (goto-char pt)
     (let ((start (point)))
+      (print comment-at-start)
       (when (and comment-start
                  only
+                 comment-at-start
                  (looking-at (concat "[ \t]*" (regexp-opt (list (string-trim comment-start))))))
         (let ((len (- (match-end 0) (match-beginning 0))))
           (back-to-indentation)
@@ -57,19 +60,9 @@
             (goto-char start)
             (delete-char len)))))))
 
-(setq comment-auto-fill-only-comments t)
-
-(defun esk-pretty-lambdas ()
-  (font-lock-add-keywords
-   nil `(("(?\\(lambda\\>\\)"
-          (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                    ,(make-char 'greek-iso8859-7 107))
-                    nil))))))
-
 (defun esk-add-watchwords ()
   (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
+   nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\|FixMe\\)"
           1 font-lock-warning-face t))))
 
-(add-hook 'prog-mode-hook 'esk-pretty-lambdas)
 (add-hook 'prog-mode-hook 'esk-add-watchwords)

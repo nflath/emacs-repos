@@ -206,7 +206,8 @@ manpage of a `current-word'."
 (defun prev-window (&optional arg)
   "Go to the previous window displayed."
   (interactive)
-  (other-window (- arg)))
+  (let ((arg (if arg arg 1)))
+    (other-window (- arg))))
 
 (defun turn-on-auto-revert-mode ()
   "Always turns on auto revert mode, instead of toggling."
@@ -456,7 +457,5 @@ file of a buffer in an external program."
 (defun maximize-frame ()
   "Maximizes the Emacs frame."
   (interactive)
-  (if window-system
-      (if (fboundp 'x-send-client-message)
-          (x11-maximize-frame)
-        (w32-maximize-frame))))
+  (if (eq window-system  `w32) (w32-maximize-frame)
+    (if (fboundp 'x-send-client-message) (x11-maximize-frame))))
