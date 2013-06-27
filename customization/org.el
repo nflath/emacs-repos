@@ -92,6 +92,15 @@
                      (org-full-sections)
                      :initial-value "") 1))
 
+(defun line-matches (regexp)
+  "Returns non-nil if the current line matches the given regexp, nil otherwise."
+  (interactive "sRegex: ")
+  (save-excursion
+    (end-of-line)
+    (let ((end (point)))
+      (beginning-of-line)
+      (re-search-forward regexp end t))))
+
 (defun org-publish-agenda ()
   "Writes out the agenda and all agenda files as HTML."
   (interactive)

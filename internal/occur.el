@@ -2,7 +2,7 @@
 ;; regular expression, and a window with all lines matching that expression will
 ;; be displayed.  Normally, the last regex used for occur is the default; this
 ;; modification makes the default be the current word.
-
+;; FixMe: use occur-default-current-word in el-get
 (defun occur-read-primary-args ()
   (list (read-regexp "List lines matching regexp"
                      (current-word))

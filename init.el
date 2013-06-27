@@ -2,9 +2,8 @@
 ;; FixMe: Have google-chrome work be a program on command line
 
 ;; FixMe: cache javadoc locally
-;; FixMe: nflath@optumsoft.com in jabber-chat
-;; FixMe: ';;' at end of line do not match up when indenting
-;; FixMe: global modes should be added to packages
+;; FixMe: flat0103@gmail.com/nflath@optumsoft.com in jabber-chat
+;; FixMe: ';;' at end of line do not match up when indenting ;; FixMe: global modes should be added to packages
 ;; FixMe: Have eldoc also print the values of variables
 ;; FixMe: eval-function-in and keybinding: evaluate the function you are currently inside
 ;; FixMe: investigate windmove
@@ -14,8 +13,7 @@
 
 ;; FixMe: submit pager-default-commands to marmalade, check into github, remove internal/pager.el, add to el-get
 ;; FixMe: submit occur-default-current-word to marmalade, check into github, remove internal/occur.el, add to el-get
-;; FixMe: Add missing functions to man-mode - need to push and update
-;; FixMe: dired - no file on this line??
+;; FixMe: other projects in src
 
 ;;; Debug errors when they arise
 (setq-default debug-on-error t)
@@ -47,4 +45,4 @@
 (load-dirs)
 
 ;;We're finished loading everything now
-(provide 'init-finished) ;;
+(provide 'init-finished)

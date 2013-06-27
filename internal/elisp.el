@@ -6,6 +6,12 @@
 (switch-to-buffer "*scratch*")
 (turn-on-eldoc-mode)
 
+(defvar elisp-modes '(emacs-lisp-mode-hook
+                      lisp-interaction-mode-hook
+                      ielm-mode-hook
+                      inferior-emacs-lisp-mode-hook)
+  "List of modes that are used for programming in emacs-lisp.")
+
 ;; If we edit a .el file that has a corresponding .elc file, we don't want to
 ;; keep the outdated .elc file.
 (defun esk-remove-elc-on-save ()
@@ -21,6 +27,7 @@
 (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
 
 ;; Set correct formatting for GNU Emacs elisp files
+;; FixMe: Factor out and make it better
 (defun gnu-emacs-elisp-formating ()
   "Sets up the correct style for officcial GNU Emacs elisp files."
   (setq indent-tabs-mode t)
@@ -34,6 +41,7 @@
                 (gnu-emacs-elisp-formating)))))
 
 ;; Make the scratch buffer unkillable and persistent
+;; FixMe: use scratch-persist in el-get
 (defvar scratch-file "~/.emacs.d/scratch.el"
   "Location the *scratch* buffer is saved to.")
 

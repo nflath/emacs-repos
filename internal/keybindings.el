@@ -70,6 +70,7 @@
 (define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
 
 ;; dired-mode
+;; FixMe: Create packaage dired-isearch-default-keybindings
 (define-key dired-mode-map (kbd "C-s") 'dired-isearch-forward)
 (define-key dired-mode-map (kbd "C-r") 'dired-isearch-backward)
 (define-key dired-mode-map (kbd "C-M-s") 'dired-isearch-forward-regexp)

@@ -10,7 +10,7 @@
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
-    (url-retrieve-synchronously
+      (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
     (eval-print-last-sexp)))
@@ -164,20 +164,20 @@
         keyfreq ;; FixMe: Schedule a periodic revioew
         keywiz ;; FixMe: Schedule to use
 
-        Save-visited-files ;; FixMe: Save-visited-files interfereing with save-visited-files
+        Save-visited-files ;; FixMe: Save-visited-files interfering with save-visited-files
         ))
 
 ;;; Download and require all packages
 (el-get `sync my:el-get-packages)
 
 (mapcar (lambda (p) (if (not (member p '(jump-dls
-                                    graphviz-dot-mode
-                                    generate-autoloads
-                                    duplicate-line
-                                    git-commit-mode
-                                    sicp
-                                    Save-visited-files
-                                    marmalade)))
+                                  graphviz-dot-mode
+                                  generate-autoloads
+                                  duplicate-line
+                                  git-commit-mode
+                                  sicp
+                                  Save-visited-files
+                                  marmalade)))
                    (require p))) my:el-get-packages)
 (require 'save-visited-files)
 
@@ -212,8 +212,6 @@
 (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode 1)))
 (add-hook 'prog-mode-hook (lambda () (orgtbl-comment-mode 1)))
 
-(flex-autopair-mode t)
-
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))
 (add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
@@ -229,3 +227,4 @@
 ;; To guess variables when a major mode is loaded, add `guess-style-guess-all'
 ;; to that mode's hook like this:
 (add-hook 'c-mode-common-hook 'guess-style-guess-all)
+(autopair-global-mode)

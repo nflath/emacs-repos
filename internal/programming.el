@@ -18,16 +18,20 @@
 ;I want compilation buffers to scroll to the bottom, since this is in general where errors are.
 (setq compilation-scroll-output t)
 
+(setq prog-mode nil)
+(make-variable-buffer-local 'prog-mode)
+(add-hook 'prog-mode-hook (lambda () (setq prog-mode t)))
+
 ;;These advices cause copy-pasted code to be properly indented.
 (defadvice yank (after indent-region activate)
-  (if (member major-mode programming-major-modes)
-      (let ((mark-even-if-inactive t))
-        (indent-region (region-beginning) (region-end) nil))))
+  (when prog-mode
+    (let ((mark-even-if-inactive t))
+      (indent-region (region-beginning) (region-end) nil))))
 
 (defadvice yank-pop (after indent-region activate)
-  (if (member major-mode programming-major-modes)
-      (let ((mark-even-if-inactive transient-mark-mode))
-        (indent-region (region-beginning) (region-end) nil))))
+  (when prog-mode
+    (let ((mark-even-if-inactive transient-mark-mode))
+      (indent-region (region-beginning) (region-end) nil))))
 
 (defadvice kill-line (after fixup-whitespace activate)
   "Call fixup whitespace after killing line."
@@ -40,6 +44,11 @@
              (not (looking-at "^$"))
              (not (eq indent-line-function 'indent-relative)))
         (funcall indent-line-function))))
+
+(defun string-trim (str)
+  "Chomp leading and tailing whitespace from STR."
+  (let ((s (if (symbolp str) (symbol-name str) str)))
+    (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" s)))
 
 (defadvice kill-line (after fixup-comments activate)
   "Don't leave comment characters after killing a line."

@@ -1,3 +1,10 @@
+(defun after-last (regexp string)
+  "Returns the part of the string after the last occurrence of regexp."
+  (let ((index (string-match regexp string)))
+    (if index
+        (after-last regexp (substring string (match-end 0) (length string)))
+      string)))
+
 (defun insert-java-class-template ()
   "Insert a template for a java class."
   (interactive)
