@@ -44,7 +44,6 @@
 
         ;; Emacs navigation improvements
         winpoint
-        pager
         smooth-scrolling
         sourcepair    ;; FixMe: set keybindings
         pc-keys
@@ -57,6 +56,8 @@
         ace-jump-mode    ;; FixMe: keybindings
         breadcrumb       ;; FixMe: Configure, keybindings
                          ;; FixMe: isearch should auto-place
+        pager
+        pager-default-keybindings
 
         ;; Emacs editing improvements
         hungry-delete
@@ -90,7 +91,6 @@
 
         ;; ;; General utility functions
         buffer-move ;; FixMe: keybindings
-        marmalade
         dedicated    ;; FixMe: Configure/remember
         unbound
         loccur
