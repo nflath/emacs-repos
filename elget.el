@@ -132,11 +132,12 @@
         guess-style
 
         ;; ;; Elisp programming enhancements
-        ;; elisp-slime-nav ;; Add to jump-dls?
+        elisp-slime-nav ;; Add to jump-dls?
 
         ;; ;; Elisp programming libraries
         thingatpt+
         dirtree
+        hook-utils
 
         ;; Org-mode
         org
