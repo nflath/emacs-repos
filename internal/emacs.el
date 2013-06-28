@@ -194,10 +194,13 @@
 ;; Wrap lines by default
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
-;; Use Chrome as the browse
+;; Use Chrome as the browser
 (setq browse-url-browser-function (quote browse-url-generic))
 (setq browse-url-generic-program "google-chrome")
 
 (set-face-attribute 'default nil :height 90)
 
 (xterm-mouse-mode)
+
+;; Always grab locks
+(defun ask-user-about-lock (FILE OPPONENT) t)
