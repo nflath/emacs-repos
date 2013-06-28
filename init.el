@@ -1,6 +1,3 @@
-;; FixMe: Install ispell on mac OS x
-;; FixMe: Have google-chrome work be a program on command line
-
 ;; FixMe: cache javadoc locally
 ;; FixMe: flat0103@gmail.com/nflath@optumsoft.com in jabber-chat
 ;; FixMe: ';;' at end of line do not match up when indenting ;; FixMe: global modes should be added to packages
