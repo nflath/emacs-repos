@@ -156,7 +156,7 @@
         w32-browser
 
         ;; M-x compile enhancements
-        compile-dwim  ;; FixMe: Choose compile-dwim, smart-compile, smart-compile+, smarter-compile
+        compile-dwim
 
         ;; Documentation
         javadoc-help
