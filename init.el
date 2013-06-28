@@ -1,5 +1,6 @@
 ;; FixMe: cache javadoc locally
-;; FixMe: ';;' at end of line do not match up when indenting ;; FixMe: global modes should be added to packages
+;; FixMe: ';;' at end of line do not match up when indenting
+;; FixMe: global modes should be added to packages
 ;; FixMe: Have eldoc also print the values of variables
 ;; FixMe: eval-function-in and keybinding: evaluate the function you are currently inside
 ;; FixMe: investigate windmove
