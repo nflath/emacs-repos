@@ -72,6 +72,20 @@
 (defun esk-add-watchwords ()
   (font-lock-add-keywords
    nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\|FixMe\\)"
-          1 font-lock-warning-face t))))
+        1 font-lock-warning-face t))))
+
+(defadvice indent-for-tab-command (after indent-comments activate)
+  (save-excursion
+    (end-of-line)
+    (let ((end (point)))
+      (while (and (line-matches comment-start) (= 0 (forward-line -1))))
+      (let ((start (point)))
+        (forward-line)
+        (beginning-of-line)
+        (let ((saved (point)))
+          (re-search-forward (concat "\\(\\s-*\\)" comment-start ))
+          (if (= (point) (+ (length comment-start) saved))
+              (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 0 t)
+            (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 1 t)))))))
 
 (add-hook 'prog-mode-hook 'esk-add-watchwords)

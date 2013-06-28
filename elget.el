@@ -211,7 +211,6 @@
 (highlight-symbol-mode 1)
 
 (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode 1)))
-(add-hook 'prog-mode-hook (lambda () (orgtbl-comment-mode 1)))
 
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))

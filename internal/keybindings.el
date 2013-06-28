@@ -80,3 +80,5 @@
 (define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
 
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
+
+(define-key lisp-interaction-mode-map (kbd "C-<RET>") 'newline-and-indent)
