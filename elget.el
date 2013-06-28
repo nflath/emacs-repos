@@ -229,3 +229,11 @@
 ;; to that mode's hook like this:
 (add-hook 'c-mode-common-hook 'guess-style-guess-all)
 (autopair-global-mode)
+
+(setq jabber-account-list
+      '(("flat0103@gmail.com"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl))
+        ("nflath@optumsoft.com"
+         (:network-server . "talk.google.com")
+         (:connection-type . ssl))))

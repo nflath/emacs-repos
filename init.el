@@ -1,5 +1,4 @@
 ;; FixMe: cache javadoc locally
-;; FixMe: flat0103@gmail.com/nflath@optumsoft.com in jabber-chat
 ;; FixMe: ';;' at end of line do not match up when indenting ;; FixMe: global modes should be added to packages
 ;; FixMe: Have eldoc also print the values of variables
 ;; FixMe: eval-function-in and keybinding: evaluate the function you are currently inside
