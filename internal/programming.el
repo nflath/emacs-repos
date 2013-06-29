@@ -83,7 +83,7 @@
         (forward-line)
         (beginning-of-line)
         (let ((saved (point)))
-          (re-search-forward (concat "\\(\\s-*\\)" comment-start ))
+          (re-search-forward (concat "\\(\\s-*\\)" comment-start) nil t)
           (if (= (point) (+ (length comment-start) saved))
               (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 0 t)
             (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 1 t)))))))

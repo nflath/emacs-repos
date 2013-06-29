@@ -81,4 +81,4 @@
 
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
 
-(define-key lisp-interaction-mode-map (kbd "C-<RET>") 'newline-and-indent)
+(define-key lisp-interaction-mode-map (kbd "C-j") 'newline-and-indent)

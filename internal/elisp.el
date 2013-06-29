@@ -39,23 +39,3 @@
               (goto-char (point-min))
               (when (search-forward "This file is part of GNU Emacs." (point-max) t)
                 (gnu-emacs-elisp-formating)))))
-
-;; Make the scratch buffer unkillable and persistent
-;; FixMe: use scratch-persist in el-get
-(defvar scratch-file "~/.emacs.d/scratch.el"
-  "Location the *scratch* buffer is saved to.")
-
-(save-excursion
-  (set-buffer (get-buffer-create "*scratch*"))
-  (lisp-interaction-mode)
-  (make-local-variable 'kill-buffer-query-functions)
-  (add-hook 'kill-buffer-query-functions #'(lambda ()
-                                             (if (eq (current-buffer) (get-buffer-create "*scratch*"))
-                                                 (bury-buffer)
-                                               (bury-buffer (get-buffer-create "*scratch*")))
-                                             nil))
-  (erase-buffer)
-  (if (file-exists-p scratch-file) (insert-file scratch-file))
-  (setq buffer-file-name scratch-file)
-  (setq default-directory "~/.emacs.d")
-  (save-buffer))

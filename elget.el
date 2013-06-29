@@ -7,6 +7,11 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
+
+hi ;; this is
+   ;; a thing
+   ;; which is pretty cool
+
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -39,8 +44,9 @@
         highlight-parentheses
         icomplete+
         pretty-mode-plus    ;; FixMe: Add matches in org.el
-                            ;; FixMe: Should match words at start of line
         highlight-80+       ;; FixMe: Have highlight change immediately when fill-column changes
+        scratch-persist
+        occur-default-current-word
 
         ;; Emacs navigation improvements
         winpoint

@@ -8,9 +8,6 @@
 ;; FixMe: browse-URL on OS x doesn't work
 ;; FixMe: fullscreen command on OSX
 
-;; FixMe: submit occur-default-current-word to marmalade, check into github, remove internal/occur.el, add to el-get
-;; FixMe: other projects in src
-
 ;;; Debug errors when they arise
 (setq-default debug-on-error t)
 
