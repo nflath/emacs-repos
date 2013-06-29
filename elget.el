@@ -238,3 +238,8 @@
         ("nflath@optumsoft.com"
          (:network-server . "talk.google.com")
          (:connection-type . ssl))))
+
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(setq js2-bounce-indent-p t)
+(setq js2-highlight-level 3)
