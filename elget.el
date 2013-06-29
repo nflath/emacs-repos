@@ -8,10 +8,6 @@
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
 
-hi ;; this is
-   ;; a thing
-   ;; which is pretty cool
-
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -21,7 +17,7 @@ hi ;; this is
     (eval-print-last-sexp)))
 
 ;;; Make sure that recipes are build for emacswiki and elpa (only done if necessary
-(add-to-list 'el-get-recipe-path "~/Dropbox/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-recipe-path "~/Dropbox/emacs-repos/recipes")
 (if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/elpa"))
     (el-get-elpa-build-local-recipes))
 (if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/emacswiki"))

@@ -5,16 +5,14 @@
 ;; properly.
 
 (setq-default comint-process-echoes t)
-(add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
-
 (setq comint-prompt-read-only t)
+(add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
+(add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
 
 (setq comint-scroll-show-maxiumum-output t)
 (setq comint-scroll-to-bottom-on-input t)
 
-(setq comint-password-prompt-regexp
-      "\\(\\(?: SMB\\|'s\\|Bad\\|CVS\\|Enter\\(?: same\\)?\\|Kerberos\\|LDAP\\|New\\|Old\\|Repeat\\|UNIX\\|\\[sudo]\\|login\\|new\\|old\\)\\)? ?\\(?:[Pp]ass\\(?: phrase\\|phrase\\|word\\)\\|pass\\(?: phrase\\|phrase\\|word\\)\\) ?\\(?:\\(?:, try\\)? *again\\| (empty for no passphrase)\\| (again)\\)?\\(?: for [^:]+\\)?:\\s *\\'")
-(add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
+
 
 ;; Many times in a shell you perform the same action over and over again.  The
 ;; following will make repeated commands only add one item to the history of the
