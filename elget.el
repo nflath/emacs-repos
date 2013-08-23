@@ -132,10 +132,10 @@
         auto-indent-mode
         guess-style
 
-        ;; ;; Elisp programming enhancements
+        ;; Elisp programming enhancements
         elisp-slime-nav ;; Add to jump-dls?
 
-        ;; ;; Elisp programming libraries
+        ;; Elisp programming libraries
         thingatpt+
         dirtree
         hook-utils
@@ -145,7 +145,6 @@
 
         ;; Version control enhacements
         git-emacs
-;;        github-browse-file
         gitconfig-mode
         gitignore-mode
         git-commit-mode
@@ -160,7 +159,7 @@
         compile-dwim
 
         ;; Documentation
-;;        javadoc-help
+        javadoc-help
 
         ;; Emacs usage information
         keyfreq ;; FixMe: Schedule a periodic revioew
@@ -235,3 +234,4 @@
 (setq markdown-enable-math t)
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 (setq htmlize-html-major-mode 'html-mode)
+(setq nxml-slash-auto-complete-flag t)
