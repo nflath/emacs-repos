@@ -103,7 +103,6 @@
         ioccur
         go-play
         imgur
-        flip-tables ;; FixMe: Also have insert in buffer
         generate-autoloads
         google-contacts
 
@@ -162,8 +161,8 @@
         javadoc-help
 
         ;; Emacs usage information
-        keyfreq ;; FixMe: Schedule a periodic revioew
-        keywiz ;; FixMe: Schedule to use
+        keyfreq
+        keywiz
 
         Save-visited-files ;; FixMe: Save-visited-files interfering with save-visited-files
         ))
