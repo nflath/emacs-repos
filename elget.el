@@ -232,3 +232,6 @@
 
 (setq js2-bounce-indent-p t)
 (setq js2-highlight-level 3)
+(setq markdown-enable-math t)
+(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+(setq htmlize-html-major-mode 'html-mode)
