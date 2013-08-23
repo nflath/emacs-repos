@@ -122,7 +122,7 @@
         python-pylint
 
         ;; M-x grep enhancements
-        wgrep ;; FixMe: Keybindings
+        wgrep
 
         ;; General programming utilities
         c-toggle-dot-pointer ;; FixMe: Keybindings
@@ -233,3 +233,7 @@
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 (setq htmlize-html-major-mode 'html-mode)
 (setq nxml-slash-auto-complete-flag t)
+
+(setq wgrep-enable-key "q")
+(add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
+(paren-activate)
