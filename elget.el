@@ -170,7 +170,6 @@
 ;;; Download and require all packages
 (el-get `sync my:el-get-packages)
 
-(require 'hook-utils)
 (mapcar (lambda (p) (if (not (member p '(jump-dls
                                   graphviz-dot-mode
                                   generate-autoloads
