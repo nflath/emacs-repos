@@ -42,8 +42,8 @@
 (load-dirs)
 
 ;;We're finished loading everything now
-(setq save-visited-files-auto-restore t)
-(save-visited-files-mode t)
 (server-start)
 (maximize-frame)
+(setq save-visited-files-auto-restore t)
+(save-visited-files-mode t)
 (shell-current-directory)
