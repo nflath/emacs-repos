@@ -38,7 +38,7 @@
 
 ;;; Load other customizations
 (setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
-                        '("customization" "internal" "external")))
+                        '("internal" "external")))
 (load-dirs)
 
 ;;We're finished loading everything now
