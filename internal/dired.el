@@ -19,9 +19,4 @@
               (seq ".pyc" eol)
               )))
 
-(setq dired-omit-extensions
-      (append dired-latex-unclean-extensions
-              dired-bibtex-unclean-extensions
-              dired-texinfo-unclean-extensions))
-
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
