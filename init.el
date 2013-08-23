@@ -4,7 +4,7 @@
 ;; FixMe: Have eldoc also print the values of variables
 ;; FixMe: eval-function-in and keybinding: evaluate the function you are currently inside
 ;; FixMe: investigate windmove
-;; FixMe: Send email from emacs - including contacts from google?
+;; FixMe: Send email from emacs
 ;; FixMe: browse-URL on OS x doesn't work
 ;; FixMe: fullscreen command on OSX
 

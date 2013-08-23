@@ -11,8 +11,8 @@
 (setq dired-auto-revert-buffer t)
 
 (setq dired-omit-files
-      (rx (or (seq bol (? ".") "#")         ;; emacs autosave files
-              (seq bol "." (not (any "."))) ;; dot-files
+      (rx (or (seq bol (? ".") "#")          ;; emacs autosave files
+              (seq bol "." (not (any ".")))   ;; dot-files
               (seq "~" eol)                 ;; backup-files
               (seq bol "CVS" eol)           ;; CVS dirs
               (seq ".class" eol)
