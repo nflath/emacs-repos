@@ -2,15 +2,18 @@
 ;; Turn eldoc on
 (setq eldoc-idle-delay 0)
 (autoload 'turn-on-eldoc-mode "eldoc" nil t)
-(add-hook-to-all elisp-modes 'turn-on-eldoc-mode)
-(switch-to-buffer "*scratch*")
-(turn-on-eldoc-mode)
 
 (defvar elisp-modes '(emacs-lisp-mode-hook
                       lisp-interaction-mode-hook
                       ielm-mode-hook
                       inferior-emacs-lisp-mode-hook)
   "List of modes that are used for programming in emacs-lisp.")
+
+(hook-utils-add-hook-to-all elisp-modes 'turn-on-eldoc-mode)
+(switch-to-buffer "*scratch*")
+(turn-on-eldoc-mode)
+
+
 
 ;; If we edit a .el file that has a corresponding .elc file, we don't want to
 ;; keep the outdated .elc file.

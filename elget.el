@@ -67,7 +67,7 @@
         kill-ring-ido ;; FixMe: keybindings
         ireplace      ;; FixMe: Train to use
         smart-operator ;;FixMe: Code clearnup, have '+SPACE' not add another space
-        autopair
+        autopair       ;; FixMe: Can be annoying
         duplicate-line ;; FixMe: kybindings
 
         ;; Dired enhancements
@@ -146,7 +146,7 @@
 
         ;; Version control enhacements
         git-emacs
-        github-browse-file
+;;        github-browse-file
         gitconfig-mode
         gitignore-mode
         git-commit-mode
@@ -161,7 +161,7 @@
         compile-dwim
 
         ;; Documentation
-        javadoc-help
+;;        Javadoc-help
 
         ;; Emacs usage information
         keyfreq ;; FixMe: Schedule a periodic revioew
@@ -172,7 +172,7 @@
 
 ;;; Download and require all packages
 (el-get `sync my:el-get-packages)
-
+(require 'hook-utils)
 (mapcar (lambda (p) (if (not (member p '(jump-dls
                                   graphviz-dot-mode
                                   generate-autoloads
@@ -186,22 +186,12 @@
 
 (global-rainbow-delimiters-mode)
 
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-    (highlight-parentheses-mode t)))
-
 (define-globalized-minor-mode global-highlight-80+-mode
   highlight-80+-mode
   (lambda ()
     (highlight-80+-mode t)))
 (global-highlight-80+-mode t)
 
-
-(define-globalized-minor-mode global-hungry-delete-mode
-  hungry-delete-mode
-  (lambda ()
-    (hungry-delete-mode t)))
 (global-hungry-delete-mode)
 
 (global-pretty-mode)

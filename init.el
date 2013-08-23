@@ -8,11 +8,15 @@
 ;; FixMe: browse-URL on OS x doesn't work
 ;; FixMe: fullscreen command on OSX
 
+(setq-default ispell-program-name "/usr/local/bin/aspell")
+
+
 ;;; Debug errors when they arise
 (setq-default debug-on-error t)
 
 ;;; Add git to our exec-path
 (add-to-list 'exec-path "/usr/local/git/bin")
+(add-to-list 'exec-path "~/bin")
 
 ;;; Set a few paths in order to determine where everything is
 (setq user-emacs-directory "~/.emacs.d/")

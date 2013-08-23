@@ -96,7 +96,7 @@
   "Returns non-nil if the current line matches the given regexp, nil otherwise."
   (interactive "sRegex: ")
   (save-excursion
-    (end-of-line)p
+    (end-of-line)
     (let ((end (point)))
       (beginning-of-line)
       (re-search-forward regexp end t))))
