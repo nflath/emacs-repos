@@ -75,10 +75,16 @@
         1 font-lock-warning-face t))))
 
 (defadvice indent-for-tab-command (after indent-comments activate)
+  ;;; Aligns comments when indenting, even if they are after lines of code
   (save-excursion
     (end-of-line)
     (let ((end (point)))
       (while (and (line-matches comment-start) (= 0 (forward-line -1))))
+      ;; Move backwards until a line that does not contain a comment
+      (forward-line)
+      (beginning-of-line)
+      (if (not (looking-at (concat "\\(\\s-*\\)" comment-start))) (forward-line -1))
+      (end-of-line)
       (let ((start (point)))
         (forward-line)
         (beginning-of-line)
