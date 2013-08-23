@@ -33,8 +33,6 @@
 (setq tabify-regexp "^[ \t]+")
 (setq diff-switches "-u")
 (global-reveal-mode nil)
-(eval-after-load 'init-finished
-  '(server-start))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -102,8 +100,6 @@
 (setq auto-save-list-file-name "~/.emacs.d/.saves")
 
 ;; Maximize the frame
-(eval-after-load 'init-finished
-  '(maximize-frame))
 
 ;; subword movement
 (require 'subword)

@@ -3,9 +3,6 @@
 (if (= 0 (shell-command "zsh"))
     (setq explicit-shell-file-name "/bin/zsh"))
 
-;; Create a shell in the default emacs directory.
-(eval-after-load 'init-finished '(shell-current-directory))
-
 ;; Shell-mode doesn't colorize your output by default; instead, it inserts the
 ;; control codes into your buffer.  This turns on colorization.
 (require 'ansi-color)

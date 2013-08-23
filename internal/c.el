@@ -10,7 +10,6 @@ matches any regexp in the list."
             result
           (string-match-any (cdr regexp-list) string start)))))
 
-
 (defun h-file-create ()
   "Create a new h file.  Insert a infdef/define/endif block"
   (if (or (equal (substring (buffer-file-name (current-buffer)) -2 ) ".h")

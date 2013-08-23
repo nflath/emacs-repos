@@ -42,4 +42,8 @@
 (load-dirs)
 
 ;;We're finished loading everything now
-(provide 'init-finished)
+(setq save-visited-files-auto-restore t)
+(save-visited-files-mode t)
+(server-start)
+(maximize-frame)
+(shell-current-directory)
