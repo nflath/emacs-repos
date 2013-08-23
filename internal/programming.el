@@ -77,21 +77,25 @@
 (defadvice indent-for-tab-command (after indent-comments activate)
   ;;; Aligns comments when indenting, even if they are after lines of code
   (save-excursion
-    (end-of-line)
-    (let ((end (point)))
-      (while (and (line-matches comment-start) (= 0 (forward-line -1))))
-      ;; Move backwards until a line that does not contain a comment
-      (forward-line)
-      (beginning-of-line)
-      (if (not (looking-at (concat "\\(\\s-*\\)" comment-start))) (forward-line -1))
+    (beginning-of-line)
+    (when (not (looking-at (concat "\\(\\s-*\\)" comment-start)))
       (end-of-line)
-      (let ((start (point)))
+      (let ((end (point)))
+        (while (and (line-matches comment-start) (= 0 (forward-line -1))))
+        ;; Move backwards until a line that does not contain a comment
         (forward-line)
         (beginning-of-line)
-        (let ((saved (point)))
-          (re-search-forward (concat "\\(\\s-*\\)" comment-start) nil t)
-          (if (= (point) (+ (length comment-start) saved))
-              (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 0 t)
-            (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 1 t)))))))
+        (if (not (looking-at (concat "\\(\\s-*\\)" comment-start))) (forward-line -1))
+        (end-of-line)
+        ;; We don't want to indent comments that start at beginning of line to match
+        ;; comments after lines of code
+        (let ((start (point)))
+          (forward-line)
+          (beginning-of-line)
+          (let ((saved (point)))
+            (re-search-forward (concat "\\(\\s-*\\)" comment-start) nil t)
+            (if (= (point) (+ (length comment-start) saved))
+                (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 0 t)
+              (align-regexp start end (concat "\\(\\s-*\\)" comment-start "+") 1 1 t))))))))
 
 (add-hook 'prog-mode-hook 'esk-add-watchwords)
