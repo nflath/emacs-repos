@@ -7,7 +7,6 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
-
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -161,7 +160,7 @@
         compile-dwim
 
         ;; Documentation
-;;        Javadoc-help
+;;        javadoc-help
 
         ;; Emacs usage information
         keyfreq ;; FixMe: Schedule a periodic revioew
@@ -172,6 +171,7 @@
 
 ;;; Download and require all packages
 (el-get `sync my:el-get-packages)
+
 (require 'hook-utils)
 (mapcar (lambda (p) (if (not (member p '(jump-dls
                                   graphviz-dot-mode
@@ -184,16 +184,15 @@
                    (require p))) my:el-get-packages)
 (require 'save-visited-files)
 
-(global-rainbow-delimiters-mode)
 
 (define-globalized-minor-mode global-highlight-80+-mode
   highlight-80+-mode
   (lambda ()
     (highlight-80+-mode t)))
+
+(global-rainbow-delimiters-mode)
 (global-highlight-80+-mode t)
-
 (global-hungry-delete-mode)
-
 (global-pretty-mode)
 (zenburn)
 
