@@ -27,7 +27,8 @@
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
 
 ;; Add tab-completion to M-:
-(define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
+(define-key read-expression-map (kbd "M-/") 'lisp-complete-symbol)
+
 
 ;; Set correct formatting for GNU Emacs elisp files
 ;; FixMe: Factor out and make it better

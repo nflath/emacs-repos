@@ -1,4 +1,4 @@
-;;; Collection of utility functions for interactive use 
+;;; Collection of utility functions for interactive use
 
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill. This function directly calls
@@ -338,7 +338,7 @@ file of a buffer in an external program."
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
 
-(defun add (amt) 
+(defun add (amt)
   "Increment the number (in base 10 representation) at point."
   (interactive "nAmount to add: ")
   (if (looking-at "[-0-9.]+")
@@ -353,7 +353,7 @@ file of a buffer in an external program."
   (interactive)
   (add 1))
 
-(defun mul (amt) 
+(defun mul (amt)
   "Multiply the number (in base 10 representation) at point."
   (interactive "nAmount to multiply by: ")
   (if (looking-at "[-0-9.]+")

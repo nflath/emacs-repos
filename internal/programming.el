@@ -57,10 +57,9 @@
          (only (eq (point) pt)))
     (goto-char pt)
     (let ((start (point)))
-      (print comment-at-start)
+
       (when (and comment-start
-                 only
-                 comment-at-start
+               comment-at-start
                  (looking-at (concat "[ \t]*" (regexp-opt (list (string-trim comment-start))))))
         (let ((len (- (match-end 0) (match-beginning 0))))
           (back-to-indentation)
