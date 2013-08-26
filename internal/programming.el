@@ -1,5 +1,3 @@
-(require 'flymake)
-
 ;; If there is a tags file in a directory above this one, use it; otherwise
 ;; create one in this directory.  I don't want to be prompted for a TAGS file.
 (defadvice find-tag (before create-tags activate)

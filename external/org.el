@@ -1,5 +1,3 @@
- (require 'org-habit)
-
 (setq org-alphabetical-lists t)
 
 ;; Agenda customizations
@@ -170,7 +168,6 @@
             (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)))
 
 ;; Turn on appointment checking
-(require 'appt)
 (setq appt-time-msg-list nil)
 (appt-activate 1)
 (setq appt-display-format 'window)
@@ -182,7 +179,6 @@
     (org-agenda-to-appt)))
 
 ;; Setup
-(require 'org)
 (when (locate-library "org-babel-init")(require 'org-babel-init))
 (when (locate-library "org-depend") (require 'org-depend))
 

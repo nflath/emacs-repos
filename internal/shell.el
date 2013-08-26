@@ -5,7 +5,6 @@
 
 ;; Shell-mode doesn't colorize your output by default; instead, it inserts the
 ;; control codes into your buffer.  This turns on colorization.
-(require 'ansi-color)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;Dirtrack is a mode that keeps your shell buffers' directories in sync with
@@ -57,6 +56,5 @@
       input)))
 (add-hook 'comint-preoutput-filter-functions 'shorten-prompt)
 
-(require 'dirtrack)
 (when (eq window-system 'w32)
   (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1)))

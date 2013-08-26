@@ -1,5 +1,4 @@
 ;; Customizations for cc-mode
-(require 'cc-mode)
 
 (defun string-match-any (regexp-list string &optional start)
   "Returns whether the given string, starting at position start,

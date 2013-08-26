@@ -39,7 +39,6 @@
 ;;History features
 (setq save-place-file "~/.emacs.d/.saveplace")
 (setq-default save-place t)
-(require 'saveplace)
 
 (setq savehist-file "~/.emacs.d/.savehist")
 (setq savehist-additional-variables
@@ -47,7 +46,6 @@
 (savehist-mode 1)
 
 ;;Improve the buffer menu
-(require 'ibuffer)
 (setq ibuffer-default-sorting-mode 'major-mode)
 (setq ibuffer-elide-long-columns t)
 (setq ibuffer-always-show-last-buffer t)
@@ -55,7 +53,6 @@
 (global-set-key  (kbd "C-x C-b")        'ibuffer-other-window)
 
 ;; Rename duplicate buffers
-(require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
@@ -102,7 +99,6 @@
 ;; Maximize the frame
 
 ;; subword movement
-(require 'subword)
 (global-subword-mode t)
 
 ;; Better M-x
@@ -128,7 +124,6 @@
 
 ;; Turn abbrev mode on
 (setq only-global-abbrevs nil)
-(require 'abbrev)
 (setq-default abbrev-mode t)
 
 ;; Record changes in window configuration
@@ -138,7 +133,6 @@
 ;; /ssh:user@host:path/to/file.  It is too slow for regular use, but it can still
 ;; sometimes be useful.  We want it to use ssh by default to make it slightly
 ;; more bearable.
-(require 'tramp)
 (setq tramp-default-method "ssh")
 
 ;; Use tab to complete if possible
@@ -167,7 +161,6 @@
 (global-auto-revert-mode t)
 
 ;; Windmove - use keys to move windows
-(require 'windmove)
 (windmove-default-keybindings 'super)
 
 ;; Set Imenu to always rescan

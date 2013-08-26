@@ -389,8 +389,6 @@ file of a buffer in an external program."
         (insert "+ \""))
     (newline-and-indent)))
 
-(require 'imenu)
-(require 'cl)
 (defun ido-goto-symbol ()
   "Will update the imenu index and then use ido to select a symbol to navigate to."
   (interactive)

@@ -6,7 +6,6 @@
 ;; buffer already opened, it sets point to 0.
 
 ;; FixMe: submit to winpoint.el - submitted, awaiting response
-(require 'winpoint)
 (defun winpoint-restore (win)
   "Restore point in the window WIN."
   (with-selected-window win

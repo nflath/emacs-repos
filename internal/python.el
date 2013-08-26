@@ -1,4 +1,3 @@
-(require 'python)
 (add-hook 'python-mode-hook 'turn-on-eldoc-mode)
 
 (defun my-insert-self ()

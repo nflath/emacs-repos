@@ -32,6 +32,32 @@
         (list (concat user-emacs-directory "elpa")
               (concat user-emacs-directory "log")))
 
+;; Require packages that are internal to emacs (not using el-get)
+;; FixMe: Have these in the el-get list anyway
+(setq require-list `(scheme
+                     org-habit
+                     appt
+                     org
+                     cc-mode
+                     wdired
+                     dired-x
+                     dired-aux
+                     saveplace
+                     ibuffer
+                     uniquify
+                     subword
+                     abbrev
+                     tramp
+                     windmove
+                     smtpmail
+                     flymake
+                     python
+                     ansi-color
+                     dirtrack
+                     imenu
+                     cl))
+(mapcar (lambda (p) (require p)) require-list)
+
 ;;; Load packages using el-get
 (load-file (concat emacs-repos-dir "elget.el"))
 

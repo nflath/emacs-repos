@@ -1,6 +1,5 @@
 ;; Use Gmail to send email when ~/.authinfo exists
 (when (file-exists-p "~/.authinfo")
-  (require 'smtpmail)
   (setq send-mail-function 'smtpmail-send-it
         message-send-mail-function 'smtpmail-send-it
         smtpmail-starttls-credentials
@@ -19,4 +18,3 @@
                         "Name: "
                         (mapcar #'car email-alist))
                        email-alist))))
-

@@ -4,9 +4,6 @@
 ;; you make will be saved when you execute save-buffer.  dired-x gives some
 ;; extra commands that you can use.
 
-(require 'wdired)
-(require 'dired-x)
-(require 'dired-aux)
 (setq wdired-allow-to-change-permissions 'advanced)
 (setq dired-auto-revert-buffer t)
 
