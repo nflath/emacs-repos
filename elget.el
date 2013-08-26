@@ -68,6 +68,7 @@
         smart-operator ;;FixMe: Code clearnup, have '+SPACE' not add another space
         autopair       ;; FixMe: Can be annoying
         duplicate-line ;; FixMe: kybindings
+        smart-whitespace-comment-fixup
 
         ;; Dired enhancements
         dired-isearch
@@ -237,3 +238,4 @@
 (setq wgrep-enable-key "q")
 (add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
 (paren-activate)
+(mv-shell-mode)
