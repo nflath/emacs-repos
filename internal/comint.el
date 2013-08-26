@@ -12,8 +12,6 @@
 (setq comint-scroll-show-maxiumum-output t)
 (setq comint-scroll-to-bottom-on-input t)
 
-
-
 ;; Many times in a shell you perform the same action over and over again.  The
 ;; following will make repeated commands only add one item to the history of the
 ;; process, making it easier to access previous commands.
