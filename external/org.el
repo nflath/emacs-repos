@@ -145,19 +145,6 @@
         (shell-command "mv *.html publish/" nil)
         (kill-buffer "agenda.html")))))
 
-;; If yasnippet is loaded, make TAB work properly with both org and yasnippet
-(when (locate-library "yasnippet")
-  (require 'yasnippet)
-  (progn
-    (defun yas/org-very-safe-expand ()
-      (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
-    (add-hook 'org-mode-hook
-              (lambda ()
-                (make-variable-buffer-local 'yas/trigger-key)
-                (setq yas/trigger-key [tab])
-                (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-                (define-key yas/keymap [tab] 'yas/next-field)))))
-
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
@@ -177,10 +164,6 @@
   (progn
     (setq appt-time-msg-list nil)
     (org-agenda-to-appt)))
-
-;; Setup
-(when (locate-library "org-babel-init")(require 'org-babel-init))
-(when (locate-library "org-depend") (require 'org-depend))
 
 (defun my-org-pending-remove-scheduled ()
   (when (string= state "PENDING")
