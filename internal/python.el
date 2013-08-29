@@ -12,10 +12,6 @@
 
 (define-key	python-mode-map	(kbd "C-;")	'my-insert-self)
 
-(add-hook 'inferior-python-mode-hook
-          (lambda ()
-            (setq comint-process-echoes nil)))
-
 ;; Customizing
 (when (= 0 (shell-command "pyflakes"))
   (setq flymake-enable-pyflakes t)
