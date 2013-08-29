@@ -12,11 +12,5 @@
 
 (define-key	python-mode-map	(kbd "C-;")	'my-insert-self)
 
-;; Customizing
-(when (= 0 (shell-command "pyflakes"))
-  (setq flymake-enable-pyflakes t)
-  (setq flymake-enable-pylint nil)
-  (setq flymake-enable-pep8 nil))
-
 (setq python-remove-cwd-from-path nil)
 (add-hook 'python-mode-hook (lambda () (setq imenu-create-index-function 'python-imenu-create-index)))
