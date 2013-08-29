@@ -1,7 +1,6 @@
 ;;; Customizations for shell-mode
 
-(if (= 0 (shell-command "zsh"))
-    (setq explicit-shell-file-name "/bin/zsh"))
+(if (= 0 (shell-command "zsh")) (setq explicit-shell-file-name "/bin/zsh"))
 
 ;; Shell-mode doesn't colorize your output by default; instead, it inserts the
 ;; control codes into your buffer.  This turns on colorization.
