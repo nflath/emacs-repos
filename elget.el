@@ -45,6 +45,7 @@
 
         ;; Emacs navigation improvements
         winpoint
+        winpoint-ignore-dired
         smooth-scrolling
         sourcepair    ;; FixMe: set keybindings
         pc-keys
@@ -106,9 +107,6 @@
         imgur
         generate-autoloads
         google-contacts
-
-        ;; Sceme programming enhancements
-        scheme-complete  ;; FixMe: hook into autocomplete
 
         ;; Communication
         jabber ;; FixMe: disable auto paren insertion
