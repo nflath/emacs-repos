@@ -77,6 +77,7 @@
         dired-sort
 
         ;; Shell-mode enhancements
+        comint-better-defaults
         gdb-shell
         mv-shell
 
