@@ -1,5 +1,5 @@
 ;; Configures flyspell, a spell checker
-(when (= 0 (shell-command "ispell"))
+(when (= 0 (shell-command ispell-program-name))
   (add-hook 'text-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'org-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'latex-mode-hook 'turn-on-flyspell-mode)

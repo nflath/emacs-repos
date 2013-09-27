@@ -166,7 +166,7 @@
     (org-agenda-to-appt)))
 
 (defun my-org-pending-remove-scheduled ()
-  (when (string= state "PENDING")
+  (when (string= (org-get-todo-state) "PENDING")
     (org-remove-timestamp-with-keyword org-scheduled-string)))
 (add-hook 'org-after-todo-state-change-hook 'my-org-pending-remove-scheduled)
 

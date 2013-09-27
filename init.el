@@ -65,7 +65,7 @@
 (setq load-dirs (mapcar (lambda (x) (concat emacs-repos-dir x "/"))
                         '("internal" "external")))
 (load-dirs)
-
+(load-file "~/Dropbox/logins.el")
 ;;We're finished loading everything now
 (server-start)
 (maximize-frame)
