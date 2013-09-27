@@ -125,6 +125,7 @@
 
         ;; General programming utilities
         c-toggle-dot-pointer ;; FixMe: Keybindings
+        java-file-create
         guess-offset
         org-table-comment
         auto-indent-mode
