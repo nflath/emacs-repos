@@ -79,4 +79,3 @@ matches any regexp in the list."
 
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-syntactic-indentation 1)))
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-electric-state 1)))
-(add-hook 'c-mode-common-hook (lambda () (c-toggle-hungry-state 1)))

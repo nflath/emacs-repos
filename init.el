@@ -7,7 +7,6 @@
 ;; FixMe: browse-URL on OS x doesn't work
 ;; FixMe: fullscreen command on OSX
 
-
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 
 ;;; Debug errors when they arise
