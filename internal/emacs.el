@@ -163,9 +163,6 @@
 ;; Windmove - use keys to move windows
 (windmove-default-keybindings 'super)
 
-;; Set Imenu to always rescan
-(set-default 'imenu-auto-rescan t)
-
 ;; Get rid of annoying prompts
 (setq revert-without-query '(".*"))
 (defun ask-user-about-supersession-threat (filename)

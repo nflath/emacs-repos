@@ -8,12 +8,16 @@
 (setq dired-auto-revert-buffer t)
 
 (setq dired-omit-files
+      (concat
+       dired-omit-files
+       "\\\\|"
       (rx (or (seq bol (? ".") "#")          ;; emacs autosave files
               (seq bol "." (not (any ".")))   ;; dot-files
               (seq "~" eol)                 ;; backup-files
               (seq bol "CVS" eol)           ;; CVS dirs
-              (seq ".class" eol)
-              (seq ".pyc" eol)
-              )))
+              (seq ".class" eol)            ;; Compiled java files
+              (seq ".pyc" eol)              ;; Compiled python files
+              (regexp "TAGS")
+              ))))
 
 (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))

@@ -63,8 +63,8 @@
         ;; Emacs editing improvements
         hungry-delete
         recursive-narrow
-        kill-ring-ido ;; FixMe: keybindings
-        ireplace      ;; FixMe: Train to use
+        kill-ring-ido  ;; FixMe: keybindings
+        ireplace       ;; FixMe: Train to use
         smart-operator ;;FixMe: Code clearnup, have '+SPACE' not add another space
         autopair       ;; FixMe: Can be annoying
         duplicate-line ;; FixMe: kybindings
@@ -92,9 +92,9 @@
         graphviz-dot-mode
         go-mode
 
-        ;; ;; General utility functions
+        ;; General utility functions
         buffer-move ;; FixMe: keybindings
-        dedicated    ;; FixMe: Configure/remember
+        dedicated   ;; FixMe: Configure/remember
         unbound
         loccur
         htmlize
@@ -180,7 +180,6 @@
                                   marmalade)))
                    (require p))) my:el-get-packages)
 (require 'save-visited-files)
-
 
 (define-globalized-minor-mode global-highlight-80+-mode
   highlight-80+-mode

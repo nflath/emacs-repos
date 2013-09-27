@@ -13,4 +13,3 @@
 (define-key	python-mode-map	(kbd "C-;")	'my-insert-self)
 
 (setq python-remove-cwd-from-path nil)
-(add-hook 'python-mode-hook (lambda () (setq imenu-create-index-function 'python-imenu-create-index)))

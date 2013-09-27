@@ -1,4 +1,6 @@
 ;; Use Gmail to send email when ~/.authinfo exists
+(defvar email-alist `())
+
 (when (file-exists-p "~/.authinfo")
   (setq send-mail-function 'smtpmail-send-it
         message-send-mail-function 'smtpmail-send-it

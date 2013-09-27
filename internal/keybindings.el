@@ -1,6 +1,5 @@
 
 ;; global
-(global-set-key (kbd "M-s") 'ido-goto-symbol)
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 (global-set-key (kbd "C-x y") 'copy-whole-line)
 (global-set-key [f1] 'help-anything)
