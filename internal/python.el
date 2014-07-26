@@ -10,6 +10,4 @@
         (forward-char))
     (insert "self.")))
 
-(define-key	python-mode-map	(kbd "C-;")	'my-insert-self)
-
 (setq python-remove-cwd-from-path nil)

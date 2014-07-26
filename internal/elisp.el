@@ -26,10 +26,6 @@
                   (delete-file (concat buffer-file-name "c"))))))
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
 
-;; Add tab-completion to M-:
-(define-key read-expression-map (kbd "M-/") 'lisp-complete-symbol)
-
-
 ;; Set correct formatting for GNU Emacs elisp files
 ;; FixMe: Factor out and make it better
 (defun gnu-emacs-elisp-formating ()

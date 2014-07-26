@@ -1,5 +1,3 @@
-
-;; global
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 (global-set-key (kbd "C-x y") 'copy-whole-line)
 (global-set-key [f1] 'help-anything)
@@ -19,6 +17,7 @@
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-k") 'kill-line)
 (global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "M-RET") 'comment-indent-new-line)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "M-o") 'occur)
 (global-set-key (kbd "C-x C-k") 'kill-region)
@@ -31,7 +30,7 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-c w") (lambda () (interactive) (diff-buffer-with-file (current-buffer))))
-(global-set-key (kbd "C-c i") 'bh/insert-inactive-timestamp)
+
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key (kbd "C-x n n") 'recursive-narrow-to-region)
@@ -48,8 +47,6 @@
 
 ;; c-mode
 (define-key c-mode-map (kbd "C-c o") 'ff-find-other-file)
-
-;; c++-mode
 (define-key c++-mode-map (kbd "C-c o") 'ff-find-other-file)
 
 ;; dired-mode
@@ -58,6 +55,8 @@
 
 ;; emacs-lisp-mode
 (define-key emacs-lisp-mode-map (kbd "M-.") 'find-function-at-point)
+(define-key emacs-lisp-mode-map (kbd "C-x i") 'eval-function-in)
+
 
 ;; visual-line-mode
 (define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
@@ -65,8 +64,10 @@
 
 ;; org-mode
 (define-key org-mode-map (kbd "C-<RET>" ) 'org-insert-heading-respect-content)
-(define-key global-map "\C-cr" 'org-remember)
-(define-key org-remember-mode-map (kbd "C-x C-s") 'org-remember-finalize)
+(define-key global-map "\C-cr" 'my-org-capture-dont-ask)
+(define-key org-capture-mode-map (kbd "C-x C-s") 'org-capture-finalize)
+(define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
+(define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)
 
 ;; dired-mode
 ;; FixMe: Create packaage dired-isearch-default-keybindings
@@ -81,3 +82,18 @@
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
 
 (define-key lisp-interaction-mode-map (kbd "C-j") 'newline-and-indent)
+
+;; Add tab-completion to M-:
+(define-key read-expression-map (kbd "M-/") 'lisp-complete-symbol)
+
+(define-key python-mode-map (kbd "C-;") 'my-insert-self)
+
+(define-key isearch-mode-map (kbd "C-M-r") 'isearch-switch-to-regexp-backward)
+(define-key isearch-mode-map (kbd "C-M-r") 'isearch-switch-to-regexp-forward)
+(define-key isearch-mode-map (kbd "C-o") `isearch-switch-to-occur)
+
+(global-set-key  (kbd "C-x C-b")        'ibuffer-other-window)
+
+(global-set-key (kbd "M-s") 'imenu)
+
+(windmove-default-keybindings 'M)

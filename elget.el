@@ -5,6 +5,7 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; Note: Also need to hack package.rcp to have this if I reinstall.
 
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
@@ -29,6 +30,8 @@
         package
         load-dir
         sys
+        oauth2
+
 
         ;; Emacs UI improvements
         color-theme
@@ -37,27 +40,25 @@
         rainbow-delimiters
         highlight-parentheses
         icomplete+
-        pretty-mode-plus    ;; FixMe: Add matches in org.el
-        highlight-80+       ;; FixMe: Have highlight change immediately when fill-column changes
         scratch-persist
         occur-default-current-word
+        frame-fns
+        frame-cmds
 
         ;; Emacs navigation improvements
-        winpoint
+        ; winpoint ;;FixMe: This is breaking startup
         winpoint-ignore-dired
         smooth-scrolling
-        sourcepair    ;; FixMe: set keybindings
         pc-keys
-        highlight-symbol ;; FixMe: set keybindings
-        idomenu          ;; FixMe: set keybindings
+        idomenu
         jump-dls         ;; FixMe: set keybindings - should override tag/idomenu?
-                         ;; FixMe: should provide jump-dls
+        helm
         eproject         ;; FixMe: configure
         expand-region    ;; FixMe: keybindings
         ace-jump-mode    ;; FixMe: keybindings
-        breadcrumb       ;; FixMe: Configure, keybindings
-                         ;; FixMe: isearch should auto-place
-        pager
+        breadcrumb       ;; FixMe: Configure, keybindings ;; FixMe: isearch should auto-place
+
+        ; pager ;; FixMe: Breaking installation
         pager-default-keybindings
 
         ;; Emacs editing improvements
@@ -65,8 +66,6 @@
         recursive-narrow
         kill-ring-ido  ;; FixMe: keybindings
         ireplace       ;; FixMe: Train to use
-        smart-operator ;;FixMe: Code clearnup, have '+SPACE' not add another space
-        autopair       ;; FixMe: Can be annoying
         duplicate-line ;; FixMe: kybindings
         smart-whitespace-comment-fixup
 
@@ -131,6 +130,7 @@
         auto-indent-mode
         guess-style
 
+
         ;; Elisp programming enhancements
         elisp-slime-nav ;; Add to jump-dls?
 
@@ -161,11 +161,9 @@
         javadoc-help
 
         ;; Emacs usage information
-        keyfreq
         keywiz
-
-        Save-visited-files ;; FixMe: Save-visited-files interfering with save-visited-files
         ))
+
 
 ;;; Download and require all packages
 (el-get `sync my:el-get-packages)
@@ -179,6 +177,8 @@
                                   Save-visited-files
                                   marmalade)))
                    (require p))) my:el-get-packages)
+(require 'winpoint)
+(require 'pager)
 (require 'save-visited-files)
 
 (define-globalized-minor-mode global-highlight-80+-mode
@@ -189,7 +189,6 @@
 (global-rainbow-delimiters-mode)
 (global-highlight-80+-mode t)
 (global-hungry-delete-mode)
-(global-pretty-mode)
 (zenburn)
 
 (defvaralias 'highlight-80+-columns 'fill-column)
@@ -202,8 +201,6 @@
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))
 (add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
-(keyfreq-mode 1)
-(keyfreq-autosave-mode 1)
 
 (add-hook 'occur-mode-hook 'turn-on-occur-x-mode)
 (auto-indent-global-mode)
@@ -214,7 +211,6 @@
 ;; To guess variables when a major mode is loaded, add `guess-style-guess-all'
 ;; to that mode's hook like this:
 (add-hook 'c-mode-common-hook 'guess-style-guess-all)
-(autopair-global-mode)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
@@ -235,3 +231,46 @@
 (condition-case nil
     (jdh-refresh-url "http://download.oracle.com/javase/1.5.0/docs/api/")
   (error nil))
+
+
+
+; FixMe: Add this stuff to idomenu
+
+(defun imenu-old (index-item)
+  "Jump to a place in the buffer chosen using a buffer menu or mouse menu.
+INDEX-ITEM specifies the position.  See `imenu-choose-buffer-index'
+for more information."
+  (interactive (list (imenu-choose-buffer-index)))
+  ;; Convert a string to an alist element.
+  (if (stringp index-item)
+      (setq index-item (assoc index-item (imenu--make-index-alist))))
+  (when index-item
+    (push-mark nil t)
+    (let* ((is-special-item (listp (cdr index-item)))
+           (function
+            (if is-special-item
+                (nth 2 index-item) imenu-default-goto-function))
+           (position (if is-special-item
+                         (cadr index-item) (cdr index-item)))
+           (rest (if is-special-item (cddr index-item))))
+      (apply function (car index-item) position rest))
+    (run-hooks 'imenu-after-jump-hook)))
+
+;;;###autoload
+(defun idomenu ()
+  "Switch to a buffer-local tag from Imenu via Ido."
+  (interactive)
+  ;; ido initialization
+  (ido-init-completion-maps)
+  (add-hook 'minibuffer-setup-hook 'ido-minibuffer-setup)
+  (add-hook 'choose-completion-string-functions 'ido-choose-completion-string)
+  (add-hook 'kill-emacs-hook 'ido-kill-emacs-hook)
+  ;; set up ido completion list
+  (let ((index-alist (cdr (imenu--make-index-alist))))
+    (if (equal index-alist '(nil))
+        (message "No imenu tags in buffer")
+      (imenu-old (idomenu--read (idomenu--trim-alist index-alist) nil t)))))
+
+(defun imenu (&rest args)
+  (interactive)
+  (idomenu))

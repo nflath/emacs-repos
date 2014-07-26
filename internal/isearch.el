@@ -5,16 +5,17 @@
   (isearch-repeat direction)
   (isearch-update))
 
-(define-key isearch-mode-map (kbd "C-M-r") (lambda ()
-                                             (interactive)
-                                             (isearch-switch-to-regexp 'backward)))
+(defun isearch-switch-to-regexp-backward ()
+  (interactive)
+  (isearch-switch-to-regexp 'backward))
 
-(define-key isearch-mode-map (kbd "C-M-s") (lambda ()
-                                             (interactive)
-                                             (isearch-switch-to-regexp 'forward)))
+(defun isearch-switch-to-regexp-forward ()
+  (interactive)
+  (isearch-switch-to-regexp 'forward))
+
+(defun isearch-switch-to-occur ()
+  (interactive)
+  (let ((case-fold-search isearch-case-fold-search))
+    (occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
+
 (setq-default isearch-case-fold-search t)
-
-(define-key isearch-mode-map (kbd "C-o")
-  (lambda () (interactive)
-    (let ((case-fold-search isearch-case-fold-search))
-      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))

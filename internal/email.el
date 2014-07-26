@@ -1,17 +1,24 @@
 ;; Use Gmail to send email when ~/.authinfo exists
+(require 'starttls)
+(setq starttls-use-gnutls t)
+
 (defvar email-alist `())
+(setq smtpmail-stream-type 'ssl)
+
 
 (when (file-exists-p "~/.authinfo")
   (setq send-mail-function 'smtpmail-send-it
         message-send-mail-function 'smtpmail-send-it
-        smtpmail-starttls-credentials
-        '(("smtp.gmail.com" 587 nil nil))
-        smtpmail-auth-credentials
-        (expand-file-name "~/.authinfo")
+        smtpmail-starttls-credentials '(("smtp.gmail.com" 465 nil nil))
+        smtpmail-auth-credentials (expand-file-name "~/.authinfo")
         smtpmail-default-smtp-server "smtp.gmail.com"
         smtpmail-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-service 587
-        smtpmail-debug-info t))
+        smtpmail-smtp-service 465
+        smtpmail-debug-info t)
+
+
+  )
+
 
 (defun insert-email ()
   "Uses email-alist to read a name and insert the correct email addresses at point."

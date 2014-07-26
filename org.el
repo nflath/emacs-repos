@@ -25,13 +25,21 @@
 (add-hook 'org-clock-in-prepare-hook 'my-org-mode-ask-effort)
 
 ;; org-remember - quickly jot down thoughts
-(org-remember-insinuate)
-(setq org-remember-templates
-      `(("Todo" ?t "* TODO %?\n  %i\n " ,(concat org-directory "remember.org") "Tasks")))
+(require 'org-capture)
+(setq org-capture-templates
+      `(("t" "Todo" entry (file+headline ,(concat org-directory "TODO.org") "Tasks")
+         "* TODO %?\n  %i\n")))
+
+
 (setq org-outline-path-complete-in-steps t)
 (setq org-refile-use-outline-path 'file)
 (setq org-refile-targets '((org-agenda-files . (:level . 1))))
-(setq org-default-notes-file (concat org-directory "/remember.org"))
+(setq org-default-notes-file (concat org-directory "TODO.org"))
+
+(defun my-org-capture-dont-ask ()
+  (interactive)
+   (org-capture 1 "t"))
+
 
 ;; General org customizations
 (setq org-agenda-repeating-timestamp-show-all nil)
@@ -51,9 +59,7 @@
 ;; TODO customizations
 (setq org-enforce-todo-dependencies t)
 (setq org-log-done 'time)
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "WAITINGRESPONSE(t)" "|" "DONE(d!)")
-        (sequence "|" "CANCELED(c@/!)")))
+(setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)") ))
 
 (setq org-todo-keyword-faces
       '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
@@ -150,9 +156,6 @@
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
 (remove-hook 'org-mode-hook 'org-indent-mode)
 (add-hook 'org-agenda-mode-hook '(lambda () (cd (car org-agenda-files))))
-(add-hook 'org-mode-hook
-          (lambda ()
-            (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)))
 
 ;; Turn on appointment checking
 (setq appt-time-msg-list nil)
@@ -195,11 +198,26 @@
 (defun work-org-mode ()
   (interactive)
   (setq org-directory "~/Dropbox/work/")
-  (load-file (concat emacs-repos-dir "customization/org.el")))
+  (setq org-agenda-files (list org-directory))
+  (load-file (concat emacs-repos-dir "org.el")))
+
 (defun home-org-mode ()
   (interactive)
   (setq org-directory "~/Dropbox/org/")
-  (load-file (concat emacs-repos-dir "customization/org.el")))
+  (setq org-agenda-files (list org-directory))
+  (load-file (concat emacs-repos-dir "org.el")))
+
+
+(setq org-agenda-custom-commands
+      '(("h" "Daily habits"
+         ((agenda ""))
+         ((org-agenda-show-log t)
+          (org-agenda-ndays 7)
+          (org-agenda-log-mode-items '(state))
+
+        ;; other commands here
+        ))))
 
 ;; Make the agenda
 (org-agenda-list)
+(setq org-list-allow-alphabetical t)

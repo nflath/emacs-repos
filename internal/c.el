@@ -33,13 +33,14 @@ matches any regexp in the list."
   "Sets the compile command to a sensible default if no makefile is found."
   (unless (file-exists-p "Makefile")
     (set (make-local-variable 'compile-command)
-         (let ((file (file-name-nondirectory buffer-file-name)))
-           (format "%s -c -o %s.o %s %s %s"
-                   (or (getenv "CC") "g++")
-                   (file-name-sans-extension file)
-                   (or (getenv "CPPFLAGS") "-DDEBUG=9")
-                   (or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")
-                   file)))))
+         (if buffer-file-name
+             (let ((file (file-name-nondirectory buffer-file-name)))
+               (format "%s -c -o %s.o %s %s %s"
+                       (or (getenv "CC") "g++")
+                       (file-name-sans-extension file)
+                       (or (getenv "CPPFLAGS") "-DDEBUG=9")
+                       (or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")
+                       file))))))
 
 (add-hook 'c-mode-hook 'set-compile-command)
 (add-hook 'c++-mode-hook 'set-compile-command)

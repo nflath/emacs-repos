@@ -50,7 +50,6 @@
 (setq ibuffer-elide-long-columns t)
 (setq ibuffer-always-show-last-buffer t)
 (setq ibuffer-view-ibuffer t)
-(global-set-key  (kbd "C-x C-b")        'ibuffer-other-window)
 
 ;; Rename duplicate buffers
 (setq uniquify-buffer-name-style 'reverse)
@@ -77,16 +76,22 @@
                   )))
 
 ;; Backup should only use one directory instead of sending
-(mkdir "~/.emacs.d/data/emacs-backups/" t)
-(setq backup-directory-alist `(("." . "~/.emacs.d/emacs-backups/")))
+(mkdir "~/.emacs.d/emacs-backups/" t)
+(setq backup-directory-alist `((".*" . "~/.emacs.d/emacs-backups/")))
 (setq version-control t)
 (setq delete-old-versions t)
-(setq kept-new-versions 100)
-(setq kept-old-versions 100)
+(setq kept-new-versions 1000)
+(setq kept-old-versions 1000)
 (setq backup-by-copying t)
 (add-hook 'before-save-hook
           '(lambda ()
              (setq buffer-backed-up nil)))
+
+(defadvice find-backup-file-name (around add-timestamp activate)
+  (let ((filename ad-do-it))
+    (setq ad-return-value (list (concat (car filename) (format-time-string "%Y-%m-%d %T"))))))
+
+
 
 ;; CUA-mode rectangles
 (setq cua-enable-cua-keys nil)
@@ -181,7 +186,17 @@
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
 ;; Use Chrome as the browser
+
+(defun browse-url-default-macosx-browser-prepend-http (url &optional new-window)
+  (interactive (browse-url-interactive-arg "URL: "))
+  (let
+      ((url (if (string-prefix-p "http" url) url (concat "http://" url))))
+    (message (concat "url: "  url))
+    (start-process (concat "open " url) nil "open" url)))
+
 (setq browse-url-browser-function (quote browse-url-generic))
+(setq browse-url-browser-function 'browse-url-default-macosx-browser-prepend-http)
+
 (setq browse-url-generic-program "google-chrome")
 
 
