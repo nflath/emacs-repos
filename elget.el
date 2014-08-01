@@ -53,7 +53,6 @@
         winpoint-ignore-dired
         smooth-scrolling
         pc-keys
-        idomenu
         jump-dls
         helm
         eproject         ;; FixMe: configure
@@ -257,45 +256,3 @@
 (condition-case nil
     (jdh-refresh-url "http://download.oracle.com/javase/7/docs/api/")
   (error nil))
-
-;;; FixMe: Add this stuff to idomenu
-
-(defun imenu-old (index-item)
-  "Jump to a place in the buffer chosen using a buffer menu or mouse menu.
-INDEX-ITEM specifies the position.  See `imenu-choose-buffer-index'
-for more information."
-  (interactive (list (imenu-choose-buffer-index)))
-  ;; Convert a string to an alist element.
-  (if (stringp index-item)
-      (setq index-item (assoc index-item (imenu--make-index-alist))))
-  (when index-item
-    (push-mark nil t)
-    (let* ((is-special-item (listp (cdr index-item)))
-           (function
-            (if is-special-item
-                (nth 2 index-item) imenu-default-goto-function))
-           (position (if is-special-item
-                         (cadr index-item) (cdr index-item)))
-           (rest (if is-special-item (cddr index-item))))
-      (apply function (car index-item) position rest))
-    (run-hooks 'imenu-after-jump-hook)))
-
-;;;###autoload
-(defun idomenu ()
-  "Switch to a buffer-local tag from Imenu via Ido."
-  (interactive)
-  ;; ido initialization
-  (ido-init-completion-maps)
-  (add-hook 'minibuffer-setup-hook 'ido-minibuffer-setup)
-  (add-hook 'choose-completion-string-functions 'ido-choose-completion-string)
-  (add-hook 'kill-emacs-hook 'ido-kill-emacs-hook)
-  ;; set up ido completion list
-  (let ((index-alist (cdr (imenu--make-index-alist))))
-    (if (equal index-alist '(nil))
-        (message "No imenu tags in buffer")
-      (imenu-old (idomenu--read (idomenu--trim-alist index-alist) nil t)))))
-
-(defun imenu (&rest args)
-  (interactive)
-  (idomenu))
-;;; FixMe: End idomenu enhancements
