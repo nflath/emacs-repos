@@ -33,8 +33,7 @@
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cl" 'org-store-link)
-(global-set-key (kbd "C-x n n") 'recursive-narrow-to-region)
-(global-set-key (kbd "C-x n w") 'recursive-widen)
+
 (global-set-key (kbd "C-x v s") 'magit-status)
 (global-set-key "\C-x~" 'macro-math-eval-and-round-region)
 (global-set-key "\C-x=" 'macro-math-eval-region)
@@ -54,9 +53,8 @@
 (define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
 
 ;; emacs-lisp-mode
-(define-key emacs-lisp-mode-map (kbd "M-.") 'find-function-at-point)
+(define-key emacs-lisp-mode-map (kbd "M-.") 'jump-symbol-at-point)
 (define-key emacs-lisp-mode-map (kbd "C-x i") 'eval-function-in)
-
 
 ;; visual-line-mode
 (define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
@@ -70,11 +68,7 @@
 (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)
 
 ;; dired-mode
-;; FixMe: Create packaage dired-isearch-default-keybindings
-(define-key dired-mode-map (kbd "C-s") 'dired-isearch-forward)
-(define-key dired-mode-map (kbd "C-r") 'dired-isearch-backward)
-(define-key dired-mode-map (kbd "C-M-s") 'dired-isearch-forward-regexp)
-(define-key dired-mode-map (kbd "C-M-r") 'dired-isearch-backward-regexp)
+(setq dired-isearch-filenames t)
 
 ;; java-mode
 (define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
@@ -97,3 +91,6 @@
 (global-set-key (kbd "M-s") 'imenu)
 
 (windmove-default-keybindings 'M)
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-'") 'ace-jump-line-mode)
+(global-set-key (kbd "M-'") 'ace-jump-word-mode)

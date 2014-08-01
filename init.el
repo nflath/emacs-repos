@@ -12,12 +12,17 @@
     (end-of-defun)
     (call-interactively 'eval-last-sexp)))
 
+(defadvice org-cycle (after org-reactivate-always activate)
+  (if (org-at-table-p)
+      (org-table-recalculate t)))
+
+;; FixMe: Make ERC readable
+;; FixMe: Make CANCELLED be a state in org-mode
 ;; FixMe: which-function in C++
 ;; FixMe: cache javadoc locally
 ;; FixMe: investigate breadcrumbs
 ;; FixMe: Keybindings should all be (eval-after-load)ed
-;; FixMe: global modes should be added to packages
-;; FixMe: Have eldoc also print the values of variablesj
+;; FixMe: Have eldoc also print the values of variables
 
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 
@@ -40,32 +45,6 @@
 (mapcar (lambda (dir) (mkdir dir t))
         (list (concat user-emacs-directory "elpa")
               (concat user-emacs-directory "log")))
-
-;; Require packages that are internal to emacs (not using el-get)
-;; FixMe: Have these in the el-get list anyway
-(setq require-list `(scheme
-                     org-habit
-                     appt
-                     org
-                     cc-mode
-                     wdired
-                     dired-x
-                     dired-aux
-                     saveplace
-                     ibuffer
-                     uniquify
-                     subword
-                     abbrev
-                     tramp
-                     windmove
-                     smtpmail
-                     flymake
-                     python
-                     ansi-color
-                     dirtrack
-                     imenu
-                     cl))
-(mapcar (lambda (p) (require p)) require-list)
 
 ;;; Load packages using el-get
 (load-file (concat emacs-repos-dir "org.el"))

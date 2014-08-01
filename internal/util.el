@@ -402,3 +402,11 @@ file of a buffer in an external program."
   (let ((pos (point)))
     (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
     (goto-char pos)))
+
+(defun try-require (pkg)
+  (condition-case  nil
+      (require pkg)
+    (error nil)))
+(defun my-filter (condp lst)
+  (delq nil
+        (mapcar (lambda (x) (and (funcall condp x) x)) lst)))

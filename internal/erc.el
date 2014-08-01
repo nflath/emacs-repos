@@ -29,3 +29,8 @@
     (if (string-match "nflath:" msg)
         (shell-command (concat "notify-send \"" msg "\""))))
   (add-hook 'erc-insert-pre-hook 'erc-notify-on-msg))
+
+(and
+ (require 'erc-highlight-nicknames)
+ (add-to-list 'erc-modules 'highlight-nicknames)
+ (erc-update-modules))

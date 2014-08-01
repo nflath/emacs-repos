@@ -5,7 +5,9 @@
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; Note: Also need to hack package.rcp to have this if I reinstall.
+;; FixMe: Note: Also need to hack package.rcp to have this if I reinstall.
+;; FixMe: Does el-get prefer package.el to emacswicki? if not, it should
+;; FixMe: el-get-update should only be able to select real packages
 
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
@@ -17,10 +19,11 @@
 
 ;;; Make sure that recipes are build for emacswiki and elpa (only done if necessary
 (add-to-list 'el-get-recipe-path "~/Dropbox/emacs-repos/recipes")
-(if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/elpa"))
-    (el-get-elpa-build-local-recipes))
 (if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/emacswiki"))
     (el-get-emacswiki-build-local-recipes))
+(if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/elpa"))
+    (el-get-elpa-build-local-recipes))
+
 
 ;;; List of packages to make sure are installed
 (setq my:el-get-packages
@@ -31,7 +34,7 @@
         load-dir
         sys
         oauth2
-
+        save-visited-files
 
         ;; Emacs UI improvements
         color-theme
@@ -46,19 +49,19 @@
         frame-cmds
 
         ;; Emacs navigation improvements
-        ; winpoint ;;FixMe: This is breaking startup
+        winpoint
         winpoint-ignore-dired
         smooth-scrolling
         pc-keys
         idomenu
-        jump-dls         ;; FixMe: set keybindings - should override tag/idomenu?
+        jump-dls
         helm
         eproject         ;; FixMe: configure
-        expand-region    ;; FixMe: keybindings
-        ace-jump-mode    ;; FixMe: keybindings
+        expand-region
+        ace-jump-mode
         breadcrumb       ;; FixMe: Configure, keybindings ;; FixMe: isearch should auto-place
 
-        ; pager ;; FixMe: Breaking installation
+        pager
         pager-default-keybindings
 
         ;; Emacs editing improvements
@@ -70,7 +73,6 @@
         smart-whitespace-comment-fixup
 
         ;; Dired enhancements
-        dired-isearch
         wdired
         dired-sort
 
@@ -80,7 +82,7 @@
         mv-shell
 
         ;; Eldoc improvements
-        c-eldoc    ;; FixMe: Not enabled by default
+        c-eldoc
 
         ;; Miscellanious major modes
         haml-mode
@@ -106,9 +108,10 @@
         imgur
         generate-autoloads
         google-contacts
+        marmalade-upload
 
         ;; Communication
-        jabber ;; FixMe: disable auto paren insertion
+        jabber
         jabber-chatx
         erc
         erc-highlight-nicknames
@@ -141,6 +144,7 @@
 
         ;; Org-mode
         org
+        org-habit
 
         ;; Version control enhacements
         git-emacs
@@ -162,25 +166,37 @@
 
         ;; Emacs usage information
         keywiz
+
+        ;; Emacs-internal packages
+        cl
+        scheme
+        appt
+
+        cc-mode
+        wdired
+        dired-x
+        dired-aux
+        saveplace
+        ibuffer
+        uniquify
+        subword
+        abbrev
+        tramp
+        windmove
+        smtpmail
+        flymake
+        python
+        ansi-color
+        dirtrack
+        imenu
         ))
 
-
 ;;; Download and require all packages
-(el-get `sync my:el-get-packages)
 
-(mapcar (lambda (p) (if (not (member p '(jump-dls
-                                  graphviz-dot-mode
-                                  generate-autoloads
-                                  duplicate-line
-                                  git-commit-mode
-                                  sicp
-                                  Save-visited-files
-                                  marmalade)))
-                   (require p))) my:el-get-packages)
-(require 'winpoint)
-(require 'pager)
-(require 'save-visited-files)
+(el-get `sync (my-filter (lambda (x) (not (try-require x))) my:el-get-packages))
+(mapcar 'try-require my:el-get-packages)
 
+;; FixMe: These should be default
 (define-globalized-minor-mode global-highlight-80+-mode
   highlight-80+-mode
   (lambda ()
@@ -189,20 +205,25 @@
 (global-rainbow-delimiters-mode)
 (global-highlight-80+-mode t)
 (global-hungry-delete-mode)
+
+;; FixMe: This should be on by default?
 (zenburn)
 
 (defvaralias 'highlight-80+-columns 'fill-column)
 
 (setq highlight-symbol-idle-delay 0)
 (highlight-symbol-mode 1)
-
 (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode 1)))
 
+;; FixMe: This should be default
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))
 (add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
 
+;; FixMe: This should be default
 (add-hook 'occur-mode-hook 'turn-on-occur-x-mode)
+
+;; FixMe: This should be on by default
 (auto-indent-global-mode)
 
 (dolist (hook  '(emacs-lisp-mode-hook ielm-mode-hook))
@@ -212,29 +233,32 @@
 ;; to that mode's hook like this:
 (add-hook 'c-mode-common-hook 'guess-style-guess-all)
 
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
 (setq js2-bounce-indent-p t)
 (setq js2-highlight-level 3)
 (setq markdown-enable-math t)
-(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
-(setq htmlize-html-major-mode 'html-mode)
 (setq nxml-slash-auto-complete-flag t)
-
 (setq wgrep-enable-key "q")
-(add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
-(paren-activate)
-(mv-shell-mode)
 
-(javadoc-set-predefined-urls '("http://download.oracle.com/javase/1.5.0/docs/api/"))
+;; FixMe: This should be default
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; FixMe: This should be default
+(setq htmlize-html-major-mode 'html-mode)
+
+;; FixMe: This should be on by default
+(paren-activate)
+
+;; FixMe: This should be on by default
+(add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
+
+;; FixMe: Export to own package
+(javadoc-set-predefined-urls '("http://download.oracle.com/javase/7/docs/api/"))
 (jdh-process-predefined-urls *jdh-predefined-urls*)
 (condition-case nil
-    (jdh-refresh-url "http://download.oracle.com/javase/1.5.0/docs/api/")
+    (jdh-refresh-url "http://download.oracle.com/javase/7/docs/api/")
   (error nil))
 
-
-
-; FixMe: Add this stuff to idomenu
+;;; FixMe: Add this stuff to idomenu
 
 (defun imenu-old (index-item)
   "Jump to a place in the buffer chosen using a buffer menu or mouse menu.
@@ -274,3 +298,4 @@ for more information."
 (defun imenu (&rest args)
   (interactive)
   (idomenu))
+;;; FixMe: End idomenu enhancements

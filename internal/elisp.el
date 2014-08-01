@@ -25,17 +25,3 @@
               (if (file-exists-p (concat buffer-file-name "c"))
                   (delete-file (concat buffer-file-name "c"))))))
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
-
-;; Set correct formatting for GNU Emacs elisp files
-;; FixMe: Factor out and make it better
-(defun gnu-emacs-elisp-formating ()
-  "Sets up the correct style for officcial GNU Emacs elisp files."
-  (setq indent-tabs-mode t)
-  (setq tab-width 8))
-
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (save-excursion
-              (goto-char (point-min))
-              (when (search-forward "This file is part of GNU Emacs." (point-max) t)
-                (gnu-emacs-elisp-formating)))))
