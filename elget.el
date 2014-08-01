@@ -8,6 +8,7 @@
 ;; FixMe: Note: Also need to hack package.rcp to have this if I reinstall.
 ;; FixMe: Does el-get prefer package.el to emacswicki? if not, it should
 ;; FixMe: el-get-update should only be able to select real packages
+;; FixMe: Actually, what if we just got rid of elget and onl used package.
 
 ;;; Make sure that we have *some* version of el-get
 (unless (require 'el-get nil 'noerror)
@@ -32,9 +33,8 @@
         el-get
         package
         load-dir
-        sys
         oauth2
-        save-visited-files
+        ;;save-visited-files
 
         ;; Emacs UI improvements
         color-theme
@@ -47,6 +47,7 @@
         occur-default-current-word
         frame-fns
         frame-cmds
+        workgroups2
 
         ;; Emacs navigation improvements
         winpoint
@@ -192,6 +193,15 @@
 
 ;;; Download and require all packages
 
+ (defun my-filter (condp lst)
+   (delq nil
+         (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
+
+(defun try-require (sym)
+  (condition-case nil
+      (require sym)
+    (error nil)))
+
 (el-get `sync (my-filter (lambda (x) (not (try-require x))) my:el-get-packages))
 (mapcar 'try-require my:el-get-packages)
 
@@ -250,9 +260,33 @@
 ;; FixMe: This should be on by default
 (add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
 
-;; FixMe: Export to own package
+;; FixMe: Export to own package/ javadoc pacakge
 (javadoc-set-predefined-urls '("http://download.oracle.com/javase/7/docs/api/"))
 (jdh-process-predefined-urls *jdh-predefined-urls*)
 (condition-case nil
     (jdh-refresh-url "http://download.oracle.com/javase/7/docs/api/")
   (error nil))
+
+;; FixMe: Add this functionality to a package
+;; FixMe: Have eldoc also have the first line of the docstring of a function
+(defun stringify (object)
+  "Convert OBJECT into a string value."
+  (cond
+   ((stringp object) object)
+   ((and (listp object)
+         (not (eq object nil)))
+    (let ((string (pp-to-string object)))
+      (substring string 0 (1- (length string)))))
+   ((numberp object)
+    (number-to-string object))
+   (t
+    (unless (and (eq object t)
+                 (not eshell-stringify-t))
+      (pp-to-string object)))))
+
+(defadvice eldoc-get-var-docstring (after add-value activate)
+  (when ad-return-value
+    (setq ad-return-value (concat ad-return-value " = " (stringify (symbol-value (ad-get-arg 0)))))
+    (if (< 160 (string-width ad-return-value))
+        (setq ad-return-value (concat (truncate-string-to-width ad-return-value 157) "...")))))
+;; FixMe: end this new package

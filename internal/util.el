@@ -407,6 +407,13 @@ file of a buffer in an external program."
   (condition-case  nil
       (require pkg)
     (error nil)))
+
 (defun my-filter (condp lst)
   (delq nil
         (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
+
+(defun eval-function-in ()
+  (interactive)
+  (save-excursion
+    (end-of-defun)
+    (call-interactively 'eval-last-sexp)))

@@ -1,3 +1,4 @@
+;; Allow use of alphabetical lists
 (setq org-alphabetical-lists t)
 
 ;; Agenda customizations
@@ -6,6 +7,10 @@
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
+
+(defadvice org-cycle (after org-reactivate-always activate)
+  (if (org-at-table-p)
+      (org-table-recalculate t)))
 
 ;; Time logging
 ;(org-clock-persistence-insinuate)

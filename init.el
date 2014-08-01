@@ -2,20 +2,9 @@
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
 
 (setq-default case-fold-search t)
-
-;;; Debug errors when they arise
 (setq-default debug-on-error t)
 
-(defun eval-function-in ()
-  (interactive)
-  (save-excursion
-    (end-of-defun)
-    (call-interactively 'eval-last-sexp)))
-
-(defadvice org-cycle (after org-reactivate-always activate)
-  (if (org-at-table-p)
-      (org-table-recalculate t)))
-
+;; FixMe: investigate projectile
 ;; FixMe: Make ERC readable
 ;; FixMe: Make CANCELLED be a state in org-mode
 ;; FixMe: which-function in C++
@@ -58,10 +47,13 @@
 (load-file "~/Dropbox/logins.el")
 
 ;;We're finished loading everything now
-(server-start)
-(setq save-visited-files-auto-restore t)
-(save-visited-files-mode t)
 (shell-current-directory)
-(mv-shell-mode)
 
 (maximize-frame)
+(setq wg-session-load-on-start t)
+(workgroups-mode 1)
+
+;; FixMe: We may need to check if we are in the minibuffer
+(add-hook 'auto-save-hook 'wg-save-session)
+(add-hook 'kill-emacs-hook 'wg-save-session)
+(server-start)
