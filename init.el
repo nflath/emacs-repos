@@ -1,14 +1,12 @@
 (require 'cc-mode)
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
-
+(setq calc-multiplication-has-precedence t)
 (setq-default case-fold-search t)
 (setq-default debug-on-error t)
 
 ;; FixMe: investigate projectile
 ;; FixMe: Make ERC readable
-;; FixMe: Make CANCELLED be a state in org-mode
 ;; FixMe: which-function in C++
-;; FixMe: cache javadoc locally
 ;; FixMe: investigate breadcrumbs
 ;; FixMe: Keybindings should all be (eval-after-load)ed
 ;; FixMe: Have eldoc also print the values of variables

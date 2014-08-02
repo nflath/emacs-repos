@@ -25,7 +25,6 @@
 (if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/elpa"))
     (el-get-elpa-build-local-recipes))
 
-
 ;;; List of packages to make sure are installed
 (setq my:el-get-packages
       `(
@@ -53,14 +52,11 @@
         winpoint
         winpoint-ignore-dired
         smooth-scrolling
-        pc-keys
         jump-dls
         helm
         eproject         ;; FixMe: configure
         expand-region
         ace-jump-mode
-        breadcrumb       ;; FixMe: Configure, keybindings ;; FixMe: isearch should auto-place
-
         pager
         pager-default-keybindings
 
@@ -68,12 +64,9 @@
         hungry-delete
         recursive-narrow
         kill-ring-ido  ;; FixMe: keybindings
-        ireplace       ;; FixMe: Train to use
-        duplicate-line ;; FixMe: kybindings
         smart-whitespace-comment-fixup
 
         ;; Dired enhancements
-        wdired
         dired-sort
 
         ;; Shell-mode enhancements
@@ -126,7 +119,6 @@
         wgrep
 
         ;; General programming utilities
-        c-toggle-dot-pointer ;; FixMe: Keybindings
         java-file-create
         guess-offset
         org-table-comment
@@ -135,7 +127,7 @@
 
 
         ;; Elisp programming enhancements
-        elisp-slime-nav ;; Add to jump-dls?
+        elisp-slime-nav ;; FixMe: Add to jump-dls?
 
         ;; Elisp programming libraries
         thingatpt+
@@ -147,7 +139,6 @@
         org-habit
 
         ;; Version control enhacements
-        git-emacs
         gitconfig-mode
         gitignore-mode
         git-commit-mode
@@ -157,9 +148,6 @@
 
         ;; Windows enhancements
         w32-browser
-
-        ;; M-x compile enhancements
-        compile-dwim
 
         ;; Documentation
         javadoc-help
@@ -201,6 +189,11 @@
   (condition-case nil
       (require sym)
     (error nil)))
+
+(setq y (mapcar 'car package-archive-contents))
+(setq not-in-package (my-filter (lambda (x) (not (memq x y)) ) my:el-get-packages))
+(setq a (cadr package-archive-contents))
+
 
 (el-get `sync (my-filter (lambda (x) (not (try-require x))) my:el-get-packages))
 (mapcar 'try-require my:el-get-packages)
@@ -289,4 +282,5 @@
     (setq ad-return-value (concat ad-return-value " = " (stringify (symbol-value (ad-get-arg 0)))))
     (if (< 160 (string-width ad-return-value))
         (setq ad-return-value (concat (truncate-string-to-width ad-return-value 157) "...")))))
+(ad-deactivate 'eldoc-get-var-docstring)
 ;; FixMe: end this new package

@@ -64,7 +64,10 @@
 ;; TODO customizations
 (setq org-enforce-todo-dependencies t)
 (setq org-log-done 'time)
-(setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)") ))
+(setq org-todo-keywords
+      '((sequence "TODO(t)"  "|" "DONE(d!)" "CANCELED(c!)")))
+
+
 
 (setq org-todo-keyword-faces
       '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
