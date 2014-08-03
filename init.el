@@ -9,7 +9,6 @@
 ;; FixMe: which-function in C++
 ;; FixMe: investigate breadcrumbs
 ;; FixMe: Keybindings should all be (eval-after-load)ed
-;; FixMe: Have eldoc also print the values of variables
 
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 
@@ -51,7 +50,5 @@
 (setq wg-session-load-on-start t)
 (workgroups-mode 1)
 
-;; FixMe: We may need to check if we are in the minibuffer
-(add-hook 'auto-save-hook 'wg-save-session)
-(add-hook 'kill-emacs-hook 'wg-save-session)
+(save-visited-files-mode t)
 (server-start)

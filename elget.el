@@ -47,6 +47,7 @@
         frame-fns
         frame-cmds
         workgroups2
+        save-visited-files
 
         ;; Emacs navigation improvements
         winpoint
@@ -65,9 +66,6 @@
         recursive-narrow
         kill-ring-ido  ;; FixMe: keybindings
         smart-whitespace-comment-fixup
-
-        ;; Dired enhancements
-        dired-sort
 
         ;; Shell-mode enhancements
         comint-better-defaults
@@ -105,9 +103,7 @@
 
         ;; Communication
         jabber
-        jabber-chatx
         erc
-        erc-highlight-nicknames
 
         ;; Python-mode enhancements
         pyflakes
@@ -178,6 +174,9 @@
         dirtrack
         imenu
         ))
+;; FixMe: Get these on ELPA
+;; jump-dls
+;; javadoc-help
 
 ;;; Download and require all packages
 
@@ -259,28 +258,3 @@
 (condition-case nil
     (jdh-refresh-url "http://download.oracle.com/javase/7/docs/api/")
   (error nil))
-
-;; FixMe: Add this functionality to a package
-;; FixMe: Have eldoc also have the first line of the docstring of a function
-(defun stringify (object)
-  "Convert OBJECT into a string value."
-  (cond
-   ((stringp object) object)
-   ((and (listp object)
-         (not (eq object nil)))
-    (let ((string (pp-to-string object)))
-      (substring string 0 (1- (length string)))))
-   ((numberp object)
-    (number-to-string object))
-   (t
-    (unless (and (eq object t)
-                 (not eshell-stringify-t))
-      (pp-to-string object)))))
-
-(defadvice eldoc-get-var-docstring (after add-value activate)
-  (when ad-return-value
-    (setq ad-return-value (concat ad-return-value " = " (stringify (symbol-value (ad-get-arg 0)))))
-    (if (< 160 (string-width ad-return-value))
-        (setq ad-return-value (concat (truncate-string-to-width ad-return-value 157) "...")))))
-(ad-deactivate 'eldoc-get-var-docstring)
-;; FixMe: end this new package

@@ -254,6 +254,7 @@ known that the table will be realigned a little later anyway."
            (line-re org-table-dataline-regexp)
            (thisline (org-current-line))
            (thiscol (org-table-current-column))
+           (starttime (float-time))
            seen-fields lhs1
            beg end entry eqlnum eqlname eqlname1 eql (cnt 0) eq a name name1)
       ;; Insert constants in all formulas
