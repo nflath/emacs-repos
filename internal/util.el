@@ -1,5 +1,7 @@
 ;;; Collection of utility functions for interactive use
 
+;; FixMe: Can any of these be exported to own pacakges
+
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill. This function directly calls
 kill-line, so see documentation of kill-line for how to use it including prefix

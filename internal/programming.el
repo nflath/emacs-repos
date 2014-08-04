@@ -16,9 +16,9 @@
 ;I want compilation buffers to scroll to the bottom, since this is in general where errors are.
 (setq compilation-scroll-output t)
 
+;; FixMe: Make own package?
 (defun esk-add-watchwords ()
   (font-lock-add-keywords
    nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\|NOCOMMIT\\|FixMe\\)"
         1 font-lock-warning-face t))))
-
 (add-hook 'prog-mode-hook 'esk-add-watchwords)

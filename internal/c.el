@@ -1,5 +1,6 @@
 ;; Customizations for cc-mode
 
+;; FixMe: Export to own package?
 (defun string-match-any (regexp-list string &optional start)
   "Returns whether the given string, starting at position start,
 matches any regexp in the list."
@@ -29,6 +30,8 @@ matches any regexp in the list."
 (add-hook 'c++-mode-hook 'h-file-create)
 (add-hook 'c-mode-hook 'h-file-create)
 
+;; FixMe: End package
+
 (defun set-compile-command ()
   "Sets the compile command to a sensible default if no makefile is found."
   (unless (file-exists-p "Makefile")
@@ -45,6 +48,7 @@ matches any regexp in the list."
 (add-hook 'c-mode-hook 'set-compile-command)
 (add-hook 'c++-mode-hook 'set-compile-command)
 
+;; FixMe: Export to package?
 (defun c-include (include)
   "Includes a header file in the current file."
   (interactive (list (read-string (concat "Include file <" (current-word) ">: "))))
@@ -67,16 +71,8 @@ matches any regexp in the list."
         (insert (concat "\nclass " (capitalize class) ";"))
       (search-forward "\n\n")
       (insert "class " (capitalize class) ";\n\n"))))
+;; FixMe: End package
 
-(defun c-fwdinclude (arg)
-  "Either forward declare or include a class/file, depending on
-  whether you are in a header or implementation file."
-  (interactive (list (read-string (concat "Import <" (current-word) ">: "))))
-  (when (string-equal arg "") (setq arg (current-word)))
-  (let ((buffer-name (buffer-name (current-buffer))))
-    (if (string-match-any (list "\.h" "\.hpp") buffer-name )
-        (c-forward-declare arg)
-      (c-include arg))))
-
+;; FixMe: Are these defaults?
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-syntactic-indentation 1)))
 (add-hook 'c-mode-common-hook (lambda () (c-toggle-electric-state 1)))

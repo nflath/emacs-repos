@@ -13,8 +13,7 @@
 (switch-to-buffer "*scratch*")
 (turn-on-eldoc-mode)
 
-
-
+;; FixMe: Export to own package
 ;; If we edit a .el file that has a corresponding .elc file, we don't want to
 ;; keep the outdated .elc file.
 (defun esk-remove-elc-on-save ()

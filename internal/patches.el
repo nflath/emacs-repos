@@ -1,5 +1,7 @@
 ;;;;; Things I really wish were patched in Emacs.
 
+;; FixMe: Why isn't this
+
 (defun ff-find-the-other-file (&optional in-other-window)
   "Find the header or source file corresponding to the current file.
 Being on a `#include' line pulls in that file, but see the help on
@@ -132,4 +134,3 @@ If optional IN-OTHER-WINDOW is non-nil, find the file in another window."
         nil))))
 
     found))                        ;; return buffer-name or filename
-

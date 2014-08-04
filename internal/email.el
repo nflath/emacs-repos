@@ -1,10 +1,7 @@
 ;; Use Gmail to send email when ~/.authinfo exists
 (require 'starttls)
 (setq starttls-use-gnutls t)
-
-(defvar email-alist `())
 (setq smtpmail-stream-type 'ssl)
-
 
 (when (file-exists-p "~/.authinfo")
   (setq send-mail-function 'smtpmail-send-it
@@ -14,10 +11,7 @@
         smtpmail-default-smtp-server "smtp.gmail.com"
         smtpmail-smtp-server "smtp.gmail.com"
         smtpmail-smtp-service 465
-        smtpmail-debug-info t)
-
-
-  )
+        smtpmail-debug-info t))
 
 
 (defun insert-email ()

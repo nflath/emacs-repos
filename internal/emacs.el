@@ -1,3 +1,4 @@
+;; FixMe: Can any of this be shoved into packages
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
@@ -36,6 +37,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;History features
+;; FixMe: Replace ~/.emacs.d with varname
 (setq save-place-file "~/.emacs.d/.saveplace")
 (setq-default save-place t)
 
@@ -90,8 +92,6 @@
   (let ((filename ad-do-it))
     (setq ad-return-value (list (concat (car filename) (format-time-string "%Y-%m-%d %T"))))))
 
-
-
 ;; CUA-mode rectangles
 (setq cua-enable-cua-keys nil)
 (cua-mode t)
@@ -99,8 +99,6 @@
 ;; Turn on auto-save
 (setq auto-save-default t)
 (setq auto-save-list-file-name "~/.emacs.d/.saves")
-
-;; Maximize the frame
 
 ;; subword movement
 (global-subword-mode t)

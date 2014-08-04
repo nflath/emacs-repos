@@ -1,3 +1,4 @@
+;; FixMe: Seperate to own package
 (defun isearch-switch-to-regexp (direction)
   (setq isearch-regexp t)
   (setq isearch-word nil)
@@ -17,5 +18,6 @@
   (interactive)
   (let ((case-fold-search isearch-case-fold-search))
     (occur (if isearch-regexp isearch-string (regexp-quote isearch-string)))))
+;; FixMe: End package
 
 (setq-default isearch-case-fold-search t)

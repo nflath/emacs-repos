@@ -33,7 +33,7 @@
         smooth-scrolling
         jump-dls
         helm
-        eproject         ;; FixMe: configure
+        eproject         ;; FixMe: configure/compare vs projectile
         expand-region
         ace-jump-mode
         pager
@@ -96,9 +96,6 @@
         org-table-comment
         auto-indent-mode
 
-        ;; Elisp programming enhancements
-        elisp-slime-nav ;; FixMe: Add to jump-dls?
-
         ;; Elisp programming libraries
         thingatpt+
         dirtree
@@ -149,10 +146,7 @@
         ))
 ;;; Download and require all packages
 
- (defun my-filter (condp lst)
-   (delq nil
-         (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
-
+;; FixMe: Can these functions be anywhere else?
 (setq failed-requires ())
 (defun try-require (sym)
   (condition-case nil
@@ -173,36 +167,17 @@
 ;; FixMe: These should be default
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)
-
-;; FixMe: This should be default
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))
 (add-hook 'ssh-config-mode-hook 'turn-on-font-lock)
-
-;; FixMe: This should be default
 (add-hook 'occur-mode-hook 'turn-on-occur-x-mode)
-
-;; FixMe: This should be on by default
 (auto-indent-global-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq htmlize-html-major-mode 'html-mode)
+(paren-activate)
 
-(dolist (hook  '(emacs-lisp-mode-hook ielm-mode-hook))
-  (add-hook hook 'turn-on-elisp-slime-nav-mode))
-
-;; To guess variables when a major mode is loaded, add `guess-style-guess-all'
-;; to that mode's hook like this:
-(add-hook 'c-mode-common-hook 'guess-style-guess-all)
-
+;; FixMe: Move to a different file?
 (setq js2-bounce-indent-p t)
 (setq js2-highlight-level 3)
 (setq markdown-enable-math t)
-(setq nxml-slash-auto-complete-flag t)
 (setq wgrep-enable-key "q")
-
-;; FixMe: This should be default
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-
-;; FixMe: This should be default
-(setq htmlize-html-major-mode 'html-mode)
-
-;; FixMe: This should be on by default
-(paren-activate)

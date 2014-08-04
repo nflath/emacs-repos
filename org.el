@@ -8,12 +8,13 @@
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
 
+;; Auto-recalculate table lines
 (defadvice org-cycle (after org-reactivate-always activate)
   (if (org-at-table-p)
       (org-table-recalculate t)))
 
 ;; Time logging
-;(org-clock-persistence-insinuate)
+(org-clock-persistence-insinuate)
 (setq org-clock-idle-time 15)
 (setq org-clock-out-remove-zero-time-clocks t)
 (setq org-clock-persist 'history)
@@ -35,7 +36,6 @@
       `(("t" "Todo" entry (file+headline ,(concat org-directory "TODO.org") "Tasks")
          "* TODO %?\n  %i\n")))
 
-
 (setq org-outline-path-complete-in-steps t)
 (setq org-refile-use-outline-path 'file)
 (setq org-refile-targets '((org-agenda-files . (:level . 1))))
@@ -44,7 +44,6 @@
 (defun my-org-capture-dont-ask ()
   (interactive)
    (org-capture 1 "t"))
-
 
 ;; General org customizations
 (setq org-agenda-repeating-timestamp-show-all nil)
@@ -67,11 +66,10 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)"  "|" "DONE(d!)" "CANCELED(c!)")))
 
-
-
 (setq org-todo-keyword-faces
       '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
 
+;; FixMe: Export to package?
 (defun org-current-section-number (&optional pos)
   "Returns the subsection number at pos"
   (save-excursion
@@ -159,10 +157,11 @@
         (shell-command "mv *.html publish/" nil)
         (kill-buffer "agenda.html")))))
 
+;; FixMe: End package
+
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
-(remove-hook 'org-mode-hook 'org-indent-mode)
 (add-hook 'org-agenda-mode-hook '(lambda () (cd (car org-agenda-files))))
 
 ;; Turn on appointment checking
@@ -214,7 +213,6 @@
   (setq org-directory "~/Dropbox/org/")
   (setq org-agenda-files (list org-directory))
   (load-file (concat emacs-repos-dir "org.el")))
-
 
 (setq org-agenda-custom-commands
       '(("h" "Daily habits"

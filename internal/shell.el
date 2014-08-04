@@ -6,6 +6,7 @@
 ;; control codes into your buffer.  This turns on colorization.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;; FixMe: Export to own package
 ;;Dirtrack is a mode that keeps your shell buffers' directories in sync with
 ;;the shell.  It does this by looking for the current directory in your prompt.
 ;;To use it, you need to set your prompt to match the regex, or vice versa.
