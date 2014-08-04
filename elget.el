@@ -7,7 +7,7 @@
 (package-refresh-contents)
 
 ;;; List of packages to make sure are installed
-(setq my:el-get-packages
+(setq my-packages
       `(
         ;; Packages used for initialization purposes
         load-dir
@@ -162,12 +162,13 @@
 (setq failed-installs ())
 (defun try-package-install (sym)
   (condition-case nil
-      (if ((not package-installed-p sym)
-	  (package-install sym)))
+      (progn
+        (if ((not package-installed-p sym)
+             (package-install sym)))
+        (try-require sym))
     (error sym)))
 
-(mapcar 'try-package-install my:el-get-packages)
-(mapcar 'try-require my:el-get-packages)
+(mapcar 'try-package-install my-packages)
 
 ;; FixMe: These should be default
 (global-rainbow-delimiters-mode)

@@ -35,7 +35,7 @@
         (list (concat user-emacs-directory "elpa")
               (concat user-emacs-directory "log")))
 
-;;; Load packages using el-get
+;;; Load packages using package
 (load-file (concat emacs-repos-dir "org.el"))
 (load-file (concat emacs-repos-dir "elget.el"))
 
