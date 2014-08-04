@@ -1,43 +1,21 @@
-;;; Configuration for el-get
 ;;; Installs all the packages I rely on
 
 ;;; Ensure that all ELPA repositories are available
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-;; FixMe: Note: Also need to hack package.rcp to have this if I reinstall.
-;; FixMe: Does el-get prefer package.el to emacswicki? if not, it should
-;; FixMe: el-get-update should only be able to select real packages
-;; FixMe: Actually, what if we just got rid of elget and onl used package.
-
-;;; Make sure that we have *some* version of el-get
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-;;; Make sure that recipes are build for emacswiki and elpa (only done if necessary
-(add-to-list 'el-get-recipe-path "~/Dropbox/emacs-repos/recipes")
-(if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/emacswiki"))
-    (el-get-emacswiki-build-local-recipes))
-(if (not (file-exists-p "~/Dropbox/.emacs.d/el-get/recipes/elpa"))
-    (el-get-elpa-build-local-recipes))
+(package-refresh-contents)
 
 ;;; List of packages to make sure are installed
 (setq my:el-get-packages
       `(
         ;; Packages used for initialization purposes
-        el-get
-        package
         load-dir
         oauth2
-        ;;save-visited-files
 
         ;; Emacs UI improvements
         color-theme
-        zenburn
+        zenburn-theme
         mic-paren
         rainbow-delimiters
         highlight-parentheses
@@ -69,7 +47,6 @@
 
         ;; Shell-mode enhancements
         comint-better-defaults
-        gdb-shell
         mv-shell
 
         ;; Eldoc improvements
@@ -78,10 +55,10 @@
         ;; Miscellanious major modes
         haml-mode
         markdown-mode
-        nxml-mode
+        nxml
         js2-mode
         ssh-config-mode
-        graphviz-dot-mode
+        graphviz-dot-mode ; FixMe: Add provide to file
         go-mode
 
         ;; General utility functions
@@ -97,7 +74,6 @@
         ioccur
         go-play
         imgur
-        generate-autoloads
         google-contacts
         marmalade-upload
 
@@ -119,8 +95,6 @@
         guess-offset
         org-table-comment
         auto-indent-mode
-        guess-style
-
 
         ;; Elisp programming enhancements
         elisp-slime-nav ;; FixMe: Add to jump-dls?
@@ -137,7 +111,7 @@
         ;; Version control enhacements
         gitconfig-mode
         gitignore-mode
-        git-commit-mode
+        git-commit
 
         ;; HTML in emacs...
         w3
@@ -146,16 +120,15 @@
         w32-browser
 
         ;; Documentation
-        javadoc-help
+        javadoc-lookup
 
         ;; Emacs usage information
         keywiz
 
-        ;; Emacs-internal packages
+        ;; Emacs-internal packages FixMe: reorganize
         cl
         scheme
         appt
-
         cc-mode
         wdired
         dired-x
@@ -174,47 +147,31 @@
         dirtrack
         imenu
         ))
-;; FixMe: Get these on ELPA
-;; jump-dls
-;; javadoc-help
-
 ;;; Download and require all packages
 
  (defun my-filter (condp lst)
    (delq nil
          (mapcar (lambda (x) (and (funcall condp x) x)) lst)))
 
+(setq failed-requires ())
 (defun try-require (sym)
   (condition-case nil
       (require sym)
-    (error nil)))
+    (error sym)))
 
-(setq y (mapcar 'car package-archive-contents))
-(setq not-in-package (my-filter (lambda (x) (not (memq x y)) ) my:el-get-packages))
-(setq a (cadr package-archive-contents))
+(setq failed-installs ())
+(defun try-package-install (sym)
+  (condition-case nil
+      (if ((not package-installed-p sym)
+	  (package-install sym)))
+    (error sym)))
 
-
-(el-get `sync (my-filter (lambda (x) (not (try-require x))) my:el-get-packages))
+(mapcar 'try-package-install my:el-get-packages)
 (mapcar 'try-require my:el-get-packages)
 
 ;; FixMe: These should be default
-(define-globalized-minor-mode global-highlight-80+-mode
-  highlight-80+-mode
-  (lambda ()
-    (highlight-80+-mode t)))
-
 (global-rainbow-delimiters-mode)
-(global-highlight-80+-mode t)
 (global-hungry-delete-mode)
-
-;; FixMe: This should be on by default?
-(zenburn)
-
-(defvaralias 'highlight-80+-columns 'fill-column)
-
-(setq highlight-symbol-idle-delay 0)
-(highlight-symbol-mode 1)
-(add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode 1)))
 
 ;; FixMe: This should be default
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
@@ -248,13 +205,3 @@
 
 ;; FixMe: This should be on by default
 (paren-activate)
-
-;; FixMe: This should be on by default
-(add-hook 'shell-mode-hook 'gdb-shell-minor-mode)
-
-;; FixMe: Export to own package/ javadoc pacakge
-(javadoc-set-predefined-urls '("http://download.oracle.com/javase/7/docs/api/"))
-(jdh-process-predefined-urls *jdh-predefined-urls*)
-(condition-case nil
-    (jdh-refresh-url "http://download.oracle.com/javase/7/docs/api/")
-  (error nil))

@@ -1,5 +1,8 @@
+(setq mac-command-modifier `meta)
+
 (require 'cc-mode)
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
+
 (setq calc-multiplication-has-precedence t)
 (setq-default case-fold-search t)
 (setq-default debug-on-error t)
@@ -8,7 +11,7 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
 ;; FixMe: investigate breadcrumbs
-;; FixMe: Keybindings should all be (eval-after-load)ed
+;; FixMe: s should all be (eval-after-load)ed
 
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 

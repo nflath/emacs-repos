@@ -1,4 +1,3 @@
-(setq mac-command-modifier `meta)
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
