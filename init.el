@@ -3,6 +3,7 @@
 ;; FixMe: which-function in C++
 ;; FixMe: investigate breadcrumbs
 ;; FixMe: keybindings should all be (eval-after-load)ed
+;; FixMe: Allow @-1 in org-tables
 
 (setq mac-command-modifier `meta)
 

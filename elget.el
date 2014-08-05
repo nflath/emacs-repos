@@ -42,7 +42,6 @@
         ;; Emacs editing improvements
         hungry-delete
         recursive-narrow
-        kill-ring-ido  ;; FixMe: keybindings
         smart-whitespace-comment-fixup
 
         ;; Shell-mode enhancements
