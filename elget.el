@@ -33,7 +33,6 @@
         smooth-scrolling
         jump-dls
         helm
-        eproject         ;; FixMe: configure/compare vs projectile
         expand-region
         ace-jump-mode
         pager
@@ -157,11 +156,11 @@
   (condition-case nil
       (progn
         (if ((not package-installed-p sym)
-             (package-install sym)))
-        (try-require sym))
+             (package-install sym))))
     (error sym)))
 
 (mapcar 'try-package-install my-packages)
+(mapcar 'try-require my-packages)
 
 ;; FixMe: These should be default
 (global-rainbow-delimiters-mode)

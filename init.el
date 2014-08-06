@@ -1,7 +1,8 @@
-;; FixMe: investigate projectile
+;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
+;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
-;; FixMe: investigate breadcrumbs
+;; FixMe: investigate breadcrumb
 ;; FixMe: keybindings should all be (eval-after-load)ed
 ;; FixMe: Allow @-1 in org-tables
 
