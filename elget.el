@@ -60,7 +60,6 @@
         go-mode
 
         ;; General utility functions
-        buffer-move ;; FixMe: keybindings
         dedicated   ;; FixMe: Configure/remember
         unbound
         loccur

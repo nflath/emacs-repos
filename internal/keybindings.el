@@ -95,3 +95,9 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "C-'") 'ace-jump-line-mode)
 (global-set-key (kbd "M-'") 'ace-jump-word-mode)
+
+
+(global-set-key (kbd "<C-M-down>")   'buf-move-down)
+(global-set-key (kbd "<C-M-up>")     'buf-move-up)
+(global-set-key (kbd "<C-M-left>")   'buf-move-left)
+(global-set-key (kbd "<C-M-right>")  'buf-move-right)
