@@ -60,7 +60,7 @@
         go-mode
 
         ;; General utility functions
-        dedicated   ;; FixMe: Configure/remember
+        dedicated
         unbound
         loccur
         htmlize

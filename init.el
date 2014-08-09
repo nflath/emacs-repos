@@ -1,4 +1,6 @@
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
+;; FixMe: ( can cause org fontification to break?
+;; FixMe: Better searchingaqw
 ;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
