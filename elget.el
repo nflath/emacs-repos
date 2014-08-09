@@ -56,7 +56,7 @@
         nxml
         js2-mode
         ssh-config-mode
-        graphviz-dot-mode ; FixMe: Add provide to file
+        graphviz-dot-mode
         go-mode
 
         ;; General utility functions
