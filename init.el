@@ -1,3 +1,4 @@
+;; FixMe: recursive-narrow only really works if narrow-to-defun is evaluated???
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Better searchingaqw

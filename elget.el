@@ -26,6 +26,8 @@
         frame-cmds
         workgroups2
         save-visited-files
+        ibuffer
+        uniquify
 
         ;; Emacs navigation improvements
         winpoint
@@ -37,15 +39,35 @@
         ace-jump-mode
         pager
         pager-default-keybindings
+        saveplace
+        subword
+        windmove
+        imenu
 
         ;; Emacs editing improvements
         hungry-delete
         recursive-narrow
         smart-whitespace-comment-fixup
+        abbrev
+
+        ;; General programming utilities
+        java-file-create
+        guess-offset
+        org-table-comment
+        auto-indent-mode
+        flymake
+
+        ;; Dired enhancements
+        dired
+        wdired
+        dired-x
+        dired-aux
 
         ;; Shell-mode enhancements
         comint-better-defaults
         mv-shell
+        ansi-color
+        dirtrack
 
         ;; Eldoc improvements
         c-eldoc
@@ -58,6 +80,9 @@
         ssh-config-mode
         graphviz-dot-mode
         go-mode
+        scheme
+        cc-mode
+        python
 
         ;; General utility functions
         dedicated
@@ -77,6 +102,8 @@
         ;; Communication
         jabber
         erc
+        smtpmail
+        tramp
 
         ;; Python-mode enhancements
         pyflakes
@@ -84,23 +111,16 @@
         python-pep8
         python-pylint
 
-        ;; M-x grep enhancements
-        wgrep
-
-        ;; General programming utilities
-        java-file-create
-        guess-offset
-        org-table-comment
-        auto-indent-mode
-
         ;; Elisp programming libraries
         thingatpt+
         dirtree
         hook-utils
+        cl
 
         ;; Org-mode
         org
         org-habit
+        appt
 
         ;; Version control enhacements
         gitconfig-mode
@@ -118,28 +138,6 @@
 
         ;; Emacs usage information
         keywiz
-
-        ;; Emacs-internal packages FixMe: reorganize
-        cl
-        scheme
-        appt
-        cc-mode
-        wdired
-        dired-x
-        dired-aux
-        saveplace
-        ibuffer
-        uniquify
-        subword
-        abbrev
-        tramp
-        windmove
-        smtpmail
-        flymake
-        python
-        ansi-color
-        dirtrack
-        imenu
         ))
 ;;; Download and require all packages
 
