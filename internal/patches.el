@@ -1,6 +1,6 @@
 ;;;;; Things I really wish were patched in Emacs.
 
-;; FixMe: Why isn't this
+;; FixMe: Why isn't this??
 
 (defun ff-find-the-other-file (&optional in-other-window)
   "Find the header or source file corresponding to the current file.

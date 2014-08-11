@@ -141,7 +141,7 @@
         ))
 ;;; Download and require all packages
 
-;; FixMe: Can these functions be anywhere else?
+;; FixMe: Update failed-requires and failed-installs properly
 (setq failed-requires ())
 (defun try-require (sym)
   (condition-case nil

@@ -1,12 +1,15 @@
+;; (setq recursive-narrow-in t)
+;; (defadvice narrow-to-region (around potentially-recursive activate)
+;;   (message "advice")
+;;   (if recursive-narrow-in
+;;       ad-do-it
+;;     (recursive-narrow-to-region (ad-get-arg 0) (ad-get-arg 1))))
 ;; FixMe: recursive-narrow only really works if narrow-to-defun is evaluated???
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: ( can cause org fontification to break?
-;; FixMe: Better searchingaqw
 ;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
-;; FixMe: investigate breadcrumb
-;; FixMe: keybindings should all be (eval-after-load)ed
 ;; FixMe: Allow @-1 in org-tables
 
 (setq mac-command-modifier `meta)
@@ -49,6 +52,7 @@
 
 ;;; Load packages using package
 ;; FixMe: Is this required or can we just do the load-dirs
+
 (load-file (concat emacs-repos-dir "org.el"))
 (load-file (concat emacs-repos-dir "elget.el"))
 
@@ -58,6 +62,7 @@
 
 ;; FixMe: Rename this file
 (load-file "~/Dropbox/logins.el")
+(load-file (concat emacs-repos-dir "keybindings.el"))
 
 ;;We're finished loading everything now
 (maximize-frame)

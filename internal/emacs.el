@@ -37,7 +37,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;History features
-;; FixMe: Replace ~/.emacs.d with varname
 (setq save-place-file "~/.emacs.d/.saveplace")
 (setq-default save-place t)
 
