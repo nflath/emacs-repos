@@ -1,10 +1,3 @@
-;; (setq recursive-narrow-in t)
-;; (defadvice narrow-to-region (around potentially-recursive activate)
-;;   (message "advice")
-;;   (if recursive-narrow-in
-;;       ad-do-it
-;;     (recursive-narrow-to-region (ad-get-arg 0) (ad-get-arg 1))))
-;; FixMe: recursive-narrow only really works if narrow-to-defun is evaluated???
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Python auto-indentation is broken
