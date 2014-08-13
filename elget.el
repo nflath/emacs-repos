@@ -75,7 +75,6 @@
         ;; Miscellanious major modes
         haml-mode
         markdown-mode
-        nxml
         js2-mode
         ssh-config-mode
         graphviz-dot-mode
@@ -141,12 +140,11 @@
         ))
 ;;; Download and require all packages
 
-;; FixMe: Update failed-requires and failed-installs properly
 (setq failed-requires ())
 (defun try-require (sym)
   (condition-case nil
       (require sym)
-    (error sym)))
+    (error (setq failed-requires (append failed-requires (list sym))))))
 
 (setq failed-installs ())
 (defun try-package-install (sym)
@@ -154,7 +152,7 @@
       (progn
         (if ((not package-installed-p sym)
              (package-install sym))))
-    (error sym)))
+    (error (setq failed-installs (append failed-installs (list sym))))))
 
 (mapcar 'try-package-install my-packages)
 (mapcar 'try-require my-packages)
@@ -171,7 +169,6 @@
 (setq htmlize-html-major-mode 'html-mode)
 (paren-activate)
 
-;; FixMe: Move to a different file?
 (setq js2-bounce-indent-p t)
 (setq js2-highlight-level 3)
 (setq markdown-enable-math t)

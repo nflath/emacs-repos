@@ -1,4 +1,5 @@
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
+;; FixMe: Get better fontification for og-mode
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
