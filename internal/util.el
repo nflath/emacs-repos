@@ -419,3 +419,12 @@ file of a buffer in an external program."
   (save-excursion
     (end-of-defun)
     (call-interactively 'eval-last-sexp)))
+
+(defun string-match-any (regexp-list string &optional start)
+  "Returns whether the given string, starting at position start,
+matches any regexp in the list."
+  (if regexp-list
+      (let ((result (string-match (car regexp-list) string start)))
+        (if result
+            result
+          (string-match-any (cdr regexp-list) string start)))))

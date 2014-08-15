@@ -1,15 +1,6 @@
 ;; Customizations for cc-mode
 
 ;; FixMe: Export to own package?
-(defun string-match-any (regexp-list string &optional start)
-  "Returns whether the given string, starting at position start,
-matches any regexp in the list."
-  (if regexp-list
-      (let ((result (string-match (car regexp-list) string start)))
-        (if result
-            result
-          (string-match-any (cdr regexp-list) string start)))))
-
 (defun h-file-create ()
   "Create a new h file.  Insert a infdef/define/endif block"
   (if (or (equal (substring (buffer-file-name (current-buffer)) -2 ) ".h")
@@ -21,15 +12,12 @@ matches any regexp in the list."
                   (upcase class-name)
                   "_H\n#define "
                   (upcase class-name)
-                  "_H\n\nclass "
-                  (capitalize class-name)
-                  " {\npublic:\n\n\nprivate:\n\n\n};"
-                  "\n\n#endif")
-          (search-backward "public:\n")
-          (next-line)))))
+
+                  "_H\n\n\n\n#endif")
+          (search-backward "define")
+          (next-line 2)))))
 (add-hook 'c++-mode-hook 'h-file-create)
 (add-hook 'c-mode-hook 'h-file-create)
-
 ;; FixMe: End package
 
 (defun set-compile-command ()

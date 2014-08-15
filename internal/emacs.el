@@ -1,4 +1,3 @@
-;; FixMe: Can any of this be shoved into packages
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
@@ -194,10 +193,7 @@
 (setq browse-url-browser-function 'browse-url-default-macosx-browser-prepend-http)
 
 (setq browse-url-generic-program "google-chrome")
-
-
 (set-face-attribute 'default nil :height 90)
-
 (xterm-mouse-mode)
 
 ;; Always grab locks
