@@ -1,5 +1,5 @@
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
-;; FixMe: Get better fontification for og-mode
+;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
@@ -24,19 +24,17 @@
   (setq-default ispell-program-name "/usr/local/bin/aspell"))
 
 ;;; Add git to our exec-path
-;; FixMe: This should be unnecessary and already in our path
 (add-to-list 'exec-path "/usr/local/git/bin")
 (add-to-list 'exec-path "~/bin")
+
+;;; Set the load path
+(let ((default-directory user-emacs-directory))
+  (add-to-list 'load-path default-directory)
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;;; Set a few paths in order to determine where everything is
 (setq emacs-repos-dir "~/Dropbox/emacs-repos/")
 (defvar org-directory "~/Dropbox/org/" "Location of org files")
-
-;;; Set the load path
-;;; FixMe: Is this necessary?  Can we just move everything into one directory now
-(let ((default-directory user-emacs-directory))
-  (add-to-list 'load-path default-directory)
-  (normal-top-level-add-subdirs-to-load-path))
 
 ;; Create various required directories
 ;; FixMe: Is this actually required?
@@ -44,8 +42,8 @@
         (list (concat user-emacs-directory "elpa")
               (concat user-emacs-directory "log")))
 
-;;; Load packages using package
-;; FixMe: Is this required or can we just do the load-dirs
+;; Load private data (that I don't want in Github)
+(load-file "~/Dropbox/private.el")
 
 (load-file (concat emacs-repos-dir "org.el"))
 (load-file (concat emacs-repos-dir "elget.el"))
@@ -54,8 +52,7 @@
 (setq load-dirs (concat emacs-repos-dir "/internal"))
 (load-dirs)
 
-;; FixMe: Rename this file
-(load-file "~/Dropbox/logins.el")
+;; Only reset keybindings after downloading everything
 (load-file (concat emacs-repos-dir "keybindings.el"))
 
 ;;We're finished loading everything now
