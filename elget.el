@@ -43,6 +43,7 @@
         subword
         windmove
         imenu
+        elisp-slime-nav-mode
 
         ;; Emacs editing improvements
         hungry-delete
@@ -158,6 +159,7 @@
 (mapcar 'try-require my-packages)
 
 ;; FixMe: These should be default
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)

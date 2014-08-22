@@ -81,6 +81,7 @@
 (setq delete-old-versions t)
 (setq kept-new-versions 1000)
 (setq kept-old-versions 1000)
+(setq vc-make-backup-files t)
 (setq backup-by-copying t)
 (add-hook 'before-save-hook
           '(lambda ()
@@ -159,6 +160,8 @@
 
 ;; Always revert
 (global-auto-revert-mode t)
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
 
 ;; Windmove - use keys to move windows
 (windmove-default-keybindings 'super)

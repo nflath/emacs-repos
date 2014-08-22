@@ -52,3 +52,105 @@
 (workgroups-mode 1)
 (save-visited-files-mode t)
 (server-start)
+
+
+;; FixMe: Which of these do I want
+;; (defmacro rename-modeline (package-name mode new-name)
+;;   `(eval-after-load ,package-name
+;;      '(defadvice ,mode (after rename-modeline activate)
+;;         (setq mode-name ,new-name))))
+
+;; (rename-modeline "js2-mode" js2-mode "JS2")
+;; (rename-modeline "clojure-mode" clojure-mode "Clj")
+
+;;http://whattheemacsd.com/init.el-04.html
+
+;; (add-hook 'ido-setup-hook
+;;           (lambda ()
+;;             ;; Go straight home
+;;             (define-key ido-file-completion-map
+;;               (kbd "~")
+;;               (lambda ()
+;;                 (interactive)
+;;                 (if (looking-back "/")
+;;                     (insert "~/")
+;;                   (call-interactively 'self-insert-command))))))
+
+
+;; (defun dired-back-to-top ()
+;;   (interactive)
+;;   (beginning-of-buffer)
+;;   (dired-next-line 4))
+
+;; (define-key dired-mode-map
+;;   (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+
+;; (defun dired-jump-to-bottom ()
+;;   (interactive)
+;;   (end-of-buffer)
+;;   (dired-next-line -1))
+
+;; (define-key dired-mode-map
+;;   (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+
+;; (global-set-key (kbd "M-j")
+;;                 (lambda ()
+;;                   (interactive)
+;;                   (join-line -1)))
+
+;; (defun toggle-window-split ()
+;;   (interactive)
+;;   (if (= (count-windows) 2)
+;;       (let* ((this-win-buffer (window-buffer))
+;;              (next-win-buffer (window-buffer (next-window)))
+;;              (this-win-edges (window-edges (selected-window)))
+;;              (next-win-edges (window-edges (next-window)))
+;;              (this-win-2nd (not (and (<= (car this-win-edges)
+;;                                          (car next-win-edges))
+;;                                      (<= (cadr this-win-edges)
+;;                                          (cadr next-win-edges)))))
+;;              (splitter
+;;               (if (= (car this-win-edges)
+;;                      (car (window-edges (next-window))))
+;;                   'split-window-horizontally
+;;                 'split-window-vertically)))
+;;         (delete-other-windows)
+;;         (let ((first-win (selected-window)))
+;;           (funcall splitter)
+;;           (if this-win-2nd (other-window 1))
+;;           (set-window-buffer (selected-window) this-win-buffer)
+;;           (set-window-buffer (next-window) next-win-buffer)
+;;           (select-window first-win)
+;;           (if this-win-2nd (other-window 1))))))
+
+
+;; (defun rename-current-buffer-file ()
+;;   "Renames current buffer and file it is visiting."
+;;   (interactive)
+;;   (let ((name (buffer-name))
+;;         (filename (buffer-file-name)))
+;;     (if (not (and filename (file-exists-p filename)))
+;;         (error "Buffer '%s' is not visiting a file!" name)
+;;       (let ((new-name (read-file-name "New name: " filename)))
+;;         (if (get-buffer new-name)
+;;             (error "A buffer named '%s' already exists!" new-name)
+;;           (rename-file filename new-name 1)
+;;           (rename-buffer new-name)
+;;           (set-visited-file-name new-name)
+;;           (set-buffer-modified-p nil)
+;;           (message "File '%s' successfully renamed to '%s'"
+;;                    name (file-name-nondirectory new-name)))))))
+
+;; (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+
+;; (eval-after-load 'elisp-slime-nav '(diminish 'elisp-slime-nav-mode))
+
+(defun goto-line-with-feedback ()
+  "Show line numbers temporarily, while prompting for the line number input"
+  (interactive)
+  (unwind-protect
+      (progn
+        (linum-mode 1)
+        (goto-line (read-number "Goto line: ")))
+    (linum-mode -1)))
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
