@@ -23,10 +23,6 @@
 (when (file-exists-p "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/local/bin/aspell"))
 
-;;; Add git to our exec-path
-(add-to-list 'exec-path "/usr/local/git/bin")
-(add-to-list 'exec-path "~/bin")
-
 ;;; Set the load path
 (let ((default-directory user-emacs-directory))
   (add-to-list 'load-path default-directory)

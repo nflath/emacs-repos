@@ -1,6 +1,5 @@
 ;; Customizations for cc-mode
 
-;; FixMe: Export to own package?
 (defun h-file-create ()
   "Create a new h file.  Insert a infdef/define/endif block"
   (if (or (equal (substring (buffer-file-name (current-buffer)) -2 ) ".h")
@@ -18,7 +17,6 @@
           (next-line 2)))))
 (add-hook 'c++-mode-hook 'h-file-create)
 (add-hook 'c-mode-hook 'h-file-create)
-;; FixMe: End package
 
 (defun set-compile-command ()
   "Sets the compile command to a sensible default if no makefile is found."
@@ -60,7 +58,3 @@
       (search-forward "\n\n")
       (insert "class " (capitalize class) ";\n\n"))))
 ;; FixMe: End package
-
-;; FixMe: Are these defaults?
-(add-hook 'c-mode-common-hook (lambda () (c-toggle-syntactic-indentation 1)))
-(add-hook 'c-mode-common-hook (lambda () (c-toggle-electric-state 1)))

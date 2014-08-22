@@ -158,6 +158,7 @@
 (mapcar 'try-require my-packages)
 
 ;; FixMe: These should be default
+
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
