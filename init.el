@@ -1,3 +1,4 @@
+;; FixMe: Add filtering to ido
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
@@ -31,12 +32,6 @@
 ;;; Set a few paths in order to determine where everything is
 (setq emacs-repos-dir "~/Dropbox/emacs-repos/")
 (defvar org-directory "~/Dropbox/org/" "Location of org files")
-
-;; Create various required directories
-;; FixMe: Is this actually required?
-(mapcar (lambda (dir) (mkdir dir t))
-        (list (concat user-emacs-directory "elpa")
-              (concat user-emacs-directory "log")))
 
 ;; Load private data (that I don't want in Github)
 (load-file "~/Dropbox/private.el")

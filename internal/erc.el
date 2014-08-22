@@ -1,5 +1,8 @@
 ;; The following gives a visual indication of a disconnected channel by making
 ;; the header line red.
+(add-to-list 'erc-modules 'log)
+(erc-update-modules)
+
 (defface erc-header-line-disconnected
   '((t (:foreground "black" :background "indianred")))
   "Face to use when ERC has been disconnected.")
@@ -15,6 +18,7 @@
 ;; following makes sure to always keep logs up-to-date and saved.
 (setq erc-log-channels-directory "~/.emacs.d/logs/")
 (setq erc-save-buffer-on-part t)
+
 (setq erc-save-queries-on-quit nil
       erc-log-write-after-send t
       erc-log-write-after-insert t)
