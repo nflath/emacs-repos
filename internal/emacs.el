@@ -123,6 +123,18 @@
 (ido-everywhere t)
 (setq ido-default-buffer-method 'selected-window)
 
+;; FixMe: Export to own package
+(add-hook 'ido-setup-hook
+          (lambda ()
+            ;; Go straight home
+            (define-key ido-file-completion-map
+              (kbd "~")
+              (lambda ()
+                (interactive)
+                (if (looking-back "/")
+                    (insert "~/")
+                  (call-interactively 'self-insert-command))))))
+
 ;; Turn abbrev mode on
 (setq only-global-abbrevs nil)
 (setq-default abbrev-mode t)
