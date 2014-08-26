@@ -1,7 +1,5 @@
 ;;; Customizations for shell-mode
 
-(if (= 0 (shell-command "zsh")) (setq explicit-shell-file-name "/bin/zsh"))
-
 ;; Shell-mode doesn't colorize your output by default; instead, it inserts the
 ;; control codes into your buffer.  This turns on colorization.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -14,9 +12,7 @@
 (defun shell-mode-start-dirtrack ()
   "Changes to the correct prompt"
   (shell-dirtrack-mode -1)
-  (if (= 0 (shell-command "zsh"))
-      (comint-send-string (current-buffer) "export PS1=\"nflath@\%d$ \"\n")
-    (comint-send-string (current-buffer) "export PS1=\"nflath@\\w$ \"\n"))
+  (comint-send-string (current-buffer) "export PS1=\"nflath@\\w$ \"\n")
   (dirtrack-mode 1))
 (add-hook 'shell-mode-hook 'shell-mode-start-dirtrack)
 

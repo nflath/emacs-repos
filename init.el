@@ -1,3 +1,4 @@
+;; FixMe: .h files open in c++-mode under some circumstances?
 ;; FixMe: Add filtering to ido
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: Get better fontification for org-mode
