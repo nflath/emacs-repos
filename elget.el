@@ -98,6 +98,7 @@
         imgur
         google-contacts
         marmalade-upload
+        calc
 
         ;; Communication
         jabber

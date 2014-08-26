@@ -13,13 +13,6 @@
 (require 'cc-mode)
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
 
-;; FixMe: This should not be required
-(setq calc-multiplication-has-precedence t)
-
-;; FixMe: Are these required?
-(setq-default case-fold-search t)
-(setq-default debug-on-error t)
-
 ;; FixMe: Should be somewhere else.
 (when (file-exists-p "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/local/bin/aspell"))
