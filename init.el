@@ -1,5 +1,7 @@
+;; FixMe: Skeleton files
+;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
-;; FixMe: Jump-dls auto-gnerates tags and imenu
+;; FixMe: Jump-dls auto-genrates tags and imenu
 ;; FixMe: .h files open in c++-mode under some circumstances?
 ;; FixMe: Add filtering to ido
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
@@ -9,6 +11,7 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
 ;; FixMe: Allow @-1 in org-tables
+;; FixMe: Autocomplete
 
 (setq mac-command-modifier `meta)
 

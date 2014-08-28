@@ -63,6 +63,7 @@
         wdired
         dired-x
         dired-aux
+        dired-nav-enhance
 
         ;; Shell-mode enhancements
         comint-better-defaults
