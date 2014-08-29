@@ -57,6 +57,7 @@
         org-table-comment
         auto-indent-mode
         flymake
+        fixme-mode
 
         ;; Dired enhancements
         dired
