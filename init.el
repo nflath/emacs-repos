@@ -11,7 +11,9 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
 ;; FixMe: Allow @-1 in org-tables
-;; FixMe: Autocomplete
+;; FixMe: Autocomplete - company-mode?
+;; FixMe: CEDET
+;; FixMe: function-args https://github.com/abo-abo/function-args
 
 (setq mac-command-modifier `meta)
 

@@ -161,9 +161,7 @@
 (mapcar 'try-package-install my-packages)
 (mapcar 'try-require my-packages)
 
-;; FixMe: These should be default
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
-
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
@@ -174,7 +172,6 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (setq htmlize-html-major-mode 'html-mode)
 (paren-activate)
-
 (setq js2-bounce-indent-p t)
 (setq js2-highlight-level 3)
 (setq markdown-enable-math t)
