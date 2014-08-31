@@ -44,6 +44,7 @@
         windmove
         imenu
         elisp-slime-nav-mode
+        isearch-switch
 
         ;; Emacs editing improvements
         hungry-delete
