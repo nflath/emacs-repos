@@ -13,7 +13,6 @@
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: Autocomplete - company-mode?
 ;; FixMe: CEDET
-;; FixMe: function-args https://github.com/abo-abo/function-args
 
 (setq mac-command-modifier `meta)
 
