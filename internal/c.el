@@ -34,7 +34,6 @@
 (add-hook 'c-mode-hook 'set-compile-command)
 (add-hook 'c++-mode-hook 'set-compile-command)
 
-;; FixMe: Export to package?
 (defun c-include (include)
   "Includes a header file in the current file."
   (interactive (list (read-string (concat "Include file <" (current-word) ">: "))))
@@ -57,4 +56,3 @@
         (insert (concat "\nclass " (capitalize class) ";"))
       (search-forward "\n\n")
       (insert "class " (capitalize class) ";\n\n"))))
-;; FixMe: End package
