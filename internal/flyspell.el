@@ -6,7 +6,6 @@
   (add-hook 'LaTeX-mode-hook 'turn-on-flyspell-mode)
   (add-hook 'plain-tex-mode-hook 'turn-on-flyspell-mode))
 
-;; FixMe: Add to own package
 (defadvice ispell-command-loop (before ispell-reverse-miss-list activate)
   "reverse the first argument to ispell-command-loop"
   (ad-set-arg 0 (reverse (ad-get-arg 0))))
