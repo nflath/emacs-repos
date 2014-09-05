@@ -1,7 +1,5 @@
 ;;; Collection of utility functions for interactive use
 
-;; FixMe: Can any of these be exported to own pacakges
-
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill. This function directly calls
 kill-line, so see documentation of kill-line for how to use it including prefix
@@ -22,6 +20,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
     (move-beginning-of-line 1)
     (copy-line arg)))
 
+;; FixMe: Export to package
 (defun move-line (n)
   "Move the current line up or down by N lines."
   (interactive "p")
@@ -49,7 +48,9 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   "Move the current line down by N lines."
   (interactive "p")
   (move-line (if (null n) 1 n)))
+;; FixMe: End package
 
+;; FixMe: Export to package
 (defun help-anything ()
   "If function given tries to `describe-function' if variable
 uses 'describe-variable', otherwise uses `manual-entry' to display
@@ -63,6 +64,7 @@ manpage of a `current-word'."
      ((and (eq major-mode 'java-mode) (fboundp java-describe-class))
       (java-describe-class (current-word)))
      (t (man (current-word))))))
+;; FixMe: End package
 
 (defun google (query)
   "googles a query"
@@ -94,6 +96,7 @@ manpage of a `current-word'."
   (interactive)
   (tabify (point-min) (point-max)))
 
+;; FixMe: Export to package
 (defun increment-number-decimal (&optional arg)
   "Increment the number forward from point by 'arg'."
   (interactive "p*")
@@ -141,6 +144,20 @@ manpage of a `current-word'."
       (setq width (1- width)))
     result))
 
+(defun ++ ()
+  "Increment the number (in base 10 representation) at point."
+  (interactive)
+  (add 1))
+
+(defun mul (amt)
+  "Multiply the number (in base 10 representation) at point."
+  (interactive "nAmount to multiply by: ")
+  (if (looking-at "[-0-9.]+")
+      (progn
+        (let ((num (car (read-from-string (buffer-substring (match-beginning 0) (match-end 0))))))
+          (delete-region (match-beginning 0) (match-end 0))
+          (insert (format "%f" (* num amt)))))))
+
 (defun increment-number-binary (&optional arg)
   "Increment the number forward from point by 'arg'."
   (interactive "p*")
@@ -155,6 +172,7 @@ manpage of a `current-word'."
           (when (< answer 0)
             (setq answer (+ (expt 2 field-width) answer)))
           (replace-match (format-bin answer field-width)))))))
+;;; FixMe: End package
 
 (defun swap-windows ()
   "If you have 2 windows, it swaps them."
@@ -173,6 +191,7 @@ manpage of a `current-word'."
       (set-window-start w1 s2)
       (set-window-start w2 s1)))))
 
+;;; FixMe: Export to package
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
@@ -204,6 +223,7 @@ manpage of a `current-word'."
         (delete-file filename)
         (set-visited-file-name newname)
         (set-buffer-modified-p nil)     t))))
+;; End package
 
 (defun prev-window (&optional arg)
   "Go to the previous window displayed."
@@ -350,20 +370,6 @@ file of a buffer in an external program."
           (setq num (+ num amt))
           (insert (format (if (< (abs (- num (round num))) 0.001) "%.0f" "%.2f") num))))))
 
-(defun ++ ()
-  "Increment the number (in base 10 representation) at point."
-  (interactive)
-  (add 1))
-
-(defun mul (amt)
-  "Multiply the number (in base 10 representation) at point."
-  (interactive "nAmount to multiply by: ")
-  (if (looking-at "[-0-9.]+")
-      (progn
-        (let ((num (car (read-from-string (buffer-substring (match-beginning 0) (match-end 0))))))
-          (delete-region (match-beginning 0) (match-end 0))
-          (insert (format "%f" (* num amt)))))))
-
 (defun shell-current-directory ()
   "Opens a shell in the current directory"
   (interactive)
@@ -391,6 +397,7 @@ file of a buffer in an external program."
         (insert "+ \""))
     (newline-and-indent)))
 
+;; FixMe: Export to package
 (defun sudo-edit (&optional arg)
   "Find a file and open it as root."
   (interactive "p")
@@ -404,6 +411,7 @@ file of a buffer in an external program."
   (let ((pos (point)))
     (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
     (goto-char pos)))
+;; FixMe: End
 
 (defun try-require (pkg)
   (condition-case  nil
