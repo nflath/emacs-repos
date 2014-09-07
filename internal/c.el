@@ -56,3 +56,5 @@
         (insert (concat "\nclass " (capitalize class) ";"))
       (search-forward "\n\n")
       (insert "class " (capitalize class) ";\n\n"))))
+
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
