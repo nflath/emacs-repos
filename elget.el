@@ -51,6 +51,7 @@
         recursive-narrow
         smart-whitespace-comment-fixup
         abbrev
+        move-line
 
         ;; General programming utilities
         java-file-create
