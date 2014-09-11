@@ -89,6 +89,7 @@
         python
 
         ;; General utility functions
+        exec-path-from-shell
         dedicated
         unbound
         loccur

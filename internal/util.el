@@ -66,84 +66,6 @@ manpage of a `current-word'."
   (interactive)
   (tabify (point-min) (point-max)))
 
-;; FixMe: Export to package
-(defun increment-number-decimal (&optional arg)
-  "Increment the number forward from point by 'arg'."
-  (interactive "p*")
-  (save-excursion
-    (save-match-data
-      (let (inc-by field-width answer)
-        (setq inc-by (if arg arg 1))
-        (skip-chars-backward "0123456789")
-        (when (re-search-forward "[0-9]+" nil t)
-          (setq field-width (- (match-end 0) (match-beginning 0)))
-          (setq answer (+ (string-to-number (match-string 0) 10) inc-by))
-          (when (< answer 0)
-            (setq answer (+ (expt 10 field-width) answer)))
-          (replace-match (format (concat "%0" (int-to-string field-width) "d")
-                                 answer)))))))
-
-(defun increment-number-hexadecimal (&optional arg)
-  "Increment the number forward from point by 'arg'."
-  (interactive "p*")
-  (save-excursion
-    (save-match-data
-      (let (inc-by field-width answer hex-format)
-        (setq inc-by (if arg arg 1))
-        (skip-chars-backward "0123456789abcdefABCDEF")
-        (when (re-search-forward "[0-9a-fA-F]+" nil t)
-          (setq field-width (- (match-end 0) (match-beginning 0)))
-          (setq answer (+ (string-to-number (match-string 0) 16) inc-by))
-          (when (< answer 0)
-            (setq answer (+ (expt 16 field-width) answer)))
-          (if (equal (match-string 0) (upcase (match-string 0)))
-              (setq hex-format "X")
-            (setq hex-format "x"))
-          (replace-match (format (concat "%0" (int-to-string field-width)
-                                         hex-format)
-                                 answer)))))))
-
-(defun format-bin (val width)
-  "Convert a number to a binary string."
-  (let (result)
-    (while (> width 0)
-      (if (equal (mod val 2) 1)
-          (setq result (concat "1" result))
-        (setq result (concat "0" result)))
-      (setq val (/ val 2))
-      (setq width (1- width)))
-    result))
-
-(defun ++ ()
-  "Increment the number (in base 10 representation) at point."
-  (interactive)
-  (add 1))
-
-(defun mul (amt)
-  "Multiply the number (in base 10 representation) at point."
-  (interactive "nAmount to multiply by: ")
-  (if (looking-at "[-0-9.]+")
-      (progn
-        (let ((num (car (read-from-string (buffer-substring (match-beginning 0) (match-end 0))))))
-          (delete-region (match-beginning 0) (match-end 0))
-          (insert (format "%f" (* num amt)))))))
-
-(defun increment-number-binary (&optional arg)
-  "Increment the number forward from point by 'arg'."
-  (interactive "p*")
-  (save-excursion
-    (save-match-data
-      (let (inc-by field-width answer)
-        (setq inc-by (if arg arg 1))
-        (skip-chars-backward "01")
-        (when (re-search-forward "[0-1]+" nil t)
-          (setq field-width (- (match-end 0) (match-beginning 0)))
-          (setq answer (+ (string-to-number (match-string 0) 2) inc-by))
-          (when (< answer 0)
-            (setq answer (+ (expt 2 field-width) answer)))
-          (replace-match (format-bin answer field-width)))))))
-;;; FixMe: End package
-
 (defun swap-windows ()
   "If you have 2 windows, it swaps them."
   (interactive)
@@ -329,16 +251,6 @@ file of a buffer in an external program."
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
-
-(defun add (amt)
-  "Increment the number (in base 10 representation) at point."
-  (interactive "nAmount to add: ")
-  (if (looking-at "[-0-9.]+")
-      (progn
-        (let ((num (car (read-from-string (buffer-substring (match-beginning 0) (match-end 0))))))
-          (delete-region (match-beginning 0) (match-end 0))
-          (setq num (+ num amt))
-          (insert (format (if (< (abs (- num (round num))) 0.001) "%.0f" "%.2f") num))))))
 
 (defun shell-current-directory ()
   "Opens a shell in the current directory"

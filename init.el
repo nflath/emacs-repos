@@ -1,3 +1,4 @@
+;; FixMe: M-q doesn't work in org-mode
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
@@ -51,3 +52,7 @@
 (workgroups-mode 1)
 (save-visited-files-mode t)
 (server-start)
+
+;; FixMe: Should be elsewhere
+(add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
+(exec-path-from-shell-initialize)
