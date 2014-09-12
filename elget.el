@@ -90,6 +90,7 @@
 
         ;; General utility functions
         exec-path-from-shell
+        sudo-edit
         dedicated
         unbound
         loccur

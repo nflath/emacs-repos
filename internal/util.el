@@ -279,22 +279,6 @@ file of a buffer in an external program."
         (insert "+ \""))
     (newline-and-indent)))
 
-;; FixMe: Export to package
-(defun sudo-edit (&optional arg)
-  "Find a file and open it as root."
-  (interactive "p")
-  (if arg
-      (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
-    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
-(defun sudo-edit-current-file ()
-  "Edit the current file as root."
-  (interactive)
-  (let ((pos (point)))
-    (find-alternate-file (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
-    (goto-char pos)))
-;; FixMe: End
-
 (defun try-require (pkg)
   (condition-case  nil
       (require pkg)
