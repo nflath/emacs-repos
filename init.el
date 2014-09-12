@@ -1,4 +1,3 @@
-;; FixMe: M-q doesn't work in org-mode
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
