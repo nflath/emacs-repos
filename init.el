@@ -1,3 +1,4 @@
+;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?

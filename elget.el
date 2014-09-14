@@ -18,6 +18,7 @@
         zenburn-theme
         mic-paren
         rainbow-delimiters
+        highlight-symbol
         highlight-parentheses
         icomplete+
         scratch-persist
@@ -28,6 +29,8 @@
         save-visited-files
         ibuffer
         uniquify
+        smart-mode-line
+        browse-kill-ring
 
         ;; Emacs navigation improvements
         winpoint
@@ -180,3 +183,6 @@
 (setq js2-highlight-level 3)
 (setq markdown-enable-math t)
 (setq wgrep-enable-key "q")
+(sml/setup)
+(setq browse-kill-ring-highlight-current-entry t)
+(global-anzu-mode +1)
