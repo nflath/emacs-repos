@@ -123,7 +123,6 @@
 (ido-everywhere t)
 (setq ido-default-buffer-method 'selected-window)
 
-;; FixMe: Export to own package
 (add-hook 'ido-setup-hook
           (lambda ()
             ;; Go straight home
