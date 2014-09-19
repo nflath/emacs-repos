@@ -150,7 +150,6 @@
         keywiz
         ))
 ;;; Download and require all packages
-
 (setq failed-requires ())
 (defun try-require (sym)
   (condition-case nil
@@ -168,7 +167,8 @@
 (mapcar 'try-package-install my-packages)
 (mapcar 'try-require my-packages)
 
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
+;; FixMe: Why does this not work
+;;(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
@@ -185,4 +185,5 @@
 (setq wgrep-enable-key "q")
 (sml/setup)
 (setq browse-kill-ring-highlight-current-entry t)
-(global-anzu-mode +1)
+;; FixMe: why isn't this working
+; (global-anzu-mode +1)

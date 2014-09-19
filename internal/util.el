@@ -20,7 +20,6 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
     (move-beginning-of-line 1)
     (copy-line arg)))
 
-;; FixMe: Export to package
 (defun help-anything ()
   "If function given tries to `describe-function' if variable
 uses 'describe-variable', otherwise uses `manual-entry' to display
