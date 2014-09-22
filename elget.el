@@ -1,5 +1,5 @@
 ;;; Installs all the packages I rely on
-
+s
 ;;; Ensure that all ELPA repositories are available
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -17,6 +17,7 @@
         color-theme
         zenburn-theme
         mic-paren
+        dirtrack-buffer-name-track-mode
         rainbow-delimiters
         highlight-symbol
         highlight-parentheses
