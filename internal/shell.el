@@ -10,14 +10,6 @@
 (when (eq window-system 'w32)
   (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1)))
 
-(defun shell-mode-start-dirtrack ()
-  "Changes to the correct prompt"
-  (shell-dirtrack-mode -1)
-  (comint-send-string (current-buffer) "export PS1=\"nflath@\\w$ \"\n")
-  (dirtrack-mode 1))
-
-(add-hook 'shell-mode-hook 'shell-mode-start-dirtrack)
-
 ;; Dirtrack forces the prompt to contain the full working directory, but this
 ;; sometimes causes the prompt to be too long.  The following code will cause
 ;; your prompt to only contain the last 40 characters of the current directory.
