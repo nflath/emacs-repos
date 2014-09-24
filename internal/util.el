@@ -33,7 +33,6 @@ manpage of a `current-word'."
      ((and (eq major-mode 'java-mode) (fboundp java-describe-class))
       (java-describe-class (current-word)))
      (t (man (current-word))))))
-;; FixMe: End package
 
 (defun google (query)
   "googles a query"

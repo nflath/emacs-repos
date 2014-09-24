@@ -5,8 +5,6 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (setq-default dirtrack-list '("[a-zA-Z]*@\\([^$ \t\r\n]*\\)\\$ " 1))
-
-;; FixMe: This should be in .bashrc
 (when (eq window-system 'w32)
   (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1)))
 
