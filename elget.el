@@ -1,5 +1,5 @@
 ;;; Installs all the packages I rely on
-s
+
 ;;; Ensure that all ELPA repositories are available
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -56,6 +56,9 @@ s
         smart-whitespace-comment-fixup
         abbrev
         move-line
+        company
+        company-c-headers
+        company-go
 
         ;; General programming utilities
         java-file-create
@@ -186,5 +189,6 @@ s
 (setq wgrep-enable-key "q")
 (sml/setup)
 (setq browse-kill-ring-highlight-current-entry t)
+(add-hook 'after-init-hook 'global-company-mode)
 ;; FixMe: why isn't this working
 ; (global-anzu-mode +1)

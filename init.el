@@ -11,7 +11,6 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: which-function in C++
 ;; FixMe: Allow @-1 in org-tables
-;; FixMe: Autocomplete - company-mode?
 ;; FixMe: CEDET
 
 (setq mac-command-modifier `meta)
