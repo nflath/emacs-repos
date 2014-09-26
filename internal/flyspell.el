@@ -19,4 +19,7 @@
   (ispell-send-string (concat "*" word "\n"))
   (ispell-send-string "#\n"))
 
+(when (file-exists-p "/usr/local/bin/aspell")
+  (setq-default ispell-program-name "/usr/local/bin/aspell"))
+
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)

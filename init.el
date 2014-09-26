@@ -20,10 +20,6 @@
 (require 'cc-mode)
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
 
-;; FixMe: Should be somewhere else.
-(when (file-exists-p "/usr/local/bin/aspell")
-  (setq-default ispell-program-name "/usr/local/bin/aspell"))
-
 ;;; Set the load path
 (let ((default-directory user-emacs-directory))
   (add-to-list 'load-path default-directory)
@@ -53,6 +49,5 @@
 (save-visited-files-mode t)
 (server-start)
 
-;; FixMe: Should be elsewhere
 (add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
 (exec-path-from-shell-initialize)
