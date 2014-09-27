@@ -212,3 +212,92 @@
 
 ;; Always grab locks
 (defun ask-user-about-lock (FILE OPPONENT) t)
+
+
+(add-hook 'find-file-hook (lambda () (make-directory default-directory t) ))
+
+
+(defun after-find-file (&optional error warn noauto
+                                  _after-find-file-from-revert-buffer
+                                  nomodes)
+  "Called after finding a file and by the default revert function.
+Sets buffer mode, parses local variables.
+Optional args ERROR, WARN, and NOAUTO: ERROR non-nil means there was an
+error in reading the file.  WARN non-nil means warn if there
+exists an auto-save file more recent than the visited file.
+NOAUTO means don't mess with auto-save mode.
+Fourth arg AFTER-FIND-FILE-FROM-REVERT-BUFFER is ignored
+\(see `revert-buffer-in-progress-p' for similar functionality).
+Fifth arg NOMODES non-nil means don't alter the file's modes.
+Finishes by calling the functions in `find-file-hook'
+unless NOMODES is non-nil."
+  (setq buffer-read-only (not (file-writable-p buffer-file-name)))
+  (if noninteractive
+      nil
+    (let* (not-serious
+           (msg
+            (cond
+             ((not warn) nil)
+             ((and error (file-attributes buffer-file-name))
+              (setq buffer-read-only t)
+              (if (and (file-symlink-p buffer-file-name)
+                       (not (file-exists-p
+                             (file-chase-links buffer-file-name))))
+                  "Symbolic link that points to nonexistent file"
+                "File exists, but cannot be read"))
+             ((not buffer-read-only)
+              (if (and warn
+                       ;; No need to warn if buffer is auto-saved
+                       ;; under the name of the visited file.
+                       (not (and buffer-file-name
+                                 auto-save-visited-file-name))
+                       (file-newer-than-file-p (or buffer-auto-save-file-name
+                                                   (make-auto-save-file-name))
+                                               buffer-file-name))
+                  (format "%s has auto save data; consider M-x recover-this-file"
+                          (file-name-nondirectory buffer-file-name))
+                (setq not-serious t)
+                (if error "(New file)" nil)))
+             ((not error)
+              (setq not-serious t)
+              "Note: file is write protected")
+             ((file-attributes (directory-file-name default-directory))
+              "File not found and directory write-protected")
+             ((file-exists-p (file-name-directory buffer-file-name))
+              (setq buffer-read-only nil))
+             (t
+              (setq buffer-read-only nil)
+              ))))
+      (when msg
+        (message "%s" msg)
+        (or not-serious (sit-for 1 t))))
+    (when (and auto-save-default (not noauto))
+      (auto-save-mode 1)))
+  ;; Make people do a little extra work (C-x C-q)
+  ;; before altering a backup file.
+  (when (backup-file-name-p buffer-file-name)
+    (setq buffer-read-only t))
+  ;; When a file is marked read-only,
+  ;; make the buffer read-only even if root is looking at it.
+  (when (and (file-modes (buffer-file-name))
+             (zerop (logand (file-modes (buffer-file-name)) #o222)))
+    (setq buffer-read-only t))
+  (unless nomodes
+    (when (and view-read-only view-mode)
+      (view-mode-disable))
+    (normal-mode t)
+    ;; If requested, add a newline at the end of the file.
+    (and (memq require-final-newline '(visit visit-save))
+         (> (point-max) (point-min))
+         (/= (char-after (1- (point-max))) ?\n)
+         (not (and (eq selective-display t)
+                   (= (char-after (1- (point-max))) ?\r)))
+         (not buffer-read-only)
+         (save-excursion
+           (goto-char (point-max))
+           (ignore-errors (insert "\n"))))
+    (when (and buffer-read-only
+               view-read-only
+               (not (eq (get major-mode 'mode-class) 'special)))
+      (view-mode-enter))
+    (run-hooks 'find-file-hook)))
