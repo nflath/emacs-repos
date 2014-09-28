@@ -9,7 +9,6 @@
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Python auto-indentation is broken
 ;; FixMe: Make ERC readable
-;; FixMe: which-function in C++
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: CEDET
 
