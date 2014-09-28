@@ -57,4 +57,8 @@
       (search-forward "\n\n")
       (insert "class " (capitalize class) ";\n\n"))))
 
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (which-function-mode t)))
+
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
