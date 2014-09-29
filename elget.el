@@ -96,6 +96,7 @@
         python
 
         ;; General utility functions
+        org-publish-agenda
         exec-path-from-shell
         sudo-edit
         dedicated

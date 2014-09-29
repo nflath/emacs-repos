@@ -117,9 +117,10 @@
   (save-window-excursion
     (mapcar (lambda (file)
               (find-file file)
-              (org-export-as-html 3)
+              (org-html-export-as-html)
+              (write-file (replace-regexp-in-string "\\.org" ".html" file))
               (kill-buffer))
-            (org-agenda-files))
+            (org-agenda-files) ))
     (org-agenda 0 "a")
     (org-agenda-month-view)
     (let ((html-buffer (htmlize-buffer (get-buffer "*Org Agenda*")))
@@ -155,7 +156,7 @@
       (write-file (concat (car org-agenda-files) "agenda.html"))
       (let ((default-directory (car org-agenda-files)))
         (shell-command "mv *.html publish/" nil)
-        (kill-buffer "agenda.html")))))
+        (kill-buffer "agenda.html"))))
 
 ;; FixMe: End package
 

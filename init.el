@@ -1,4 +1,6 @@
 ;; FixMe: highlight-symbol-at-point customization
+;; FixMe: Sum-column work with decimals
+;; FixMe: Sum-column work if last lines in file
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
@@ -11,6 +13,8 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: CEDET
+;; FixMe: Get jump-dls to prompt if no matches found
+;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 
 (setq mac-command-modifier `meta)
 
