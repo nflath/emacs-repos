@@ -97,6 +97,7 @@
 
         ;; General utility functions
         org-publish-agenda
+        buffer-file-utils
         exec-path-from-shell
         sudo-edit
         dedicated
