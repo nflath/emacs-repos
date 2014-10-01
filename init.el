@@ -1,3 +1,4 @@
+;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Sum-column work with decimals
 ;; FixMe: Checkdoc+flymake in elisp?
@@ -10,7 +11,7 @@
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
-;; FixMe: Python auto-indentation is broken
+;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: CEDET

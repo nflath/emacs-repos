@@ -1,3 +1,6 @@
+(when (file-exists-p "/usr/local/bin/aspell")
+  (setq-default ispell-program-name "/usr/local/bin/aspell"))
+
 ;; Configures flyspell, a spell checker
 (when (= 0 (shell-command ispell-program-name))
   (add-hook 'text-mode-hook 'turn-on-flyspell-mode)
@@ -19,7 +22,5 @@
   (ispell-send-string (concat "*" word "\n"))
   (ispell-send-string "#\n"))
 
-(when (file-exists-p "/usr/local/bin/aspell")
-  (setq-default ispell-program-name "/usr/local/bin/aspell"))
 
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)

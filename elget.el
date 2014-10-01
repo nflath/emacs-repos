@@ -173,8 +173,9 @@
 (mapcar 'try-package-install my-packages)
 (mapcar 'try-require my-packages)
 
-;; FixMe: Why does this not work
-;;(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
+(require 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
+
 (global-rainbow-delimiters-mode)
 (global-hungry-delete-mode)
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
