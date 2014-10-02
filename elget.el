@@ -193,5 +193,6 @@
 (sml/setup)
 (setq browse-kill-ring-highlight-current-entry t)
 (add-hook 'after-init-hook 'global-company-mode)
-;; FixMe: why isn't this working
-; (global-anzu-mode +1)
+
+(require 'anzu)
+(global-anzu-mode +1)

@@ -1,3 +1,6 @@
+;; FixMe: Loading a theme can run lisp code prompt
+;; FixMe: exec-path-from-shell variable warning
+;; FixMe: saving doesn't delete trailing whitespace after '*' in org-mode
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Sum-column work with decimals
@@ -54,4 +57,6 @@
 (server-start)
 
 (add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
+;; FixMe: Get tac-mode here
+(add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
 (exec-path-from-shell-initialize)
