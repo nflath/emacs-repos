@@ -1,5 +1,4 @@
 ;; FixMe: Loading a theme can run lisp code prompt
-;; FixMe: exec-path-from-shell variable warning
 ;; FixMe: saving doesn't delete trailing whitespace after '*' in org-mode
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
@@ -22,6 +21,8 @@
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 
 (setq mac-command-modifier `meta)
+(setq enable-local-eval t)
+(setq enable-local-variables :all)
 
 ;; FixMe: This should not be required
 (require 'cc-mode)
