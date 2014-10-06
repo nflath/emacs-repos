@@ -1,4 +1,3 @@
-;; FixMe: Loading a theme can run lisp code prompt
 ;; FixMe: saving doesn't delete trailing whitespace after '*' in org-mode
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
@@ -19,6 +18,8 @@
 ;; FixMe: CEDET
 ;; FixMe: Get jump-dls to prompt if no matches found
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
+
+(defun custom-theme-load-confirm (hash) t)
 
 (setq mac-command-modifier `meta)
 (setq enable-local-eval t)
