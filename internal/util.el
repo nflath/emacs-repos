@@ -172,9 +172,9 @@ character of the current line."
       (while (not
               (looking-at "^[ \t]*$"))
         (move-to-column old-column t)
-        (if (and (looking-at "-?[0123456789]+")
+        (if (and (looking-at "-?[0123456789]+\\.[0123456789]+")
                  (eq (current-column) old-column))
-            (setq retn (+ retn (string-to-number (current-word)))))
+            (setq retn (+ retn (string-to-number (buffer-substring (match-beginning 0) (match-end 0))))))
         (next-line)
         (beginning-of-line))
       (next-line)

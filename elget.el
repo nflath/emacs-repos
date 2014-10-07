@@ -196,4 +196,3 @@
 
 (require 'anzu)
 (global-anzu-mode +1)
-(global-rainbow-delimiters-mode nil)

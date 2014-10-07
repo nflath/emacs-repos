@@ -1,7 +1,6 @@
 ;; FixMe: saving doesn't delete trailing whitespace after '*' in org-mode
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
-;; FixMe: Sum-column work with decimals
 ;; FixMe: Checkdoc+flymake in elisp?
 ;; FixMe: Sum-column work if last lines in file
 ;; FixMe: Skeleton files
