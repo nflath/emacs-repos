@@ -2,7 +2,6 @@
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Checkdoc+flymake in elisp?
-;; FixMe: Sum-column work if last lines in file
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
