@@ -33,7 +33,7 @@
 (setq diff-switches "-u")
 (global-reveal-mode nil)
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook (lambda () (if (not (eq major-mode 'org-mode)) (delete-trailing-whitespace))))
 
 ;;History features
 (setq save-place-file "~/.emacs.d/.saveplace")
