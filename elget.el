@@ -61,6 +61,7 @@
         company-go
 
         ;; General programming utilities
+        flycheck
         java-file-create
         guess-offset
         org-table-comment
@@ -193,6 +194,6 @@
 (sml/setup)
 (setq browse-kill-ring-highlight-current-entry t)
 (add-hook 'after-init-hook 'global-company-mode)
-
+(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
 (require 'anzu)
 (global-anzu-mode +1)

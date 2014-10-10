@@ -273,3 +273,13 @@ known that the table will be realigned a little later anyway."
         (org-table-goto-column thiscol)
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
+(current-time)
+
+
+(progn
+  (setq start (current-time))
+  (let ((row 0) (log (time-add (current-time) '(0 1 0 0))))
+    (while (< row 6543210)
+      (setq row (1+ row))))
+  (setq end (current-time))
+  (print (time-subtract end start)))

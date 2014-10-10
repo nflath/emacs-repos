@@ -1,7 +1,6 @@
-;; FixMe: saving doesn't delete trailing whitespace after '*' in org-mode
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
-;; FixMe: Checkdoc+flymake in elisp?
+;; FixMe: Automatically Checkdoc?
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Save-visited-files not working?
@@ -16,7 +15,7 @@
 ;; FixMe: CEDET
 ;; FixMe: Get jump-dls to prompt if no matches found
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
-
+;; FixMe: Have flycheck messages override eldoc messages
 (defun custom-theme-load-confirm (hash) t)
 
 (setq mac-command-modifier `meta)
