@@ -1,4 +1,5 @@
 ;; FixMe: Eldoc running in python
+;; FixMe: flucheck in other modes?
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Automatically Checkdoc?
 ;; FixMe: Skeleton files
