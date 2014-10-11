@@ -4,6 +4,7 @@
 ;; Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))
+(setq org-agenda-files (list "~/Dropbox/org"))
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
@@ -273,13 +274,5 @@ known that the table will be realigned a little later anyway."
         (org-table-goto-column thiscol)
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
+
 (current-time)
-
-
-(progn
-  (setq start (current-time))
-  (let ((row 0) (log (time-add (current-time) '(0 1 0 0))))
-    (while (< row 6543210)
-      (setq row (1+ row))))
-  (setq end (current-time))
-  (print (time-subtract end start)))

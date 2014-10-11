@@ -318,3 +318,12 @@ matches any regexp in the list."
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
+
+(defmacro time (block)
+  `(let (start end)
+    (setq start (current-time))
+    ,block
+    (setq end (current-time))
+    (print (time-subtract end start))))
+
+(macroexpand '(time (print "hi")))

@@ -1,5 +1,4 @@
 ;; FixMe: Eldoc running in python
-;; FixMe: flucheck in other modes?
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Automatically Checkdoc?
 ;; FixMe: Skeleton files
@@ -58,5 +57,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
 ;; FixMe: Get tac-mode here
+
 (add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
 (exec-path-from-shell-initialize)
