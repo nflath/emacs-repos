@@ -1,9 +1,8 @@
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
-;; FixMe: Automatically Checkdoc?
+;; FixMe: Automatically Checkdoc
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
-;; FixMe: Save-visited-files not working?
 ;; FixMe: Jump-dls auto-genrates tags and imenu
 ;; FixMe: Add filtering to ido
 ;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
