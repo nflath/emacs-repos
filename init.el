@@ -5,7 +5,6 @@
 ;; FixMe: snippets
 ;; FixMe: Jump-dls auto-genrates tags and imenu
 ;; FixMe: Add filtering to ido
-;; FixMe: Error message - Can't guess python-indent-offset, using defaults: 4
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
@@ -15,6 +14,21 @@
 ;; FixMe: Get jump-dls to prompt if no matches found
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 ;; FixMe: Have flycheck messages override eldoc messages
+
+;; FixMe: Upgrade to emacs 24
+;; FixMe: Uniquify is enabled by default - can I remove this customization?
+;; FixMe: investigate dired-hide-details-mod
+;; FixMe: electric-indent-mode defaults to true
+;; FixMe: eldoc in messages-buffer-mode
+;; FixMe: (setq load-prefer-newer t)
+;; FixMe: toggle-frame-fullscreen and toggle-frame-maximized are now here
+;; FixMe: just-one-space (currently bound to spotlight key)
+;; FixMe: rectangle-mark-mode instead of CUA?
+;; FixMe: prettify-symbols-mode
+;; FixMe: Use advice-aedd and advice-rermove instead of defadvice
+;; FixMe: org-mode filter by location
+
+
 (defun custom-theme-load-confirm (hash) t)
 
 (setq mac-command-modifier `meta)
@@ -55,7 +69,6 @@
 (server-start)
 
 (add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
-;; FixMe: Get tac-mode here
-
 (add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
+;; FixMe: Get tac mode here
 (exec-path-from-shell-initialize)

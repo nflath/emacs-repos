@@ -35,6 +35,7 @@
 
         ;; Emacs navigation improvements
         winpoint
+        smartscan
         winpoint-ignore-dired
         smooth-scrolling
         jump-dls
@@ -200,3 +201,4 @@
 (add-hook 'python-mode-hook 'flycheck-mode)
 (require 'anzu)
 (global-anzu-mode +1)
+(add-hook 'prog-mode-hook 'smartscan-mode)

@@ -11,3 +11,4 @@
     (insert "self.")))
 
 (setq python-remove-cwd-from-path nil)
+(setq python-indent-guess-indent-offset nil)

@@ -1,7 +1,9 @@
 (blink-cursor-mode -1)
 (show-paren-mode 1)
 (column-number-mode t)
-(setq eval-expression-print-length nil)
+
+(setq eval-expression-print-length nil) ;; FixMe: have this not be true in eldoc and print vars
+
 (display-time-mode t)
 (setq frame-title-format (concat invocation-name "@" system-name ": %b %+%+ %f"))
 (when window-system (global-unset-key "\C-z"))
