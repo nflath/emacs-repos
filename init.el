@@ -4,6 +4,7 @@
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
 ;; FixMe: Jump-dls auto-genrates tags and imenu
+;; FixMe: Jump-back
 ;; FixMe: Add filtering to ido
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
@@ -11,9 +12,9 @@
 ;; FixMe: Make ERC readable
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: CEDET
-;; FixMe: Get jump-dls to prompt if no matches found
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 ;; FixMe: Have flycheck messages override eldoc messages
+;; FixMe: Submit changes to jump-dls.el
 
 ;; FixMe: Upgrade to emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
