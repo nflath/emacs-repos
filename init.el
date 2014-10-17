@@ -3,7 +3,6 @@
 ;; FixMe: Automatically Checkdoc
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
-;; FixMe: Jump-dls auto-refreshes imenu-index
 ;; FixMe: Jump-back
 ;; FixMe: Add filtering to ido
 ;; FixMe: Get better fontification for org-mode
