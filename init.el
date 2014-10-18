@@ -1,9 +1,12 @@
+;;; init.el --- Entry point of my emacs initialization file
+;;; Commentary:
+
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Automatically Checkdoc
 ;; FixMe: Skeleton files
 ;; FixMe: snippets
-;; FixMe: Jump-back
+;; FixMe: Add elisp-slime-nav to jump-jumperrs
 ;; FixMe: Add filtering to ido
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: ( can cause org fontification to break?
@@ -14,8 +17,11 @@
 ;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 ;; FixMe: Have flycheck messages override eldoc messages
 ;; FixMe: Submit changes to jump-dls.el
+;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED
+;; FixMe: Fix everything checkdoc/flycheck occurs
+;; FixMe: Get org-mode to hook into google calendar for events
 
-;; FixMe: Upgrade to emacs 24
+;; FixMe: Upgrade to Emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
 ;; FixMe: investigate dired-hide-details-mod
 ;; FixMe: electric-indent-mode defaults to true
@@ -29,7 +35,10 @@
 ;; FixMe: org-mode filter by location
 
 
-(defun custom-theme-load-confirm (hash) t)
+;;; Code:
+(defun custom-theme-load-confirm (&rest args)
+  "Prevent theme from promting during load.  ARGS is ignored."
+  t)
 
 (setq mac-command-modifier `meta)
 (setq enable-local-eval t)
@@ -45,8 +54,8 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;;; Set a few paths in order to determine where everything is
-(setq emacs-repos-dir "~/Dropbox/emacs-repos/")
-(defvar org-directory "~/Dropbox/org/" "Location of org files")
+(defvar emacs-repos-dir "~/Dropbox/emacs-repos/")
+(defvar org-directory "~/Dropbox/org/" "Location of org files.")
 
 ;; Load private data (that I don't want in Github)
 (load-file "~/Dropbox/private.el")
@@ -55,7 +64,7 @@
 (load-file (concat emacs-repos-dir "elget.el"))
 
 ;;; Load other customizations
-(setq load-dirs (concat emacs-repos-dir "/internal"))
+(defvar load-dirs (concat emacs-repos-dir "/internal"))
 (load-dirs)
 
 ;; Only reset keybindings after downloading everything
@@ -72,3 +81,6 @@
 (add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
 ;; FixMe: Get tac mode here
 (exec-path-from-shell-initialize)
+
+(provide 'init)
+;;; init.el ends here

@@ -7,7 +7,7 @@
 (package-refresh-contents)
 
 ;;; List of packages to make sure are installed
-(setq my-packages
+(defvar my-packages
       `(
         ;; Packages used for initialization purposes
         load-dir
@@ -156,7 +156,9 @@
 
         ;; Emacs usage information
         keywiz
-        ))
+        )
+      "List of packages to install via package.el."
+      )
 ;;; Download and require all packages
 (setq failed-requires ())
 (defun try-require (sym)
@@ -172,11 +174,11 @@
              (package-install sym))))
     (error (setq failed-installs (append failed-installs (list sym))))))
 
-(mapcar 'try-package-install my-packages)
-(mapcar 'try-require my-packages)
+(mapc 'try-package-install my-packages)
+(mapc 'try-require my-packages)
 
 (require 'elisp-slime-nav)
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
+(remove-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (global-hungry-delete-mode)
@@ -201,4 +203,4 @@
 (add-hook 'python-mode-hook 'flycheck-mode)
 (require 'anzu)
 (global-anzu-mode +1)
-(add-hook 'prog-mode-hook 'smartscan-mode)
+(global-smartscan-mode t)
