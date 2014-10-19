@@ -178,7 +178,6 @@
 (mapc 'try-require my-packages)
 
 (require 'elisp-slime-nav)
-(remove-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (global-hungry-delete-mode)
@@ -203,4 +202,7 @@
 (add-hook 'python-mode-hook 'flycheck-mode)
 (require 'anzu)
 (global-anzu-mode +1)
-(global-smartscan-mode t)
+
+(add-hook 'prog-mode-hook 'smartscan-mode)
+(add-hook 'org-mode-hook 'smartscan-mode)
+(setq jump-build-index t)

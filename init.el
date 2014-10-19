@@ -3,23 +3,22 @@
 
 ;; FixMe: Eldoc running in python
 ;; FixMe: highlight-symbol-at-point customization
-;; FixMe: Automatically Checkdoc
+;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
-;; FixMe: snippets
-;; FixMe: Add elisp-slime-nav to jump-jumperrs
-;; FixMe: Add filtering to ido
-;; FixMe: Get better fontification for org-mode
-;; FixMe: ( can cause org fontification to break?
+;; FixMe: Investigate snippets
+;; FixMe: Add elisp-slime-nav to jump-jumpers
+;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
-;; FixMe: Allow @-1 in org-tables
 ;; FixMe: CEDET
-;; FixMe: Why is company-mode not popping up autocompletes in elisp mode?
 ;; FixMe: Have flycheck messages override eldoc messages
-;; FixMe: Submit changes to jump-dls.el
-;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED
 ;; FixMe: Fix everything checkdoc/flycheck occurs
+
 ;; FixMe: Get org-mode to hook into google calendar for events
+;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED
+;; FixMe: Get better fontification for org-mode
+;; FixMe: ( can cause org fontification to break?
+;; FixMe: Allow @-1 in org-tables
 
 ;; FixMe: Upgrade to Emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
