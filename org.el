@@ -61,11 +61,15 @@
 (setq org-archive-location (concat org-directory "archive/%s_archive::"))
 (setq org-hide-leading-stars t)
 
+(defalias 'archive-done-tasks 'org-my-archive-done-tasks)
+
 ;; TODO customizations
 (setq org-enforce-todo-dependencies t)
+(setq org-track-ordered-property-with-tag t)
 (setq org-log-done 'time)
+
 (setq org-todo-keywords
-      '((sequence "TODO(t)"  "|" "DONE(d!)" "CANCELED(c!)")))
+      '((sequence "TODO(t)" "WAITING(w/!)" "|" "DONE(d!)" "CANCELED(c)")))
 
 (setq org-todo-keyword-faces
       '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
@@ -139,7 +143,9 @@
 (org-agenda-list)
 (setq org-list-allow-alphabetical t)
 
+
 ;;; FixMe: This is submitted to the mailing list but not committed
+
 (defun org-table-recalculate (&optional all noalign)
   "Recalculate the current table line by applying all stored formulas.
 With prefix arg ALL, do this for all lines in the table.
@@ -274,5 +280,3 @@ known that the table will be realigned a little later anyway."
         (org-table-goto-column thiscol)
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
-
-(current-time)

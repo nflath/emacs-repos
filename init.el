@@ -13,12 +13,14 @@
 ;; FixMe: CEDET
 ;; FixMe: Have flycheck messages override eldoc messages
 ;; FixMe: Fix everything checkdoc/flycheck occurs
-
-;; FixMe: Get org-mode to hook into google calendar for events
-;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED
+;; FixMe: investigate keychord
+;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
-;; FixMe: ( can cause org fontification to break?
+;; FixMe: Have ~/ in ido still go to home dir
 ;; FixMe: Allow @-1 in org-tables
+;; FixMe: Set up default browser to be firefox instead of chrome
+;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: Why is org-remember putting in so many blank lines?
 
 ;; FixMe: Upgrade to Emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
@@ -30,9 +32,7 @@
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
-;; FixMe: Use advice-aedd and advice-rermove instead of defadvice
-;; FixMe: org-mode filter by location
-
+;; FixMe: Use advice-edd and advice-rermove instead of defadvice
 
 ;;; Code:
 (defun custom-theme-load-confirm (&rest args)
@@ -63,7 +63,7 @@
 (load-file (concat emacs-repos-dir "elget.el"))
 
 ;;; Load other customizations
-(defvar load-dirs (concat emacs-repos-dir "/internal"))
+(setq load-dirs (concat emacs-repos-dir "internal"))
 (load-dirs)
 
 ;; Only reset keybindings after downloading everything

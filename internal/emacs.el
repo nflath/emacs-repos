@@ -161,9 +161,9 @@
 
 ;; Have lines be max 80 chars
 (setq whitespace-style '(lines-tail))
-(setq whitespace-line-column 85)
 (add-hook 'prog-mode-hook '(lambda () (whitespace-mode 1)))
 (add-hook 'prog-mode-hook '(lambda () (setq fill-column 79)))
+(add-hook 'prog-mode-hook '(lambda () (setq whitespace-line-column 80)))
 
 ;; When to split windows
 (setq split-height-threshold 80)
@@ -303,3 +303,5 @@ unless NOMODES is non-nil."
                (not (eq (get major-mode 'mode-class) 'special)))
       (view-mode-enter))
     (run-hooks 'find-file-hook)))
+
+(setq set-mark-command-repeat-pop t)
