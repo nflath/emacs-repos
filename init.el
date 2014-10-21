@@ -20,7 +20,6 @@
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: Set up default browser to be firefox instead of chrome
 ;; FixMe: why does whitespace-mode not seem to work?
-;; FixMe: Why is org-remember putting in so many blank lines?
 
 ;; FixMe: Upgrade to Emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?

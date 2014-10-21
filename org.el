@@ -35,7 +35,7 @@
 (require 'org-capture)
 (setq org-capture-templates
       `(("t" "Todo" entry (file+headline ,(concat org-directory "TODO.org") "Tasks")
-         "* TODO %?\n  %i\n")))
+         "* TODO %?")))
 
 (setq org-outline-path-complete-in-steps t)
 (setq org-refile-use-outline-path 'file)
@@ -44,7 +44,14 @@
 
 (defun my-org-capture-dont-ask ()
   (interactive)
-   (org-capture 1 "t"))
+  (org-capture 1 "t"))
+
+
+(defadvice org-capture-finalize (after flush-blanks activate)
+  (save-current-buffer
+    (find-file (concat org-directory "TODO.org"))
+    (beginning-of-buffer)
+    (flush-lines "^\\s-*$")))
 
 ;; General org customizations
 (setq org-agenda-repeating-timestamp-show-all nil)
