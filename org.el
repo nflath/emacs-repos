@@ -76,7 +76,7 @@
 (setq org-log-done 'time)
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "WAITING(w/!)" "|" "DONE(d!)" "CANCELED(c)")))
+      '((sequence "TODO(t)" "LATER(l)" "WAITING(w/!)" "|" "DONE(d!)" "CANCELED(c)")))
 
 (setq org-todo-keyword-faces
       '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))

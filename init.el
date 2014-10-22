@@ -2,6 +2,7 @@
 ;;; Commentary:
 
 ;; FixMe: Eldoc running in python
+;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
