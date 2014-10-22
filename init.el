@@ -22,7 +22,6 @@
 ;; FixMe: Set up default browser to be firefox instead of chrome
 ;; FixMe: why does whitespace-mode not seem to work?
 
-;; FixMe: Upgrade to Emacs 24
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
 ;; FixMe: investigate dired-hide-details-mod
 ;; FixMe: electric-indent-mode defaults to true
@@ -32,7 +31,14 @@
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
-;; FixMe: Use advice-edd and advice-rermove instead of defadvice
+;; FixMe: Use advice-edd and advice-rermove instead of def advice
+
+;; FixMe: Source file `/Users/nflath/.emacs.d/elpa/marmalade-upload-20140613.924/marmalade-upload.el' newer than byte-compiled file
+;; FixMe: File mode specification error: (error "Lisp nesting exceeds `max-lisp-eval-depth'")
+;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
+;; FixMe: Loading Emacs Lisp code from ~/Dropbox/emacs-repos/internal
+;; FixMe: Skipping /Users/nflath/Dropbox/emacs-repos/internal/c, it's already loaded.
+
 
 ;;; Code:
 (defun custom-theme-load-confirm (&rest args)
