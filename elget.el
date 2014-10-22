@@ -32,6 +32,7 @@
         uniquify
         smart-mode-line
         browse-kill-ring
+        key-chord
 
         ;; Emacs navigation improvements
         winpoint

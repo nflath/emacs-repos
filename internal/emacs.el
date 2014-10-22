@@ -305,3 +305,5 @@ unless NOMODES is non-nil."
     (run-hooks 'find-file-hook)))
 
 (setq set-mark-command-repeat-pop t)
+
+(setq load-prefer-newer t)

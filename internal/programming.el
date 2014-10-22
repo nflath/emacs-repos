@@ -15,3 +15,7 @@
 
 ;I want compilation buffers to scroll to the bottom, since this is in general where errors are.
 (setq compilation-scroll-output t)
+
+(add-hook
+ 'eval-expression-minibuffer-setup-hook
+ #'eldoc-mode)

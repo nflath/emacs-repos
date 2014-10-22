@@ -1,4 +1,5 @@
 ;;; init.el --- Entry point of my emacs initialization file
+
 ;;; Commentary:
 
 ;; FixMe: Eldoc running in python
@@ -12,9 +13,8 @@
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
 ;; FixMe: CEDET
-;; FixMe: Have flycheck messages override eldoc messages
+;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Fix everything checkdoc/flycheck occurs
-;; FixMe: investigate keychord
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: Have ~/ in ido still go to home dir
@@ -23,17 +23,14 @@
 ;; FixMe: why does whitespace-mode not seem to work?
 
 ;; FixMe: Uniquify is enabled by default - can I remove this customization?
-;; FixMe: investigate dired-hide-details-mod
+;; FixMe: investigate dired-hide-details-mode
 ;; FixMe: electric-indent-mode defaults to true
-;; FixMe: eldoc in messages-buffer-mode
-;; FixMe: (setq load-prefer-newer t)
 ;; FixMe: toggle-frame-fullscreen and toggle-frame-maximized are now here
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
 ;; FixMe: Use advice-edd and advice-rermove instead of def advice
 
-;; FixMe: Source file `/Users/nflath/.emacs.d/elpa/marmalade-upload-20140613.924/marmalade-upload.el' newer than byte-compiled file
 ;; FixMe: File mode specification error: (error "Lisp nesting exceeds `max-lisp-eval-depth'")
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 ;; FixMe: Loading Emacs Lisp code from ~/Dropbox/emacs-repos/internal
@@ -44,6 +41,7 @@
 (defun custom-theme-load-confirm (&rest args)
   "Prevent theme from promting during load.  ARGS is ignored."
   t)
+
 
 (setq mac-command-modifier `meta)
 (setq enable-local-eval t)
