@@ -207,3 +207,9 @@
 (add-hook 'prog-mode-hook 'smartscan-mode)
 (add-hook 'org-mode-hook 'smartscan-mode)
 (setq jump-build-index t)
+
+t))
+
+(setq highlight-symbol-idle-delay 0)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(add-hook 'org-mode-hook 'highlight-symbol-mode)

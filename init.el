@@ -4,7 +4,6 @@
 
 ;; FixMe: Eldoc running in python
 ;; FixMe: Why are colors not working in ansi-term?
-;; FixMe: highlight-symbol-at-point customization
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate snippets
@@ -22,7 +21,6 @@
 ;; FixMe: Set up default browser to be firefox instead of chrome
 ;; FixMe: why does whitespace-mode not seem to work?
 
-;; FixMe: Uniquify is enabled by default - can I remove this customization?
 ;; FixMe: investigate dired-hide-details-mode
 ;; FixMe: electric-indent-mode defaults to true
 ;; FixMe: toggle-frame-fullscreen and toggle-frame-maximized are now here
@@ -30,11 +28,10 @@
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
 ;; FixMe: Use advice-edd and advice-rermove instead of def advice
+;; FixMe: org-agenda prefers being on bottom (instead of left) now - fix this
 
 ;; FixMe: File mode specification error: (error "Lisp nesting exceeds `max-lisp-eval-depth'")
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
-;; FixMe: Loading Emacs Lisp code from ~/Dropbox/emacs-repos/internal
-;; FixMe: Skipping /Users/nflath/Dropbox/emacs-repos/internal/c, it's already loaded.
 
 
 ;;; Code:
@@ -68,7 +65,6 @@
 
 ;;; Load other customizations
 (setq load-dirs (concat emacs-repos-dir "internal"))
-(load-dirs)
 
 ;; Only reset keybindings after downloading everything
 (load-file (concat emacs-repos-dir "keybindings.el"))
