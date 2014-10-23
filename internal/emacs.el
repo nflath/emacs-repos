@@ -166,7 +166,7 @@
 (add-hook 'prog-mode-hook '(lambda () (setq whitespace-line-column 80)))
 
 ;; When to split windows
-(setq split-height-threshold 80)
+(setq split-height-threshold nil)
 (setq split-width-threshold 160)
 
 (electric-indent-mode t)

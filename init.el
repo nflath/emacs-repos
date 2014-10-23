@@ -28,7 +28,6 @@
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
 ;; FixMe: Use advice-edd and advice-rermove instead of def advice
-;; FixMe: org-agenda prefers being on bottom (instead of left) now - fix this
 
 ;; FixMe: File mode specification error: (error "Lisp nesting exceeds `max-lisp-eval-depth'")
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
