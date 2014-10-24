@@ -169,8 +169,6 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 160)
 
-(electric-indent-mode t)
-
 ;; Always revert
 (global-auto-revert-mode t)
 (setq global-auto-revert-non-file-buffers t)

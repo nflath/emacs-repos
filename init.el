@@ -20,9 +20,9 @@
 ;; FixMe: Allow @-1 in org-tables
 ;; FixMe: Set up default browser to be firefox instead of chrome
 ;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
+;; FixMe: Have org-mode show heirarchy in agenda? (it's in the bottom)
 
-;; FixMe: investigate dired-hide-details-mode
-;; FixMe: electric-indent-mode defaults to true
 ;; FixMe: toggle-frame-fullscreen and toggle-frame-maximized are now here
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?

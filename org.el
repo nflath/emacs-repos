@@ -65,7 +65,7 @@
 (setq org-startup-align-all-tables t)
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 (setq org-use-speed-commands t)
-(setq org-archive-location (concat org-directory "archive/%s_archive::"))
+(setq org-archive-location (concat org-directory "done.org::"))
 (setq org-hide-leading-stars t)
 
 (defalias 'archive-done-tasks 'org-my-archive-done-tasks)
