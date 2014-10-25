@@ -65,7 +65,7 @@
 (setq org-startup-align-all-tables t)
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 (setq org-use-speed-commands t)
-(setq org-archive-location (concat org-directory "done.org::"))
+(setq org-archive-location (concat org-directory "Archive.org::"))
 (setq org-hide-leading-stars t)
 
 (defalias 'archive-done-tasks 'org-my-archive-done-tasks)
@@ -287,3 +287,10 @@ known that the table will be realigned a little later anyway."
         (org-table-goto-column thiscol)
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
+
+(defun sync-google-calendar ()
+  (interactive)
+  (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
+
+(setq org-google-sync (run-at-time 0 300 'sync-google-calendar))
+(defun org-add-log-note (&optional purpose))

@@ -7,7 +7,6 @@
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate snippets
-;; FixMe: Add elisp-slime-nav to jump-jumpers
 ;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
@@ -22,8 +21,8 @@
 ;; FixMe: why does whitespace-mode not seem to work?
 ;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
 ;; FixMe: Have org-mode show heirarchy in agenda? (it's in the bottom)
+;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp
 
-;; FixMe: toggle-frame-fullscreen and toggle-frame-maximized are now here
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
@@ -38,7 +37,8 @@
   "Prevent theme from promting during load.  ARGS is ignored."
   t)
 
-
+(setq max-specpdl-size 5000)
+(setq max-lisp-eval-depth 3000)
 (setq mac-command-modifier `meta)
 (setq enable-local-eval t)
 (setq enable-local-variables :all)
@@ -69,7 +69,11 @@
 (load-file (concat emacs-repos-dir "keybindings.el"))
 
 ;;We're finished loading everything now
-(maximize-frame)
+(modify-frame-parameters
+ nil
+ `((fullscreen . maximized)))
+
+
 (setq wg-session-load-on-start t)
 (workgroups-mode 1)
 (save-visited-files-mode t)
@@ -79,6 +83,7 @@
 (add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
 ;; FixMe: Get tac mode here
 (exec-path-from-shell-initialize)
+(add-to-list 'exec-path "~/bin")
 
 (provide 'init)
 ;;; init.el ends here
