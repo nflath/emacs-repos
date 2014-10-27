@@ -67,14 +67,18 @@
 (add-hook 'doc-view-mode-hook 'turn-on-auto-revert-mode)
 
 ;; Set the major mode on new buffers according to the buffer name.
-(setq-default major-mode
-              (lambda ()
-                (let ((buffer-file-name
-                       (replace-regexp-in-string
-                        "\\.tmp$" ""
-                        (or buffer-file-name (buffer-name)))))
-                  (set-auto-mode)
-                  )))
+
+(add-to-list 'auto-mode-alist '("\\.tmp\\'" ignore t))
+
+(defadvice ido-switch-buffer (after set-mode activate)
+  (unless buffer-file-name
+    (let ((buffer-file-name (buffer-name)))
+      (set-auto-mode t))))
+
+(defadvice switch-to-buffer (after set-mode activate)
+  (unless buffer-file-name
+    (let ((buffer-file-name (buffer-name)))
+      (set-auto-mode t))))
 
 ;; Backup should only use one directory instead of sending
 (mkdir "~/.emacs.d/emacs-backups/" t)
@@ -207,7 +211,6 @@
 (setq browse-url-browser-function 'browse-url-default-macosx-browser-prepend-http)
 
 (setq browse-url-generic-program "google-chrome")
-(set-face-attribute 'default nil :height 90)
 (xterm-mouse-mode)
 
 ;; Always grab locks

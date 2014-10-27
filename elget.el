@@ -3,7 +3,7 @@
 ;;; Ensure that all ELPA repositories are available
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-refresh-contents)
 
 ;;; List of packages to make sure are installed
@@ -159,7 +159,8 @@
         keywiz
         )
       "List of packages to install via package.el."
-      )
+        )
+
 ;;; Download and require all packages
 (setq failed-requires ())
 (defun try-require (sym)
@@ -179,6 +180,7 @@
 (mapc 'try-require my-packages)
 
 (require 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (global-hungry-delete-mode)

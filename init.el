@@ -5,6 +5,7 @@
 ;; FixMe: Eldoc running in python
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
+;; FixMe: Investigate aggresive-indent-mode
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
@@ -22,6 +23,8 @@
 ;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
 ;; FixMe: Have org-mode show heirarchy in agenda? (it's in the bottom)
 ;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp
+;; FixMe: flush-lines default to last entry
+;; FixMe: 'mv' in shell slow now?
 
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?
@@ -68,12 +71,6 @@
 ;; Only reset keybindings after downloading everything
 (load-file (concat emacs-repos-dir "keybindings.el"))
 
-;;We're finished loading everything now
-(modify-frame-parameters
- nil
- `((fullscreen . maximized)))
-
-
 (setq wg-session-load-on-start t)
 (workgroups-mode 1)
 (save-visited-files-mode t)
@@ -86,4 +83,5 @@
 (add-to-list 'exec-path "~/bin")
 
 (provide 'init)
+(maximize-frame)
 ;;; init.el ends here

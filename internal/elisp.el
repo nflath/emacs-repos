@@ -9,7 +9,8 @@
                       inferior-emacs-lisp-mode-hook)
   "List of modes that are used for programming in emacs-lisp.")
 
-(hook-utils-add-hook-to-all elisp-modes 'turn-on-eldoc-mode)
+(if (fboundp 'hook-utils-add-hook-to-all) 
+    (hook-utils-add-hook-to-all elisp-modes 'turn-on-eldoc-mode))
 (switch-to-buffer "*scratch*")
 (turn-on-eldoc-mode)
 
