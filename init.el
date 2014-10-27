@@ -12,19 +12,15 @@
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
 ;; FixMe: CEDET
-;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
-;; FixMe: Have ~/ in ido still go to home dir
 ;; FixMe: Allow @-1 in org-tables
-;; FixMe: Set up default browser to be firefox instead of chrome
 ;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
-;; FixMe: Have org-mode show heirarchy in agenda? (it's in the bottom)
-;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp
+;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp - [2014-10-27 Mon] Asked on emacs SE
 ;; FixMe: flush-lines default to last entry
-;; FixMe: 'mv' in shell slow now?
 
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: rectangle-mark-mode instead of CUA?

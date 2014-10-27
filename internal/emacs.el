@@ -129,16 +129,29 @@
 (ido-everywhere t)
 (setq ido-default-buffer-method 'selected-window)
 
+(defun ido-tilde ()
+  (interactive)
+  (if (looking-back "/")
+      (insert "~/")
+    (call-interactively 'self-insert-command)))
+
 (add-hook 'ido-setup-hook
           (lambda ()
             ;; Go straight home
             (define-key ido-file-completion-map
-              (kbd "~")
-              (lambda ()
-                (interactive)
-                (if (looking-back "/")
-                    (insert "~/")
-                  (call-interactively 'self-insert-command))))))
+              (kbd "~") 'ido-tilde
+              )))
+
+(defun ido-slash ()
+  (interactive)
+  (if (not (eq last-command 'ido-tilde))
+      (call-interactively 'self-insert-command)))
+
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-file-completion-map
+              (kbd "/") 'ido-slash)))
+
 
 ;; Turn abbrev mode on
 (setq only-global-abbrevs nil)
