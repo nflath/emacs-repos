@@ -99,4 +99,3 @@
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (join-line -1)))
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 (global-set-key (kbd "C-x p") 'pop-to-mark-command)
-(global-set-key (kbd "<C-return>") 'rectangle-mark-mode)

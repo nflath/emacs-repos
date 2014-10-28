@@ -5,7 +5,7 @@
 ;; FixMe: Eldoc running in python
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
-;; FixMe: Investigate aggresive-indent-mode
+;; FixMe: Investigate aggreesive-indent-mode
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
@@ -15,15 +15,13 @@
 ;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
-;; FixMe: Allow @-1 in org-tables
-;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: Allow @-1 in org-;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: flush-lines default to last entry
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
 ;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp - [2014-10-27 Mon] Asked on emacs SE
-;; FixMe: flush-lines default to last entry
 
 ;; FixMe: just-one-space (currently bound to spotlight key)
-;; FixMe: rectangle-mark-mode instead of CUA?
 ;; FixMe: prettify-symbols-mode
 ;; FixMe: Use advice-edd and advice-rermove instead of def advice
 
