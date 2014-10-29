@@ -19,7 +19,6 @@
 ;; FixMe: flush-lines default to last entry
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
-;; FixMe: Have going to 'waiting' state take off the 'scheduled' timestamp - [2014-10-27 Mon] Asked on emacs SE
 
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: prettify-symbols-mode

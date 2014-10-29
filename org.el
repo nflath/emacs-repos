@@ -294,3 +294,15 @@ known that the table will be realigned a little later anyway."
 
 (setq org-google-sync (run-at-time 0 300 'sync-google-calendar))
 (defun org-add-log-note (&optional purpose))
+
+(defun rasmus/remove-schedule ()
+  "Remove SCHEDULED-cookie is switching state to WAITING."
+  (save-excursion
+    (and (equal (org-get-todo-state) "WAITING")
+         (org-get-scheduled-time (point))
+         (when (search-forward-regexp org-scheduled-time-regexp nil t)
+           (or (delete-region (match-beginning 0) (match-end 0)) t))
+         )))
+
+(add-hook 'org-after-todo-state-change-hook
+          'rasmus/remove-schedule)
