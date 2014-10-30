@@ -15,16 +15,14 @@
 ;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
-;; FixMe: Allow @-1 in org-;; FixMe: why does whitespace-mode not seem to work?
+;; FixMe: Allow @-1 in org-
+;; FixMe: why does whitespace-mode not seem to work?
 ;; FixMe: flush-lines default to last entry
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
-;; FixMe: Sometimes the agenda disappears after marking an item completed - [2014-10-24 Fri] Asked on emacs SE
 
 ;; FixMe: just-one-space (currently bound to spotlight key)
 ;; FixMe: prettify-symbols-mode
-;; FixMe: Use advice-edd and advice-rermove instead of def advice
 
-;; FixMe: File mode specification error: (error "Lisp nesting exceeds `max-lisp-eval-depth'")
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 
 
