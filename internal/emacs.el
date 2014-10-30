@@ -104,6 +104,8 @@
 ;; Turn on auto-save
 (setq auto-save-default t)
 (setq auto-save-list-file-name "~/.emacs.d/.saves")
+(setq-default isearch-case-fold-search t)
+(setq isearch-case-fold-search t)
 
 ;; subword movement
 (global-subword-mode t)
