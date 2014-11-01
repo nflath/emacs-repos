@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 
-;; FixMe: Eldoc running in python
+;; FixMe: Eldoc running in python - [2014-11-01 Sat] Posted on stackexchange
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Investigate aggreesive-indent-mode
@@ -14,16 +14,13 @@
 ;; FixMe: CEDET
 ;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
-;; FixMe: Get better fontification for org-mode
-;; FixMe: Allow @-1 in org-
+;; FixMe: Get better fontifipcation for org-mode
+;; FixMe: Allow @-1 in org-mode
 ;; FixMe: why does whitespace-mode not seem to work?
-;; FixMe: flush-lines default to last entry
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
-
 ;; FixMe: just-one-space (currently bound to spotlight key)
-;; FixMe: prettify-symbols-mode
-
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
+
 
 
 ;;; Code:
