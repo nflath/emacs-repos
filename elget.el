@@ -1,9 +1,11 @@
 ;;; Installs all the packages I rely on
 
 ;;; Ensure that all ELPA repositories are available
+;;; Code
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
 (package-refresh-contents)
 
 ;;; List of packages to make sure are installed

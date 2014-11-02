@@ -323,3 +323,4 @@ unless NOMODES is non-nil."
 (setq set-mark-command-repeat-pop t)
 
 (setq load-prefer-newer t)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))

@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-x p") 'prev-window)
 (global-set-key (kbd "C-c b m") 'move-buffer-file)
 (global-set-key (kbd "C-a") 'nflath-cycle-bol)
+(global-set-key (kbd "C-SPC") 'cua-set-mark)
 
 (global-set-key (kbd "C-x s" ) 'ido-shell)
 (global-set-key (kbd "C-c s") 'shell-current-directory)
@@ -29,6 +30,7 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-c w") (lambda () (interactive) (diff-buffer-with-file (current-buffer))))
+(global-set-key (kbd "C-M-SPC") 'just-one-space)
 
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cl" 'org-store-link)
