@@ -56,6 +56,7 @@
 
         ;; Emacs editing improvements
         hungry-delete
+        aggresive-indent
         recursive-narrow
         smart-whitespace-comment-fixup
         abbrev
@@ -215,3 +216,5 @@
 (setq highlight-symbol-idle-delay 0)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+
+(global-aggressive-indent-mode 1)

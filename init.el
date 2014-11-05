@@ -3,9 +3,10 @@
 ;;; Commentary:
 
 ;; FixMe: Eldoc running in python - [2014-11-01 Sat] Posted on stackexchange
+;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
+
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
-;; FixMe: Investigate aggreesive-indent-mode
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
@@ -17,7 +18,6 @@
 ;; FixMe: Get better fontifipcation for org-mode
 ;; FixMe: Allow @-1 in org-mode
 ;; FixMe: why does whitespace-mode not seem to work?
-;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 
 
