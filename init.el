@@ -4,7 +4,6 @@
 
 ;; FixMe: Eldoc running in python - [2014-11-01 Sat] Posted on stackexchange
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
-
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
@@ -68,6 +67,7 @@
 (exec-path-from-shell-initialize)
 (add-to-list 'exec-path "~/bin")
 
-(provide 'init)
 (maximize-frame)
+
+(provide 'init)
 ;;; init.el ends here

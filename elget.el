@@ -202,8 +202,15 @@
 (sml/setup)
 (setq browse-kill-ring-highlight-current-entry t)
 (add-hook 'after-init-hook 'global-company-mode)
-(add-hook 'emacs-lisp-mode-hook 'flycheck-mode)
-(add-hook 'c-mode-hook 'flycheck-mode)
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (if (not (or (f-ancestor-of? emacs-repos-dir default-directory)
+                         (file-equal-p emacs-repos-dir default-directory)))
+                (flycheck-mode))))
+
+
+
+         (add-hook 'c-mode-hook 'flycheck-mode)
 (add-hook 'go-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook 'flycheck-mode)
 (require 'anzu)
