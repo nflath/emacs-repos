@@ -66,6 +66,7 @@
 (define-key global-map "\C-cr" 'my-org-capture-dont-ask)
 (define-key org-capture-mode-map (kbd "C-x C-s") 'org-capture-finalize)
 (define-key global-map (kbd "C-c ,") 'org-time-stamp-inactive)
+(define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
 (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)
 
 ;; dired-mode

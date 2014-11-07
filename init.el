@@ -14,7 +14,7 @@
 ;; FixMe: CEDET
 ;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
-;; FixMe: Get better fontifipcation for org-mode
+;; FixMe: Get better fontification for org-mode
 ;; FixMe: Allow @-1 in org-mode
 ;; FixMe: why does whitespace-mode not seem to work?
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
@@ -31,7 +31,6 @@
 (setq enable-local-eval t)
 (setq enable-local-variables :all)
 
-;; FixMe: This should not be required
 (require 'cc-mode)
 (setq c-standard-font-lock-fontify-region-function (default-value 'font-lock-fontify-region-function))
 
