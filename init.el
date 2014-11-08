@@ -7,12 +7,13 @@
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
+;; FixMe: Investigate erefactor
+;; FixMe: Investigate redshank
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
 ;; FixMe: CEDET
-;; FixMe: Fix everything checkdoc/flycheck occurs
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: Allow @-1 in org-mode
