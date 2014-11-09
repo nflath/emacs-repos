@@ -11,15 +11,14 @@
 ;; FixMe: Investigate redshank
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
-;; FixMe: Python auto-indentation is broken - maybe smart-whitespace-comment-fixup.el?
 ;; FixMe: Make ERC readable
+;; FixMe: dirtrack-buffer-name-track-mode doesn't seem to be working
 ;; FixMe: CEDET
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
 ;; FixMe: Allow @-1 in org-mode
 ;; FixMe: why does whitespace-mode not seem to work?
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
-
 
 ;;; Code:
 (defun custom-theme-load-confirm (&rest args)
