@@ -8,7 +8,6 @@
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
 ;; FixMe: Investigate erefactor
-;; FixMe: Investigate redshank
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Make ERC readable
