@@ -7,7 +7,6 @@
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Skeleton files
-;; FixMe: Investigate erefactor
 ;; FixMe: Investigate snippets
 ;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Make ERC readable
