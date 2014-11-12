@@ -3,8 +3,16 @@
 ;; Shell-mode doesn't colorize your output by default; instead, it inserts the
 ;; control codes into your buffer.  This turns on colorization.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(defun shell-dirtrack-mode-off ()
+  (shell-dirtrack-mode -1))
 
-(setq-default dirtrack-list '("[a-zA-Z]*@\\([^$ \t\r\n]*\\)\\$ " 1))
+(defun dirtrack-mode-on ()
+  (dirtrack-mode 1))
+
+(add-hook 'shell-mode-hook 'shell-dirtrack-mode-off)
+(add-hook 'shell-mode-hook 'dirtrack-mode-on)
+
+(setq-default dirtrack-list '("[a-zA-Z]*@\\([^$ \t\r\n]*\\)\\$" 1))
 (when (eq window-system 'w32)
   (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1)))
 
