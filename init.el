@@ -2,7 +2,6 @@
 
 ;;; Commentary:
 
-;; FixMe: dirtrack-buffer-name-track-mode doesn't seem to be working
 ;; FixMe: Why are colors not working in ansi-term?
 ;; FixMe: why does whitespace-mode not seem to work?
 ;; FixMe: Investigate snippets
