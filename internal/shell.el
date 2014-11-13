@@ -18,7 +18,6 @@
 
 (defvar max-prompt-len 40 "Maximum length of your prompt string.")
 
-
 ;; Dirtrack forces the prompt to contain the full working directory, but this
 ;; sometimes causes the prompt to be too long.  The following code will cause
 ;; your prompt to only contain the last 40 characters of the current directory.

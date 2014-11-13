@@ -42,6 +42,7 @@
 (setq org-refile-targets '((org-agenda-files . (:level . 1))))
 (setq org-default-notes-file (concat org-directory "TODO.org"))
 
+
 (defun my-org-capture-dont-ask ()
   (interactive)
   (org-capture 1 "t"))
@@ -293,7 +294,10 @@ known that the table will be realigned a little later anyway."
   (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
 
 (setq org-google-sync (run-at-time 0 300 'sync-google-calendar))
-(defun org-add-log-note (&optional purpose))
+;;(defun org-add-log-note (&optional purpose))
+
+(defadvice org-add-log-note (around org-only-log-habits activate)
+  (if (string-equal (org-entry-get nil "STYLE" t) "habit") ad-do-it))
 
 (defun rasmus/remove-schedule ()
   "Remove SCHEDULED-cookie is switching state to WAITING."

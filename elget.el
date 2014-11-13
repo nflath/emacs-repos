@@ -10,159 +10,159 @@
 
 ;;; List of packages to make sure are installed
 (defvar my-packages
-      `(
-        ;; Packages used for initialization purposes
-        load-dir
-        oauth2
+  `(
+    ;; Packages used for initialization purposes
+    load-dir
+    oauth2
 
-        ;; Emacs UI improvements
-        color-theme
-        zenburn-theme
-        mic-paren
-        dirtrack-buffer-name-track-mode
-        rainbow-delimiters
-        highlight-symbol
-        highlight-parentheses
-        icomplete+
-        scratch-persist
-        occur-default-current-word
-        frame-fns
-        frame-cmds
-        workgroups2
-        save-visited-files
-        ibuffer
-        uniquify
-        smart-mode-line
-        browse-kill-ring
-        key-chord
+    ;; Emacs UI improvements
+    color-theme
+    zenburn-theme
+    mic-paren
+    dirtrack-buffer-name-track-mode
+    rainbow-delimiters
+    highlight-symbol
+    highlight-parentheses
+    icomplete+
+    scratch-persist
+    occur-default-current-word
+    frame-fns
+    frame-cmds
+    workgroups2
+    save-visited-files
+    ibuffer
+    uniquify
+    smart-mode-line
+    browse-kill-ring
+    key-chord
 
-        ;; Emacs navigation improvements
-        winpoint
-        smartscan
-        winpoint-ignore-dired
-        smooth-scrolling
-        jump-dls
-        helm
-        expand-region
-        ace-jump-mode
-        pager
-        pager-default-keybindings
-        saveplace
-        subword
-        windmove
-        imenu
-        elisp-slime-nav-mode
-        isearch-switch
+    ;; Emacs navigation improvements
+    winpoint
+    smartscan
+    winpoint-ignore-dired
+    smooth-scrolling
+    jump-dls
+    helm
+    expand-region
+    ace-jump-mode
+    pager
+    pager-default-keybindings
+    saveplace
+    subword
+    windmove
+    imenu
+    elisp-slime-nav-mode
+    isearch-switch
 
-        ;; Emacs editing improvements
-        hungry-delete
-        aggresive-indent
-        recursive-narrow
-        smart-whitespace-comment-fixup
-        abbrev
-        move-line
-        company
-        company-c-headers
-        company-go
+    ;; Emacs editing improvements
+    hungry-delete
+    aggresive-indent
+    recursive-narrow
+    smart-whitespace-comment-fixup
+    abbrev
+    move-line
+    company
+    company-c-headers
+    company-go
 
-        ;; General programming utilities
-        flycheck
-        java-file-create
-        guess-offset
-        org-table-comment
-        auto-indent-mode
-        flymake
-        fixme-mode
+    ;; General programming utilities
+    flycheck
+    java-file-create
+    guess-offset
+    org-table-comment
+    auto-indent-mode
+    flymake
+    fixme-mode
 
-        ;; Dired enhancements
-        dired
-        wdired
-        dired-x
-        dired-aux
-        dired-nav-enhance
+    ;; Dired enhancements
+    dired
+    wdired
+    dired-x
+    dired-aux
+    dired-nav-enhance
 
-        ;; Shell-mode enhancements
-        comint-better-defaults
-        mv-shell
-        ansi-color
-        dirtrack
+    ;; Shell-mode enhancements
+    comint-better-defaults
+    mv-shell
+    ansi-color
+    dirtrack
 
-        ;; Eldoc improvements
-        c-eldoc
+    ;; Eldoc improvements
+    c-eldoc
 
-        ;; Miscellanious major modes
-        haml-mode
-        markdown-mode
-        js2-mode
-        ssh-config-mode
-        graphviz-dot-mode
-        go-mode
-        scheme
-        cc-mode
-        python
+    ;; Miscellanious major modes
+    haml-mode
+    markdown-mode
+    js2-mode
+    ssh-config-mode
+    graphviz-dot-mode
+    go-mode
+    scheme
+    cc-mode
+    python
 
-        ;; General utility functions
-        org-publish-agenda
-        buffer-file-utils
-        exec-path-from-shell
-        sudo-edit
-        dedicated
-        unbound
-        loccur
-        htmlize
-        macro-math
-        occur-x
-        man-commands
-        memory-usage
-        ioccur
-        go-play
-        imgur
-        google-contacts
-        marmalade-upload
-        calc
+    ;; General utility functions
+    org-publish-agenda
+    buffer-file-utils
+    exec-path-from-shell
+    sudo-edit
+    dedicated
+    unbound
+    loccur
+    htmlize
+    macro-math
+    occur-x
+    man-commands
+    memory-usage
+    ioccur
+    go-play
+    imgur
+    google-contacts
+    marmalade-upload
+    calc
 
-        ;; Communication
-        jabber
-        erc
-        smtpmail
-        tramp
+    ;; Communication
+    jabber
+    erc
+    smtpmail
+    tramp
 
-        ;; Python-mode enhancements
-        pyflakes
-        pytest
-        python-pep8
-        python-pylint
+    ;; Python-mode enhancements
+    pyflakes
+    pytest
+    python-pep8
+    python-pylint
 
-        ;; Elisp programming libraries
-        thingatpt+
-        dirtree
-        hook-utils
-        cl
+    ;; Elisp programming libraries
+    thingatpt+
+    dirtree
+    hook-utils
+    cl
 
-        ;; Org-mode
-        org
-        org-habit
-        appt
+    ;; Org-mode
+    org
+    org-habit
+    appt
 
-        ;; Version control enhacements
-        gitconfig-mode
-        gitignore-mode
-        git-commit
+    ;; Version control enhacements
+    gitconfig-mode
+    gitignore-mode
+    git-commit
 
-        ;; HTML in emacs...
-        w3
+    ;; HTML in emacs...
+    w3
 
-        ;; Windows enhancements
-        w32-browser
+    ;; Windows enhancements
+    w32-browser
 
-        ;; Documentation
-        javadoc-lookup
+    ;; Documentation
+    javadoc-lookup
 
-        ;; Emacs usage information
-        keywiz
-        )
-      "List of packages to install via package.el."
-        )
+    ;; Emacs usage information
+    keywiz
+    )
+  "List of packages to install via package.el."
+  )
 
 ;;; Download and require all packages
 (setq failed-requires ())
@@ -224,4 +224,7 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 
+(require 'dirtrack-buffer-name-track-mode)
 (global-aggressive-indent-mode 1)
+
+(dirtrack-buffer-name-track-mode)
