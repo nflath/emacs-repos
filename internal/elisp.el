@@ -9,7 +9,7 @@
                       inferior-emacs-lisp-mode-hook)
   "List of modes that are used for programming in emacs-lisp.")
 
-(if (fboundp 'hook-utils-add-hook-to-all) 
+(if (fboundp 'hook-utils-add-hook-to-all)
     (hook-utils-add-hook-to-all elisp-modes 'turn-on-eldoc-mode))
 (switch-to-buffer "*scratch*")
 (turn-on-eldoc-mode)
@@ -24,3 +24,5 @@
               (if (file-exists-p (concat buffer-file-name "c"))
                   (delete-file (concat buffer-file-name "c"))))))
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
+
+(auto-insert-mode 1)
