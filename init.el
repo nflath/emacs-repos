@@ -13,7 +13,6 @@
 ;; FixMe: CEDET
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Get better fontification for org-mode
-;; FixMe: Allow @-1 in org-mode
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 
 ;;; Code:

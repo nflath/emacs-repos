@@ -56,7 +56,6 @@
 
     ;; Emacs editing improvements
     hungry-delete
-    aggresive-indent
     recursive-narrow
     smart-whitespace-comment-fixup
     abbrev
@@ -225,6 +224,8 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 
 (require 'dirtrack-buffer-name-track-mode)
-(global-aggressive-indent-mode 1)
+
+;;aggresive-indent - Not using anymore because transient states were annoying
+;(global-aggressive-indent-mode 1)
 
 (dirtrack-buffer-name-track-mode)
