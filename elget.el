@@ -178,7 +178,7 @@
              (package-install sym))))
     (error (setq failed-installs (append failed-installs (list sym))))))
 
-(mapc 'try-package-install my-packages)
+;(mapc 'try-package-install my-packages)
 (mapc 'try-require my-packages)
 
 (require 'elisp-slime-nav)
