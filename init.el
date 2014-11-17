@@ -62,5 +62,7 @@
 
 (maximize-frame)
 
+(face-spec-set 'org-level-2 '((t (:foreground "#DC8CC3"))))
+
 (provide 'init)
 ;;; init.el ends here
