@@ -178,7 +178,7 @@
              (package-install sym))))
     (error (setq failed-installs (append failed-installs (list sym))))))
 
-;(mapc 'try-package-install my-packages)
+(mapc 'try-package-install my-packages)
 (mapc 'try-require my-packages)
 
 (require 'elisp-slime-nav)
@@ -224,8 +224,4 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 
 (require 'dirtrack-buffer-name-track-mode)
-
-;;aggresive-indent - Not using anymore because transient states were annoying
-;(global-aggressive-indent-mode 1)
-
 (dirtrack-buffer-name-track-mode)

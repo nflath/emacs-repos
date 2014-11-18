@@ -10,7 +10,6 @@
 ;; FixMe: Automatically Checkdoc on save?
 ;; FixMe: Add filtering to ido (or try out helm-mode)
 ;; FixMe: Make ERC readable
-;; FixMe: CEDET
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 
