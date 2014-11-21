@@ -8,7 +8,6 @@
 ;; FixMe: Eldoc running in python - [2014-11-01 Sat] Posted on stackexchange
 ;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
 ;; FixMe: Add filtering to ido (or try out helm-mode)
-;; FixMe: Make ERC readable
 ;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
 ;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
 
