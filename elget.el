@@ -16,6 +16,7 @@
     oauth2
 
     ;; Emacs UI improvements
+    magit
     color-theme
     zenburn-theme
     mic-paren
@@ -174,17 +175,17 @@
 (defun try-package-install (sym)
   (condition-case nil
       (progn
-        (if ((not package-installed-p sym)
-             (package-install sym))))
+        (if (not (package-installed-p sym))
+             (package-install sym)))
     (error (setq failed-installs (append failed-installs (list sym))))))
 
 (mapc 'try-package-install my-packages)
 (mapc 'try-require my-packages)
 
-(require 'elisp-slime-nav)
-(add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
+;(require 'elisp-slime-nav)
+;(add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
+;(add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable)
 (global-hungry-delete-mode)
 (add-to-list 'auto-mode-alist '(".ssh/config\\'"  . ssh-config-mode))
 (add-to-list 'auto-mode-alist '("sshd?_config\\'" . ssh-config-mode))
@@ -212,8 +213,8 @@
          (add-hook 'c-mode-hook 'flycheck-mode)
 (add-hook 'go-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook 'flycheck-mode)
-(require 'anzu)
-(global-anzu-mode +1)
+;(require 'anzu)
+;(global-anzu-mode +1)
 
 (add-hook 'prog-mode-hook 'smartscan-mode)
 (add-hook 'org-mode-hook 'smartscan-mode)

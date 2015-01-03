@@ -1,3 +1,4 @@
+(setq-default ispell-program-name "/usr/local/bin/ispell")
 (when (file-exists-p "/usr/local/bin/aspell")
   (setq-default ispell-program-name "/usr/local/bin/aspell"))
 

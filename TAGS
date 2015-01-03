@@ -1,8 +1,58 @@
 
-test.org,0
+elget.el,93
+(defvar my-packages12,379
+(defun try-require 169,2904
+(defun try-package-install 175,3071
 
-scratch.el,0
+init.el,105
+(defun custom-theme-load-confirm 15,654
+(defvar emacs-repos-dir 34,1275
+(defvar org-directory 35,1325
 
-init.el,0
+keybindings.el,788
+(define-key c-mode-base-map 45,1898
+(define-key c-mode-base-map 46,1984
+(define-key c-mode-map 49,2054
+(define-key c++-mode-map 50,2112
+(define-key dired-mode-map 53,2187
+(define-key dired-mode-map 54,2240
+(define-key emacs-lisp-mode-map 57,2328
+(define-key emacs-lisp-mode-map 58,2395
+(define-key visual-line-mode-map 61,2481
+(define-key visual-line-mode-map 62,2553
+(define-key org-mode-map 65,2632
+(define-key global-map 66,2711
+(define-key org-capture-mode-map 67,2768
+(define-key global-map 68,2840
+(define-key org-mode-map 69,2903
+(define-key org-mode-map 70,2968
+(define-key java-mode-map 76,3113
+(define-key jabber-chat-mode-map 78,3171
+(define-key lisp-interaction-mode-map 80,3249
+(define-key read-expression-map 83,3350
+(define-key python-mode-map 85,3418
 
-#init.el#,0
+org-gmail-cleanup.el,37
+(defun cleanup-alarms-for-gmail 1,0
+
+org.el,454
+(defadvice org-cycle 15,433
+(defun my-org-mode-ask-effort 25,713
+(defun my-org-capture-dont-ask 48,1537
+(defadvice org-capture-finalize 53,1612
+(defadvice  org-agenda-redo 98,3202
+(defun my-org-pending-remove-scheduled 104,3403
+(defun work-org-mode 131,4540
+(defun home-org-mode 137,4718
+(defun org-table-recalculate 160,5281
+(defun sync-google-calendar 295,12026
+(defadvice org-add-log-note 301,12291
+(defun rasmus/remove-schedule 304,12428
+
+wget-log,83
+HTTP request sent,5,353
+HTTP request sent, awaiting response... Read error 5,353
+
+wget-log.1,104
+HTTP request sent,5,353
+    50K .......... .......... ..                               59.8K=K10,547

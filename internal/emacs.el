@@ -158,6 +158,9 @@
 ;; Turn abbrev mode on
 (setq only-global-abbrevs nil)
 (setq-default abbrev-mode t)
+(setq abbrev-file-name             ;; tell emacs where to read abbrev
+      "~/.emacs.d/.abbrev_defs")    ;; definitions from...
+(quietly-read-abbrev-file)
 
 ;; Record changes in window configuration
 (winner-mode t)

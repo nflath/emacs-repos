@@ -1,10 +1,12 @@
 ;; Allow use of alphabetical lists
 (setq org-alphabetical-lists t)
 
+;; Cleanup-alarms script for ical
+
 ;; Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))
-(setq org-agenda-files (list "~/Dropbox/org"))
+(setq org-agenda-files (list "~/Dropbox/org" "~/Dropbox/org/info"))
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
@@ -69,9 +71,6 @@
 (setq org-archive-location (concat org-directory "Archive.org::"))
 (setq org-hide-leading-stars t)
 
-(defalias 'archive-done-tasks 'org-my-archive-done-tasks)
-
-;; TODO customizations
 (setq org-enforce-todo-dependencies t)
 (setq org-track-ordered-property-with-tag t)
 (setq org-log-done 'time)
@@ -79,8 +78,13 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "LATER(l)" "WAITING(w/!)" "|" "DONE(d!)" "CANCELED(c)")))
 
+;; FixMe: This is overridden somehow?
 (setq org-todo-keyword-faces
-      '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))))
+      '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))
+        ("WAITING"  . (:foreground "cyan"))))
+
+(setq org-todo-keyword-faces
+      '(("TODO"  . (:foreground "green" :weight bold))))
 
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
@@ -292,12 +296,11 @@ known that the table will be realigned a little later anyway."
 (defun sync-google-calendar ()
   (interactive)
   (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
-
 (setq org-google-sync (run-at-time 0 300 'sync-google-calendar))
 ;;(defun org-add-log-note (&optional purpose))
 
-(defadvice org-add-log-note (around org-only-log-habits activate)
-  (if (string-equal (org-entry-get nil "STYLE" t) "habit") ad-do-it))
+;; (defadvice org-add-log-note (around org-only-log-habits activate)
+;;   (if (string-equal (org-entry-get nil "STYLE" t) "habit") ad-do-it))
 
 (defun rasmus/remove-schedule ()
   "Remove SCHEDULED-cookie is switching state to WAITING."
