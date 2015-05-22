@@ -6,7 +6,7 @@
 ;; Agenda customizations
 (setq org-agenda-start-on-weekday nil)
 (setq org-agenda-files (list org-directory))
-(setq org-agenda-files (list "~/Dropbox/org" "~/Dropbox/org/info"))
+(setq org-agenda-files (list "~/Dropbox/org" "~/Dropbox/org/info" "~/Dropbox/org/trips"))
 (setq org-deadline-warning-days 7)
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
@@ -77,14 +77,6 @@
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "LATER(l)" "WAITING(w/!)" "|" "DONE(d!)" "CANCELED(c)")))
-
-;; FixMe: This is overridden somehow?
-(setq org-todo-keyword-faces
-      '(("CANCELED"  . (:foreground "blue" :weight bold :strike-through t))
-        ("WAITING"  . (:foreground "cyan"))))
-
-(setq org-todo-keyword-faces
-      '(("TODO"  . (:foreground "green" :weight bold))))
 
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
@@ -293,6 +285,27 @@ known that the table will be realigned a little later anyway."
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
 
+(defun cleanup-alarms-for-gmail ()
+  (interactive)
+  (save-window-excursion
+    (find-file "~/Dropbox/org/calendar.org")
+    (goto-char (point-min))
+    (while (search-forward "* Alarm notification" nil t)
+      (beginning-of-line)
+      (forward-char 2)
+      (let* ((bolp (point))
+             (eolp (progn (end-of-line) (point)))
+             (bosp (progn (search-forward "SUMMARY:") (point)))
+             (eosp (progn (end-of-line) (point)))
+             (summary (buffer-substring bosp eosp)))
+        (message summary)
+        (delete-region bosp eosp)
+        (delete-region bolp eolp)
+        (goto-char bolp)
+        (insert summary))
+      (save-buffer)
+      )))
+
 (defun sync-google-calendar ()
   (interactive)
   (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
@@ -313,3 +326,338 @@ known that the table will be realigned a little later anyway."
 
 (add-hook 'org-after-todo-state-change-hook
           'rasmus/remove-schedule)
+
+
+(defun org-habit-parse-todo (&optional pom)
+  "Parse the TODO surrounding point for its habit-related data.
+Returns a list with the following elements:
+
+  0: Scheduled date for the habit (may be in the past)
+  1: \".+\"-style repeater for the schedule, in days
+  2: Optional deadline (nil if not present)
+  3: If deadline, the repeater for the deadline, otherwise nil
+  4: A list of all the past dates this todo was mark closed
+
+This list represents a \"habit\" for the rest of this module."
+  (save-excursion
+    (if pom (goto-char pom))
+    (assert (org-is-habit-p (point)))
+    (let* ((scheduled (org-get-scheduled-time (point)))
+           (scheduled-repeat (org-get-repeat org-scheduled-string))
+           (end (org-entry-end-position))
+           (habit-entry (org-no-properties (nth 4 (org-heading-components))))
+           closed-dates deadline dr-days sr-days)
+      (if scheduled
+          (setq scheduled (time-to-days scheduled))
+        (error "Habit %s has no scheduled date" habit-entry))
+      (unless scheduled-repeat
+        (error
+         "Habit '%s' has no scheduled repeat period or has an incorrect one"
+         habit-entry))
+      (setq sr-days (org-habit-duration-to-days scheduled-repeat))
+      (unless (> sr-days 0)
+        (error "Habit %s scheduled repeat period is less than 1d" habit-entry))
+      (when (string-match "/\\([0-9]+[dwmy]\\)" scheduled-repeat)
+        (setq dr-days (org-habit-duration-to-days
+                       (match-string-no-properties 1 scheduled-repeat)))
+        (if (<= dr-days sr-days)
+            (error "Habit %s deadline repeat period is less than or equal to scheduled (%s)"
+                   habit-entry scheduled-repeat))
+        (setq deadline (+ scheduled (- dr-days sr-days))))
+      (org-back-to-heading t)
+      (let* ((maxdays (+ org-habit-preceding-days org-habit-following-days))
+             (reversed org-log-states-order-reversed)
+             (search (if reversed 're-search-forward 're-search-backward))
+             (limit (if reversed end (point)))
+             (count 0))
+        (unless reversed (goto-char end))
+        (while (and (< count maxdays)
+                    (funcall search (format "- State \"DONE\".*\\[\\([^]]+\\)\\]"
+                                            (regexp-opt org-done-keywords))
+                             limit t))
+          (push (time-to-days
+                 (org-time-string-to-time (match-string-no-properties 1)))
+                closed-dates)
+          (setq count (1+ count))))
+      (list scheduled sr-days deadline dr-days closed-dates))))
+
+
+(setq org-todo-keyword-faces
+      '(("TODO"  . (:foreground "green" :weight bold))
+        ("CANCELED"  . (:foreground "red" :weight bold :strike-through t))
+        ("WAITING"  . (:foreground "cyan"))))
+
+(defun org-make-habit ()
+  (interactive)
+  (insert ":PROPERTIES:\n" ":STYLE: habit\n" ":END:\n"))
+
+
+(defun org-agenda-get-scheduled (&optional deadline-results with-hour)
+  "Return the scheduled information for agenda display.
+When WITH-HOUR is non-nil, only return scheduled items with
+an hour specification like [h]h:mm."
+  (let* ((props (list 'org-not-done-regexp org-not-done-regexp
+                      'org-todo-regexp org-todo-regexp
+                      'org-complex-heading-regexp org-complex-heading-regexp
+                      'done-face 'org-agenda-done
+                      'mouse-face 'highlight
+                      'help-echo
+                      (format "mouse-2 or RET jump to org file %s"
+                              (abbreviate-file-name buffer-file-name))))
+         (regexp (if with-hour
+                     org-scheduled-time-hour-regexp
+                   org-scheduled-time-regexp))
+         (todayp (org-agenda-todayp date)) ; DATE bound by calendar
+         (d1 (calendar-absolute-from-gregorian date))  ; DATE bound by calendar
+         mm
+         (deadline-position-alist
+          (mapcar (lambda (a) (and (setq mm (get-text-property
+                                        0 'org-hd-marker a))
+                              (cons (marker-position mm) a)))
+                  deadline-results))
+         d2 diff pos pos1 category category-pos level tags donep
+         ee txt head pastschedp todo-state face timestr s habitp show-all
+         did-habit-check-p warntime inherited-tags ts-date suppress-delay
+         ddays)
+    (goto-char (point-min))
+    (while (re-search-forward regexp nil t)
+      (catch :skip
+        (org-agenda-skip)
+        (setq s (match-string 1)
+              txt nil
+              pos (1- (match-beginning 1))
+              todo-state (save-match-data (org-get-todo-state))
+              show-all (or (eq org-agenda-repeating-timestamp-show-all t)
+                           (member todo-state
+                                   org-agenda-repeating-timestamp-show-all))
+              d2 (org-time-string-to-absolute
+                  s d1 'past show-all (current-buffer) pos)
+              diff (- d2 d1)
+              warntime (get-text-property (point) 'org-appt-warntime))
+        (setq pastschedp (and todayp (< diff 0)))
+        (setq did-habit-check-p nil)
+        (setq suppress-delay
+              (let ((ds (and org-agenda-skip-scheduled-delay-if-deadline
+                             (let ((item (buffer-substring (point-at-bol) (point-at-eol))))
+                               (save-match-data
+                                 (and (string-match
+                                       org-deadline-time-regexp item)
+                                      (match-string 1 item)))))))
+                (cond
+                 ((not ds) nil)
+                 ;; The current item has a deadline date (in ds), so
+                 ;; evaluate its delay time.
+                 ((integerp org-agenda-skip-scheduled-delay-if-deadline)
+                  ;; Use global delay time.
+                  (- org-agenda-skip-scheduled-delay-if-deadline))
+                 ((eq org-agenda-skip-scheduled-delay-if-deadline
+                      'post-deadline)
+                  ;; Set delay to no later than deadline.
+                  (min (- d2 (org-time-string-to-absolute
+                              ds d1 'past show-all (current-buffer) pos))
+                       org-scheduled-delay-days))
+                 (t 0))))
+        (setq ddays (if suppress-delay
+                        (let ((org-scheduled-delay-days suppress-delay))
+                          (org-get-wdays s t t))
+                      (org-get-wdays s t)))
+        ;; Use a delay of 0 when there is a repeater and the delay is
+        ;; of the form --3d
+        (when (and (save-match-data (string-match "--[0-9]+[hdwmy]" s))
+                   (< (org-time-string-to-absolute s)
+                      (org-time-string-to-absolute
+                       s d2 'past nil (current-buffer) pos)))
+          (setq ddays 0))
+        ;; When to show a scheduled item in the calendar:
+        ;; If it is on or past the date.
+        (when (or (and (> ddays 0) (= diff (- ddays)))
+                  (and (zerop ddays) (= diff 0))
+                  (and (< (+ diff ddays) 0)
+                       (< (abs diff) org-scheduled-past-days)
+                       (and todayp (not org-agenda-only-exact-dates)))
+                  ;; org-is-habit-p uses org-entry-get, which is expansive
+                  ;; so we go extra mile to only call it once
+                  (and todayp
+                       (boundp 'org-habit-show-all-today)
+                       org-habit-show-all-today
+                       (setq did-habit-check-p t)
+                       (setq habitp (and (functionp 'org-is-habit-p)
+                                         (org-is-habit-p)))))
+          (when (and (or (not (org-entry-get nil "HIDDEN-UNTIL"))
+                         (progn
+                           (and todayp)))
+                     (or (not (org-entry-get nil "HIDDEN-DATE"))
+                         (progn (print "hi")
+                                (print (current-buffer))
+                                (print (point))
+                                (let ((d3 (org-time-string-to-absolute (org-entry-get nil "HIDDEN-DATE"))))
+                                  (not (= today d3))))))
+          (save-excursion
+            (setq donep (member todo-state org-done-keywords))
+            (if (and donep
+                     (or org-agenda-skip-scheduled-if-done
+                         (not (= diff 0))
+                         (and (functionp 'org-is-habit-p)
+                              (org-is-habit-p))))
+                (setq txt nil)
+              (setq habitp (if did-habit-check-p habitp
+                             (and (functionp 'org-is-habit-p)
+                                  (org-is-habit-p))))
+              (setq category (org-get-category)
+                    category-pos (get-text-property (point) 'org-category-position))
+              (if (and (eq org-agenda-skip-scheduled-if-deadline-is-shown
+                           'repeated-after-deadline)
+                       (org-get-deadline-time (point))
+                       (<= 0 (- d2 (time-to-days (org-get-deadline-time (point))))))
+                  (throw :skip nil))
+              (if (not (re-search-backward "^\\*+[ \t]+" nil t))
+                  (throw :skip nil)
+                (goto-char (match-end 0))
+                (setq pos1 (match-beginning 0))
+                (if habitp
+                    (if (or (not org-habit-show-habits)
+                            (and (not todayp)
+                                 (boundp 'org-habit-show-habits-only-for-today)
+                                 org-habit-show-habits-only-for-today))
+                        (throw :skip nil))
+                  (if (and
+                       (or (eq t org-agenda-skip-scheduled-if-deadline-is-shown)
+                           (and (eq org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
+                                pastschedp))
+                       (setq mm (assoc pos1 deadline-position-alist)))
+                      (throw :skip nil)))
+                (setq inherited-tags
+                      (or (eq org-agenda-show-inherited-tags 'always)
+                          (and (listp org-agenda-show-inherited-tags)
+                               (memq 'agenda org-agenda-show-inherited-tags))
+                          (and (eq org-agenda-show-inherited-tags t)
+                               (or (eq org-agenda-use-tag-inheritance t)
+                                   (memq 'agenda org-agenda-use-tag-inheritance))))
+
+                      tags (org-get-tags-at nil (not inherited-tags)))
+                (setq level (make-string (org-reduced-level (org-outline-level)) ? ))
+                (setq head (buffer-substring
+                            (point)
+                            (progn (skip-chars-forward "^\r\n") (point))))
+                (if (string-match " \\([012]?[0-9]:[0-9][0-9]\\)" s)
+                    (setq timestr
+                          (concat (substring s (match-beginning 1)) " "))
+                  (setq timestr 'time))
+                (setq txt (org-agenda-format-item
+                           (if (= diff 0)
+                               (car org-agenda-scheduled-leaders)
+                             (format (nth 1 org-agenda-scheduled-leaders)
+                                     (- 1 diff)))
+                           head level category tags
+                           (if (not (= diff 0)) nil timestr)
+                           nil habitp))))
+            (when txt
+              (setq face
+                    (cond
+                     ((and (not habitp) pastschedp)
+                      'org-scheduled-previously)
+                     (todayp 'org-scheduled-today)
+                     (t 'org-scheduled))
+                    habitp (and habitp (org-habit-parse-todo)))
+              (org-add-props txt props
+                'undone-face face
+                'face (if donep 'org-agenda-done face)
+                'org-marker (org-agenda-new-marker pos)
+                'org-hd-marker (org-agenda-new-marker pos1)
+                'type (if pastschedp "past-scheduled" "scheduled")
+                'date (if pastschedp d2 date)
+                'ts-date d2
+                'warntime warntime
+                'level level
+                'priority (if habitp
+                              (org-habit-get-priority habitp)
+                            (+ 94 (- 5 diff) (org-get-priority txt)))
+                'org-category category
+                'category-position category-pos
+                'org-habit-p habitp
+                'todo-state todo-state)
+              (push txt ee)))))))
+    (nreverse ee)))
+
+(defun org-time-stamp-string (time &optional with-hm inactive pre post extra)
+  "Insert a date stamp for the date given by the internal TIME.
+WITH-HM means use the stamp format that includes the time of the day.
+INACTIVE means use square brackets instead of angular ones, so that the
+stamp will not contribute to the agenda.
+PRE and POST are optional strings to be inserted before and after the
+stamp.
+The command returns the inserted time stamp."
+  (let ((fmt (funcall (if with-hm 'cdr 'car) org-time-stamp-formats))
+        stamp
+        (result ""))
+    (if inactive (setq fmt (concat "[" (substring fmt 1 -1) "]")))
+
+    ;(insert-before-markers (or pre ""))
+    (when (listp extra)
+      (setq extra (car extra))
+      (if (and (stringp extra)
+               (string-match "\\([0-9]+\\):\\([0-9]+\\)" extra))
+          (setq extra (format "-%02d:%02d"
+                              (string-to-number (match-string 1 extra))
+                              (string-to-number (match-string 2 extra))))
+        (setq extra nil)))
+    (when extra
+      (setq fmt (concat (substring fmt 0 -1) extra (substring fmt -1))))
+    (setq result (concat result (setq stamp (format-time-string fmt time))))
+    (setq result (concat result (insert-before-markers (or post ""))))
+    (setq org-last-inserted-timestamp stamp)))
+
+(defun org-agenda-hide-today (&rest args)
+  (interactive)
+  (let* ((col (current-column))
+         (marker (or (org-get-at-bol 'org-marker)
+                     (org-agenda-error)))
+         (buffer (marker-buffer marker))
+         (hdmarker (org-get-at-bol 'org-hd-marker))
+         (pos (marker-position marker))
+         just-one)
+
+    (org-with-remote-undo buffer
+      (with-current-buffer buffer
+        (widen)
+        (goto-char pos)
+        (org-entry-put nil "HIDDEN-DATE" (org-time-stamp-string (current-time) nil t))
+        (setq newhead (org-get-heading))
+        (when (and (org-bound-and-true-p
+                    org-agenda-headline-snapshot-before-repeat)
+                   (not (equal org-agenda-headline-snapshot-before-repeat
+                               newhead))
+                   todayp)
+          (setq newhead org-agenda-headline-snapshot-before-repeat
+                just-one t)))
+      (org-agenda-change-all-lines (concat "HIDDEN " newhead) hdmarker 'fixface just-one))
+    ))
+
+(defun org-agenda-hide-until (&rest args)
+  (interactive)
+  (let* ((col (current-column))
+         (marker (or (org-get-at-bol 'org-marker)
+                     (org-agenda-error)))
+         (buffer (marker-buffer marker))
+         (hdmarker (org-get-at-bol 'org-hd-marker))
+         (pos (marker-position marker))
+         just-one)
+
+    (org-with-remote-undo buffer
+      (with-current-buffer buffer
+        (widen)
+        (goto-char pos)
+        (org-entry-put nil "HIDDEN-UNTIL" "t")
+        (setq newhead (org-get-heading))
+        (when (and (org-bound-and-true-p
+                    org-agenda-headline-snapshot-before-repeat)
+                   (not (equal org-agenda-headline-snapshot-before-repeat
+                               newhead))
+                   todayp)
+          (setq newhead org-agenda-headline-snapshot-before-repeat
+                just-one t)))
+      (org-agenda-change-all-lines (concat "HIDDEN " newhead) hdmarker 'fixface just-one))
+    ))
+
+(org-defkey org-agenda-mode-map "h" 'org-agenda-hide-today)
+(org-defkey org-agenda-mode-map "H" 'org-agenda-hide-until)

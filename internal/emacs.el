@@ -327,3 +327,5 @@ unless NOMODES is non-nil."
 
 (setq load-prefer-newer t)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[0-9.]\.\\|.*:$" )
