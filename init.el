@@ -1,20 +1,6 @@
 ;;; init.el --- Entry point of my emacs initialization file
 
-;;; Commentary:
-
-;; FixMe: Only replace calendar.org if there are diffs
-;; FixMe: Why are colors not working in ansi-term?
-;; FixMe: why does whitespace-mode not seem to work?
-;; FixMe: Investigate snippets
-;; FixMe: Eldoc running in python - [2014-11-01 Sat] Posted on stackexchange
-;; FixMe: Have flycheck messages override eldoc messages - [2014-10-22 Wed] Asked on emacs stack exchange
-;; FixMe: Add filtering to ido (or try out helm-mode)
-;; FixMe: have 't' in org-mode go straight from TODO->DONE, 'c' go from TODO->CANCELED (is this org-speed-commands?)
-;; FixMe: Loading /Users/nflath/Dropbox/emacs-repos/init.el (source)...done
-;; FixMe: Indentation after :config should increment
-;; FixMe: Switch to use-package for everything
-;; FixMe: Make the 'HIDDEN' bold
-(setq debug-on-error t)
+(setq debug-on-error t) ;; We want to debug errors.
 
 ;; Bootstrap use-package
 (require 'package)
@@ -23,8 +9,6 @@
              '("melpa" . "http://melpa.org/packages/"))
 
 (package-initialize)
-
-;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
