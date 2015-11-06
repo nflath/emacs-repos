@@ -6,7 +6,7 @@
 
 (setq wdired-allow-to-change-permissions 'advanced)
 (setq dired-auto-revert-buffer t)
-
+(require 'dired-x)
 (setq dired-omit-files
       (concat
        dired-omit-files

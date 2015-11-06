@@ -1,13 +1,214 @@
 
-elget.el,93
-(defvar my-packages12,379
-(defun try-require 169,2904
-(defun try-package-install 175,3071
+#elget.el#,169
+;;; Installs all the packages I rely on1,0
+;;; Ensure that all ELPA repositories are available3,41
+;(add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)mode25,720
 
-init.el,105
-(defun custom-theme-load-confirm 15,654
-(defvar emacs-repos-dir 34,1275
-(defvar org-directory 35,1325
+elget.el,35
+(defun try-package-install 14,396
+
+gud.el,8025
+(defvar gdb-active-process)47,1928
+(defvar gdb-define-alist)48,1956
+(defvar gdb-macro-info)49,1982
+(defvar gdb-server-prefix)50,2006
+(defvar gdb-show-changed-values)51,2033
+(defvar gdb-var-list)52,2066
+(defvar gdb-speedbar-auto-raise)53,2088
+(defvar tool-bar-map)54,2121
+(defgroup gud 59,2279
+(defcustom gud-key-prefix 66,2482
+(define-key ctl-x-map 72,2663
+(defvar gud-marker-filter 74,2735
+(defvar gud-find-file 76,2810
+(defun gud-marker-filter 79,2878
+(defvar gud-minor-mode 82,2951
+(defvar gud-comint-buffer 85,3021
+(defvar gud-keep-buffer 87,3053
+(defun gud-symbol 89,3083
+(defun gud-val 98,3525
+(defvar gud-running 103,3715
+(defvar gdb-ready 107,3826
+(defun gud-goto-info 110,3892
+(defun gud-tool-bar-item-visible-no-fringe 128,4479
+(defun gud-stop-subjob 133,4707
+(defvar gud-mode-map263,12274
+(defvar gud-tool-bar-map268,12403
+(defun gud-file-name 294,13487
+(defun gud-find-file 308,14006
+(defmacro gud-def 342,15545
+(defvar gud-last-frame 378,17226
+(defvar gud-last-last-frame 383,17423
+(defvar gud-last-speedbar-stackframe 414,18625
+(defvar gud-speedbar-key-map 418,18797
+(defun gud-speedbar-item-info 421,18882
+(defun gud-install-speedbar-variables 428,19169
+(defvar gud-speedbar-menu-items450,20086
+(defun gud-expansion-speedbar-buttons 477,21323
+(defun gud-speedbar-buttons 482,21543
+(defvar gud-gdb-history 598,26862
+(defcustom gud-gud-gdb-command-name 600,26892
+(defvar gud-gdb-marker-regexp606,27108
+(defvar gud-marker-acc 619,27708
+(defun gud-gdb-marker-filter 622,27781
+(defun gud-query-cmdline 682,30250
+(defvar gdb-first-prompt 702,31141
+(defvar gud-filter-pending-text 704,31170
+(defun gud-gdb 709,31375
+(defvar gud-gdb-fetch-lines-in-progress)766,34050
+(defvar gud-gdb-fetch-lines-string)769,34169
+(defvar gud-gdb-fetch-lines-break)772,34265
+(defvar gud-gdb-fetched-lines)775,34362
+(defun gud-gdb-complete-command 777,34394
+(defun gud-gdb-fetch-lines-filter 827,36734
+(defun gud-gdb-goto-stackframe 847,37451
+(defvar gud-gdb-fetched-stack-frame 853,37674
+(defun gud-gdb-get-stackframe 867,38513
+(defun gud-gdb-run-command-fetch-lines 905,40231
+(defvar gud-lldb-history 937,41582
+(defvar gud-breakpoint-id 944,41872
+(defun lldb-extract-breakpoint-id 946,41904
+(defun gud-lldb-marker-filter 955,42298
+(defvar lldb-oneshot-break-defined 988,43893
+(defun lldb 991,43949
+(defvar gud-sdb-history 1076,48085
+(defvar gud-sdb-needs-tags 1078,48115
+(defvar gud-sdb-lastfile 1081,48245
+(defun gud-sdb-marker-filter 1083,48276
+(defun gud-sdb-find-file 1124,50179
+(defun sdb 1128,50296
+(defvar gud-dbx-history 1162,51815
+(defcustom gud-dbx-directories 1164,51845
+(defun gud-dbx-massage-args 1176,52271
+(defun gud-dbx-marker-filter 1185,52588
+(defvar gud-mips-p1216,53931
+(defvar gud-dbx-command-name1225,54361
+(defun gud-mipsdbx-marker-filter 1230,54573
+(defvar gud-irix-p1291,57369
+(defvar gud-dbx-use-stopformat-p1297,57688
+(defun gud-irixdbx-marker-filter 1323,59180
+(defvar gud-dgux-p 1365,61219
+(defun gud-dguxdbx-marker-filter 1387,62006
+(defun dbx 1415,63169
+(defvar gud-xdb-history 1481,66186
+(defcustom gud-xdb-directories 1483,66216
+(defun gud-xdb-massage-args 1495,66642
+(defun gud-xdb-marker-filter 1505,67034
+(defun xdb 1524,67834
+(defvar gud-perldb-history 1557,69412
+(defun gud-perldb-massage-args 1559,69445
+(defun gud-perldb-marker-filter 1607,71213
+(defcustom gud-perldb-command-name 1649,72900
+(defun perldb 1655,73053
+(defvar gud-pdb-history 1687,74728
+(defvar gud-pdb-marker-regexp1691,74891
+(defvar gud-pdb-marker-regexp-file-group 1693,75035
+(defvar gud-pdb-marker-regexp-line-group 1694,75079
+(defvar gud-pdb-marker-regexp-fnname-group 1695,75123
+(defvar gud-pdb-marker-regexp-start 1697,75170
+(defun gud-pdb-marker-filter 1705,75558
+(defcustom gud-pdb-command-name 1754,77605
+(defun pdb 1761,77808
+(defcustom gud-jdb-command-name 1878,82483
+(defcustom gud-jdb-use-classpath 1883,82598
+(defvar gud-jdb-classpath 1899,83314
+(defvar gud-jdb-sourcepath 1919,84255
+(defvar gud-marker-acc-max-length 1924,84478
+(defvar gud-jdb-history 1930,84724
+(defvar gud-jdb-directories 1935,84841
+(defvar gud-jdb-source-files 1947,85426
+(defvar gud-jdb-class-source-alist 1952,85624
+(defvar gud-jdb-analysis-buffer 1956,85790
+(defvar gud-jdb-classpath-string 1958,85828
+(defun gud-jdb-build-source-files-list 1961,85905
+(defun gud-jdb-skip-whitespace 1972,86370
+(defun gud-jdb-skip-single-line-comment 1976,86492
+(defun gud-jdb-skip-traditional-or-documentation-comment 1980,86611
+(defun gud-jdb-skip-whitespace-and-comments 1995,87099
+(defun gud-jdb-skip-id-ish-thing 2011,87635
+(defun gud-jdb-skip-string-literal 2015,87752
+(defun gud-jdb-skip-character-literal 2025,88027
+(defun gud-jdb-skip-block 2038,88433
+(defun gud-jdb-analyze-source 2083,89940
+(defun gud-jdb-build-class-source-alist-for-file 2159,92577
+(defun gud-jdb-build-class-source-alist 2168,92896
+(defun gud-jdb-massage-args 2181,93324
+(defun gud-jdb-find-source-file 2225,95500
+(defvar gud-jdb-lowest-stack-level 2229,95640
+(defun gud-jdb-find-source-using-classpath 2231,95681
+(defun gud-jdb-find-source 2260,96853
+(defun gud-jdb-parse-classpath-string 2267,97101
+(defun gud-jdb-marker-filter 2278,97601
+(defvar gud-jdb-command-name 2385,102268
+(defun jdb 2388,102363
+(defvar gud-delete-prompt-marker 2506,107594
+(define-derived-mode gud-mode 2511,107673
+(defcustom gud-chdir-before-run 2581,110694
+(defvar gud-target-name 2586,110820
+(defun gud-common-init 2594,111169
+(defun gud-set-buffer 2659,114314
+(defvar gud-filter-defer-flag 2663,114422
+(defun gud-filter 2671,114747
+(defvar gud-minor-mode-type 2731,117583
+(defvar gud-overlay-arrow-position 2732,117616
+(defun gud-sentinel 2735,117728
+(defun gud-kill-buffer-hook 2780,119773
+(defun gud-reset 2786,119948
+(defun gud-display-frame 2794,120194
+(defun gud-display-line 2811,120973
+(defun gud-format-command 2862,123304
+(defun gud-read-address 2918,125606
+(defun gud-call 2938,126429
+(defun gud-basic-call 2944,126585
+(defun gud-refresh 2966,127487
+(defvar gud-find-expr-function 2977,127878
+(defun gud-find-expr 2979,127928
+(defun gud-find-c-expr 3002,128928
+(defun gud-innermost-expr 3027,129904
+(defun gud-backward-sexp 3047,130530
+(defun gud-forward-sexp 3053,130671
+(defun gud-prev-expr 3059,130809
+(defun gud-next-expr 3072,131263
+(defun gud-expr-compound-sep 3085,131720
+(defun gud-expr-compound 3107,132541
+(defun gud-find-class 3138,133523
+(defvar gdb-script-mode-syntax-table3225,138080
+(defvar gdb-script-font-lock-keywords3232,138271
+(defvar gdb-script-font-lock-syntactic-keywords3237,138512
+(defun gdb-script-font-lock-syntactic-face 3257,139644
+(defvar gdb-script-basic-indent 3263,139815
+(defun gdb-script-skip-to-head 3265,139851
+(defun gdb-script-calculate-indentation 3271,140130
+(defun gdb-script-indent-line 3289,140702
+(defun gdb-script-beginning-of-defun 3311,141516
+(defun gdb-script-end-of-defun 3322,141857
+(define-derived-mode gdb-script-mode 3339,142411
+(define-minor-mode gud-tooltip-mode3363,143501
+(defcustom gud-tooltip-modes 3399,145181
+(defcustom gud-tooltip-display3406,145403
+(defcustom gud-tooltip-echo-area 3417,145775
+(define-obsolete-variable-alias 'tooltip-gud-modestooltip-gud-modes3423,145921
+(define-obsolete-variable-alias 'tooltip-gud-displaytooltip-gud-display3425,146001
+(defun gud-tooltip-change-major-mode 3430,146119
+(defun gud-tooltip-activate-mouse-motions-if-enabled 3434,146312
+(defvar gud-tooltip-mouse-motions-active 3446,146803
+(defun gud-tooltip-activate-mouse-motions 3455,147248
+(defun gud-tooltip-mouse-motion 3468,147790
+(defvar gud-tooltip-original-filter 3478,148087
+(defvar gud-tooltip-dereference 3481,148195
+(defvar gud-tooltip-event 3485,148349
+(defun gud-tooltip-dereference 3489,148503
+(define-obsolete-function-alias 'tooltip-gud-toggle-dereferencetooltip-gud-toggle-dereference3500,148943
+(defun gud-tooltip-process-output 3509,149609
+(defun gud-tooltip-print-command 3515,149902
+(defun gud-tooltip-tips 3525,150303
+
+init.el,166
+(defvar my-packages34,1252
+(defvar emacs-repos-dir 190,3719
+(defun custom-theme-load-confirm 191,3769
+(defun try-require 210,4354
+(defvar org-directory 218,4584
 
 keybindings.el,788
 (define-key c-mode-base-map 45,1898
@@ -35,24 +236,22 @@ keybindings.el,788
 org-gmail-cleanup.el,37
 (defun cleanup-alarms-for-gmail 1,0
 
-org.el,454
-(defadvice org-cycle 15,433
-(defun my-org-mode-ask-effort 25,713
-(defun my-org-capture-dont-ask 48,1537
-(defadvice org-capture-finalize 53,1612
-(defadvice  org-agenda-redo 98,3202
-(defun my-org-pending-remove-scheduled 104,3403
-(defun work-org-mode 131,4540
-(defun home-org-mode 137,4718
-(defun org-table-recalculate 160,5281
-(defun sync-google-calendar 295,12026
-(defadvice org-add-log-note 301,12291
-(defun rasmus/remove-schedule 304,12428
-
-wget-log,83
-HTTP request sent,5,353
-HTTP request sent, awaiting response... Read error 5,353
-
-wget-log.1,104
-HTTP request sent,5,353
-    50K .......... .......... ..                               59.8K=K10,547
+org.el,692
+(defadvice org-cycle 15,455
+(defun my-org-mode-ask-effort 25,735
+(defun my-org-capture-dont-ask 48,1559
+(defadvice org-capture-finalize 53,1634
+(defadvice  org-agenda-redo 91,2976
+(defun my-org-pending-remove-scheduled 97,3177
+(defun work-org-mode 124,4314
+(defun home-org-mode 130,4492
+(defun org-table-recalculate 153,5055
+(defun cleanup-alarms-for-gmail 288,11800
+(defun sync-google-calendar 309,12476
+(defun rasmus/remove-schedule 319,12885
+(defun org-habit-parse-todo 332,13320
+(defun org-make-habit 391,16097
+(defun org-agenda-get-scheduled 396,16197
+(defun org-time-stamp-string 581,25863
+(defun org-agenda-hide-today 609,27177
+(defun org-agenda-hide-until 635,28190

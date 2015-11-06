@@ -81,7 +81,7 @@
 ;; General hooks for org and agenda
 (add-hook 'org-mode-hook (lambda () (auto-revert-mode t)))
 (add-hook 'org-mode-hook (lambda () (visual-line-mode -1)))
-(add-hook 'org-agenda-mode-hook '(lambda () (cd (car org-agenda-files))))
+(add-hook 'org-agenda-mode-hook '(lambda () (cd org-directory)))
 
 ;; Turn on appointment checking
 (setq appt-time-msg-list nil)
@@ -309,6 +309,7 @@ known that the table will be realigned a little later anyway."
 (defun sync-google-calendar ()
   (interactive)
   (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
+
 (setq org-google-sync (run-at-time 0 300 'sync-google-calendar))
 ;;(defun org-add-log-note (&optional purpose))
 
@@ -412,7 +413,7 @@ an hour specification like [h]h:mm."
          mm
          (deadline-position-alist
           (mapcar (lambda (a) (and (setq mm (get-text-property
-                                        0 'org-hd-marker a))
+                                             0 'org-hd-marker a))
                               (cons (marker-position mm) a)))
                   deadline-results))
          d2 diff pos pos1 category category-pos level tags donep
@@ -487,13 +488,11 @@ an hour specification like [h]h:mm."
                          (progn
                            (and todayp)))
                      (or (not (org-entry-get nil "HIDDEN-DATE"))
-                         (progn (print "hi")
-                                (print (current-buffer))
-                                (print (point))
-                                (let ((d3 (org-time-string-to-absolute (org-entry-get nil "HIDDEN-DATE"))))
-                                  (not (= today d3))))))
-          (save-excursion
-            (setq donep (member todo-state org-done-keywords))
+                         (progn (let ((d3 (org-time-string-to-absolute (org-entry-get nil "HIDDEN-DATE"))))
+                                  (not (org-agenda-todayp d3))
+                                  ))))
+            (save-excursion
+              (setq donep (member todo-state org-done-keywords))
             (if (and donep
                      (or org-agenda-skip-scheduled-if-done
                          (not (= diff 0))
@@ -661,3 +660,13 @@ The command returns the inserted time stamp."
 
 (org-defkey org-agenda-mode-map "h" 'org-agenda-hide-today)
 (org-defkey org-agenda-mode-map "H" 'org-agenda-hide-until)
+
+(add-hook 'org-mode-hook
+          (lambda () (setq paragraph-start (concat paragraph-start "\\|.*:\\|[ \t]*\\[.*\\]\\|"))))
+
+(add-hook 'org-mode-hook (lambda () (setq fill-paragraph-function 'org-fill-paragraph)))
+(setq org-mobile-directory "~/Dropbox/mobileorg")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/from-mobile.org")
+(require 'org-mobile)
+(setq org-agenda-buffer-name "*Org Agenda*")
+(setq-default org-done-keywords `("DONE"))

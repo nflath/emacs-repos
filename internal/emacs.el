@@ -10,7 +10,7 @@
 (toggle-truncate-lines 1)
 (setq-default truncate-lines t)
 (setq-default truncate-partial-width-windows t)
-(setq-default fill-column 120)
+(setq-default fill-column 85)
 (setq line-move-visual nil)
 (windmove-default-keybindings)
 (defalias 'qrr 'query-replace-regexp)
@@ -328,4 +328,4 @@ unless NOMODES is non-nil."
 (setq load-prefer-newer t)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(setq paragraph-start "\f\\|[ \t]*$\\|[ \t]*[0-9.]\.\\|.*:$" )
+(setq-default paragraph-start "\f\\|[ \t]*$\\|[ \t]*[0-9.]+\.\\|.*:$\\|[ \t]*\\[.*\\]\\|[ \t]*-" )
