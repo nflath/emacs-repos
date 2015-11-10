@@ -2,8 +2,6 @@
 
 (setq debug-on-error t) ;; We want to debug errors.
 
-;;; I-Z packages
-
 ;; Bootstrap use-package
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -15,6 +13,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
+(setq use-package-always-ensure t)
 
 ;;; List of packages to make sure are installed
 (defvar my-packages
@@ -237,13 +236,22 @@
      ( "<C-M-left>" . buf-move-left)
      ("<C-M-right>" . buf-move-right)))
 
-(use-package rainbow-delimeters-mode
+(use-package javadoc-lookup
+  :bind
+  (("C-x j" . javadoc-lookup)))
+
+(use-package smartscan
+  :config
+  (add-hook 'prog-mode-hook 'smartscan-mode)
+  (add-hook 'org-mode-hook 'smartscan-mode))
+
+(use-package occur-x
+  :config
+  (add-hook 'occur-mode-hook 'turn-on-occur-x-mode))
+
+(use-package rainbow-delimiters
   :config
     (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable))
-
-(use-package isearch-mode
-  :config
-    (setq case-fold-search t))
 
 (use-package flyspell
   :config
@@ -266,6 +274,31 @@
       (ispell-send-string "#\n"))
 
     (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+
+(use-package python-mode
+  :config
+  (add-hook 'python-mode-hook 'turn-on-eldoc-mode)
+  (add-hook 'python-mode-hook 'flycheck-mode)
+
+  (defun my-insert-self ()
+    "Insert self. at the beginning of the current word."
+    (interactive)
+    (save-excursion
+      (search-backward-regexp
+       "[
+ \t,(-]\\|^")
+      (if (not (looking-at "^"))
+          (forward-char))
+      (insert "self.")))
+
+  (setq python-indent-guess-indent-offset nil)
+  )
+
+(use-package cc-mode
+  :mode (("\\.tin$" . c++-mode)
+         ("\\.tac$" . c++-mode))
+  :config
+  (add-hook 'c-mode-hook 'flycheck-mode))
 
 (use-package dired
   :config
@@ -293,23 +326,111 @@
   (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
   :after dired)
 
+(use-package workgroups2
+  :init
+  (setq wg-session-load-on-start t)
+  :config
+  (workgroups-mode 1))
+
+(use-package save-visited-files
+  :config
+  (save-visited-files-mode t))
+
+(use-package frame-cmds
+  :config
+  (maximize-frame))
+
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize)
+  (add-to-list 'exec-path "~/bin"))
+
+(use-package shell
+  :config
+  (defun shell-dirtrack-mode-off ()
+    (interactive)
+    (shell-dirtrack-mode -1))
+  (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+  (add-hook 'shell-mode-hook 'shell-dirtrack-mode-off))
+
+(use-package dirtrack
+  :config
+  (if (eq window-system 'w32)
+      (setq-default dirtrack-list '("\\(c:[^ ]*\\)>" 1))
+    (setq-default dirtrack-list '("[a-zA-Z]*@\\([^$ \t\r\n]*\\)\\$" 1)))
+
+  (defun dirtrack-mode-on ()
+    (interactive)
+    (dirtrack-mode 1))
+  (add-hook 'shell-mode-hook 'dirtrack-mode-on)
+
+  (defvar max-prompt-len 40 "Maximum length of your prompt string.")
+
+  ;; Dirtrack forces the prompt to contain the full working directory, but this
+  ;; sometimes causes the prompt to be too long.  The following code will cause
+  ;; your prompt to only contain the last 40 characters of the current directory.
+  (defun dirtrack-buffer-name-track-shorten-prompt (input)
+    "Shortens any prompts displayed to max-prompt-len chars."
+    (let* ((prompt (progn (if (string-match (car dirtrack-list) input)
+                              (match-string 0 input))))
+           (len (if prompt (length prompt) 0)))
+      (if (and (> len max-prompt-len)
+               (<= (- len max-prompt-len 1) (length default-directory)))
+          (replace-regexp-in-string
+           (replace-regexp-in-string "\\$" "\\$"  prompt nil t)
+           (concat "nflath@/"
+                   (substring default-directory (- len max-prompt-len 1)) "$ " )
+           input nil t)
+        input)))
+  (add-hook 'comint-preoutput-filter-functions 'dirtrack-buffer-name-track-shorten-prompt)
+
+  :after shell)
+
+(use-package dirtrack-buffer-name-track-mode
+  :config
+  (dirtrack-buffer-name-track-mode))
+
+(use-package htmlize
+  :config
+  (setq htmlize-html-major-mode 'html-mode))
+
+(use-package highlight-symbol
+  :config
+  (setq highlight-symbol-idle-delay 0)
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode))
+
+(use-package go-mode
+  :config
+  (add-hook 'go-mode-hook 'flycheck-mode))
+
+(use-package wgrep
+  :config
+  (setq wgrep-enable-key "q"))
+
+(use-package jump-dls
+  :config
+  (setq jump-build-index t))
+
+(use-package ssh-config-mode
+  :mode (".ssh/config\\'"
+         "sshd?_config\\'")
+  :config
+  (add-hook 'ssh-config-mode-hook 'turn-on-font-lock))
+
+(use-package markdown-mode
+  :config
+  (setq markdown-enable-math t))
+
 ;; Only reset keybindings after downloading everything
 (load-file (concat emacs-repos-dir "keybindings.el"))
 
-(setq wg-session-load-on-start t)
-(workgroups-mode 1)
-(save-visited-files-mode t)
-(server-start)
 
-(add-to-list 'auto-mode-alist '("\\.tin$" . c++-mode))
-(add-to-list 'auto-mode-alist '("\\.tac$" . c++-mode))
 ;; FixMe: Get tac mode here
 
-(exec-path-from-shell-initialize)
-(add-to-list 'exec-path "~/bin")
-
-(maximize-frame)
+(setq read-quoted-char-radix 16)
+(server-start)
+(setq case-fold-search t)
 
 (provide 'init)
 ;;; init.el ends here
-(setq read-quoted-char-radix 16)

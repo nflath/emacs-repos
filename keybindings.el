@@ -73,9 +73,6 @@
 ;; dired-mode
 (setq dired-isearch-filenames t)
 
-;; java-mode
-(define-key java-mode-map (kbd "C-x j") 'javadoc-lookup)
-
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
 
 (define-key lisp-interaction-mode-map (kbd "C-j") 'newline-and-indent)
