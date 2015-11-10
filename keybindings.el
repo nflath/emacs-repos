@@ -1,3 +1,4 @@
+
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 (global-set-key (kbd "C-x y") 'copy-whole-line)
 (global-set-key [f1] 'help-anything)
@@ -90,14 +91,6 @@
 
 (windmove-default-keybindings 'M)
 (global-set-key (kbd "C-=") 'er/expand-region)
-(global-set-key (kbd "C-'") 'ace-jump-line-mode)
-(global-set-key (kbd "M-'") 'ace-jump-word-mode)
-
-
-(global-set-key (kbd "<C-M-down>")   'buf-move-down)
-(global-set-key (kbd "<C-M-up>")     'buf-move-up)
-(global-set-key (kbd "<C-M-left>")   'buf-move-left)
-(global-set-key (kbd "<C-M-right>")  'buf-move-right)
 
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (join-line -1)))
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)

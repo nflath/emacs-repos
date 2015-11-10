@@ -2,6 +2,8 @@
 
 (setq debug-on-error t) ;; We want to debug errors.
 
+;;; I-Z packages
+
 ;; Bootstrap use-package
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -205,28 +207,16 @@
 (load-file "~/Dropbox/private.el")
 
 (load-file (concat emacs-repos-dir "org.el"))
-;; (setq load-dirs (concat emacs-repos-dir "internal"))
-;; (condition-case nil
-;;     (progn
-;;       (require 'load-dir)
-;;       (load-dirs)
-;;       (message "Loaded directories")
-;;       )
-;;   (error nil))
-
-
 (load-file (concat emacs-repos-dir "elget.el"))
 
-
-
-
-(require `use-package)
 (use-package load-dir
-  :init (setq load-dirs (concat emacs-repos-dir "internal"))
+  :init
+  (setq load-dirs (concat emacs-repos-dir "internal"))
   :config (load-dirs))
 
 (use-package hungry-delete
-  :config (global-hungry-delete-mode))
+  :config
+    (global-hungry-delete-mode))
 
 (use-package js2-mode
   :mode "\\.js$"
@@ -234,10 +224,74 @@
     (setq js2-bounce-indent-p t)
     (setq js2-highlight-level 3))
 
-(use-package rainbow-delimeters-mode
-  :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable))
+(use-package ace-jump-mode
+  :bind
+    (("C-'" . ace-jump-line-mode)
+     ("M-'" . ace-jump-word-mode)
+     ("C-." . ace-jump-mode)))
 
-;;; Load other customizations
+(use-package buffer-move
+  :bind
+    (("<C-M-down>" . buf-move-down)
+     ("<C-M-up>"   . buf-move-up)
+     ( "<C-M-left>" . buf-move-left)
+     ("<C-M-right>" . buf-move-right)))
+
+(use-package rainbow-delimeters-mode
+  :config
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode-enable))
+
+(use-package isearch-mode
+  :config
+    (setq case-fold-search t))
+
+(use-package flyspell
+  :config
+    (defadvice ispell-command-loop (before ispell-reverse-miss-list activate)
+      "reverse the first argument to ispell-command-loop"
+      (ad-set-arg 0 (reverse (ad-get-argument 0))))
+
+    (when (= 0 (shell-command ispell-program-name))
+      (add-hook 'text-mode-hook 'turn-on-flyspell-mode)
+      (add-hook 'org-mode-hook 'turn-on-flyspell-mode)
+      (add-hook 'latex-mode-hook 'turn-on-flyspell-mode)
+      (add-hook 'LaTeX-mode-hook 'turn-on-flyspell-mode)
+      (add-hook 'plain-tex-mode-hook 'turn-on-flyspell-mode))
+
+    (defun flyspell-add-word (word)
+      "Adds word to personal dictionary"
+      (interactive (list (read-string (concat "Add word to personal dictionary <" (current-word) ">: "))))
+      (when (string-equal word "") (setq word (current-word)))
+      (ispell-send-string (concat "*" word "\n"))
+      (ispell-send-string "#\n"))
+
+    (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+
+(use-package dired
+  :config
+  (setq dired-auto-revert-buffer t))
+
+(use-package wdired
+  :config
+  (setq wdired-allow-to-change-permissions 'advanced)
+  :after dired)
+
+(use-package dired-x
+  :config
+  (setq dired-omit-files
+        (concat
+         dired-omit-files
+         "\\\\|"
+         (rx (or (seq bol (? ".") "#")         ;; emacs autosave files
+                 (seq bol "." (not (any "."))) ;; dot-files
+                 (seq "~" eol)                 ;; backup-files
+                 (seq bol "CVS" eol)           ;; CVS dirs
+                 (seq ".class" eol)            ;; Compiled java files
+                 (seq ".pyc" eol)              ;; Compiled python files
+                 (regexp "TAGS")
+                 ))))
+  (add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
+  :after dired)
 
 ;; Only reset keybindings after downloading everything
 (load-file (concat emacs-repos-dir "keybindings.el"))
@@ -255,8 +309,6 @@
 (add-to-list 'exec-path "~/bin")
 
 (maximize-frame)
-
-(face-spec-set 'org-level-2 '((t (:foreground "#DC8CC3"))))
 
 (provide 'init)
 ;;; init.el ends here

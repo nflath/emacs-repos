@@ -670,3 +670,4 @@ The command returns the inserted time stamp."
 (require 'org-mobile)
 (setq org-agenda-buffer-name "*Org Agenda*")
 (setq-default org-done-keywords `("DONE"))
+(face-spec-set 'org-level-2 '((t (:foreground "#DC8CC3"))))
