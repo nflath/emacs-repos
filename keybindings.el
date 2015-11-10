@@ -44,7 +44,6 @@
 
 ;; c-mode-base
 (define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
-(define-key c-mode-base-map (kbd "C-c c f") 'c-fwdinclude)
 
 ;; c-mode
 (define-key c-mode-map (kbd "C-c o") 'ff-find-other-file)
@@ -59,7 +58,7 @@
 (define-key emacs-lisp-mode-map (kbd "C-x i") 'eval-function-in)
 
 ;; visual-line-mode
-(define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
+(define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visuael-line)
 (define-key visual-line-mode-map (kbd "C-e") 'end-of-visual-line)
 
 ;; org-mode

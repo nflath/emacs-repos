@@ -285,27 +285,6 @@ known that the table will be realigned a little later anyway."
         (or noalign (and org-table-may-need-update (org-table-align)))))))
 ;;; FixMe: End submission
 
-(defun cleanup-alarms-for-gmail ()
-  (interactive)
-  (save-window-excursion
-    (find-file "~/Dropbox/org/calendar.org")
-    (goto-char (point-min))
-    (while (search-forward "* Alarm notification" nil t)
-      (beginning-of-line)
-      (forward-char 2)
-      (let* ((bolp (point))
-             (eolp (progn (end-of-line) (point)))
-             (bosp (progn (search-forward "SUMMARY:") (point)))
-             (eosp (progn (end-of-line) (point)))
-             (summary (buffer-substring bosp eosp)))
-        (message summary)
-        (delete-region bosp eosp)
-        (delete-region bolp eolp)
-        (goto-char bolp)
-        (insert summary))
-      (save-buffer)
-      )))
-
 (defun sync-google-calendar ()
   (interactive)
   (start-process-shell-command "sync_google_calendar_to_org" "foo" "~/bin/sync_google_calendar_to_org"))
