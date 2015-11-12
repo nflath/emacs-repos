@@ -1,3 +1,5 @@
+(defvar org-directory "~/Dropbox/org/" "Location of org files.")
+
 ;; Allow use of alphabetical lists
 (setq org-alphabetical-lists t)
 

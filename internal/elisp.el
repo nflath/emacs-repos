@@ -36,3 +36,9 @@
 (add-hook 'emacs-lisp-mode-hook 'esk-remove-elc-on-save)
 
 (auto-insert-mode 1)
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (if (not (or (f-ancestor-of? emacs-repos-dir default-directory)
+                         (file-equal-p emacs-repos-dir default-directory)))
+                (flycheck-mode))))

@@ -1,4 +1,3 @@
-
 (global-set-key (kbd "C-c e") 'eval-and-replace)
 (global-set-key (kbd "C-x y") 'copy-whole-line)
 (global-set-key [f1] 'help-anything)
@@ -8,7 +7,6 @@
 (global-set-key (kbd "C-c b m") 'move-buffer-file)
 (global-set-key (kbd "C-a") 'nflath-cycle-bol)
 (global-set-key (kbd "C-SPC") 'cua-set-mark)
-
 (global-set-key (kbd "C-x s" ) 'ido-shell)
 (global-set-key (kbd "C-c s") 'shell-current-directory)
 (global-set-key (kbd "C-c m") 'insert-email)
@@ -33,35 +31,17 @@
 (global-set-key (kbd "C-c w") (lambda () (interactive) (diff-buffer-with-file (current-buffer))))
 (global-set-key (kbd "C-M-SPC") 'just-one-space)
 
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cl" 'org-store-link)
-
-(global-set-key (kbd "C-x v s") 'magit-status)
-(global-set-key "\C-x~" 'macro-math-eval-and-round-region)
-(global-set-key "\C-x=" 'macro-math-eval-region)
-(global-set-key [(control meta o)] 'loccur)
-(global-set-key [(control shift o)] 'loccur-previous-match)
-
-;; c-mode-base
-(define-key c-mode-base-map [remap newline-and-indent] 'continue-string-if-necessary)
-
-;; c-mode
-(define-key c-mode-map (kbd "C-c o") 'ff-find-other-file)
-(define-key c++-mode-map (kbd "C-c o") 'ff-find-other-file)
-
-;; dired-mode
-(define-key dired-mode-map (kbd "c") 'dired-do-load)
-(define-key dired-mode-map (kbd "r") 'wdired-change-to-wdired-mode)
-
 ;; emacs-lisp-mode
-(define-key emacs-lisp-mode-map (kbd "M-.") 'jump-symbol-at-point)
 (define-key emacs-lisp-mode-map (kbd "C-x i") 'eval-function-in)
+(define-key lisp-interaction-mode-map (kbd "C-j") 'newline-and-indent)
 
 ;; visual-line-mode
-(define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visuael-line)
+(define-key visual-line-mode-map (kbd "C-a") 'beginning-of-visual-line)
 (define-key visual-line-mode-map (kbd "C-e") 'end-of-visual-line)
 
 ;; org-mode
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cl" 'org-store-link)
 (define-key org-mode-map (kbd "C-<RET>" ) 'org-insert-heading-respect-content)
 (define-key global-map "\C-cr" 'my-org-capture-dont-ask)
 (define-key org-capture-mode-map (kbd "C-x C-s") 'org-capture-finalize)
@@ -69,27 +49,16 @@
 (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
 (define-key org-mode-map (kbd "C-M-<return>") 'org-insert-heading-respect-content)
 
-;; dired-mode
-(setq dired-isearch-filenames t)
-
 (define-key jabber-chat-mode-map (kbd "M-p") 'jabber-chat-input-cycle-input)
 
-(define-key lisp-interaction-mode-map (kbd "C-j") 'newline-and-indent)
 
 ;; Add tab-completion to M-:
 (define-key read-expression-map (kbd "M-/") 'lisp-complete-symbol)
 
-(define-key python-mode-map (kbd "C-;") 'my-insert-self)
-
 (global-set-key  (kbd "C-x C-b")        'ibuffer-other-window)
-
 (global-set-key (kbd "M-s") 'imenu)
 
-(windmove-default-keybindings 'M)
-(global-set-key (kbd "C-=") 'er/expand-region)
-
 (global-set-key (kbd "C-M-j") (lambda () (interactive) (join-line -1)))
-(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 (global-set-key (kbd "C-x p") 'pop-to-mark-command)
 
 (global-set-key "\M-c" 'endless/capitalize)
