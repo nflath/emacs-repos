@@ -18,5 +18,6 @@
 
 (add-hook
  'eval-expression-minibuffer-setup-hook
- #'eldoc-mode)
+ 'eldoc-mode)
+
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)

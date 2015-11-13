@@ -1,5 +1,4 @@
-(defvar org-directory "~/Dropbox/org/" "Location of org files.")
-
+(setq org-directory "~/Dropbox/org/")
 ;; Allow use of alphabetical lists
 (setq org-alphabetical-lists t)
 
@@ -142,8 +141,8 @@
           (org-agenda-ndays 7)
           (org-agenda-log-mode-items '(state))
 
-        ;; other commands here
-        ))))
+          ;; other commands here
+          ))))
 
 ;; Make the agenda
 (org-agenda-list)
@@ -395,7 +394,7 @@ an hour specification like [h]h:mm."
          (deadline-position-alist
           (mapcar (lambda (a) (and (setq mm (get-text-property
                                              0 'org-hd-marker a))
-                              (cons (marker-position mm) a)))
+                                   (cons (marker-position mm) a)))
                   deadline-results))
          d2 diff pos pos1 category category-pos level tags donep
          ee txt head pastschedp todo-state face timestr s habitp show-all
@@ -474,89 +473,89 @@ an hour specification like [h]h:mm."
                                   ))))
             (save-excursion
               (setq donep (member todo-state org-done-keywords))
-            (if (and donep
-                     (or org-agenda-skip-scheduled-if-done
-                         (not (= diff 0))
-                         (and (functionp 'org-is-habit-p)
-                              (org-is-habit-p))))
-                (setq txt nil)
-              (setq habitp (if did-habit-check-p habitp
-                             (and (functionp 'org-is-habit-p)
-                                  (org-is-habit-p))))
-              (setq category (org-get-category)
-                    category-pos (get-text-property (point) 'org-category-position))
-              (if (and (eq org-agenda-skip-scheduled-if-deadline-is-shown
-                           'repeated-after-deadline)
-                       (org-get-deadline-time (point))
-                       (<= 0 (- d2 (time-to-days (org-get-deadline-time (point))))))
-                  (throw :skip nil))
-              (if (not (re-search-backward "^\\*+[ \t]+" nil t))
-                  (throw :skip nil)
-                (goto-char (match-end 0))
-                (setq pos1 (match-beginning 0))
-                (if habitp
-                    (if (or (not org-habit-show-habits)
-                            (and (not todayp)
-                                 (boundp 'org-habit-show-habits-only-for-today)
-                                 org-habit-show-habits-only-for-today))
-                        (throw :skip nil))
-                  (if (and
-                       (or (eq t org-agenda-skip-scheduled-if-deadline-is-shown)
-                           (and (eq org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
-                                pastschedp))
-                       (setq mm (assoc pos1 deadline-position-alist)))
-                      (throw :skip nil)))
-                (setq inherited-tags
-                      (or (eq org-agenda-show-inherited-tags 'always)
-                          (and (listp org-agenda-show-inherited-tags)
-                               (memq 'agenda org-agenda-show-inherited-tags))
-                          (and (eq org-agenda-show-inherited-tags t)
-                               (or (eq org-agenda-use-tag-inheritance t)
-                                   (memq 'agenda org-agenda-use-tag-inheritance))))
+              (if (and donep
+                       (or org-agenda-skip-scheduled-if-done
+                           (not (= diff 0))
+                           (and (functionp 'org-is-habit-p)
+                                (org-is-habit-p))))
+                  (setq txt nil)
+                (setq habitp (if did-habit-check-p habitp
+                               (and (functionp 'org-is-habit-p)
+                                    (org-is-habit-p))))
+                (setq category (org-get-category)
+                      category-pos (get-text-property (point) 'org-category-position))
+                (if (and (eq org-agenda-skip-scheduled-if-deadline-is-shown
+                             'repeated-after-deadline)
+                         (org-get-deadline-time (point))
+                         (<= 0 (- d2 (time-to-days (org-get-deadline-time (point))))))
+                    (throw :skip nil))
+                (if (not (re-search-backward "^\\*+[ \t]+" nil t))
+                    (throw :skip nil)
+                  (goto-char (match-end 0))
+                  (setq pos1 (match-beginning 0))
+                  (if habitp
+                      (if (or (not org-habit-show-habits)
+                              (and (not todayp)
+                                   (boundp 'org-habit-show-habits-only-for-today)
+                                   org-habit-show-habits-only-for-today))
+                          (throw :skip nil))
+                    (if (and
+                         (or (eq t org-agenda-skip-scheduled-if-deadline-is-shown)
+                             (and (eq org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
+                                  pastschedp))
+                         (setq mm (assoc pos1 deadline-position-alist)))
+                        (throw :skip nil)))
+                  (setq inherited-tags
+                        (or (eq org-agenda-show-inherited-tags 'always)
+                            (and (listp org-agenda-show-inherited-tags)
+                                 (memq 'agenda org-agenda-show-inherited-tags))
+                            (and (eq org-agenda-show-inherited-tags t)
+                                 (or (eq org-agenda-use-tag-inheritance t)
+                                     (memq 'agenda org-agenda-use-tag-inheritance))))
 
-                      tags (org-get-tags-at nil (not inherited-tags)))
-                (setq level (make-string (org-reduced-level (org-outline-level)) ? ))
-                (setq head (buffer-substring
-                            (point)
-                            (progn (skip-chars-forward "^\r\n") (point))))
-                (if (string-match " \\([012]?[0-9]:[0-9][0-9]\\)" s)
-                    (setq timestr
-                          (concat (substring s (match-beginning 1)) " "))
-                  (setq timestr 'time))
-                (setq txt (org-agenda-format-item
-                           (if (= diff 0)
-                               (car org-agenda-scheduled-leaders)
-                             (format (nth 1 org-agenda-scheduled-leaders)
-                                     (- 1 diff)))
-                           head level category tags
-                           (if (not (= diff 0)) nil timestr)
-                           nil habitp))))
-            (when txt
-              (setq face
-                    (cond
-                     ((and (not habitp) pastschedp)
-                      'org-scheduled-previously)
-                     (todayp 'org-scheduled-today)
-                     (t 'org-scheduled))
-                    habitp (and habitp (org-habit-parse-todo)))
-              (org-add-props txt props
-                'undone-face face
-                'face (if donep 'org-agenda-done face)
-                'org-marker (org-agenda-new-marker pos)
-                'org-hd-marker (org-agenda-new-marker pos1)
-                'type (if pastschedp "past-scheduled" "scheduled")
-                'date (if pastschedp d2 date)
-                'ts-date d2
-                'warntime warntime
-                'level level
-                'priority (if habitp
-                              (org-habit-get-priority habitp)
-                            (+ 94 (- 5 diff) (org-get-priority txt)))
-                'org-category category
-                'category-position category-pos
-                'org-habit-p habitp
-                'todo-state todo-state)
-              (push txt ee)))))))
+                        tags (org-get-tags-at nil (not inherited-tags)))
+                  (setq level (make-string (org-reduced-level (org-outline-level)) ? ))
+                  (setq head (buffer-substring
+                              (point)
+                              (progn (skip-chars-forward "^\r\n") (point))))
+                  (if (string-match " \\([012]?[0-9]:[0-9][0-9]\\)" s)
+                      (setq timestr
+                            (concat (substring s (match-beginning 1)) " "))
+                    (setq timestr 'time))
+                  (setq txt (org-agenda-format-item
+                             (if (= diff 0)
+                                 (car org-agenda-scheduled-leaders)
+                               (format (nth 1 org-agenda-scheduled-leaders)
+                                       (- 1 diff)))
+                             head level category tags
+                             (if (not (= diff 0)) nil timestr)
+                             nil habitp))))
+              (when txt
+                (setq face
+                      (cond
+                       ((and (not habitp) pastschedp)
+                        'org-scheduled-previously)
+                       (todayp 'org-scheduled-today)
+                       (t 'org-scheduled))
+                      habitp (and habitp (org-habit-parse-todo)))
+                (org-add-props txt props
+                  'undone-face face
+                  'face (if donep 'org-agenda-done face)
+                  'org-marker (org-agenda-new-marker pos)
+                  'org-hd-marker (org-agenda-new-marker pos1)
+                  'type (if pastschedp "past-scheduled" "scheduled")
+                  'date (if pastschedp d2 date)
+                  'ts-date d2
+                  'warntime warntime
+                  'level level
+                  'priority (if habitp
+                                (org-habit-get-priority habitp)
+                              (+ 94 (- 5 diff) (org-get-priority txt)))
+                  'org-category category
+                  'category-position category-pos
+                  'org-habit-p habitp
+                  'todo-state todo-state)
+                (push txt ee)))))))
     (nreverse ee)))
 
 (defun org-time-stamp-string (time &optional with-hm inactive pre post extra)
@@ -572,7 +571,7 @@ The command returns the inserted time stamp."
         (result ""))
     (if inactive (setq fmt (concat "[" (substring fmt 1 -1) "]")))
 
-    ;(insert-before-markers (or pre ""))
+                                        ;(insert-before-markers (or pre ""))
     (when (listp extra)
       (setq extra (car extra))
       (if (and (stringp extra)

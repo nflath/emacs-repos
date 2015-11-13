@@ -2,10 +2,7 @@
 
 (setq debug-on-error t) ;; We want to debug errors.
 
-;; Bootstrap use-package
-
 (defvar emacs-repos-dir "~/Dropbox/emacs-repos/")
-
 (setq max-specpdl-size 5000)
 (setq max-lisp-eval-depth 3000)
 (setq mac-command-modifier `meta)
@@ -28,3 +25,5 @@
 (setq read-quoted-char-radix 16)
 (server-start)
 (setq case-fold-search t)
+
+(auto-insert-mode 1)

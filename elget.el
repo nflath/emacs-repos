@@ -3,6 +3,7 @@
 ;;; Bootstrap use-package and Ensure that all ELPA repositories are available
 (require 'package)
 (setq package-enable-at-startup nil)
+(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -13,7 +14,6 @@
 
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
 (package-refresh-contents)
 
 ;;; List of packages to make sure are installed
@@ -25,6 +25,8 @@
     use-package
 
     ;; Emacs UI improvements
+    color-theme
+    zenburn
     magit
     wgrep
     mic-paren
@@ -73,6 +75,9 @@
     company-c-headers
     company-go
     flyspell
+    org
+    org-capture
+    org-mobile
 
     ;; General programming utilities
     flycheck
@@ -107,6 +112,7 @@
     ssh-config-mode
     graphviz-dot-mode
     go-mode
+
     scheme
     cc-mode
     python
@@ -145,6 +151,7 @@
     python-pylint
 
     ;; Elisp programming libraries
+    lisp-mode
     thingatpt+
     dirtree
     hook-utils
@@ -176,6 +183,7 @@
    )
 
 ;;; Download and require all packages
+
 (setq failed-installs ())
 (defun try-package-install (sym)
   (condition-case nil
@@ -293,7 +301,7 @@
   :bind (([(control meta o)] . loccur)
          ([(control shift o)] . loccur-previous-match)))
 
-(use-package macro-match
+(use-package macro-math
   :bind (("\C-x~" . macro-math-eval-and-round-region)
          ("\C-x=" . macro-math-eval-region)))
 
@@ -514,3 +522,17 @@ current file) if no makefile is found."
 
 (use-package expand-region
   :bind (("C-=" . r/expand-region)))
+
+(use-package hook-utils
+  :config
+  (defvar elisp-modes '(emacs-lisp-mode-hook
+                        lisp-interaction-mode-hook
+                        ielm-mode-hook
+                        inferior-emacs-lisp-mode-hook)
+    "List of modes that are used for programming in emacs-lisp.")
+
+  (hook-utils-add-hook-to-all elisp-modes 'turn-on-eldoc-mode))
+
+(use-package zenburn
+  :config
+  (zenburn))

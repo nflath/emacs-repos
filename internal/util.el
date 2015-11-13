@@ -1,5 +1,13 @@
 ;;; Collection of utility functions for interactive use
 
+(defun insert-email ()
+  "Uses email-alist to read a name and insert the correct email addresses at point."
+  (interactive)
+  (insert (cadr (assoc (ido-completing-read
+                        "Name: "
+                        (mapcar #'car email-alist))
+                       email-alist))))
+
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill. This function directly calls
 kill-line, so see documentation of kill-line for how to use it including prefix
