@@ -25,8 +25,10 @@
     use-package
 
     ;; Emacs UI improvements
+    diminish
     color-theme
     zenburn
+    miniedit
     magit
     wgrep
     mic-paren
@@ -399,6 +401,7 @@ current file) if no makefile is found."
   :after dired)
 
 (use-package workgroups2
+  :diminish workgroups-mode
   :init
   (setq wg-session-load-on-start t)
   :config
@@ -407,8 +410,6 @@ current file) if no makefile is found."
 (use-package save-visited-files
   :config
   (add-hook 'after-init-hook (save-visited-files-mode t)))
-
-
 
 (use-package browse-kill-ring
   :config
@@ -429,6 +430,7 @@ current file) if no makefile is found."
   (add-hook 'prog-mode-hook 'highlight-symbol-mode))
 
 (use-package auto-indent-mode
+  :diminish auto-indent-mode
   :config
   (auto-indent-global-mode))
 
@@ -457,10 +459,6 @@ current file) if no makefile is found."
 (use-package markdown-mode
   :config
   (setq markdown-enable-math t))
-
-(use-package auto-indent-mode
-  :config
-  (auto-indent-global-mode))
 
 (use-package winner
   :config
@@ -536,3 +534,12 @@ current file) if no makefile is found."
 (use-package zenburn
   :config
   (zenburn))
+(use-package miniedit
+  :config
+  (miniedit-install))
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'abbrev-mode)
+  (diminish 'whitespace-mode)
+  (diminish 'subword-mode))

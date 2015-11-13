@@ -64,3 +64,5 @@
 (global-set-key "\M-c" 'endless/capitalize)
 (global-set-key "\M-l" 'endless/downcase)
 (global-set-key "\M-u" 'endless/upcase)
+
+(global-set-key (kbd "<f2>") 'recompile)
